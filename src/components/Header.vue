@@ -8,30 +8,37 @@
       À l'aube de l'énergie
     </h1>
     <nav id="nav">
-      <router-link to="/">
-        <img id="logoHome" src="../assets/images/logos/home.svg"/>
-        <p>Accueil</p>
-      </router-link>
+      <NavLinkItem link="/home" v-bind:imgSrc="navlinks.home" label="Accueil"/>
       <span> | </span>
-      <router-link to="/about">
-        <img id="logoAbout" src="../assets/images/logos/about.svg"/>
-        <p>À propos</p>
-      </router-link>
+      <NavLinkItem link="/about" v-bind:imgSrc="navlinks.about" label="À propos"/>
       <span> | </span>
-      <router-link to="/reservation">
-        <img id="logoAbout" src="../assets/images/logos/calendar.svg"/>
-        <p>Réservation</p>
-      </router-link>
+      <NavLinkItem link="/contacts" v-bind:imgSrc="navlinks.contacts" label="Contacts"/>
     </nav>
   </header>
 </template>
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import NavLinkItem from './NavLinkItem.vue';
 
-@Component
-export default class Header extends Vue {
+import home from '../assets/images/logos/home.svg';
+import about from '../assets/images/logos/about.svg';
+import contacts from '../assets/images/logos/contacts.svg';
 
-}
+@Component({
+  components:  {
+    NavLinkItem,
+  },
+  data() {
+    return {
+      navlinks: {
+        home,
+        about,
+        contacts,
+      },
+    };
+  },
+})
+export default class Header extends Vue {}
 </script>
 
 <style lang="scss">
@@ -54,23 +61,6 @@ header {
     justify-content: space-around;
     span {
       display: none;
-    }
-    a {
-      font-weight: bold;
-      color: $font-base;
-      display: flex;
-      align-items: center;
-
-      &.router-link-exact-active {
-        color: #42b983;
-      }
-      img {
-        width: 35px;
-        height: 35px;
-      }
-      p {
-        display: none;
-      }
     }
   }
 }
