@@ -5,6 +5,10 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
   mode: 'development',
   entry: ['main.ts', 'main.scss'],
+  output: {
+    path: './dist',
+    filename: "[name].min.js",
+  },
   module: {
     rules: [
       {
@@ -29,6 +33,15 @@ module.exports = {
           'css-loader',
           'sass-loader'
         ])
+      },
+      {
+        test: /\.(png|jpg|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {},
+          },
+        ],
       },
     ]
   },
