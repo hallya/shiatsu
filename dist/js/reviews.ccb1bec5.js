@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["reviews"],{"2e51":function(e,n,t){"use strict";t.r(n);var r=function(){var e=this,n=e.$createElement;e._self._c;return e._m(0)},s=[function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("main",[t("h1",[e._v("Avis clients")])])}],c=t("2877"),i={},l=Object(c["a"])(i,r,s,!1,null,null,null);n["default"]=l.exports}}]);
-//# sourceMappingURL=reviews.ccb1bec5.js.map
