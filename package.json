@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --mode production",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "deploy": "npx https://gist.github.com/hallya/0157697871892caaf2793170a61e6ebd"
@@ -33,7 +33,7 @@
     "ts-loader": "5.3.3",
     "typescript": "3.4.4",
     "vue-svg-loader": "0.12.0",
-    "vue-template-compiler": "2.5.21"
+    "vue-template-compiler": "^2.6.10"
   },
   "postcss": {
     "plugins": {
