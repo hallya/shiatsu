@@ -23,6 +23,14 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
     },
     {
+      path: '/blog',
+      name: 'blog',
+      meta: {
+        title: 'Shiatsu - Blog',
+      },
+      component: () => import(/* webpackChunkName: "reviews" */  './views/Blog.vue'),
+    },
+    {
       path: '/reviews',
       name: 'reviews',
       meta: {

@@ -1,14 +1,17 @@
 <template>
   <header>
-    <h1>Shiatsu</h1>
-    <picture id="logoHeader">
-      <img src="../assets/images/logos/nenuphar.svg" alt="" srcset="">
-    </picture>
-    <h2>Retrouver l’Energie</h2>
+    <!-- <section id="group-title"> -->
+      <h1 id="title">Shiatsu</h1>
+      <picture id="logoHeader">
+        <img src="../assets/images/logos/nenuphar.svg" alt="" srcset="">
+      </picture>
+    <!-- </section> -->
     <nav id="nav">
       <NavLinkItem link="/home" v-bind:imgSrc="navlinks.home" label="Accueil"/>
       <span> | </span>
       <NavLinkItem link="/about" v-bind:imgSrc="navlinks.about" label="À propos"/>
+      <span> | </span>
+      <NavLinkItem link="/blog" v-bind:imgSrc="navlinks.blog" label="Blog"/>
       <span> | </span>
       <NavLinkItem link="/reviews" v-bind:imgSrc="navlinks.reviews" label="Avis"/>
       <span> | </span>
@@ -22,6 +25,7 @@ import NavLinkItem from './NavLinkItem.vue';
 
 import home from '../assets/images/logos/home.svg';
 import about from '../assets/images/logos/about.svg';
+import blog from '../assets/images/logos/blog.svg';
 import reviews from '../assets/images/logos/reviews.svg';
 import contacts from '../assets/images/logos/contacts.svg';
 
@@ -34,6 +38,7 @@ import contacts from '../assets/images/logos/contacts.svg';
       navlinks: {
         home,
         about,
+        blog,
         reviews,
         contacts,
       },
@@ -50,14 +55,19 @@ header {
   flex-flow: wrap row;
   justify-content: center;
 
-  #logoHeader {
+  picture {
     img {
-      height: 40px;
-      width: 40px;
+      height: 50px;
+      width: 50px;
     }
   }
   h1 {
     margin-right: 10px;
+    font-size: 42px;
+  }
+  h2 {
+    width: 100%;
+    margin: 0;
   }
   #nav {
     padding: 10px 30px;
@@ -65,9 +75,12 @@ header {
     display: flex;
     flex-flow: wrap row;
     justify-content: space-around;
+    align-items: center;
 
     span {
       display: none;
+      font-size: 20px;
+      font-weight: 100;
     }
   }
 }
