@@ -1,4 +1,5 @@
 // webpack.config.js
+const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
@@ -6,8 +7,8 @@ module.exports = {
   mode: 'development',
   entry: ['main.ts', 'main.scss'],
   output: {
-    path: './dist',
-    filename: "[name].min.js",
+    path: path.join(__dirname, "dist"),
+    filename: "bundle.js"
   },
   module: {
     rules: [

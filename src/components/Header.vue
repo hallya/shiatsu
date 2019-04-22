@@ -1,16 +1,16 @@
 <template>
   <header>
+    <h1>Shiatsu</h1>
     <picture id="logoHeader">
-      <img src="../assets/images/logos/leaf.svg" alt="" srcset="">
+      <img src="../assets/images/logos/nenuphar.svg" alt="" srcset="">
     </picture>
-    <h1>
-      Shiatsu<br>
-      À l'aube de l'énergie
-    </h1>
+    <h2>Retrouver l’Energie</h2>
     <nav id="nav">
       <NavLinkItem link="/home" v-bind:imgSrc="navlinks.home" label="Accueil"/>
       <span> | </span>
       <NavLinkItem link="/about" v-bind:imgSrc="navlinks.about" label="À propos"/>
+      <span> | </span>
+      <NavLinkItem link="/reviews" v-bind:imgSrc="navlinks.reviews" label="Avis"/>
       <span> | </span>
       <NavLinkItem link="/contacts" v-bind:imgSrc="navlinks.contacts" label="Contacts"/>
     </nav>
@@ -22,6 +22,7 @@ import NavLinkItem from './NavLinkItem.vue';
 
 import home from '../assets/images/logos/home.svg';
 import about from '../assets/images/logos/about.svg';
+import reviews from '../assets/images/logos/reviews.svg';
 import contacts from '../assets/images/logos/contacts.svg';
 
 @Component({
@@ -33,6 +34,7 @@ import contacts from '../assets/images/logos/contacts.svg';
       navlinks: {
         home,
         about,
+        reviews,
         contacts,
       },
     };
@@ -44,6 +46,9 @@ export default class Header extends Vue {}
 <style lang="scss">
 @import '@/main.scss';
 header {
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: center;
 
   #logoHeader {
     img {
@@ -52,13 +57,15 @@ header {
     }
   }
   h1 {
-    margin-top: 0px;
+    margin-right: 10px;
   }
   #nav {
-    padding: 0 30px;
+    padding: 10px 30px;
+    width: 100%;
     display: flex;
     flex-flow: wrap row;
     justify-content: space-around;
+
     span {
       display: none;
     }

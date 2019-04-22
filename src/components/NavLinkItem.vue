@@ -1,22 +1,24 @@
 <template>
   <router-link v-bind:to="link">
     <SpinningRings/>
-    <img v-bind:src="imgSrc"/>
+    <img :class="label === 'Accueil' && 'home'" v-bind:src="imgSrc" v-bind:alt="label"/>
     <p>{{label}}</p>
   </router-link>
 </template>
+
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import SpinningRings from '../components-ui/SpinningRings.vue';
 
 @Component({
   components: {
-    SpinningRings
+    SpinningRings,
   },
   props: ['link', 'imgSrc', 'label'],
 })
 export default class NavLinkItem extends Vue {}
 </script>
+
 <style lang="scss">
 @import '@/main.scss';
 
@@ -30,12 +32,6 @@ a {
   &.router-link-exact-active {
     color: #42b983;
 
-    .circle {
-      &-multiple {
-        animation: appears 1s ease-in-out;
-      }
-    }
-
     img {
       filter: grayscale(1);
     }
@@ -44,21 +40,14 @@ a {
     width: 35px;
     height: 35px;
     transition: .3s;
+
+    &.home {
+    width: 37px;
+    height: 37px;
+    }
   }
   p {
     display: none;
-  }
-  @keyframes appears {
-    0% {
-      opacity: 0;
-    }
-
-    50% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
   }
 }
 </style>

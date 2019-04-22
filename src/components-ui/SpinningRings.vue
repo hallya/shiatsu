@@ -33,24 +33,26 @@ export default class SpinningRings extends Vue {}
   border-radius: 50px;
   height: 50px;
   width: 50px;
+  transition: .4s;
 
   &:nth-of-type(2) {
-    @include border-gradient(skyblue, hotpink);
+    @include border-gradient(skyblue, #42b983);
     animation: rotateThis 3s linear infinite;
   }
 
   &:nth-of-type(3) {
-    @include border-gradient(#E14847, #B53BB4);
+    @include border-gradient(#53A000, #3B7200);
   }
 
   &-multiple {
-    opacity: 0;
     height: 50px;
     width: 50px;
     left: -6px;
     position: absolute;
+    transition: .2s;
   }
   &-multiple & {
+    opacity: 0;
     position: absolute;
     top: 0;
     left: 0;
@@ -58,17 +60,24 @@ export default class SpinningRings extends Vue {}
     bottom: 0;
     margin: auto;
     transition: .2s;
+  }
+}
+
+a.router-link-exact-active {
+  & .circle {
+    opacity: 1;
+    transition: .4s;
 
     &:nth-of-type(1) {
-      animation: psycho 1s linear infinite;
+      animation: psycho 1s ease-out;
     }
 
     &:nth-of-type(2) {
-      animation: psycho 1s linear .1s infinite;
+      animation: psycho 1s ease-out .1s;
     }
 
     &:nth-of-type(3) {
-      animation: psycho 1s linear .25s infinite;
+      animation: psycho 1s ease-out .25s;
     }
   }
 }
@@ -85,7 +94,14 @@ export default class SpinningRings extends Vue {}
 
 @keyframes psycho {
   0% {
-    transform: rotate(360deg) scale(1) translate(2px, 2px);
+    transform: rotate(360deg) scale(1) translate(0px, 0px);
+    opacity: 0;
+  }
+  5% {
+    transform: rotate(400deg) scale(1) translate(2px, 2px);
+  }
+  50% {
+    opacity: 1;
   }
   
   100% {
