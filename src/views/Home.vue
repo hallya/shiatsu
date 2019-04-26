@@ -1,17 +1,25 @@
 <template>
   <main>
-    <section>
-      <h2>Retrouver l’Energie, Soigner par le Shiatsu</h2>
-      <blockquote>
-        « …le soin, lorsqu’il se conçoit comme relation et attention à la souffrance et aux besoins du malade, peut réparer son image dévastée, réveiller son désir de vivre, le libérer de l’amertume ou l’inquiétude propres à la maladie. »
-      </blockquote>
-      <cite>
-        Claire Marin – La maladie, catastrophe intime
-      </cite>
+    <h2>Retrouver l’Energie, Soigner par le Shiatsu</h2>
+    <section class="left-side">
+      <picture>
+        <img id="picture1" src="../assets/images/pictures/pinkFlower.jpg" alt=""/>
+      </picture>
+      <div>
+        <blockquote>
+          « …le soin, lorsqu’il se conçoit comme relation et attention à la souffrance et aux besoins du malade, peut réparer son image dévastée, réveiller son désir de vivre, le libérer de l’amertume ou l’inquiétude propres à la maladie. »
+        </blockquote>
+        <cite>
+          Claire Marin – La maladie, catastrophe intime
+        </cite>
+      </div>
     </section>
-    <section>
+    <section class="right-side">
       <p>Fatigué ou vite fatigable, anxieux, déprimé, tendu, irascible, colérique, à fleur de peau, agité, angoissé, stressé, triste, sans entrain, sans énergie, sans appétit, en train de suivre un régime, de santé fragile, toujours enrhumé, sujet aux gastro à répétition, aux maux de dos, aux tensions dans les épaules et la nuque, aux douleurs articulaires, aux points douloureux se déplaçant ici ou là, aux crampes et/ou aux jambes lourdes, en burn out, épuisée par une grossesse, par l’accouchement, par l’allaitement, en baby blues, en période de ménopause, douloureux à la suite d’un accident, d’une fracture, d’une opération, en période d’études difficiles, dans le trac d’un examen, en traitement pour le cancer, dans le chagrin à la suite d’une séparation, d’un deuil, dans l’angoisse d’une maladie incurable, en fin de vie…</p>
       <p>Ou simplement pour prévenir plutôt que guérir, pour avoir plus de force, plus de calme, plus d’entrain et de légèreté, pour se sentir un peu ou beaucoup mieux…</p>
+      <picture>
+        <img id="picture2" src="../assets/images/pictures/nenuphar.jpg" alt=""/>
+      </picture>
       <p>Le shiatsu vous apporte le soin qui vous permet selon les cas de vous rétablir, d’être réaccordé, un ancrage et un apaisement dans la situation qui est la vôtre.</p>
       <p>J’ai constitué cette liste à partir des maux, légers ou graves, passagers ou persistants pour lesquels femmes, hommes ou enfants sont venus me voir et à qui j’ai fait du bien en réunifiant l’être, corps, cœur, esprit.</p>
     </section>
@@ -26,12 +34,91 @@ export default class Home extends Vue {}
 </script>
 
 <style lang="scss">
-section {
-  h2 {
-    text-align: left;
+@import '@/main.scss';
+
+main {
+  width: 100%;
+  padding: 40px 6vw;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap row;
+
+  @include tablet {
+    padding: 40px 10vw;
   }
-  blockquote {
-    margin: 0 10px;
+  @include laptop {
+    padding: 40px 20vw;
   }
-} 
+  section {
+    width: 100%;
+
+    @include tablet {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+      align-items: center;
+    }
+    @include laptop {
+      justify-content: center;
+    }
+    &.left-side {
+      padding: 20px 0;
+    }
+    &.right-side {
+
+    }
+    h2 {
+      text-align: center;
+      padding: 0px 0 20px;
+    }
+    picture {
+      
+      img {
+        width: 100%;
+
+        &#picture1 {
+          @include tablet {
+          margin: 40px 0;
+            width: 250px;
+          }
+          @include laptop {
+            width: 350px;
+          }
+        }
+        &#picture2 {
+          margin: 20px 0;
+
+          @include tablet {
+            margin: 40px 0;
+            // width: 100%;
+          }
+          @include laptop {
+            width: 80%;
+          }
+        }
+      }
+    }
+    blockquote, cite {
+      @include tablet {
+        width: 240px;
+      }
+      @include laptop {
+        width: 400px;
+      }
+    }
+    blockquote {
+      min-height: 0;
+
+      @include laptop {
+        margin: 40px;
+      }
+    }
+
+    p {
+      margin: 10px 0; 
+      text-align: justify;
+    }
+  } 
+}
 </style>

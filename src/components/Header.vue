@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header id="header">
     <!-- <section id="group-title"> -->
       <h1 id="title">Shiatsu</h1>
       <picture id="logoHeader">
@@ -50,7 +50,7 @@ export default class Header extends Vue {}
 
 <style lang="scss">
 @import '@/main.scss';
-header {
+#header {
   display: flex;
   flex-flow: wrap row;
   justify-content: center;
@@ -70,17 +70,26 @@ header {
     margin: 0;
   }
   #nav {
-    padding: 10px 30px;
+    padding: 10px;
+    box-sizing: border-box;
     width: 100%;
     display: flex;
     flex-flow: wrap row;
     justify-content: space-around;
     align-items: center;
 
+    @include tablet {
+      padding: 10px 6vw;
+    }
     span {
       display: none;
-      font-size: 20px;
-      font-weight: 100;
+      
+      @include tablet {
+        // padding: 10px 6vw;
+        display: initial;
+        font-size: 20px;
+        font-weight: 100;
+      }
     }
   }
 }

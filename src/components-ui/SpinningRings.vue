@@ -14,6 +14,8 @@ export default class SpinningRings extends Vue {}
 </script>
 
 <style lang="scss">
+@import '@/main.scss';
+
 @mixin border-gradient($from, $to, $weight: 0) {
   $mix-main: mix($from, $to);
   $mix-sub-from: mix($mix-main, $from);
@@ -47,9 +49,14 @@ export default class SpinningRings extends Vue {}
   &-multiple {
     height: 50px;
     width: 50px;
-    left: -6px;
+    left: -7px;
+    top: -6px;
     position: absolute;
-    transition: .2s;
+    transition: opacity .2s;
+
+    @include tablet {
+      display: none;
+    }
   }
   &-multiple & {
     opacity: 0;
@@ -59,14 +66,14 @@ export default class SpinningRings extends Vue {}
     right: 0;
     bottom: 0;
     margin: auto;
-    transition: .2s;
+    transition: opacity .2s;
   }
 }
 
 a.router-link-exact-active {
   & .circle {
     opacity: 1;
-    transition: .4s;
+    transition: opacity .4s;
 
     &:nth-of-type(1) {
       animation: psycho 1s ease-out;
@@ -94,12 +101,12 @@ a.router-link-exact-active {
 
 @keyframes psycho {
   0% {
-    transform: rotate(360deg) scale(1) translate(0px, 0px);
+    transform: rotate(360deg) scale(1) translate(3px, 3px);
     opacity: 0;
   }
-  5% {
-    transform: rotate(400deg) scale(1) translate(2px, 2px);
-  }
+  // 5% {
+  //   transform: rotate(400deg) scale(1) translate(2px, 2px);
+  // }
   50% {
     opacity: 1;
   }

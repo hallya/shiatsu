@@ -23,14 +23,17 @@ export default class NavLinkItem extends Vue {}
 @import '@/main.scss';
 
 a {
+  border-radius: 50px;
+  padding: 10px;
   font-weight: bold;
-  color: $font-base;
+  color: $dark-gray;
   display: flex;
   position: relative;
   align-items: center;
+  transition: .2s;
 
   &.router-link-exact-active {
-    color: #42b983;
+    color: $jungle-green;
 
     img {
       filter: grayscale(1);
@@ -42,12 +45,19 @@ a {
     transition: .3s;
 
     &.home {
-    width: 37px;
-    height: 37px;
+      width: 37px;
+      height: 37px;
     }
   }
   p {
     display: none;
+
+    @include tablet {
+      display: initial;
+      margin-left: 5px;
+      font-size: 20px;
+      font-weight: bold;
+    }
   }
 }
 </style>

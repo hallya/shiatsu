@@ -1,5 +1,7 @@
 <template>
-  <h1>À propos</h1>
+  <main>
+    <h1>À propos</h1>
+  </main>
 </template>
 <script>
 import { Component, Vue } from 'vue-property-decorator';

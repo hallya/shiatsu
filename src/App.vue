@@ -1,18 +1,21 @@
 <template>
   <div id="app">
     <Header/>
-    <main>
+    <transition name="fade" mode="out-in">
       <router-view/>
-    </main>
+    </transition>
+    <Footer/>
   </div>
 </template>
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import Header from '@/components/Header.vue';
+import Footer from '@/components/Footer.vue';
 
 @Component({
   components: {
     Header,
+    Footer,
   },
 })
 export default class App extends Vue {}
@@ -25,5 +28,11 @@ export default class App extends Vue {}
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .1s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
 </style>

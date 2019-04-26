@@ -20,7 +20,7 @@ export default new Router({
       meta: {
         title: 'Shiatsu - À propos',
       },
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
+      component: () => import(/* webpackChunkName: "about" */  './views/About.vue'),
     },
     {
       path: '/blog',
