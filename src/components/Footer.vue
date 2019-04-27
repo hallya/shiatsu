@@ -23,8 +23,8 @@ import phone from '@/assets/images/logos/phone.svg';
     return {
       facebook,
       phone,
-    }
-  }
+    };
+  },
 })
 export default class Footer extends Vue {}
 </script>

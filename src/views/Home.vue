@@ -6,11 +6,11 @@
         <img id="picture1" src="../assets/images/pictures/pinkFlower.jpg" alt=""/>
       </picture>
       <div>
-        <blockquote>
-          « …le soin, lorsqu’il se conçoit comme relation et attention à la souffrance et aux besoins du malade, peut réparer son image dévastée, réveiller son désir de vivre, le libérer de l’amertume ou l’inquiétude propres à la maladie. »
+        <blockquote id="home_citation">
+          « […] le soin, lorsqu’il se conçoit comme relation et attention à la souffrance et aux besoins du malade, peut réparer son image dévastée, réveiller son désir de vivre, le libérer de l’amertume ou l’inquiétude propres à la maladie.&nbsp;»
         </blockquote>
         <cite>
-          Claire Marin – La maladie, catastrophe intime
+          <span>Claire Marin</span> – La maladie, catastrophe intime
         </cite>
       </div>
     </section>
@@ -107,17 +107,29 @@ main {
         width: 400px;
       }
     }
-    blockquote {
+    blockquote#home_citation {
       min-height: 0;
+      margin: 40px 20px 20px;
 
       @include laptop {
-        margin: 40px;
+        margin: 40px 80px;
+      }
+    }
+    cite {
+      span {
+        font-style: normal;
       }
     }
 
     p {
-      margin: 10px 0; 
+      margin: 10px 0;
+      font-size: 14px;
       text-align: justify;
+
+      @include tablet {
+        font-size: 16px;
+        line-height: 22px;
+      }
     }
   } 
 }
