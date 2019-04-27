@@ -15,7 +15,7 @@
 
 <script>
 import { Component, Vue } from 'vue-property-decorator';
-import facebook from '@/assets/images/logos/facebook.svg';
+import facebook from '@/assets/images/logos/fb.svg';
 import phone from '@/assets/images/logos/phone.svg';
 
 @Component({
