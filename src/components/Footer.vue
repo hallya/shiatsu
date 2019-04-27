@@ -2,12 +2,12 @@
   <footer id="footer">
     <a href="https://www.facebook.com/nathaliedeloeper/" target="_blank">
       <picture>
-          <img v-bind:src="facebook" alt="Facebook">
+          <img v-bind:src="facebook" alt="facebook">
       </picture>
     </a>
     <a href="tel:0033612387928">
       <picture>
-          <img v-bind:src="phone" alt="Phone">
+          <img v-bind:src="phone" alt="phone">
       </picture>
     </a>
   </footer>
