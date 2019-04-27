@@ -81,6 +81,9 @@ export default class Header extends Vue {}
     @include tablet {
       padding: 10px 6vw;
     }
+    @include laptop {
+      padding: 10px 15vw;
+    }
     span {
       display: none;
       
