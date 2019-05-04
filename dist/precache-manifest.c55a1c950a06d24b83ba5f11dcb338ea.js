@@ -12,8 +12,8 @@ self.__precacheManifest = [
     "url": "/shiatsu/img/blog.da5dbfac.svg"
   },
   {
-    "revision": "23366337eb333adc39b0",
-    "url": "/shiatsu/js/app.a04e5d21.js"
+    "revision": "2da0bd41795c0058dfd4",
+    "url": "/shiatsu/js/app.4379418e.js"
   },
   {
     "revision": "a27ce8118f0948f09b16",
@@ -36,7 +36,7 @@ self.__precacheManifest = [
     "url": "/shiatsu/js/about.7dc9b15a.js"
   },
   {
-    "revision": "3fead05874de8b528e95e66fdb9b0123",
+    "revision": "77b735aff92334d63d76bbd775e8ce65",
     "url": "/shiatsu/index.html"
   },
   {
@@ -68,7 +68,7 @@ self.__precacheManifest = [
     "url": "/shiatsu/img/about.7707daab.svg"
   },
   {
-    "revision": "23366337eb333adc39b0",
+    "revision": "2da0bd41795c0058dfd4",
     "url": "/shiatsu/css/app.819dff3b.css"
   }
 ];
