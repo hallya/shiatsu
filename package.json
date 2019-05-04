@@ -7,7 +7,7 @@
     "build": "vue-cli-service build --mode production",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
-    "deploy": "npm run build && git add dist/ && git commit -m \"build pushdd to gh-pages\" && git subtree push --prefix dist origin gh-pages"
+    "deploy": "npm run build && git add dist/ && git commit -m \"build pushed to gh-pages\" && git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
     "core-js": "2.6.5",
