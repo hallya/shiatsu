@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/shiatsu/precache-manifest.c55a1c950a06d24b83ba5f11dcb338ea.js"
+  "/shiatsu/precache-manifest.808d9d1342447a48a546c7a9b962603f.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "nathalie_shiatsu"});
