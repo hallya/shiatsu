@@ -3,12 +3,12 @@
     <h1>Blog</h1>
     <section>
         <article v-for="article in articles" :key="article.id" class="article">
-          <time class="article-date">
-            <p class="article-date-label">{{article.date | frenchDate | capitalize }}</p>
+          <div class="article-date">
+            <time class="article-date-label">{{article.date | frenchDate | capitalize }}</time>
             <picture>
               <img class="article-date-icon" src="../assets/images/logos/calendar.svg" alt="">
             </picture>
-          </time>
+          </div>
           <h2 class="article-header">{{article.title}}</h2>
           <picture v-if="article.cover">
             <img class="article-cover" v-bind:src="article.cover.url" alt="">
@@ -92,10 +92,11 @@ export default class Blog extends Vue {}
         }
 
         .article-date {
+          width: -moz-fit-content;
+          width: fit-content;
           display: flex;
           justify-content: flex-end;
           align-items: center;
-          width: -moz-fit-content;
           padding: 8px 16px;
           border-radius: 8px;
           background: #ffeebe;
@@ -106,9 +107,9 @@ export default class Blog extends Vue {}
             width: 25px;
           }
           .article-date-label {
+            margin: 0 10px 0px 0;
             text-align: right;
             font-weight: bold;
-            margin: 0 10px 0px 0;
             color: $dark-gray;
           }
         }
