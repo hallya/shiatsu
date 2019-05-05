@@ -51,6 +51,7 @@ export default class Header extends Vue {}
 <style lang="scss">
 @import '@/main.scss';
 #header {
+  padding: 20px 0;
   display: flex;
   flex-flow: wrap row;
   justify-content: center;

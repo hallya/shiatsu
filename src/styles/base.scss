@@ -2,9 +2,12 @@ h1 {
   font: 42px 'Mrs Sheppards', 'Avenir', Helvetica, Arial, sans-serif;
   margin: 0;
 }
+h2,h3, h4, h5, h6, p, label, button, a, blockquote, cite, input, div, span {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+}
 h2 {
   text-align: center;
-  font: bold 26px 'Avenir', Helvetica, Arial, sans-serif;
+  font-size: 26px;
   line-height: 30px;
 }
 a {
