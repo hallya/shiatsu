@@ -8,24 +8,24 @@ self.__precacheManifest = [
     "url": "/shiatsu/robots.txt"
   },
   {
-    "revision": "da5dbfacc33016aa129c3d0f79eeb857",
-    "url": "/shiatsu/img/blog.da5dbfac.svg"
+    "revision": "604f4f1577aa0464274a637352454f11",
+    "url": "/shiatsu/img/blog.604f4f15.svg"
   },
   {
-    "revision": "2da0bd41795c0058dfd4",
-    "url": "/shiatsu/js/app.4379418e.js"
+    "revision": "d2e865d5c681bcb3d869",
+    "url": "/shiatsu/js/app.dc5ad2ec.js"
   },
   {
     "revision": "a27ce8118f0948f09b16",
     "url": "/shiatsu/js/contacts.9123fe9d.js"
   },
   {
-    "revision": "eb35fdba2e3e145550c9",
-    "url": "/shiatsu/js/reviews.c0f5f9bf.js"
+    "revision": "4a896caa230b921fc0dc",
+    "url": "/shiatsu/js/chunk-vendors.cf01de26.js"
   },
   {
-    "revision": "7c8dd490156da1b70553",
-    "url": "/shiatsu/js/chunk-vendors.6677b732.js"
+    "revision": "d9a36ee92e4c13d55976",
+    "url": "/shiatsu/js/reviews.cce5145d.js"
   },
   {
     "revision": "b85e70d32c80448cebb1ad81e49893f0",
@@ -36,7 +36,15 @@ self.__precacheManifest = [
     "url": "/shiatsu/js/about.7dc9b15a.js"
   },
   {
-    "revision": "77b735aff92334d63d76bbd775e8ce65",
+    "revision": "bcf3cbb1462b6bec9fa24cebb5a62c02",
+    "url": "/shiatsu/img/phone.bcf3cbb1.svg"
+  },
+  {
+    "revision": "a8df594ff0b1a70879319f65cd54268a",
+    "url": "/shiatsu/img/nenuphar.a8df594f.jpg"
+  },
+  {
+    "revision": "93b2f7a200164a41571a58c7028d4597",
     "url": "/shiatsu/index.html"
   },
   {
@@ -48,14 +56,6 @@ self.__precacheManifest = [
     "url": "/shiatsu/img/pinkFlower.10426cd3.jpg"
   },
   {
-    "revision": "bcf3cbb1462b6bec9fa24cebb5a62c02",
-    "url": "/shiatsu/img/phone.bcf3cbb1.svg"
-  },
-  {
-    "revision": "a8df594ff0b1a70879319f65cd54268a",
-    "url": "/shiatsu/img/nenuphar.a8df594f.jpg"
-  },
-  {
     "revision": "4c236f7266c5977059f74376e61b8ed7",
     "url": "/shiatsu/img/nenuphar.4c236f72.svg"
   },
@@ -64,11 +64,19 @@ self.__precacheManifest = [
     "url": "/shiatsu/img/home.32e8e5e0.svg"
   },
   {
-    "revision": "7707daab7bd53822d0c9f8cf7791eede",
-    "url": "/shiatsu/img/about.7707daab.svg"
+    "revision": "13ea462200ed633e038318f1ba812a12",
+    "url": "/shiatsu/img/calendar.13ea4622.svg"
   },
   {
-    "revision": "2da0bd41795c0058dfd4",
-    "url": "/shiatsu/css/app.819dff3b.css"
+    "revision": "782d9d8fa2990e8f582cc95c24f27bbf",
+    "url": "/shiatsu/img/about.782d9d8f.svg"
+  },
+  {
+    "revision": "d9a36ee92e4c13d55976",
+    "url": "/shiatsu/css/reviews.998892b5.css"
+  },
+  {
+    "revision": "d2e865d5c681bcb3d869",
+    "url": "/shiatsu/css/app.20f0fdfe.css"
   }
 ];
