@@ -52,7 +52,7 @@ main {
   }
   section {
     width: 100%;
-
+  
     @include tablet {
       display: flex;
       flex-flow: row wrap;
@@ -66,7 +66,7 @@ main {
       padding: 20px 0;
     }
     &.right-side {
-
+      padding: 0 6vw;
     }
     h2 {
       text-align: center;
