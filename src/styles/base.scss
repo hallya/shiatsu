@@ -1,3 +1,5 @@
+@import './vars.scss';
+
 h1 {
   font: 42px 'Mrs Sheppards', 'Avenir', Helvetica, Arial, sans-serif;
   margin: 0;
@@ -25,10 +27,17 @@ cite {
   font-size: 14px;
   font-style: italic;
 }
+header {
+  min-height: $header-mobile-height;
+  box-sizing: border-box;
+}
 main {
+  min-height: $main-mobile-height;
+  box-sizing: border-box;
   padding: 10px;
 }
 footer {
-  height: 80px;
+  min-height: $footer-mobile-height;
+  box-sizing: border-box;
   padding: 20px 6
 }

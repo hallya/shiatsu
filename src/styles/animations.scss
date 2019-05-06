@@ -21,3 +21,13 @@
     transform: rotate(1080deg) scale(1) translate(0, 0);
   }
 }
+
+@keyframes rotateThis {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}

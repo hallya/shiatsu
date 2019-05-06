@@ -8,3 +8,8 @@ $jungle-green: #3B7200;
 $laptop-width: 1120px;
 $tablet-width: 550px;
 $mobile-width: 549px;
+
+// MINIMUM HEIGHT
+$header-mobile-height: 155px;
+$footer-mobile-height: 80px;
+$main-mobile-height: calc(100vh - (#{$header-mobile-height} + #{$footer-mobile-height}));
