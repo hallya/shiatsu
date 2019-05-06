@@ -12,8 +12,8 @@ self.__precacheManifest = [
     "url": "/shiatsu/img/blog.604f4f15.svg"
   },
   {
-    "revision": "4328215344c64cfcbda6",
-    "url": "/shiatsu/js/app.6ebb74e5.js"
+    "revision": "9bc49e6561f24fd1e775",
+    "url": "/shiatsu/js/app.bb39d81c.js"
   },
   {
     "revision": "a27ce8118f0948f09b16",
@@ -44,7 +44,7 @@ self.__precacheManifest = [
     "url": "/shiatsu/img/nenuphar.a8df594f.jpg"
   },
   {
-    "revision": "f900e14f41a322fcd814a5a188061d73",
+    "revision": "be4d1edc84755ab8f00e6ca25892e127",
     "url": "/shiatsu/index.html"
   },
   {
@@ -76,7 +76,7 @@ self.__precacheManifest = [
     "url": "/shiatsu/css/reviews.fcd51803.css"
   },
   {
-    "revision": "4328215344c64cfcbda6",
-    "url": "/shiatsu/css/app.796b33e4.css"
+    "revision": "9bc49e6561f24fd1e775",
+    "url": "/shiatsu/css/app.53ae1210.css"
   }
 ];
