@@ -2,7 +2,9 @@
   <div id="app">
     <Header/>
     <transition name="fade" mode="out-in">
-      <router-view/>
+      <keep-alive exclude="Blog">
+        <router-view/>
+      </keep-alive>
     </transition>
     <Footer/>
   </div>
