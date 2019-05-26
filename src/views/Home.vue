@@ -1,9 +1,9 @@
 <template>
-  <main>
+  <main id="home">
     <h2>Retrouver l’Energie, Soigner par le Shiatsu</h2>
     <section class="left-side">
       <picture>
-        <img id="picture1" src="../assets/images/pictures/pinkFlower.jpg" alt=""/>
+        <img id="picture1" src="../assets/images/pictures/tournesol.jpg" alt=""/>
       </picture>
       <div>
         <blockquote id="home_citation">
@@ -36,7 +36,7 @@ export default class Home extends Vue {}
 <style lang="scss">
 @import '@/main.scss';
 
-main {
+main#home {
   width: 100%;
   padding: 40px 6vw;
   box-sizing: border-box;
