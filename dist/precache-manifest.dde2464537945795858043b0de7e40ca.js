@@ -8,11 +8,11 @@ self.__precacheManifest = [
     "url": "/shiatsu/robots.txt"
   },
   {
-    "revision": "5ba192f1ba3ddec593b8a9ae999a3206",
-    "url": "/shiatsu/img/plateau_nenuphar.5ba192f1.jpg"
+    "revision": "a348163579c4ae6c694eb8afe36ba96c",
+    "url": "/shiatsu/img/plateau_nenuphar.a3481635.jpg"
   },
   {
-    "revision": "b43a6788c0ce76e3a5da",
+    "revision": "26d6fedc2dce91af621d",
     "url": "/shiatsu/css/app.ce610a41.css"
   },
   {
@@ -48,8 +48,8 @@ self.__precacheManifest = [
     "url": "/shiatsu/js/about.90c40d99.js"
   },
   {
-    "revision": "b43a6788c0ce76e3a5da",
-    "url": "/shiatsu/js/app.5201c123.js"
+    "revision": "26d6fedc2dce91af621d",
+    "url": "/shiatsu/js/app.57808265.js"
   },
   {
     "revision": "604f4f1577aa0464274a637352454f11",
@@ -68,8 +68,8 @@ self.__precacheManifest = [
     "url": "/shiatsu/img/contacts.b85e70d3.svg"
   },
   {
-    "revision": "678dd330591a595239d2c4eedc7e9e75",
-    "url": "/shiatsu/img/tournesol.678dd330.jpg"
+    "revision": "0bdc06a1dbea4ec6e9be622793df96df",
+    "url": "/shiatsu/img/tournesol.0bdc06a1.jpg"
   },
   {
     "revision": "2ac46cc6784303a2a75c1171364ead7c",
@@ -84,7 +84,7 @@ self.__precacheManifest = [
     "url": "/shiatsu/img/about.782d9d8f.svg"
   },
   {
-    "revision": "0c3ac2dcc32a6f6aba4aaa25cd220159",
+    "revision": "3a043f58b92e06dd91b89e13a078f4df",
     "url": "/shiatsu/index.html"
   },
   {
