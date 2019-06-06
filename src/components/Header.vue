@@ -5,13 +5,14 @@
       <picture id="logoHeader">
         <img src="../assets/images/logos/nenuphar.svg" alt="" srcset="">
       </picture>
+      <h2>Soignez votre énergie</h2>
     <!-- </section> -->
     <nav id="nav">
       <NavLinkItem link="/home" v-bind:imgSrc="navlinks.home" label="Accueil"/>
       <span> | </span>
       <NavLinkItem link="/about" v-bind:imgSrc="navlinks.about" label="À propos"/>
       <span> | </span>
-      <NavLinkItem link="/blog" v-bind:imgSrc="navlinks.blog" label="Blog"/>
+      <NavLinkItem link="/blog/posts" v-bind:imgSrc="navlinks.blog" label="Blog"/>
       <span> | </span>
       <NavLinkItem link="/reviews" v-bind:imgSrc="navlinks.reviews" label="Avis"/>
       <span> | </span>
@@ -50,6 +51,7 @@ export default class Header extends Vue {}
 
 <style lang="scss">
 @import '@/main.scss';
+
 #header {
   padding: 20px 0;
   display: flex;
@@ -65,10 +67,13 @@ export default class Header extends Vue {}
   h1 {
     margin-right: 10px;
     font-size: 42px;
+    font-weight: bold;
+    letter-spacing: 10px;
   }
   h2 {
     width: 100%;
-    margin: 0;
+    margin: 10px 0;
+    color: rgb(121,159,55);
   }
   #nav {
     padding: 10px;
@@ -84,6 +89,11 @@ export default class Header extends Vue {}
     }
     @include laptop {
       padding: 10px 15vw;
+    }
+    a {
+      p {
+        font-family: 'Arbutus Slab' !important;
+      }
     }
     span {
       display: none;
