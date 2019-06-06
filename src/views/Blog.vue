@@ -1,29 +1,9 @@
 <template>
-  <main class="blog">
+  <main id="blog">
     <TransitionFade>
       <section v-if="articles.length" class="articles" key="content">
         <h2 class="articles-header">Lisez les derniers articles sur le Shiatsu</h2>
-        <article v-for="article in articles" :key="article.id" class="article">
-          <div class="article-date">
-            <time class="article-date-label">{{article.date | frenchDate | capitalize }}</time>
-            <picture>
-              <img class="article-date-icon" src="../assets/images/logos/calendar.svg" alt="">
-            </picture>
-          </div>
-          <h2 class="article-header">{{article.title}}</h2>
-          <picture v-if="article.cover">
-            <img class="article-cover" v-bind:src="article.cover.url" alt="">
-          </picture>
-          <TransitionFadeHeight>
-            <div v-if="article.contentIsVisible">
-              <p v-for="(paragraph, index) in article.content" class="article-content" v-bind:key="index">{{paragraph}}</p>
-            </div>
-            <p v-else class="article-content">{{article.content[0] | textPreview}}</p>
-          </TransitionFadeHeight>
-          <button class="article-toggle-content" v-on:click="article.contentIsVisible = !article.contentIsVisible">
-            {{ article.contentIsVisible ? 'Réduire l\'article' : 'Lire l\'article' }}
-          </button>
-        </article>
+        <Article :article="article" v-for="article of articles" :key="article.id"></Article>
       </section>
       <section v-else key="loader" class="loader">
         <Loader></Loader>
@@ -34,31 +14,62 @@
 
 <script>
 import { Component, Vue } from 'vue-property-decorator';
-import axios from 'axios';
-import Loader from '../components-ui/Loader.vue';
-import TransitionFade from '../transitions/Transition-fade.vue';
-import TransitionFadeHeight from '../transitions/Transition-fade-height.vue';
+import router from '../router';
+import Article from '@/components/Article.vue';
+import Loader from '@/components-ui/Loader.vue';
+import TransitionFade from '@/transitions/Transition-fade.vue';
+import { getArticles, getArticle } from '@/services/strapi/strapi.service';
 
 @Component({
   components: {
+    Article,
     Loader,
     TransitionFade,
-    TransitionFadeHeight,
   },
   data() {
     return {
       articles: [],
+      meta: [
+        { property: 'og:title', content: 'Les articles sur le Shiatsu de Nathalie' },
+        { property: 'og:url', content: window.location.href},
+        { property: 'og:type', content: 'article' },
+        { property: 'og:description', content: 'Découvrez une \
+        pratique thérapeutique unique au travers du regard de Nathalie de Loeper, praticienne de Shiatsu' },
+        { property: 'og:image', content: 'http://static01.nyt.com/images/2015/02/19/\
+        arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg' },
+      ],
     };
+  },
+  mounted() {
+    this.init();
+  },
+  metaInfo() {
+    return {
+      meta: this.meta,
+    };
+  },
+  watch: {
+    $route(to, from) {
+      if (to.fullPath === from.fullPath) {
+        return;
+      } else {
+        this.init();
+      }
+    },
   },
   methods: {
     async init() {
-      const response = await axios.get('https://backoffice-shiatsu.herokuapp.com/articles');
-      this.articles = await response.data.map((article) => ({
+      this.articles = this.$route.query.article 
+        ? [await getArticle(this.$route.query.article)] 
+        : await getArticles();
+      this.articles = this.formatAndSortArticles(this.articles);
+    },
+    formatAndSortArticles(articles) {
+      return articles.map(article => ({
         ...article,
         content: this.formatStringToArray(article.content),
-        contentIsVisible: false,
-      }))
-      .sort(this.sortByDate);
+        contentIsVisible: articles.length === 1 ? null : false,
+      })).sort(this.sortByDate);
     },
     formatStringToArray: (sentence) => sentence.split('\r\n'),
     sortByDate(a, b) {
@@ -74,24 +85,29 @@ import TransitionFadeHeight from '../transitions/Transition-fade-height.vue';
       return 0;
     },
   },
-  mounted() {
-    this.init();
-  },
 })
 export default class Blog extends Vue {}
 </script>
 
 <style lang="scss">
 @import '@/main.scss';
-  main.blog {
-    padding: 0;
 
-    section {
-      &.loader {
-        height: $main-mobile-height;
-      }
+main#blog {
+  padding: 0;
+
+  section {
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap row;
+    &.loader {
+      height: $main-mobile-height;
+    }
+    &.articles {
+      padding: 10px;
+      perspective: 3000px;
+
       h2.articles-header {
-        width: 100%;
+        padding: 0 10px;
         text-align: left;
 
         @include tablet {
@@ -101,97 +117,16 @@ export default class Blog extends Vue {}
           width: 50%;
         }
       }
-      &.articles {
-        padding: 10px;
-        perspective: 3000px;
-  
-        .article {
-          margin: 20px 0;
-          border-radius: 8px;
-          padding: 24px;
-          box-shadow: 0 5px 15px -10px $dark-gray;
-          border: 1px solid $light-gray;
-  
-          @include tablet {
-            width: 70%;
-          }
-          @include laptop {
-            width: 50%;
-          }
-  
-          .article-date {
-            width: -moz-fit-content;
-            width: fit-content;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            padding: 8px 16px;
-            border-radius: 8px;
-            background: #ffeebe;
-            box-shadow: 0px 5px 10px -9px;
-            margin: 0px 0 10px auto;
-  
-            .article-date-icon {
-              width: 25px;
-            }
-            .article-date-label {
-              margin: 0 10px 0px 0;
-              text-align: right;
-              font-weight: bold;
-              color: $dark-gray;
-            }
-          }
-          .article-header {
-            margin: 20px 0;
-            padding: 0;
-            text-align: left;
-            font-weight: bold;
-  
-            @include laptop {
-              padding: 0 40px;
-            }
-          }
-          picture {
-            img.article-cover {
-              margin: 20px 0;
-            }
-          }
-          .article-content {
-            height: auto;
-            @include laptop {
-              padding: 0 40px;
-            }
-          }
-          .article-toggle-content {
-            display: block;
-            margin: 0 0 0 auto;
-            border: none;
-            border-radius: 8px;
-            padding: 8px 16px;
-            font-weight: bold;
-            font-size: 14px;
-            color: $dark-gray;
-            background: none;
-            box-shadow: 0px 0px 0px 1px $light-gray;
-            will-change: width;
-            transition: .2s;
-  
-            &:hover {
-              box-shadow: 0px 5px 15px -10px;
-            }
-          }
-        }
-      }
-      .list-enter-active, 
-      .list-leave-active {
-        transition: 5s;
-      }
-      .list-enter,
-      .list-leave-to {
-        opacity: 0;
-        transform: translateX(100px);
-      }
     }
-
+    .list-enter-active, 
+    .list-leave-active {
+      transition: 5s;
+    }
+    .list-enter,
+    .list-leave-to {
+      opacity: 0;
+      transform: translateX(100px);
+    }
   }
+}
 </style>

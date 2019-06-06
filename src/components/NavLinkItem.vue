@@ -32,7 +32,7 @@ a {
   align-items: center;
   transition: .2s;
 
-  &.router-link-exact-active {
+  &.router-link-active {
     color: $jungle-green;
 
     img {
@@ -53,6 +53,7 @@ a {
     display: none;
 
     @include tablet {
+      letter-spacing: 2px;
       display: initial;
       margin-left: 5px;
       font-size: 20px;

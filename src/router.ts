@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
+import Article from './components/Article.vue';
 
 Vue.use(Router);
 
@@ -23,12 +24,25 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */  './views/About.vue'),
     },
     {
-      path: '/blog',
+      path: '/blog/posts',
       name: 'blog',
-      meta: {
-        title: 'Shiatsu - Blog',
-      },
       component: () => import(/* webpackChunkName: "reviews" */  './views/Blog.vue'),
+      children: [
+        {
+          path: '',
+          component: Article,
+          meta: {
+            title: 'Shiatsu - Blog',
+          },
+        },
+        {
+          path: 'article/:id',
+          component: Article,
+          meta: {
+            title: 'Shiatsu - Blog',
+          },
+        },
+      ],
     },
     {
       path: '/reviews',

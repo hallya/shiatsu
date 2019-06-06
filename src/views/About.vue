@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main id="about">
     <h1>À propos</h1>
   </main>
 </template>
@@ -9,3 +9,9 @@ import { Component, Vue } from 'vue-property-decorator';
 @Component({})
 export default class About extends Vue {}
 </script>
+
+<style lang="scss">
+  main#about {
+    
+  }
+</style>
