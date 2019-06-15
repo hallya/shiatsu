@@ -12,8 +12,8 @@ self.__precacheManifest = [
     "url": "/shiatsu/img/plateau_nenuphar.a3481635.jpg"
   },
   {
-    "revision": "26d6fedc2dce91af621d",
-    "url": "/shiatsu/css/app.ce610a41.css"
+    "revision": "69c651caeaaac9da69f9",
+    "url": "/shiatsu/css/app.b145177d.css"
   },
   {
     "revision": "806c1e1c321784c7eea8",
@@ -48,8 +48,8 @@ self.__precacheManifest = [
     "url": "/shiatsu/js/about.90c40d99.js"
   },
   {
-    "revision": "26d6fedc2dce91af621d",
-    "url": "/shiatsu/js/app.57808265.js"
+    "revision": "69c651caeaaac9da69f9",
+    "url": "/shiatsu/js/app.fb780c15.js"
   },
   {
     "revision": "604f4f1577aa0464274a637352454f11",
@@ -84,7 +84,7 @@ self.__precacheManifest = [
     "url": "/shiatsu/img/about.782d9d8f.svg"
   },
   {
-    "revision": "3a043f58b92e06dd91b89e13a078f4df",
+    "revision": "96d16f765cf71ec0eb6f605f0aafb219",
     "url": "/shiatsu/index.html"
   },
   {
