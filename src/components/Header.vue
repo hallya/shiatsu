@@ -74,6 +74,7 @@ export default class Header extends Vue {}
     width: 100%;
     margin: 10px 0;
     color: rgb(121,159,55);
+    letter-spacing: 2px;
   }
   #nav {
     padding: 10px;
