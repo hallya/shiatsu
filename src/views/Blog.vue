@@ -19,6 +19,7 @@ import Article from '@/components/Article.vue';
 import Loader from '@/components-ui/Loader.vue';
 import TransitionFade from '@/transitions/Transition-fade.vue';
 import { getArticles, getArticle } from '@/services/strapi/strapi.service';
+import nenupharShareDefaultImage from '@/assets/images/pictures/nenuphars_et_fleurs.jpg';
 
 @Component({
   components: {
@@ -35,8 +36,7 @@ import { getArticles, getArticle } from '@/services/strapi/strapi.service';
         { property: 'og:type', content: 'article' },
         { property: 'og:description', content: 'Découvrez une \
         pratique thérapeutique unique au travers du regard de Nathalie de Loeper, praticienne de Shiatsu' },
-        { property: 'og:image', content: 'http://static01.nyt.com/images/2015/02/19/\
-        arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg' },
+        { property: 'og:image', content: nenupharShareDefaultImage },
       ],
     };
   },
