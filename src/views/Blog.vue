@@ -59,13 +59,13 @@ import nenupharShareDefaultImage from '@/assets/images/pictures/nenuphars_et_fle
   },
   methods: {
     async init() {
-      this.articles = this.$route.query.article 
-        ? [await getArticle(this.$route.query.article)] 
+      this.articles = this.$route.query.article
+        ? [await getArticle(this.$route.query.article)]
         : await getArticles();
       this.articles = this.formatAndSortArticles(this.articles);
     },
     formatAndSortArticles(articles) {
-      return articles.map(article => ({
+      return articles.map((article) => ({
         ...article,
         content: this.formatStringToArray(article.content),
         contentIsVisible: articles.length === 1 ? null : false,
