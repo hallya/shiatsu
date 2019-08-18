@@ -11,6 +11,7 @@
 </template>
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { MetaInfo } from '@/types/metaInfo.interface';
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
 
@@ -18,6 +19,16 @@ import Footer from '@/components/Footer.vue';
   components: {
     Header,
     Footer,
+  },
+  metaInfo(): MetaInfo {
+    return {
+      meta: [
+        {
+          property: 'og:url',
+          content: this.$store.state.environmentStore.frontendHostname + '/#' + this.$route.fullPath,
+        },
+      ],
+    };
   },
 })
 export default class App extends Vue {}

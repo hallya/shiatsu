@@ -8,15 +8,15 @@
       <h2>Soignez votre énergie</h2>
     <!-- </section> -->
     <nav id="nav">
-      <NavLinkItem link="/home" v-bind:imgSrc="navlinks.home" label="Accueil"/>
+      <NavLinkItem link="/home" :imgSrc="navlinks.home" label="Accueil"/>
       <span> | </span>
-      <NavLinkItem link="/about" v-bind:imgSrc="navlinks.about" label="À propos"/>
+      <NavLinkItem link="/about" :imgSrc="navlinks.about" label="À propos"/>
       <span> | </span>
-      <NavLinkItem link="/blog/posts" v-bind:imgSrc="navlinks.blog" label="Blog"/>
+      <NavLinkItem link="/blog/posts" :imgSrc="navlinks.blog" label="Blog"/>
       <span> | </span>
-      <NavLinkItem link="/reviews" v-bind:imgSrc="navlinks.reviews" label="Avis"/>
+      <NavLinkItem link="/reviews" :imgSrc="navlinks.reviews" label="Avis"/>
       <span> | </span>
-      <NavLinkItem link="/contacts" v-bind:imgSrc="navlinks.contacts" label="Contacts"/>
+      <NavLinkItem link="/contacts" :imgSrc="navlinks.contacts" label="Contacts"/>
     </nav>
   </header>
 </template>
@@ -58,7 +58,10 @@ export default class Header extends Vue {}
   flex-flow: wrap row;
   justify-content: center;
 
-  picture {
+  picture#logoHeader {
+    width: auto;
+    margin: 0;
+
     img {
       height: 50px;
       width: 50px;

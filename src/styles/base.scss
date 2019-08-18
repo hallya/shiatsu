@@ -22,6 +22,12 @@ a {
 p {
   line-height: 20px;
 }
+small {
+  font-size: .8rem;
+}
+em {
+  font-style: italic;
+}
 blockquote {
   margin: 20px;
   line-height: 18px;
@@ -39,6 +45,7 @@ main {
   min-height: $main-mobile-height;
   box-sizing: border-box;
   padding: 10px;
+  display: flex;
 }
 footer {
   min-height: $footer-mobile-height;

@@ -24,6 +24,13 @@ module.exports = {
         }
       },
       {
+        test: /\.tsx?$/,
+        loader: "ts-loader",
+        options: {
+          appendTsSuffixTo: [/\.vue$/]
+        }
+      },
+      {
         test: /\.js$/,
         loader: 'babel-loader'
       },
@@ -51,6 +58,5 @@ module.exports = {
     new ExtractTextPlugin({
       filename: '[name].min.css',
     }),
-
-  ]
+  ],
 }

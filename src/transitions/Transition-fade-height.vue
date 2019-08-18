@@ -9,12 +9,13 @@ export default {};
 <style>
 .fadeHeight-enter-active, 
 .fadeHeight-leave-active {
+  max-height: 9000px;
+  opacity: 1;
   transition: .5s;
-  max-height: 1000px;
 }
 .fadeHeight-enter,
 .fadeHeight-leave-to {
   opacity: 0;
-  max-height: 0;
+  max-height: 50px;
 }
 </style>

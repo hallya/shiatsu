@@ -1,5 +1,5 @@
 <template>
-  <main id="about">
+  <main class="about">
     <h1>À propos</h1>
   </main>
 </template>
@@ -11,7 +11,5 @@ export default class About extends Vue {}
 </script>
 
 <style lang="scss">
-  main#about {
-    
-  }
+
 </style>

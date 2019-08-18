@@ -1,5 +1,5 @@
 <template>
-  <main id="home">
+  <main class="home">
     <section class="left-side">
       <picture>
         <img id="picture1" src="../assets/images/pictures/tournesol.jpg" alt=""/>
@@ -27,15 +27,33 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { MetaInfo } from '@/types/metaInfo.interface';
 
-@Component({})
+@Component({
+  data() {
+    return {
+      frontendHostname: this.$store.state.domains.frontendHostname,
+    };
+  },
+  metaInfo(): MetaInfo {
+    return {
+      meta: [
+        { property: 'og:title', content: 'Nathalie de Loeper, votre praticienne de Shiatsu' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:description', content: 'Découvrez une pratique thérapeutique unique \
+        au travers du regard de Nathalie de Loeper, praticienne de Shiatsu' },
+        { property: 'og:image', content: this.frontendHostname + '/cover.jpg' },
+      ],
+    };
+  },
+})
 export default class Home extends Vue {}
 </script>
 
 <style lang="scss">
 @import '@/main.scss';
 
-main#home {
+main.home {
   width: 100%;
   padding: 30px 6vw;
   box-sizing: border-box;

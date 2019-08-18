@@ -11,6 +11,6 @@ $tablet-width: 550px;
 $mobile-width: 549px;
 
 // MINIMUM HEIGHT
-$header-mobile-height: 155px;
-$footer-mobile-height: 80px;
+$header-mobile-height: 200px;
+$footer-mobile-height: 50px;
 $main-mobile-height: calc(100vh - (#{$header-mobile-height} + #{$footer-mobile-height}));
