@@ -2,8 +2,9 @@
   "name": "nathalie_shiatsu",
   "version": "0.1.0",
   "private": true,
+  "pre-commit": "npm run test:unit",
   "scripts": {
-    "serve": "vue-cli-service serve --port 8080 --disable-host-check --hot",
+    "serve": "vue-cli-service serve --port 8080 --open",
     "build": "vue-cli-service build --mode production",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
