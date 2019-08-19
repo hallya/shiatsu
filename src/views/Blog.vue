@@ -36,7 +36,7 @@ main.blog {
     width: 100%;
 
     &.articles {
-      padding: 10px;
+      padding: 10px 8px;
 
       .articles-link {
         display: block;

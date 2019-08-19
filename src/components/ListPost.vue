@@ -86,15 +86,18 @@ export default {
 
   .articles-list {
     overflow: auto;
+
     .articles-list-item {
+      box-sizing: border-box;
+      width: 100%;
       margin: 0 auto 50px;
-      width: 90%;
 
       @include tablet {
-        width: 70%;
+        width: 80%;
       }
       @include laptop {
         width: 40%;
+        min-width: 650px;
       }
     }
   }
