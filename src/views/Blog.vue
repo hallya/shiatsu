@@ -29,44 +29,48 @@ export default class Blog extends Vue {}
 main.blog {
   padding: 0;
 
-  section {
-    display: flex;
-    justify-content: center;
-    flex-flow: wrap row;
+  section.articles {
+    box-sizing: border-box;
     width: 100%;
+    margin: 0 auto 50px;
+    padding: 10px 8px;
 
-    &.articles {
-      padding: 10px 8px;
+    @include tablet {
+      width: 80%;
+    }
+    @include laptop {
+      width: 40%;
+      min-width: 650px;
+    }
 
-      .articles-link {
-        display: block;
-        text-align: left;
-        width: 95%;
-        color: $dark-gray;
-        text-decoration: underline;
+    .articles-link {
+      display: block;
+      text-align: left;
+      width: 95%;
+      color: $dark-gray;
+      text-decoration: underline;
+    }
+    h2.articles-header {
+      padding: 0 10px;
+      width: 100%;
+      text-align: left;
+
+      @include tablet {
+        width: 70%;
       }
-      h2.articles-header {
-        padding: 0 10px;
-        width: 100%;
-        text-align: left;
-
-        @include tablet {
-          width: 70%;
-        }
-        @include laptop {
-          width: 50%;
-        }
+      @include laptop {
+        width: 50%;
       }
     }
-    .list-enter-active, 
-    .list-leave-active {
-      transition: 5s;
-    }
-    .list-enter,
-    .list-leave-to {
-      opacity: 0;
-      transform: translateX(100px);
-    }
+  }
+  .list-enter-active, 
+  .list-leave-active {
+    transition: 5s;
+  }
+  .list-enter,
+  .list-leave-to {
+    opacity: 0;
+    transform: translateX(100px);
   }
 }
 </style>

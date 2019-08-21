@@ -15,10 +15,10 @@ export interface PostFormated {
   id: string;
   title: string;
   subtitle: string;
-  preview: string;
   content: string;
   contentIsVisible?: boolean;
   author: string;
+  shareLink: string;
   image: string | null;
   video: string | null;
   tag: Tag[];

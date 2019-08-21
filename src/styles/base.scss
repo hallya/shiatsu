@@ -45,9 +45,16 @@ em {
   font-style: italic;
 }
 blockquote {
-  margin: 20px;
+  margin: 5px;
   line-height: 18px;
   font-weight: lighter;
+  
+  @include tablet {
+    margin: 10px;
+  }
+  @include laptop {
+    margin: 20px;
+  }
 }
 cite {
   font-size: 14px;

@@ -1,9 +1,9 @@
 import Vue from 'vue';
 
-import frenchDate from './frenchDate';
+import frenchDate from './toFrenchDateFormat';
 import capitalize from './capitalize';
-import textPreview from './textPreview';
+import toTimestamp from './toTimestamp';
 
 Vue.filter('frenchDate', frenchDate);
+Vue.filter('timestamp', toTimestamp);
 Vue.filter('capitalize', capitalize);
-Vue.filter('textPreview', textPreview);

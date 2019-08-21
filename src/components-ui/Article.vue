@@ -5,7 +5,7 @@
         <picture>
           <img class="article-date-icon" src="../assets/images/logos/calendar.svg" alt="">
         </picture>
-        <time :datetime="new Date(article.updatedAt).getTime()" class="article-date-label">{{ article.updatedAt | frenchDate | capitalize }}</time>
+        <time :datetime="article.updatedAt | timestamp" class="article-date-label">{{ article.updatedAt | frenchDate | capitalize }}</time>
       </div>
       <h2 class="article-title">{{article.title}}</h2>
       <h3 class="article-subtitle">{{article.subtitle}}</h3>
@@ -31,10 +31,10 @@
     </section>
     <footer class="article-footer">
       <small class="article-author">
-        <p>{{article.author}}</p>
+        <p>rédaction : {{article.author}}</p>
       </small>
       <button class="fb-share-button" :data-href="frontendHostname" data-layout="button" data-size="large">
-        <a target="_blank" :href="shareLink" class="fb-xfbml-parse-ignore">Partager</a>
+        <a target="_blank" :href="article.shareLink" class="fb-xfbml-parse-ignore">Partager</a>
       </button>
       <button v-if="article.hasOwnProperty('contentIsVisible')" class="article-toggle-content" v-on:click="article.contentIsVisible = !article.contentIsVisible">
         {{ article.contentIsVisible ? 'Réduire l\'article' : 'Lire l\'article' }}
@@ -56,7 +56,7 @@ export default {
       frontendHostname: this.$store.state.domains.frontendHostname,
     };
   },
-  props: ['article', 'shareLink'],
+  props: ['article'],
 };
 </script>
 
@@ -131,6 +131,8 @@ export default {
         margin: 15px 0;
         width: 100%;
         box-shadow: 0 3px 8px -2px;
+        min-height: 100px;
+        background: gray;
       }
     }
     .article-main-content {

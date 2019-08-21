@@ -25,7 +25,7 @@ import Footer from '@/components/Footer.vue';
       meta: [
         {
           property: 'og:url',
-          content: this.$store.state.environmentStore.frontendHostname + '/#' + this.$route.fullPath,
+          content: this.$store.state.domains.frontendHostname + '/#' + this.$route.fullPath,
         },
       ],
     };
