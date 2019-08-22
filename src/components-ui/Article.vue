@@ -33,7 +33,7 @@
       <small class="article-author">
         <p>rédaction : {{article.author}}</p>
       </small>
-      <button class="fb-share-button" :data-href="frontendHostname" data-layout="button" data-size="large">
+      <button class="fb-share-button" :data-href="frontendOrigin" data-layout="button" data-size="large">
         <a target="_blank" :href="article.shareLink" class="fb-xfbml-parse-ignore">Partager</a>
       </button>
       <button v-if="article.hasOwnProperty('contentIsVisible')" class="article-toggle-content" v-on:click="article.contentIsVisible = !article.contentIsVisible">
@@ -53,7 +53,7 @@ export default {
   },
   data() {
     return {
-      frontendHostname: this.$store.state.domains.frontendHostname,
+      frontendOrigin: this.$store.state.domains.frontendOrigin,
     };
   },
   props: ['article'],

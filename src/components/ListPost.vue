@@ -4,7 +4,7 @@
       <Article :article="article"/>
     </li>
   </ul>
-  <Loader v-else></Loader>
+  <Loader v-else/>
 </template>
 
 <script lang="ts">
@@ -29,7 +29,7 @@ export default {
   data() {
     return {
       articles: [],
-      frontendHostname: this.$store.state.domains.frontendHostname,
+      baseUrl: this.$store.state.domains.baseUrlFrontend,
     };
   },
   metaInfo() {
@@ -39,7 +39,7 @@ export default {
         { property: 'og:type', content: 'website' },
         { property: 'og:description', content: 'Suivez les articles rédigé par Nathalie sur \
         le Shiatsu et le bien-être' },
-        { property: 'og:image', content: `${this.frontendHostname}/${nenupharShareDefaultImage}` },
+        { property: 'og:image', content: this.baseUrl + nenupharShareDefaultImage },
       ],
     };
   },
@@ -61,17 +61,7 @@ export default {
     overflow: auto;
 
     .articles-list-item {
-      // box-sizing: border-box;
-      // width: 100%;
       margin: 0 auto 50px;
-
-      // @include tablet {
-      //   width: 80%;
-      // }
-      // @include laptop {
-      //   width: 40%;
-      //   min-width: 650px;
-      // }
     }
   }
 </style>

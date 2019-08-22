@@ -1,5 +1,5 @@
 <template>
-  <Article v-if="article" :article="article" :frontendHostname="frontendHostname"/>
+  <Article v-if="article" :article="article"/>
   <Loader v-else></Loader>
 </template>
 
@@ -8,6 +8,7 @@ import Articles from '@/services/api/articles.service';
 import Article from '@/components-ui/Article';
 import Loader from '@/components-ui/Loader';
 import TransitionFadeHeight from '../transitions/Transition-fade-height.vue';
+import showdown from 'showdown';
 
 export default {
   components: {
@@ -19,7 +20,8 @@ export default {
     return {
       article: null,
       meta: [],
-      frontendHostname: this.$store.state.domains.frontendHostname,
+      ogUrl: this.$store.state.domains.baseUrlFrontend + this.$store.state.domains.hash,
+      backendOrigin: this.$store.state.domains.backendOrigin,
     };
   },
   mounted() {
@@ -36,9 +38,10 @@ export default {
       this.meta = [
         { property: 'og:title', content: this.article.title },
         { property: 'og:author', content: this.article.author },
+        { property: 'og:url', content: this.ogUrl },
         { property: 'og:type', content: 'article' },
         { property: 'og:description', content: this.article.preview },
-        { property: 'og:image', content: this.article.image.url },
+        { property: 'og:image', content: this.backendOrigin + this.article.image.url },
       ];
     },
   },

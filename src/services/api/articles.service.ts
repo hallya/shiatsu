@@ -15,12 +15,12 @@ export default class Articles {
   }
 
   public getAll(): Promise<PostFormated[]> {
-    return getData(store.state.domains.backendHostname + this.apiPath)
+    return getData(store.state.domains.backendOrigin + this.apiPath)
       .then(this.formatForMany);
   }
 
   public get(id: string): Promise<PostFormated> {
-    return getData(store.state.domains.backendHostname + `${this.apiPath}/${id}`)
+    return getData(store.state.domains.backendOrigin + `${this.apiPath}/${id}`)
       .then(this.formatForOne);
   }
 
@@ -66,8 +66,9 @@ export default class Articles {
   }
 
   private generateShareLink(id: string): string {
+    const { baseUrlFrontend, hash } = store.state.domains;
     return 'https://www.facebook.com/sharer/sharer.php?u='
-      + encodeURIComponent(store.state.domains.frontendHostname + '/#/blog/posts/' + id)
+      + encodeURIComponent(baseUrlFrontend + hash + id)
       + '&amp;src=sdkpreparse';
   }
 }

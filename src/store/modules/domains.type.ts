@@ -1,4 +1,7 @@
 export interface Domains {
-  frontendHostname: string;
-  backendHostname: string;
+  frontendOrigin: string;
+  pathname: string;
+  baseUrlFrontend: string;
+  hash: string;
+  backendOrigin: string;
 }

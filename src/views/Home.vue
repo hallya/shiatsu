@@ -28,11 +28,11 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { MetaInfo } from '@/types/metaInfo.interface';
-
+import defaultImage from '@/assets/images/pictures/defaultImageForSharing.jpg'
 @Component({
   data() {
     return {
-      frontendHostname: this.$store.state.domains.frontendHostname,
+      baseUrl: this.$store.state.domains.baseUrlFrontend,
     };
   },
   metaInfo(): MetaInfo {
@@ -42,7 +42,7 @@ import { MetaInfo } from '@/types/metaInfo.interface';
         { property: 'og:type', content: 'website' },
         { property: 'og:description', content: 'Découvrez une pratique thérapeutique unique \
         au travers du regard de Nathalie de Loeper, praticienne de Shiatsu' },
-        { property: 'og:image', content: this.frontendHostname + '/cover.jpg' },
+        { property: 'og:image', content: this.baseUrl + defaultImage },
       ],
     };
   },

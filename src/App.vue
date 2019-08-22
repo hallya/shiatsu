@@ -20,12 +20,17 @@ import Footer from '@/components/Footer.vue';
     Header,
     Footer,
   },
+  data() {
+    return {
+      ogUrl: this.$store.state.domains.baseUrlFrontend + this.$store.state.domains.hash,
+    };
+  },
   metaInfo(): MetaInfo {
     return {
       meta: [
         {
           property: 'og:url',
-          content: this.$store.state.domains.frontendHostname + '/#' + this.$route.fullPath,
+          content:  this.ogUrl,
         },
       ],
     };
