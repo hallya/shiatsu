@@ -4,10 +4,6 @@
       <img class="icon-filled" v-bind:src="facebookEmpty" alt="link to social media">
       <img class="icon-empty" v-bind:src="facebookFilled" alt="link to social media">
     </a>
-    <a class="footer-icon" href="tel:0033612387928">
-      <img class="icon-empty" v-bind:src="phoneEmpty" alt="link to phone call">
-      <img class="icon-filled" v-bind:src="phoneFilled" alt="link to phone call">
-    </a>
   </footer>
 </template>
 

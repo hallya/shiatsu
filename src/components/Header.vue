@@ -54,9 +54,10 @@ export default class Header extends Vue {}
 
 #header {
   position: sticky;
-  background: white;
+  background-color: white;
   box-shadow: 0 0 10px 10px white;
   top: -115px;
+  z-index: 9999;
 
   #wrapper-title {
     height: 100px;
@@ -87,10 +88,10 @@ export default class Header extends Vue {}
     }
   }
   #nav {
-    height: 70px;
-    padding: 5px;
     box-sizing: border-box;
+    height: 70px;
     width: 100%;
+    padding: 5px;
     display: flex;
     flex-flow: wrap row;
     justify-content: space-around;

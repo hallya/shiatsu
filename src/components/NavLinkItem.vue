@@ -32,6 +32,9 @@ a {
   align-items: center;
   transition: .2s;
 
+  &:hover {
+    color: $jungle-green;
+  }
   &.router-link-active {
     color: $meadow-green;
 

@@ -1,7 +1,6 @@
 <template>
   <main id="contact">
     <address>
-      <h2>Coordonnées</h2>
       <section class="contact">
         <h3>Nathalie de Loeper</h3>
         <a href="tel:+33612387928">06 12 38 79 28</a>
@@ -9,14 +8,19 @@
         <a href="mailto:natloeper@gmail.com">natloeper@gmail.com</a>
       </section>
       <h2>Adresses</h2>
-      <Address :mapsApiAddressName="saintCyrLecole.mapApiName" :fullAddress="saintCyrLecole.fullAddress"/>
-      <Address :mapsApiAddressName="bouloire.mapApiName" :fullAddress="bouloire.fullAddress"/>
+      <Address v-if="google" :mapConfig="saintCyrLecole.mapConfig" :fullAddress="saintCyrLecole.fullAddress" :google="google">
+        <template slot-scope="{ google, map }"></template>
+      </Address>
+      <Address v-if="google" :mapConfig="bouloire.mapConfig" :fullAddress="bouloire.fullAddress" :google="google">
+        <template slot-scope="{ google, map }"></template>
+      </Address>
     </address> 
   </main>
 </template>
 
 <script>
 import Address from '@/components-ui/Address';
+import GoogleMapsApiLoader from 'google-maps-api-loader';
 
 export default {
   components: {
@@ -24,16 +28,32 @@ export default {
   },
   data() {
     return {
+      apiKey: 'AIzaSyBIpZM5Rd2uy9aYV3_DByJrYS1okNf3dJY',
+      google: null,
       bouloire: {
-        mapApiName: 'nathaliedeloeper,bouloire',
+        mapConfig: {
+          center: {
+            lat: 47.97291,
+            lng: 0.568361,
+          },
+        },
         fullAddress: ['La Grenouille', 'Route de Coudrecieux', '72440 Bouloire'],
       },
       saintCyrLecole: {
-        mapApiName: 'deloepershiatsu,saint-cyr-lecole',
+        mapConfig: {
+          center: {
+            lat : 48.8092,
+            lng : 2.05809
+          },
+        },
         fullAddress: ['5 rue Jean Zay', '78210 Saint-Cyr-l\'Ecole'],
       },
     }
-  }
+  },
+  async mounted() {
+    const googleMapApi = await GoogleMapsApiLoader({apiKey: this.apiKey})
+    this.google = googleMapApi
+  },
 }
 </script>
 
@@ -43,17 +63,19 @@ main#contact {
   display: flex;
   
   address {
-    margin: auto;
+    width: 100%;
+    margin: 0 auto;
     text-align: justify;
     
     @include tablet {
-      width: 70%;
+      width: 60%;
       display: flex;
       flex-flow: wrap row;
       justify-content: space-around;
     }
     @include laptop {
       width: 70%;
+      align-content: flex-start;
     }
   
     h2 {
@@ -87,7 +109,6 @@ main#contact {
       }
       h3 {
         margin-bottom: 15px;
-        text-decoration: underline;
         
         @include tablet {
           width: 100%;
@@ -95,6 +116,7 @@ main#contact {
         }
       }
       a {
+        text-decoration: underline;
         color: $jungle-green;
         
         @include tablet {
