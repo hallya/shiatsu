@@ -1,21 +1,21 @@
 <template>
   <header id="header">
-    <!-- <section id="group-title"> -->
+    <section id="wrapper-title">
       <h1 id="title">Shiatsu</h1>
       <picture id="logoHeader">
         <img src="../assets/images/logos/nenuphar.svg" alt="" srcset="">
       </picture>
       <h2>Soignez votre énergie</h2>
-    <!-- </section> -->
+    </section>
     <nav id="nav">
       <NavLinkItem link="/home" :imgSrc="navlinks.home" label="Accueil"/>
-      <span> | </span>
+      <span> • </span>
       <NavLinkItem link="/about" :imgSrc="navlinks.about" label="À propos"/>
-      <span> | </span>
+      <span> • </span>
       <NavLinkItem link="/blog/posts" :imgSrc="navlinks.blog" label="Blog"/>
-      <span> | </span>
+      <span> • </span>
       <NavLinkItem link="/reviews" :imgSrc="navlinks.reviews" label="Avis"/>
-      <span> | </span>
+      <span> • </span>
       <NavLinkItem link="/contacts" :imgSrc="navlinks.contacts" label="Contacts"/>
     </nav>
   </header>
@@ -53,34 +53,42 @@ export default class Header extends Vue {}
 @import '@/main.scss';
 
 #header {
-  padding: 20px 0;
-  display: flex;
-  flex-flow: wrap row;
-  justify-content: center;
+  position: sticky;
+  background: white;
+  box-shadow: 0 0 10px 10px white;
+  top: -115px;
 
-  picture#logoHeader {
-    width: auto;
-    margin: 0;
+  #wrapper-title {
+    height: 100px;
+    padding: 10px 0;
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: center;
 
-    img {
-      height: 50px;
-      width: 50px;
+    picture#logoHeader {
+      width: auto;
+      margin: 0;
+  
+      img {
+        height: 50px;
+        width: 50px;
+      }
+    }
+    h1 {
+      margin-right: 10px;
+      font-size: 42px;
+      font-weight: bold;
+      letter-spacing: 10px;
+    }
+    h2 {
+      width: 100%;
+      color: rgb(121,159,55);
+      letter-spacing: 2px;
     }
   }
-  h1 {
-    margin-right: 10px;
-    font-size: 42px;
-    font-weight: bold;
-    letter-spacing: 10px;
-  }
-  h2 {
-    width: 100%;
-    margin: 10px 0;
-    color: rgb(121,159,55);
-    letter-spacing: 2px;
-  }
   #nav {
-    padding: 10px;
+    height: 70px;
+    padding: 5px;
     box-sizing: border-box;
     width: 100%;
     display: flex;

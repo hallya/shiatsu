@@ -33,7 +33,7 @@ a {
   transition: .2s;
 
   &.router-link-active {
-    color: $jungle-green;
+    color: $meadow-green;
 
     img {
       filter: grayscale(1);
@@ -43,7 +43,9 @@ a {
     width: 35px;
     height: 35px;
     transition: .3s;
-
+    @include tablet {
+      display: none;
+    }
     &.home {
       width: 37px;
       height: 37px;
