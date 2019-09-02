@@ -33,9 +33,9 @@
       <small class="article-author">
         <p>rédaction : {{article.author}}</p>
       </small>
-      <button class="fb-share-button" :data-href="frontendOrigin" data-layout="button" data-size="large">
+      <div class="fb-share-button" :data-href="frontendOrigin" data-layout="button" data-size="large">
         <a target="_blank" :href="article.shareLink" class="fb-xfbml-parse-ignore">Partager</a>
-      </button>
+      </div>
       <button v-if="article.hasOwnProperty('contentIsVisible')" class="article-toggle-content" v-on:click="article.contentIsVisible = !article.contentIsVisible">
         {{ article.contentIsVisible ? 'Réduire l\'article' : 'Lire l\'article' }}
       </button>
