@@ -8,12 +8,8 @@
         <a href="mailto:natloeper@gmail.com">natloeper@gmail.com</a>
       </section>
       <h2>Adresses</h2>
-      <Address v-if="google" :mapConfig="saintCyrLecole.mapConfig" :fullAddress="saintCyrLecole.fullAddress" :google="google">
-        <template slot-scope="{ google, map }"></template>
-      </Address>
-      <Address v-if="google" :mapConfig="bouloire.mapConfig" :fullAddress="bouloire.fullAddress" :google="google">
-        <template slot-scope="{ google, map }"></template>
-      </Address>
+      <Address v-if="google" :mapConfig="saintCyrLecole.mapConfig" :fullAddress="saintCyrLecole.fullAddress" :google="google" />
+      <Address v-if="google" :mapConfig="bouloire.mapConfig" :fullAddress="bouloire.fullAddress" :google="google" />
     </address> 
   </main>
 </template>
