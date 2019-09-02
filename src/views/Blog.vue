@@ -1,8 +1,7 @@
 <template>
   <main class="blog">
     <section class="articles" key="content">
-      <h2 v-if="!$route.params.id" class="articles-header">Derniers articles :</h2>
-      <router-link v-else to="/blog/posts" class="articles-link">Retour aux articles</router-link>
+      <router-link v-if="$route.params.id" to="/blog/posts" class="articles-link">Retour aux articles</router-link>
       <TransitionFade>
         <router-view></router-view>
       </TransitionFade>
