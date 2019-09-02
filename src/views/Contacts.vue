@@ -24,7 +24,7 @@ import GoogleMapsApiLoader from 'google-maps-api-loader';
 
 export default {
   components: {
-    Address
+    Address,
   },
   data() {
     return {
@@ -43,18 +43,18 @@ export default {
         mapConfig: {
           center: {
             lat : 48.8092,
-            lng : 2.05809
+            lng : 2.05809,
           },
         },
         fullAddress: ['5 rue Jean Zay', '78210 Saint-Cyr-l\'Ecole'],
       },
-    }
+    };
   },
   async mounted() {
-    const googleMapApi = await GoogleMapsApiLoader({apiKey: this.apiKey})
-    this.google = googleMapApi
+    const googleMapApi = await GoogleMapsApiLoader({apiKey: this.apiKey});
+    this.google = googleMapApi;
   },
-}
+};
 </script>
 
 <style lang="scss">

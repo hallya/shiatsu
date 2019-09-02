@@ -28,7 +28,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { MetaInfo } from '@/types/metaInfo.interface';
-import defaultImage from '@/assets/images/pictures/defaultImageForSharing.jpg'
+import defaultImage from '@/assets/images/pictures/defaultImageForSharing.jpg';
 @Component({
   data() {
     return {

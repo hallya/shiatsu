@@ -31,12 +31,12 @@ export default {
   },
   methods: {
     initializeMap() {
-      const mapContainer = this.$refs.googleMap
+      const mapContainer = this.$refs.googleMap;
       this.map = new this.google.maps.Map(
         mapContainer, this.config
-      )
-    }
-  }
+      );
+    },
+  },
 };
 </script>
 <style lang="scss">
