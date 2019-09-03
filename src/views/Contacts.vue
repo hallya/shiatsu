@@ -1,16 +1,22 @@
 <template>
-  <main id="contact">
-    <address>
-      <section class="contact">
+  <main>
+    <section class="contact-me">
+      <address>
         <h3>Nathalie de Loeper</h3>
-        <a href="tel:+33612387928">06 12 38 79 28</a>
-        <span>-</span>
-        <a href="mailto:natloeper@gmail.com">natloeper@gmail.com</a>
-      </section>
-      <h2>Adresses</h2>
+        <a href="tel:+33612387928">
+          <i class="fontawesome-phone"></i> 06 12 38 79 28
+        </a>
+        <span class="contact-separator">-</span>
+        <a href="mailto:natloeper@gmail.com">
+          <i class="fontawesome-envelope"></i> natloeper@gmail.com
+        </a>
+      </address>
+    </section>
+    <section class="find-me">
+      <h2 class="fontawesome-globe">Adresses</h2>
       <Address v-if="google" :mapConfig="saintCyrLecole.mapConfig" :fullAddress="saintCyrLecole.fullAddress" :google="google" />
       <Address v-if="google" :mapConfig="bouloire.mapConfig" :fullAddress="bouloire.fullAddress" :google="google" />
-    </address> 
+    </section> 
   </main>
 </template>
 
@@ -57,39 +63,45 @@ export default {
 @import '@/main.scss';
 main#contact {
   display: flex;
+<<<<<<< Updated upstream
   
   address {
+=======
+  flex-flow: wrap row;
+  
+  section {
+>>>>>>> Stashed changes
     width: 100%;
     margin: 0 auto;
     text-align: justify;
-    
-    @include tablet {
-      width: 60%;
-      display: flex;
-      flex-flow: wrap row;
-      justify-content: space-around;
+
+    &.find-me {
+      @include laptop {
+        width: 70%;
+        display: flex;
+        flex-flow: wrap row;
+      }
     }
-    @include laptop {
-      width: 70%;
-      align-content: flex-start;
-    }
-  
     h2 {
       margin: 20px 0;
       width: 100%;
+
+      @include laptop {
+        width: 100%;
+      }
     }
-    section {
+    address {
       box-sizing: border-box;
       margin: 10px 0;
       padding: 10px 20px;
+      display: flex;
+      align-content: space-around;
+      flex-flow: row wrap;
 
-      &.contact {
-        @include laptop {
-          display: flex;
-          justify-content: center;
-          flex-flow: row wrap;
-        }
+      @include tablet {
+        justify-content: center;
       }
+
       h3, a, p {
         font-size: 1.1rem;
 
@@ -105,6 +117,7 @@ main#contact {
       }
       h3 {
         margin-bottom: 15px;
+        font-weight: bold;
         
         @include tablet {
           width: 100%;
@@ -112,23 +125,25 @@ main#contact {
         }
       }
       a {
-        text-decoration: underline;
         color: $jungle-green;
+<<<<<<< Updated upstream
         
+=======
+
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+>>>>>>> Stashed changes
         @include tablet {
           display: inline;
         }
       }
-      span {
+      .contact-separator {
         display: none;
         @include tablet {
           display: initial;
           margin: 0 10px;
         }
-      }
-      p {
-        line-height: 28px;
-        color: $gray;
       }
     }
   }

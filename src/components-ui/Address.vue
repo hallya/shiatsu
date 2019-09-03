@@ -1,5 +1,5 @@
 <template>
-  <section class="address">
+  <address class="postale">
     <figure>
       <div class="google-map" ref="googleMap"></div>
       <template v-if="Boolean(this.google) && Boolean(this.map)">
@@ -9,7 +9,7 @@
         <p v-for="line of fullAddress" v-bind:key="line">{{line}}</p>
       </figcaption>
     </figure>
-  </section>
+  </address>
 </template>
 <script>
 export default {
@@ -42,30 +42,46 @@ export default {
 <style lang="scss">
 @import '@/main.scss';
 
-section.address {
+address.postale {
   width: 100%;
+  margin: 0 0 15px;
   border: 1px solid $light-gray;
   border-radius: 8px;
   padding: 0 0 10px;
 
+  @include tablet {
+    width: 65%;
+    margin: 0 auto 30px;
+  }
   @include laptop {
     width: 45%;
   }
+
   figure {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    
     .google-map {
-      height: 200px;
-      width: 100%;
+      flex: 1 1 200px;
 
       @include tablet {
-        height: 300px;
+        flex: 1 1 300px;
       }
       @include laptop {
-        height: 350px;
+        flex: 1 1 350px;
       }
     }
-  }
-  p {
-    padding: 0 20px;
+    figcaption {
+      flex: 1 1 0;
+
+      p {
+        padding: 0 20px;
+        line-height: 28px;
+        color: $gray;
+      }
+    }
   }
 }
 </style>

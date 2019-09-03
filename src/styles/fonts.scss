@@ -1,4 +1,10 @@
-// @import url('https://fonts.googleapis.com/css?family=Arbutus+Slab|Raleway&display=swap');
+@import url(https://weloveiconfonts.com/api/?family=fontawesome);
+@import url('https://fonts.googleapis.com/css?family=Mrs+Sheppards|Spinnaker|Ubuntu');
+
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+  margin-right: 10px;
+}
 
 @font-face {
   font-family: 'Arbutus Slab';

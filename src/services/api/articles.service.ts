@@ -38,7 +38,7 @@ export default class Articles {
       ...article,
       preview: convertToHtml(this.previewOf(article.content)),
       content: convertToHtml(article.content),
-      shareLink: this.generateShareLink(article.id),
+      shareLink: this.generateFacebookShareLink(article.id),
     };
     return formatedArticle;
   }
@@ -65,10 +65,10 @@ export default class Articles {
     return text.indexOf('.');
   }
 
-  private generateShareLink(id: string): string {
+  private generateFacebookShareLink(id: string): string {
     const { baseUrlFrontend, hash } = store.state.domains;
     return 'https://www.facebook.com/sharer/sharer.php?u='
-      + encodeURIComponent(baseUrlFrontend + hash + id)
+      + encodeURIComponent(`${baseUrlFrontend}${hash}/${id}`)
       + '&amp;src=sdkpreparse';
   }
 }

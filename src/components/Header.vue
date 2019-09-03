@@ -56,7 +56,7 @@ export default class Header extends Vue {}
   position: sticky;
   background-color: white;
   box-shadow: 0 0 10px 10px white;
-  top: -115px;
+  top: -125px;
   z-index: 9999;
 
   #wrapper-title {
@@ -84,7 +84,11 @@ export default class Header extends Vue {}
     h2 {
       width: 100%;
       color: rgb(121,159,55);
-      letter-spacing: 2px;
+      letter-spacing: 3px;
+      
+      @include tablet {
+        letter-spacing: 10px;
+      }
     }
   }
   #nav {

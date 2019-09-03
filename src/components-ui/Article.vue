@@ -117,7 +117,7 @@ export default {
       .article-title, 
       .article-subtitle {
         margin: 10px 0 0;
-        padding: 0 20px;
+        padding: 0 10px;
         text-align: justify;
         font-weight: normal;
 
@@ -136,7 +136,7 @@ export default {
       }
     }
     .article-main-content {
-      padding: 5px 20px;
+      padding: 5px 10px;
 
       h3 {
         width: 100%;
