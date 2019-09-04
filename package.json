@@ -8,7 +8,7 @@
     "build": "vue-cli-service build --mode production",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
-    "deploy": "sh deploy.sh"
+    "deploy": "./deploy.sh"
   },
   "dependencies": {
     "axios": "^0.19.0",
