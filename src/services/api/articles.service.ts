@@ -67,8 +67,9 @@ export default class Articles {
 
   private generateFacebookShareLink(id: string): string {
     const { baseUrlFrontend, hash } = store.state.domains;
-    return 'https://www.facebook.com/sharer/sharer.php?u='
+    const shareLink = 'https://www.facebook.com/sharer/sharer.php?u='
       + encodeURIComponent(`${baseUrlFrontend}${hash}/${id}`)
       + '&amp;src=sdkpreparse';
+    return shareLink;
   }
 }
