@@ -61,16 +61,12 @@ export default {
 
 <style lang="scss">
 @import '@/main.scss';
-main#contact {
+
+main {
   display: flex;
-<<<<<<< Updated upstream
-  
-  address {
-=======
   flex-flow: wrap row;
   
   section {
->>>>>>> Stashed changes
     width: 100%;
     margin: 0 auto;
     text-align: justify;
@@ -126,14 +122,10 @@ main#contact {
       }
       a {
         color: $jungle-green;
-<<<<<<< Updated upstream
-        
-=======
 
         &:not(:last-child) {
           margin-bottom: 10px;
         }
->>>>>>> Stashed changes
         @include tablet {
           display: inline;
         }

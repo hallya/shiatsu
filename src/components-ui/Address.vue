@@ -23,7 +23,7 @@ export default {
         zoom: 17,
         mapTypeControl: false,
         streetViewControl: false,
-      }
+      },
     };
   },
   mounted() {
@@ -33,7 +33,7 @@ export default {
     initializeMap() {
       const mapContainer = this.$refs.googleMap;
       this.map = new this.google.maps.Map(
-        mapContainer, this.config
+        mapContainer, this.config,
       );
     },
   },
