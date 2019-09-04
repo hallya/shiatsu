@@ -8,7 +8,7 @@
     "build": "vue-cli-service build --mode production",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
-    "deploy": "git checkout deploy && npm run build && git add dist/ && git commit -m \"build pushed to gh-pages on `date`\" && git push origin `git subtree split --prefix dist`:gh-pages --force && git checkout master"
+    "deploy": "sh deploy.sh"
   },
   "dependencies": {
     "axios": "^0.19.0",
