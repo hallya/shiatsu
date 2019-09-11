@@ -121,13 +121,17 @@ main {
         }
       }
       a {
+        height: 20px;
+        padding: 0 10px 5px;
         color: $jungle-green;
+        transition: .2s;
+        box-shadow: 0 0px 0px 0px #c7c7c7;
 
+        &:hover {
+          box-shadow: 0 3px 5px -3px #9c9c9c;
+        }
         &:not(:last-child) {
           margin-bottom: 10px;
-        }
-        @include tablet {
-          display: inline;
         }
       }
       .contact-separator {
