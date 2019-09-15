@@ -1,7 +1,7 @@
 <template>
   <router-link v-bind:to="link">
     <SpinningRings/>
-    <img :class="label === 'Accueil' && 'home'" v-bind:src="imgSrc" v-bind:alt="label"/>
+    <img :class="`header-nav-item-image${label === 'Accueil' ? ' home' : ''}`" v-bind:src="imgSrc" v-bind:alt="label"/>
     <p>{{label}}</p>
   </router-link>
 </template>
@@ -13,6 +13,9 @@ import SpinningRings from '../components-ui/SpinningRings.vue';
 @Component({
   components: {
     SpinningRings,
+  },
+  computed: {
+    imgClassName: () => this.label === 'Accueil' ? ' home' : '',
   },
   props: ['link', 'imgSrc', 'label'],
 })
@@ -42,17 +45,17 @@ a {
       filter: grayscale(1);
     }
   }
-  img {
+  .header-nav-item-image {
     width: 35px;
     height: 35px;
     transition: .3s;
     @include tablet {
       display: none;
     }
-    &.home {
-      width: 37px;
-      height: 37px;
-    }
+  }
+  &.home {
+    width: 37px;
+    height: 37px;
   }
   p {
     display: none;

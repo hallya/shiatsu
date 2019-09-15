@@ -70,8 +70,12 @@ main {
     width: 100%;
     margin: 0 auto;
     text-align: justify;
+    position: sticky;
+    background-color: white;
 
     &.find-me {
+      top: 70px;
+
       @include laptop {
         width: 70%;
         display: flex;

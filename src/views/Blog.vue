@@ -1,7 +1,6 @@
 <template>
   <main class="blog">
     <section class="articles" key="content">
-      <router-link v-if="$route.params.id" to="/blog/posts" class="articles-link">Retour aux articles</router-link>
       <TransitionFade>
         <router-view></router-view>
       </TransitionFade>

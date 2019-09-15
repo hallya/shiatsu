@@ -1,7 +1,7 @@
 <template>
   <ul v-if="articles.length" class="articles-list">
     <li v-for="article of articles" :key="article.id" class="articles-list-item">
-      <Article :article="article"/>
+      <Article :article="article" :frontendOrigin="frontendOrigin"/>
     </li>
   </ul>
   <Loader v-else/>
@@ -30,6 +30,7 @@ export default {
     return {
       articles: [],
       baseUrl: this.$store.state.domains.baseUrlFrontend,
+      frontendOrigin: this.$store.state.domains.frontendOrigin,
     };
   },
   metaInfo() {

@@ -1,10 +1,34 @@
 @import './vars.scss';
 @import './mixin.scss';
 
+#app {
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+header, main, footer {
+  box-sizing: border-box;
+}
+
+main {
+  min-height: $main-mobile-height;
+  padding: 10px;
+  display: flex;
+}
+
+footer {
+  min-height: $footer-mobile-height;
+  padding: 20px 6
+}
+h1, figcaption {
+  font-family: 'Arbutus Slab', sans-serif;
+}
 h1 {
   font-size: 42px;
-  font-family: 'Arbutus Slab', sans-serif;
   margin: 0;
+}
+figcaption {
+  font-weight: bolder;
 }
 h2,h3, h4, h5, h6, p, label, button, a, blockquote, cite, input, div, span {
   font-family: 'Raleway',
@@ -59,19 +83,4 @@ blockquote {
 cite {
   font-size: 14px;
   font-style: italic;
-}
-header {
-  min-height: $header-mobile-height;
-  box-sizing: border-box;
-}
-main {
-  min-height: $main-mobile-height;
-  box-sizing: border-box;
-  padding: 10px;
-  display: flex;
-}
-footer {
-  min-height: $footer-mobile-height;
-  box-sizing: border-box;
-  padding: 20px 6
 }

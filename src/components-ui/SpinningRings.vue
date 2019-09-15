@@ -50,7 +50,7 @@ export default class SpinningRings extends Vue {}
     height: 50px;
     width: 50px;
     left: -7px;
-    top: -6px;
+    top: -7px;
     position: absolute;
     transition: opacity .2s;
 

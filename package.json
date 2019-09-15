@@ -4,7 +4,7 @@
   "private": true,
   "pre-commit": "npm run test:unit",
   "scripts": {
-    "serve": "vue-cli-service serve --port 8080 --open",
+    "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build --mode production",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",

@@ -1,5 +1,5 @@
 <template>
-  <Article v-if="article" :article="article"/>
+  <Article v-if="article" :article="article" :frontendOrigin="frontendOrigin"/>
   <Loader v-else></Loader>
 </template>
 
@@ -21,6 +21,7 @@ export default {
       article: null,
       meta: [],
       ogUrl: this.$store.state.domains.baseUrlFrontend + this.$store.state.domains.hash,
+      frontendOrigin: this.$store.state.domains.frontendOrigin,
       backendOrigin: this.$store.state.domains.backendOrigin,
     };
   },
@@ -36,11 +37,11 @@ export default {
     async init() {
       this.article = await new Articles().get(this.$route.params.id);
       this.meta = [
-        { property: 'og:title', content: this.article.title },
-        { property: 'og:author', content: this.article.author },
-        { property: 'og:url', content: this.ogUrl },
+        { property: 'title', content: this.article.title },
+        { property: 'author', content: this.article.author },
+        { property: 'url', content: this.ogUrl },
         { property: 'og:type', content: 'article' },
-        { property: 'og:description', content: this.article.preview },
+        { property: 'description', content: this.article.preview },
         { property: 'og:image', content: this.backendOrigin + this.article.image.url },
       ];
     },

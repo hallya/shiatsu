@@ -51,14 +51,10 @@ export default {
   components: {
     TransitionFadeHeight,
   },
-  data() {
-    return {
-      frontendOrigin: this.$store.state.domains.frontendOrigin,
-    };
-  },
-  props: ['article'],
+  props: ['article', 'frontendOrigin'],
 };
 </script>
+
 
 <style lang="scss">
 @import '@/main.scss';

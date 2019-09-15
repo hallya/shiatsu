@@ -1,8 +1,7 @@
 <template>
   <footer id="footer">
-    <a class="footer-icon social-media-1" href="https://www.facebook.com/nathaliedeloeper/" target="_blank">
-      <img class="icon-filled" v-bind:src="facebookEmpty" alt="link to social media">
-      <img class="icon-empty" v-bind:src="facebookFilled" alt="link to social media">
+    <a class="footer-icon" href="https://www.facebook.com/nathaliedeloeper/" target="_blank">
+      <img v-bind:src="facebookFilled" alt="go to my page">
     </a>
   </footer>
 </template>
@@ -42,26 +41,9 @@ export default class Footer extends Vue {}
     }
     &.footer-icon {
       position: relative;
-      &:hover {
-        img {
-          &.icon-filled {
-            opacity: 1;
-          }
-          &.icon-empty {
-            opacity: 0;
-          }
-        }
-      }
       img {
         position: absolute;
         transition: .2s ease-in;
-
-        &.icon-filled {
-          opacity: 0;
-        }
-        &.icon-empty {
-          opacity: 1;
-        }
       }
     }
     picture {
