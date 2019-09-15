@@ -24,12 +24,6 @@ export default {
       definitions,
     };
   },
-  methods: {
-    seeDescription(e) {
-      debugger;
-      this.openDescription = e.target.innerHtml;
-    },
-  },
 };
 </script>
 

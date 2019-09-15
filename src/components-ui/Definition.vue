@@ -13,8 +13,8 @@
       </picture>
       <p 
         v-for="(paragraph, index) of description"
-        :key="`${title} - paragraphe ${index}`">
-          {{paragraph}}
+        :key="`${title} - paragraphe ${index}`"
+        v-html="paragraph">
       </p>
     </dd>
   </div>
@@ -31,7 +31,7 @@ export default {
   data() {
     return {
       isDescriptionShown: false,
-    }
+    };
   },
 };
 </script>
