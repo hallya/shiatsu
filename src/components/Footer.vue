@@ -31,6 +31,7 @@ export default class Footer extends Vue {}
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 0 20px;
   
   a {
     height: 40px;

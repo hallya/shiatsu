@@ -30,7 +30,7 @@ export default {
   },
   data() {
     return {
-      isDescriptionShown: false
+      isDescriptionShown: false,
     }
   },
 };
@@ -52,9 +52,20 @@ export default {
     align-items: center;
     justify-content: space-between;
     transition: .5s;
-
+    
+    &:hover {
+      @include laptop {
+        box-shadow: calc(-100vw + 75vw) 1px 0px 1px $jungle-green;
+      }
+    }
     &.open {
       box-shadow: 0vw 1px 0px 1px $jungle-green;
+    }
+    @include tablet {
+      padding: 5px 15vw;
+    }
+    @include laptop {
+      padding: 5px 25vw;
     }
     h2 {
       text-align: left;
@@ -123,14 +134,12 @@ export default {
     text-align: justify;
     overflow: hidden;
     box-sizing: border-box;
-    // box-shadow: 0px -5px 8px -13px lightgrey, 0 -2px 0 -.5px lightgray;
     transition: .5s;
 
     &.open {
       border-bottom-left-radius: 8px;
       border-bottom-right-radius: 8px;
       max-height: 3000px;
-      // box-shadow: 0px -5px 8px -13px lightgrey, 0 0 0 1px lightgray;
       transition: all .5s, opacity .2s .0s;
 
       img {
@@ -142,6 +151,13 @@ export default {
         opacity: 1;
         transition: opacity .2s .2s;
       }
+    }
+
+    @include tablet {
+      padding: 0 15vw 20px;
+    }
+    @include laptop {
+      padding: 0 25vw 20px;
     }
     img {
       opacity: 0;
