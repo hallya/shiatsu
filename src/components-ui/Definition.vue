@@ -1,9 +1,8 @@
 <template>
   <div class="definition">
-    <dt :class="`${isDescriptionShown ? 'open' : ''}`">
+    <dt v-on:click="isDescriptionShown = !isDescriptionShown" :class="`${isDescriptionShown ? 'open' : ''}`">
       <h2>{{title}}</h2>
       <button 
-        v-on:click="isDescriptionShown = !isDescriptionShown"
         :class="`toggleDescription ${isDescriptionShown ? ' close' : ''}`">
       </button>
     </dt>
@@ -41,7 +40,35 @@ export default {
 
 .definition {
   margin-bottom: 5px;
+
+  @include laptop {
+    dd {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+    
+      picture {
+        width: 55%;
+      }
+      p:first-of-type {
+        width: 40%;
+      }
+    }
+
+    &:nth-child(odd) {
+      dd {
+        flex-direction: row-reverse;
+      }
+    }
+    &:nth-child(even) {
+      dd {
+        flex-direction: row;
+      }
+    }
+  }
   dt {
+    cursor: pointer;
     position: sticky;
     top: 65px;
     margin-bottom: 0px;
@@ -142,10 +169,10 @@ export default {
       max-height: 3000px;
       transition: all .5s, opacity .2s .0s;
 
-      img {
-        opacity: 1;
-        border-bottom-left-radius: 8px;
-        border-bottom-right-radius: 8px;
+      picture {
+        img {
+          opacity: 1;
+        }
       }
       p {
         opacity: 1;
@@ -159,17 +186,36 @@ export default {
     @include laptop {
       padding: 0 25vw 20px;
     }
-    img {
-      opacity: 0;
-      width: 100%;
+    picture {
+      img {
+        opacity: 0;
+        width: 100%;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+      }
     }
     p {
+      width: 100%;
       padding: 0 10px;
       opacity: 0;
       font-size: 1rem;
       margin-top: 10px;
       line-height: 24px;
       transition: opacity .2s;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+      @include laptop {
+        padding: 0;
+      }
+      strong {
+        font-weight: bold;
+      }
+      a {
+        display: inline;
+        text-decoration: underline;
+      }
     }
   }
 }

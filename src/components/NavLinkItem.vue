@@ -59,6 +59,7 @@ a {
   }
   p {
     display: none;
+    font-family: 'Arbutus Slab';
 
     @include tablet {
       letter-spacing: 2px;

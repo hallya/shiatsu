@@ -56,7 +56,7 @@ export default class Header extends Vue {}
   position: sticky;
   background-color: white;
   box-shadow: 0 0 10px 10px white;
-  top: -125px;
+  top: -123px ;
   z-index: 9999;
 
   #wrapper-title {
@@ -106,11 +106,6 @@ export default class Header extends Vue {}
     }
     @include laptop {
       padding: 10px 15vw;
-    }
-    a {
-      p {
-        font-family: 'Arbutus Slab' !important;
-      }
     }
     span {
       display: none;

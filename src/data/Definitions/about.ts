@@ -1,7 +1,12 @@
+import nathalie from '@/assets/images/pictures/nathalie_de_loeper.jpg';
 import lea_nathalie_faces from '@/assets/images/pictures/nathalie_de_loeper_praticienne_shiatsu.jpg';
 import lea_nathalie_sitting from '@/assets/images/pictures/nathalie_de_loeaper_pratique_shiatsu.jpg';
+import oiseau from '@/assets/images/pictures/oiseau_qui_chante.jpg';
+import champsTournesol from '@/assets/images/pictures/champ_de_tournesols.jpg';
 import nathalie_donkey from '@/assets/images/pictures/defaultImageForSharing.jpg';
+import saintCyrCabinet from '@/assets/images/pictures/nathalie_de_loeper_praticienne_shiatsu_cabinet_saint-cyr-lecole(2).jpg';
 import branch_on_pond from '@/assets/images/pictures/etang_verdure(2).jpg';
+import capucines from '@/assets/images/pictures/capucine_fleurs_feuilles.jpg';
 import hands_on_back from '@/assets/images/pictures/pressions_mains_shiatsu.jpg';
 import { Definition } from './about.type';
 
@@ -15,7 +20,7 @@ const me: Definition = {
     'J’ai fait des livres de cuisine pendant des années et élevé mes trois enfants sur ce mode là, dans la priorité du soin de la santé et de la vie, aimant toujours associer plaisir, simplicité et santé dans l’assiette, m’amusant à inventer avec trois fois rien de petites recettes délicieuses dont j’ai rempli mes livres qui ont rencontré en leur temps un certain succès.',
     'Nourrir et donner du soin sont le parcourt et la recherche de toute ma vie.',
   ],
-  image: null,
+  image: nathalie,
 };
 const shiatsu: Definition =  {
   title: 'Qu’est-ce que le shiatsu',
@@ -36,7 +41,7 @@ const shiatsu: Definition =  {
   image: lea_nathalie_sitting,
 };
 const meeting: Definition = {
-  title: 'Le soin d’une rencontre ',
+  title: 'Le shiatsu, un soin et une rencontre',
   description: [
     'Une séance de shiatsu ce n’est pas un praticien qui <em>« sait »</em> détenant un <em>« pouvoir »</em> face à celui qui reçoit, ignorant et soumis par son état.',
     'La rencontre ne se passe jamais sur ce mode là, parce qu’il s’agit de soigner.',
@@ -68,7 +73,7 @@ const timeForTreatment: Definition = {
     'Dans tous les cas, si recevoir une séance unique est toujours bénéfique et peut tout à fait suffire à résoudre une fatigue, une douleur ou un souci ponctuels, cela ne pourra pas suffire à améliorer en profondeur un état général affaibli et déficient, un problème déjà ancien ou la chronicité d’un souci de santé.',
     'Au-delà de ma suggestion de praticienne que je donne lorsqu’elle m’est demandée, c’est à celui qui reçoit le soin de choisir et de décider pour lui-même.',
   ],
-  image: null,
+  image: champsTournesol,
 };
 const generosity: Definition = {
   title: 'Soyez généreux, partagez la bonne nouvelle !',
@@ -79,7 +84,7 @@ const generosity: Definition = {
     'Je vous encourage donc à partager votre expérience, parce que tout ce qui nous fait du bien peut souvent aussi faire du bien à d’autres, et qu’il est dommage par méconnaissance de passer à côté de ce qui peut nous soigner et nous rendre de la force.',
     'C’est parce qu’on a fait du bien à ma mère en fin de vie que j’ai eu envie moi-même de recevoir mon premier shiatsu.',
   ],
-  image: null,
+  image: oiseau,
 };
 const extraordinary: Definition = {
   title: 'Shiatsus extraordinaires',
@@ -112,13 +117,30 @@ const healingPath: Definition = {
   image: hands_on_back,
 };
 const infos: Definition = {
-  title: 'Infos pratiques',
+  title: 'Infos pratiques et tarifs',
   description: [
+    '<strong>Sur rendez-vous uniquement.</strong>',
+    '<a href="#/contact">St Cyr l\'école</a> 60€',
+    '<a href="#/contact">Bouloire</a> 50€',
+    'Paris et proche banlieue séance à domicile avec surcoût de 30€',
     'Une séance dure en principe 60 minutes, quand il m’arrive de dépasser ce temps, ne travaillant pas fixée sur les minutes qui passent et prévoyant un écart assez grand entre les séances pour ne pas faire attendre la personne suivante, le tarif demeure inchangé.',
-    'Le shiatsu se reçoit sur un corps vêtu, pour les femmes prévoir de préférence un pantalon ou un legging plutôt qu’une jupe ou une robe.',
   ],
-  image: null,
+  image: saintCyrCabinet,
 };
+const toTheDoctors: Definition = {
+  title: 'Lettre ouverte aux médecins',
+  description: [
+    'Chers médecins,',
+    'Vous êtes nombreux à qui j’ai écrit et que j’ai invité à venir recevoir un shiatsu pour vous faire découvrir ses effets bénéfiques régénérant, parce que mieux que les mots, mieux que les témoignages, l’expérience vécue dans son être-corps prévaut.',
+    'Mais aucun d’entre vous n’a répondu et mes courriers sont restés lettres mortes. Je le comprends d’autant plus que je sais que vous êtes débordés par la tâche de guérir les autres et que recevoir un soin pour vous n’est pas dans vos priorités. C’est d’autant plus dommage que vous découvririez sans aucun doute que le shiatsu est un soin précieux et une alternative de soulagement et de mieux-être pour certains de vos patients que les médecines prescrites ou les actes médicaux ne suffisent pas toujours à aider.',
+    '<blockquote>« C’est le soin qui permet de vivre avec la maladie, qui nous apprend à apprivoiser cette compagne encombrante. Il prend des formes variables, parfois dérisoires dans ses manifestations, peu impressionnantes, autrement dit inexistantes dans une société de l’exploit technique. Parler, masser, prendre une main dans la sienne, prodiguer des conseils qui permettent de minimiser la douleur, voilà des gestes bien difficiles à répertorier dans l’inventaire technicisant d’un protocole de soin. Et pourtant… Cette humanité du soin relève d’abord de la relation humaine. D’où son côté « artisanal » : il s’appuie sur une certaine intuition de la relation à autrui, sur une sensibilité, une perception, sur un implicite plus que sur une nomenclature des actes et des gestes. Ce « bricolage » n’entre dans les cadres d’aucune évaluation possible. Le filtre administratif qui catalogue les gestes de soin médical ignore les actes simples, élémentaires qui sont peut-être fondamentaux. Le soin dans ses manifestations les plus spontanées, les plus humaines aussi peut-être, semble trop souvent exclu de son acception contemporaine. »</blockquote>',
+    'Claire Marin – <cite>L’homme sans fièvre</cite>',
+    'Si vous lisez cette lettre, sachez que ma proposition reste d’actualité et que ma porte vous est grande ouverte.',
+    'Dans l’espoir de vous rencontrer un jour, bien sincèrement.',
+  ],
+  image: capucines,
+};
+
 export const definitions = [
   me,
   shiatsu,
@@ -129,4 +151,5 @@ export const definitions = [
   extraordinary,
   healingPath,
   infos,
+  toTheDoctors,
 ];
