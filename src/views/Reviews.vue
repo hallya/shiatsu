@@ -1,5 +1,5 @@
 <template>
   <main>
-    <h1>Avis clients</h1>
+    <h1>Témoignages</h1>
   </main>
 </template>

@@ -14,7 +14,7 @@
       <span> • </span>
       <NavLinkItem link="/blog/posts" :imgSrc="navlinks.blog" label="Blog"/>
       <span> • </span>
-      <NavLinkItem link="/reviews" :imgSrc="navlinks.reviews" label="Avis"/>
+      <NavLinkItem link="/reviews" :imgSrc="navlinks.reviews" label="Témoignages"/>
       <span> • </span>
       <NavLinkItem link="/contacts" :imgSrc="navlinks.contacts" label="Contacts"/>
     </nav>

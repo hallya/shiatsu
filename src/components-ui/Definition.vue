@@ -1,27 +1,29 @@
 <template>
   <div class="definition">
-    <dt v-on:click="isDescriptionShown = !isDescriptionShown" :class="`${isDescriptionShown ? 'open' : ''}`">
+    <dt
+      v-on:click="isDescriptionShown = !isDescriptionShown"
+      :class="`${isDescriptionShown ? 'open' : ''}`">
       <h2>{{title}}</h2>
-      <button 
-        :class="`toggleDescription ${isDescriptionShown ? ' close' : ''}`">
-      </button>
+      <button :class="`toggleDescription ${isDescriptionShown ? ' close' : ''}`"></button>
     </dt>
     <dd :class="isDescriptionShown ? 'open' : ''">
-      <picture v-if="image">
-        <img :src="image" alt="">
-      </picture>
-      <p 
+      <Picture :image="image" :shouldLoadPicture="isDescriptionShown" />
+      <p
         v-for="(paragraph, index) of description"
         :key="`${title} - paragraphe ${index}`"
-        v-html="paragraph">
-      </p>
+        v-html="paragraph"></p>
     </dd>
   </div>
 </template>
 
 <script lang='ts'>
+import Picture from '@/components-ui/Picture.vue';
+
 export default {
   name: 'Definition',
+  components: {
+    Picture,
+  },
   props: {
     title: String,
     description: Array,
@@ -30,13 +32,14 @@ export default {
   data() {
     return {
       isDescriptionShown: false,
+      imageLoaded: false,
     };
   },
 };
 </script>
 
 <style lang="scss">
-@import '@/main.scss';
+@import "@/main.scss";
 
 .definition {
   margin-bottom: 5px;
@@ -47,7 +50,7 @@ export default {
       justify-content: space-around;
       align-items: center;
       flex-wrap: wrap;
-    
+
       picture {
         width: 55%;
       }
@@ -78,8 +81,8 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    transition: .5s;
-    
+    transition: 0.5s;
+
     &:hover {
       @include laptop {
         box-shadow: calc(-100vw + 75vw) 1px 0px 1px $jungle-green;
@@ -161,13 +164,13 @@ export default {
     text-align: justify;
     overflow: hidden;
     box-sizing: border-box;
-    transition: .5s;
+    transition: 0.5s;
 
     &.open {
       border-bottom-left-radius: 8px;
       border-bottom-right-radius: 8px;
       max-height: 3000px;
-      transition: all .5s, opacity .2s .0s;
+      transition: all 0.5s, opacity 0.2s 0s;
 
       picture {
         img {
@@ -176,7 +179,7 @@ export default {
       }
       p {
         opacity: 1;
-        transition: opacity .2s .2s;
+        transition: opacity 0.2s 0.2s;
       }
     }
 
@@ -201,7 +204,7 @@ export default {
       font-size: 1rem;
       margin-top: 10px;
       line-height: 24px;
-      transition: opacity .2s;
+      transition: opacity 0.2s;
 
       &:first-of-type {
         margin-top: 0;
