@@ -28,9 +28,8 @@ const router = new Router({
       },
     },
     {
-      component: () =>
-        import(/* webpackChunkName: "reviews" */ './views/WIP.vue'),
-      path: '/blog',
+      path: '/blog/posts',
+      component: () => import(/* webpackChunkName: "reviews" */  './views/Blog.vue'),
       children: [
         {
           name: 'articles',
