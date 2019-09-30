@@ -200,6 +200,7 @@ export default {
       }
     }
     p {
+      box-sizing: border-box;
       width: 100%;
       padding: 0 10px;
       opacity: 0;
