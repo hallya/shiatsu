@@ -26,7 +26,7 @@ export default new Router({
     },
     {
       path: '/blog/posts',
-      component: () => import(/* webpackChunkName: "reviews" */  './views/Blog.vue'),
+      component: () => import(/* webpackChunkName: "reviews" */  './views/WIP.vue'),
       children: [
         {
           name: 'articles',
@@ -52,7 +52,7 @@ export default new Router({
       meta: {
         title: 'Shiatsu - Avis',
       },
-      component: () => import(/* webpackChunkName: "reviews" */  './views/Reviews.vue'),
+      component: () => import(/* webpackChunkName: "reviews" */  './views/WIP.vue'),
     },
     {
       name: 'contacts',
