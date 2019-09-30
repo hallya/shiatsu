@@ -2,7 +2,8 @@
   <div class="definition">
     <dt
       v-on:click="isDescriptionShown = !isDescriptionShown"
-      :class="`${isDescriptionShown ? 'open' : ''}`">
+      :class="`${isDescriptionShown ? 'open' : ''}`"
+    >
       <h2>{{title}}</h2>
       <button :class="`toggleDescription ${isDescriptionShown ? ' close' : ''}`"></button>
     </dt>
@@ -11,30 +12,31 @@
       <p
         v-for="(paragraph, index) of description"
         :key="`${title} - paragraphe ${index}`"
-        v-html="paragraph"></p>
+        v-html="paragraph"
+      ></p>
     </dd>
   </div>
 </template>
 
 <script lang='ts'>
-import Picture from '@/components-ui/Picture.vue';
+import Picture from "@/components-ui/Picture.vue";
 
 export default {
-  name: 'Definition',
+  name: "Definition",
   components: {
-    Picture,
+    Picture
   },
   props: {
     title: String,
     description: Array,
-    image: String,
+    image: String
   },
   data() {
     return {
       isDescriptionShown: false,
-      imageLoaded: false,
+      imageLoaded: false
     };
-  },
+  }
 };
 </script>
 
@@ -76,7 +78,7 @@ export default {
     top: 65px;
     margin-bottom: 0px;
     background-color: white;
-    box-shadow: -101vw 1px 0px 1px $jungle-green;
+    box-shadow: -101vw 1px 0px 1px transparent;
     padding: 5px 10px;
     display: flex;
     align-items: center;
