@@ -1,56 +1,60 @@
 <template>
   <div id="app">
-    <Header/>
+    <Header />
     <transition name="fade" mode="out-in">
       <keep-alive exclude="Blog">
-        <router-view/>
+        <router-view />
       </keep-alive>
     </transition>
-    <Footer/>
+    <Footer />
   </div>
 </template>
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import { MetaInfo } from '@/types/metaInfo.interface';
-import Header from '@/components/Header.vue';
-import Footer from '@/components/Footer.vue';
+import { Component, Vue } from "vue-property-decorator";
+import { MetaInfo } from "@/types/metaInfo.interface";
+import Header from "@/components/Header.vue";
+const Footer = () => import("@/components/Footer.vue");
 
 @Component({
   components: {
     Header,
-    Footer,
+    Footer
   },
   data() {
     return {
-      ogUrl: this.$store.state.domains.baseUrlFrontend + this.$store.state.domains.hash,
+      ogUrl:
+        this.$store.state.domains.baseUrlFrontend +
+        this.$store.state.domains.hash
     };
   },
   metaInfo(): MetaInfo {
     return {
       meta: [
         {
-          property: 'og:url',
-          content:  this.ogUrl,
-        },
-      ],
+          property: "og:url",
+          content: this.ogUrl
+        }
+      ]
     };
-  },
+  }
 })
 export default class App extends Vue {}
 </script>
 
 <style lang="scss">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .1s;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.1s;
 }
-.fade-enter, .fade-leave-to {
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
 }
 </style>

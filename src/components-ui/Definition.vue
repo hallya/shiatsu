@@ -19,7 +19,7 @@
 </template>
 
 <script lang='ts'>
-import Picture from "@/components-ui/Picture.vue";
+const Picture = () => import("@/components-ui/Picture.vue");
 
 export default {
   name: "Definition",

@@ -1,29 +1,33 @@
 <template>
   <router-link v-bind:to="link">
-    <SpinningRings/>
-    <img :class="`header-nav-item-image${label === 'Accueil' ? ' home' : ''}`" v-bind:src="imgSrc" v-bind:alt="label"/>
+    <SpinningRings />
+    <img
+      :class="`header-nav-item-image${label === 'Accueil' ? ' home' : ''}`"
+      v-bind:src="imgSrc"
+      v-bind:alt="label"
+    />
     <p>{{label}}</p>
   </router-link>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import SpinningRings from '../components-ui/SpinningRings.vue';
+import { Component, Prop, Vue } from "vue-property-decorator";
+const SpinningRings = () => import("../components-ui/SpinningRings.vue");
 
 @Component({
   components: {
-    SpinningRings,
+    SpinningRings
   },
   computed: {
-    imgClassName: () => this.label === 'Accueil' ? ' home' : '',
+    imgClassName: () => (this.label === "Accueil" ? " home" : "")
   },
-  props: ['link', 'imgSrc', 'label'],
+  props: ["link", "imgSrc", "label"]
 })
 export default class NavLinkItem extends Vue {}
 </script>
 
 <style lang="scss">
-@import '@/main.scss';
+@import "@/main.scss";
 
 a {
   border-radius: 50px;
@@ -33,7 +37,7 @@ a {
   display: flex;
   position: relative;
   align-items: center;
-  transition: .2s;
+  transition: 0.2s;
 
   &:hover {
     color: $jungle-green;
@@ -48,7 +52,7 @@ a {
   .header-nav-item-image {
     width: 35px;
     height: 35px;
-    transition: .3s;
+    transition: 0.3s;
     @include tablet {
       display: none;
     }
@@ -59,7 +63,7 @@ a {
   }
   p {
     display: none;
-    font-family: 'Arbutus Slab';
+    font-family: "Arbutus Slab";
 
     @include tablet {
       letter-spacing: 2px;

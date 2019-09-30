@@ -3,36 +3,36 @@
     <section id="wrapper-title">
       <h1 id="title">Shiatsu</h1>
       <picture id="logoHeader">
-        <img src="../assets/images/logos/nenuphar.svg" alt="" srcset="">
+        <img src="../assets/images/logos/nenuphar.svg" alt srcset />
       </picture>
       <h2>Soignez votre énergie</h2>
     </section>
     <nav id="nav">
-      <NavLinkItem link="/home" :imgSrc="navlinks.home" label="Accueil"/>
-      <span> • </span>
-      <NavLinkItem link="/about" :imgSrc="navlinks.about" label="À propos"/>
-      <span> • </span>
-      <NavLinkItem link="/blog/posts" :imgSrc="navlinks.blog" label="Blog"/>
-      <span> • </span>
-      <NavLinkItem link="/reviews" :imgSrc="navlinks.reviews" label="Témoignages"/>
-      <span> • </span>
-      <NavLinkItem link="/contacts" :imgSrc="navlinks.contacts" label="Contacts"/>
+      <NavLinkItem link="/home" :imgSrc="navlinks.home" label="Accueil" />
+      <span>•</span>
+      <NavLinkItem link="/about" :imgSrc="navlinks.about" label="À propos" />
+      <span>•</span>
+      <NavLinkItem link="/blog/posts" :imgSrc="navlinks.blog" label="Blog" />
+      <span>•</span>
+      <NavLinkItem link="/reviews" :imgSrc="navlinks.reviews" label="Témoignages" />
+      <span>•</span>
+      <NavLinkItem link="/contacts" :imgSrc="navlinks.contacts" label="Contacts" />
     </nav>
   </header>
 </template>
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import NavLinkItem from './NavLinkItem.vue';
+import { Component, Prop, Vue } from "vue-property-decorator";
+import NavLinkItem from "./NavLinkItem.vue";
 
-import home from '../assets/images/logos/home.svg';
-import about from '../assets/images/logos/about.svg';
-import blog from '../assets/images/logos/blog.svg';
-import reviews from '../assets/images/logos/reviews.svg';
-import contacts from '../assets/images/logos/contacts.svg';
+import home from "../assets/images/logos/home.svg";
+import about from "../assets/images/logos/about.svg";
+import blog from "../assets/images/logos/blog.svg";
+import reviews from "../assets/images/logos/reviews.svg";
+import contacts from "../assets/images/logos/contacts.svg";
 
 @Component({
-  components:  {
-    NavLinkItem,
+  components: {
+    NavLinkItem
   },
   data() {
     return {
@@ -41,22 +41,22 @@ import contacts from '../assets/images/logos/contacts.svg';
         about,
         blog,
         reviews,
-        contacts,
-      },
+        contacts
+      }
     };
-  },
+  }
 })
 export default class Header extends Vue {}
 </script>
 
 <style lang="scss">
-@import '@/main.scss';
+@import "@/main.scss";
 
 #header {
   position: sticky;
   background-color: white;
   box-shadow: 0 0 10px 10px white;
-  top: -123px ;
+  top: -123px;
   z-index: 9999;
 
   #wrapper-title {
@@ -69,7 +69,7 @@ export default class Header extends Vue {}
     picture#logoHeader {
       width: auto;
       margin: 0;
-  
+
       img {
         height: 50px;
         width: 50px;
@@ -83,9 +83,9 @@ export default class Header extends Vue {}
     }
     h2 {
       width: 100%;
-      color: rgb(121,159,55);
+      color: rgb(121, 159, 55);
       letter-spacing: 3px;
-      
+
       @include tablet {
         letter-spacing: 10px;
       }
@@ -109,7 +109,7 @@ export default class Header extends Vue {}
     }
     span {
       display: none;
-      
+
       @include tablet {
         // padding: 10px 6vw;
         display: initial;

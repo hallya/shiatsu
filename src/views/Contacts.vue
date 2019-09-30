@@ -14,58 +14,68 @@
     </section>
     <section class="find-me">
       <h2 class="fontawesome-globe">Adresses</h2>
-      <Address v-if="google" :mapConfig="saintCyrLecole.mapConfig" :fullAddress="saintCyrLecole.fullAddress" :google="google" />
-      <Address v-if="google" :mapConfig="bouloire.mapConfig" :fullAddress="bouloire.fullAddress" :google="google" />
-    </section> 
+      <Address
+        v-if="google"
+        :mapConfig="saintCyrLecole.mapConfig"
+        :fullAddress="saintCyrLecole.fullAddress"
+        :google="google"
+      />
+      <Address
+        v-if="google"
+        :mapConfig="bouloire.mapConfig"
+        :fullAddress="bouloire.fullAddress"
+        :google="google"
+      />
+    </section>
   </main>
 </template>
 
 <script>
-import Address from '@/components-ui/Address';
-import GoogleMapsApiLoader from 'google-maps-api-loader';
+const Address = () => import("@/components-ui/Address");
+import GoogleMapsApiLoader from "google-maps-api-loader";
 
 export default {
   components: {
-    Address,
+    Address
   },
   data() {
     return {
-      apiKey: 'AIzaSyBIpZM5Rd2uy9aYV3_DByJrYS1okNf3dJY',
+      apiKey: "AIzaSyBIpZM5Rd2uy9aYV3_DByJrYS1okNf3dJY",
       google: null,
       bouloire: {
         mapConfig: {
           center: {
             lat: 47.97291,
-            lng: 0.568361,
-          },
+            lng: 0.568361
+          }
         },
-        fullAddress: ['La Grenouille', 'Route de Coudrecieux', '72440 Bouloire'],
+        fullAddress: ["La Grenouille", "Route de Coudrecieux", "72440 Bouloire"]
       },
       saintCyrLecole: {
         mapConfig: {
           center: {
-            lat : 48.8092,
-            lng : 2.05809,
-          },
+            lat: 48.8092,
+            lng: 2.05809
+          }
         },
-        fullAddress: ['5 rue Jean Zay', '78210 Saint-Cyr-l\'Ecole'],
-      },
+        fullAddress: ["5 rue Jean Zay", "78210 Saint-Cyr-l'Ecole"]
+      }
     };
   },
   async mounted() {
-    const googleMapApi = await GoogleMapsApiLoader({apiKey: this.apiKey});
+    const googleMapApi = await GoogleMapsApiLoader({ apiKey: this.apiKey });
     this.google = googleMapApi;
-  },
+  }
 };
 </script>
 
 <style lang="scss">
-@import '@/main.scss';
+@import "@/main.scss";
 
 main {
   display: flex;
   flex-flow: wrap row;
-  
+
   section {
     width: 100%;
     margin: 0 auto;
@@ -102,7 +112,9 @@ main {
         justify-content: center;
       }
 
-      h3, a, p {
+      h3,
+      a,
+      p {
         font-size: 1.1rem;
 
         @include tablet {
@@ -112,13 +124,14 @@ main {
           font-size: 1.4rem;
         }
       }
-      h3, a {
+      h3,
+      a {
         letter-spacing: 1px;
       }
       h3 {
         margin-bottom: 15px;
         font-weight: bold;
-        
+
         @include tablet {
           width: 100%;
           text-align: center;
@@ -128,7 +141,7 @@ main {
         height: 20px;
         padding: 0 10px 5px;
         color: $jungle-green;
-        transition: .2s;
+        transition: 0.2s;
         box-shadow: 0 0px 0px 0px #c7c7c7;
 
         &:hover {
