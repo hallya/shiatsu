@@ -2,16 +2,15 @@
   <div class="definition">
     <dt
       v-on:click="isDescriptionShown = !isDescriptionShown"
-      :class="`${isDescriptionShown ? 'open' : ''}`"
-    >
-      <h2>{{title}}</h2>
-      <button :class="`toggleDescription ${isDescriptionShown ? ' close' : ''}`"></button>
+      :class="isOpen">
+      <h2>{{definition.title}}</h2>
+      <button :class="buttonState"></button>
     </dt>
-    <dd :class="isDescriptionShown ? 'open' : ''">
-      <Picture :image="image" :shouldLoadPicture="isDescriptionShown" />
+    <dd :class="isOpen">
+      <Picture :images="definition.images" :shouldLoadPicture="isDescriptionShown" description=""/>
       <p
-        v-for="(paragraph, index) of description"
-        :key="`${title} - paragraphe ${index}`"
+        v-for="(paragraph, index) of definition.description"
+        :key="`${definition.title} - paragraphe ${index}`"
         v-html="paragraph"
       ></p>
     </dd>
@@ -19,24 +18,30 @@
 </template>
 
 <script lang='ts'>
-const Picture = () => import("@/components-ui/Picture.vue");
+const Picture = () => import('@/components-ui/Picture.vue');
 
 export default {
-  name: "Definition",
+  name: 'Definition',
   components: {
-    Picture
+    Picture,
   },
   props: {
-    title: String,
-    description: Array,
-    image: String
+    definition: Object,
   },
   data() {
     return {
       isDescriptionShown: false,
-      imageLoaded: false
+      imageLoaded: false,
     };
-  }
+  },
+  computed: {
+    isOpen() {
+      return (this.isDescriptionShown && 'open');
+    },
+    buttonState() {
+      return (this.isDescriptionShown ? 'toggleDescription close' : 'toggleDescription');
+    },
+  },
 };
 </script>
 
@@ -125,7 +130,6 @@ export default {
         will-change: transform;
         transition: transform 0.25s ease-out;
       }
-
       &:before {
         top: 0;
         left: calc(50% + 1px);

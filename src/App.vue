@@ -10,35 +10,34 @@
   </div>
 </template>
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import { MetaInfo } from "@/types/metaInfo.interface";
-import Header from "@/components/Header.vue";
-const Footer = () => import("@/components/Footer.vue");
+import { MetaInfo } from '@/types/metaInfo.interface';
+import Header from '@/components/Header.vue';
+const Footer = () => import('@/components/Footer.vue');
 
-@Component({
+export default {
+  name: 'App',
   components: {
     Header,
-    Footer
+    Footer,
   },
   data() {
     return {
       ogUrl:
         this.$store.state.domains.baseUrlFrontend +
-        this.$store.state.domains.hash
+        this.$store.state.domains.hash,
     };
   },
   metaInfo(): MetaInfo {
     return {
       meta: [
         {
-          property: "og:url",
-          content: this.ogUrl
-        }
-      ]
+          property: 'og:url',
+          content: this.ogUrl,
+        },
+      ],
     };
-  }
-})
-export default class App extends Vue {}
+  },
+};
 </script>
 
 <style lang="scss">

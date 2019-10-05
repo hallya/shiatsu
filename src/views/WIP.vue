@@ -1,6 +1,6 @@
 <template>
   <main>
-    <h3>En cours de développement . . .</h3>
+    <h3 class="wip-header">En cours de développement . . .</h3>
   </main>
 </template>
 
@@ -9,7 +9,7 @@
 
 main {
   align-items: center;
-  h3 {
+  .wip-header {
     width: 100%;
     margin: auto;
     text-align: center;

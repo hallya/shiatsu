@@ -9,6 +9,6 @@ export const domains: Module<Domains, RootStore> = {
     pathname: window.location.pathname,
     baseUrlFrontend: window.location.origin + window.location.pathname,
     hash: window.location.hash,
-    backendOrigin: 'http://ec2-35-180-225-252.eu-west-3.compute.amazonaws.com',
+    backendOrigin: 'http://ec2-35-180-47-8.eu-west-3.compute.amazonaws.com',
   },
 };

@@ -1,11 +1,9 @@
 {
   "defaultSeverity": "warning",
-  "extends": [
-    "tslint:recommended"
-  ],
   "linterOptions": {
     "exclude": [
-      "node_modules/**"
+      "node_modules/**",
+      "src/data/Definitions/about.ts"
     ]
   },
   "rules": {
@@ -15,6 +13,24 @@
     "ordered-imports": false,
     "object-literal-sort-keys": false,
     "no-consecutive-blank-lines": true,
-    "eofline": false
+    "no-irregular-whitespace": true,
+    "space-within-parens": false,
+    "semicolon": [true, "always"],
+    "whitespace": [
+      true,
+      "check-module",
+      "check-operator",
+      "check-typecast",
+      "check-preblock",
+      "check-separator",
+      "check-type-operator",
+      "check-rest-spread"
+    ],
+    "typedef-whitespace": true,
+    "eofline": false,
+    "trailing-comma": [true, {
+      "multiline": "always",
+      "singleline": "never"
+    }]
   }
 }
