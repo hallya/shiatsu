@@ -1,5 +1,7 @@
 <template>
-  <router-link v-bind:to="link">
+  <router-link 
+    v-bind:to="link" 
+    tabindex="0">
     <SpinningRings />
     <img
       :class="`header-nav-item-image${label === 'Accueil' ? ' home' : ''}`"

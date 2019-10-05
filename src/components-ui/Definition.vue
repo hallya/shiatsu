@@ -85,6 +85,9 @@ export default {
     justify-content: space-between;
     transition: 0.5s;
 
+    &:focus-within {
+      box-shadow: calc(-100vw + 75vw) 1px 0px 1px $focused;
+    }
     &:hover {
       @include laptop {
         box-shadow: calc(-100vw + 75vw) 1px 0px 1px $jungle-green;
@@ -149,6 +152,12 @@ export default {
 
         &:after {
           transform: rotate(180deg);
+        }
+      }
+      &:focus {
+        &:before,
+        &:after {
+          background-color: $focused;
         }
       }
     }
