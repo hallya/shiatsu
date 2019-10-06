@@ -52,7 +52,7 @@ a {
   text-decoration: none;
   transition: .2s;
   &:focus {
-    outline: 1px auto $focused;;
+    outline: 1px auto $focused;
   }
   &:active {
     outline: none;

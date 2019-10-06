@@ -31,41 +31,41 @@
 </template>
 
 <script>
-const Address = () => import("@/components-ui/Address");
-import GoogleMapsApiLoader from "google-maps-api-loader";
+const Address = () => import('@/components-ui/Address');
+import GoogleMapsApiLoader from 'google-maps-api-loader';
 
 export default {
   components: {
-    Address
+    Address,
   },
   data() {
     return {
-      apiKey: "AIzaSyBIpZM5Rd2uy9aYV3_DByJrYS1okNf3dJY",
+      apiKey: process.env.VUE_APP_GOOGLE_API_KEY,
       google: null,
       bouloire: {
         mapConfig: {
           center: {
             lat: 47.97291,
-            lng: 0.568361
-          }
+            lng: 0.568361,
+          },
         },
-        fullAddress: ["La Grenouille", "Route de Coudrecieux", "72440 Bouloire"]
+        fullAddress: ['La Grenouille', 'Route de Coudrecieux', '72440 Bouloire'],
       },
       saintCyrLecole: {
         mapConfig: {
           center: {
             lat: 48.8092,
-            lng: 2.05809
-          }
+            lng: 2.05809,
+          },
         },
-        fullAddress: ["5 rue Jean Zay", "78210 Saint-Cyr-l'Ecole"]
-      }
+        fullAddress: ['5 rue Jean Zay', '78210 Saint-Cyr-l\'Ecole'],
+      },
     };
   },
   async mounted() {
     const googleMapApi = await GoogleMapsApiLoader({ apiKey: this.apiKey });
     this.google = googleMapApi;
-  }
+  },
 };
 </script>
 

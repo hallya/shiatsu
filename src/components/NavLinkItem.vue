@@ -13,19 +13,22 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
-const SpinningRings = () => import("../components-ui/SpinningRings.vue");
+const SpinningRings = () => import('../components-ui/SpinningRings.vue');
 
-@Component({
+export default {
+  name: 'NavLinkItem',
   components: {
-    SpinningRings
+    SpinningRings,
   },
   computed: {
-    imgClassName: () => (this.label === "Accueil" ? " home" : "")
+    imgClassName: () => (this.label === 'Accueil' ? ' home' : ''),
   },
-  props: ["link", "imgSrc", "label"]
-})
-export default class NavLinkItem extends Vue {}
+  props: {
+    link: String,
+    imgSrc: String,
+    label: String,
+  },
+};
 </script>
 
 <style lang="scss">

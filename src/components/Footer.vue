@@ -7,13 +7,13 @@
 </template>
 
 <script>
-import { Component, Vue } from 'vue-property-decorator';
 import facebookEmpty from '@/assets/images/logos/social-media-f-empty.svg';
 import facebookFilled from '@/assets/images/logos/social-media-f-full.svg';
 import phoneEmpty from '@/assets/images/logos/phone-not-filled.svg';
 import phoneFilled from '@/assets/images/logos/phone-filled.svg';
 
-@Component({
+export default {
+  name: 'Footer',
   data() {
     return {
       facebookEmpty,
@@ -22,16 +22,18 @@ import phoneFilled from '@/assets/images/logos/phone-filled.svg';
       phoneFilled,
     };
   },
-})
-export default class Footer extends Vue {}
+};
 </script>
 
 <style lang="scss">
+@import '@/styles/vars.scss';
+
 #footer {
+  min-height: $footer-mobile-height;
+  padding: 20px 0 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 0 20px;
   
   a {
     height: 40px;

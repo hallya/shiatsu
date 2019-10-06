@@ -3,7 +3,7 @@
     <section id="wrapper-title">
       <h1 id="title">Shiatsu</h1>
       <picture id="logoHeader">
-        <img src="../assets/images/logos/nenuphar.svg" alt srcset />
+        <img :src="nenuphar" alt="un logo comprenant plusieurs nenuphar" />
       </picture>
       <h2>Soignez votre énergie</h2>
     </section>
@@ -21,32 +21,32 @@
   </header>
 </template>
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
-import NavLinkItem from "./NavLinkItem.vue";
+import NavLinkItem from './NavLinkItem.vue';
 
-import home from "../assets/images/logos/home.svg";
-import about from "../assets/images/logos/about.svg";
-import blog from "../assets/images/logos/blog.svg";
-import reviews from "../assets/images/logos/reviews.svg";
-import contacts from "../assets/images/logos/contacts.svg";
+import nenuphar from '@/assets/images/logos/nenuphar.svg';
+import home from '@/assets/images/logos/home.svg';
+import about from '@/assets/images/logos/about.svg';
+import blog from '@/assets/images/logos/blog.svg';
+import reviews from '@/assets/images/logos/reviews.svg';
+import contacts from '@/assets/images/logos/contacts.svg';
 
-@Component({
+export default {
   components: {
-    NavLinkItem
+    NavLinkItem,
   },
   data() {
     return {
+      nenuphar,
       navlinks: {
         home,
         about,
         blog,
         reviews,
-        contacts
-      }
+        contacts,
+      },
     };
-  }
-})
-export default class Header extends Vue {}
+  },
+};
 </script>
 
 <style lang="scss">

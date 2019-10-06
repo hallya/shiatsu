@@ -1,6 +1,8 @@
 <template>
   <picture>
-    <img v-if="shouldLoadPicture" :src="image" alt />
+    <source media="(min-width: 500px)" :srcset="images.imageWebp" type="image/webp" />
+    <source :srcset="images.imageWebpMobile" type="image/webp" />
+    <img v-if="shouldLoadPicture" :src="images.defaultImage" :alt="description" />
   </picture>
 </template>
 
@@ -8,18 +10,14 @@
 export default {
   name: 'Picture',
   props: {
-    image: String,
+    images: Object,
     shouldLoadPicture: Boolean,
+    description: String,
   },
   data() {
     return {
       imageLoaded: false,
     };
-  },
-  methods: {
-    loadImage() {
-      return this.imageLoaded = true;
-    }
   },
 };
 </script>
