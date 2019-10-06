@@ -3,5 +3,11 @@ import { VNode } from 'vue';
 export interface Definition {
   title: string;
   description: string[];
-  image: VNode | null;
+  images: Images;
+}
+
+export interface Images {
+  defaultImage: VNode | null;
+  imageWebp: VNode | null;
+  imageWebpMobile: VNode | null;
 }

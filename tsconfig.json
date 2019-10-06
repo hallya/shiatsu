@@ -32,15 +32,14 @@
     "src/shims-jpg.d.ts",
     "src/shims-png.d.ts",
     "src/shims-svg.d.ts",
-    "src/shims-tsx.d.ts",
-    "src/shims-vue.d.ts"
+    "src/shims-tsx.d.ts"
   ],
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "tests/**/*.tsx", "src/data/Definitions/me"
   ],
   "exclude": [
     "node_modules"

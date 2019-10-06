@@ -1,12 +1,11 @@
 <template>
   <main class="about">
     <dl>
-      <Definition 
+      <Definition
         v-for="definition of definitions"
-        :title="definition.title"
-        :description="definition.description"
-        :image="definition.image"
-        :key="`Definition : ${definition.title}`"></Definition>
+        :definition="definition"
+        :key="`Definition : ${definition.title}`"
+      ></Definition>
     </dl>
   </main>
 </template>
@@ -28,8 +27,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@/main.scss';
-
 .about {
   padding: 10px 0;
   dl {

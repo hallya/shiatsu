@@ -16,10 +16,6 @@ main {
   display: flex;
 }
 
-footer {
-  min-height: $footer-mobile-height;
-  padding: 20px 6
-}
 h2,
 h3,
 h4,
@@ -54,6 +50,14 @@ h2 {
 }
 a {
   text-decoration: none;
+  transition: .2s;
+  &:focus {
+    outline: 1px auto $focused;
+  }
+  &:active {
+    outline: none;
+    color: $focused;
+  }
 }
 p {
   line-height: 20px;

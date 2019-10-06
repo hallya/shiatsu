@@ -9,6 +9,7 @@
 
 main {
   align-items: center;
+
   h3.wip-header {
     width: 100%;
     margin: auto;
