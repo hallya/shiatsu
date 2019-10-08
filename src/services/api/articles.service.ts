@@ -6,7 +6,6 @@ import { Post, PostFormated } from './articles.types';
 import store from '@/store/store';
 
 export default class Articles {
-
   private apiPath: string = '/articles';
 
   constructor() {
@@ -15,13 +14,15 @@ export default class Articles {
   }
 
   public getAll(): Promise<PostFormated[]> {
-    return getData(store.state.domains.backendOrigin + this.apiPath)
-      .then(this.formatForMany);
+    return getData(store.state.domains.backendOrigin + this.apiPath).then(
+      this.formatForMany,
+    );
   }
 
   public get(id: string): Promise<PostFormated> {
-    return getData(store.state.domains.backendOrigin + `${this.apiPath}/${id}`)
-      .then(this.formatForOne);
+    return getData(
+      store.state.domains.backendOrigin + `${this.apiPath}/${id}`,
+    ).then(this.formatForOne);
   }
 
   private formatForMany(articles: Post[]): PostFormated[] {
@@ -30,8 +31,9 @@ export default class Articles {
       .map((article) => ({
         ...article,
         contentIsVisible: false,
-      })).sort(this.byDate);
-    }
+      }))
+      .sort(this.byDate);
+  }
 
   private formatForOne(article: Post): PostFormated {
     const formatedArticle = {
@@ -58,7 +60,10 @@ export default class Articles {
 
   private previewOf(contentInMarkdown: string): string {
     const from = 0;
-    return contentInMarkdown.slice(from, this.idealPosition(contentInMarkdown)) + ' . . .';
+    return (
+      contentInMarkdown.slice(from, this.idealPosition(contentInMarkdown)) +
+      ' . . .'
+    );
   }
 
   private idealPosition(text: string): number {
@@ -67,9 +72,10 @@ export default class Articles {
 
   private generateFacebookShareLink(id: string): string {
     const { baseUrlFrontend, hash } = store.state.domains;
-    const shareLink = 'https://www.facebook.com/sharer/sharer.php?u='
-      + encodeURIComponent(`${baseUrlFrontend}#/blog/posts/${id}`)
-      + '&amp;src=sdkpreparse';
+    const shareLink =
+      'https://www.facebook.com/sharer/sharer.php?u=' +
+      encodeURIComponent(`${baseUrlFrontend}#/blog/posts/${id}`) +
+      '&amp;src=sdkpreparse';
     return shareLink;
   }
 }

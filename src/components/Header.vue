@@ -14,12 +14,21 @@
       <span>•</span>
       <NavLinkItem link="/blog/posts" :imgSrc="navlinks.blog" label="Blog" />
       <span>•</span>
-      <NavLinkItem link="/reviews" :imgSrc="navlinks.reviews" label="Témoignages" />
+      <NavLinkItem
+        link="/reviews"
+        :imgSrc="navlinks.reviews"
+        label="Témoignages"
+      />
       <span>•</span>
-      <NavLinkItem link="/contacts" :imgSrc="navlinks.contacts" label="Contacts" />
+      <NavLinkItem
+        link="/contacts"
+        :imgSrc="navlinks.contacts"
+        label="Contacts"
+      />
     </nav>
   </header>
 </template>
+
 <script lang="ts">
 import NavLinkItem from './NavLinkItem.vue';
 
@@ -50,7 +59,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@/main.scss";
+@import '@/styles/mixin.scss';
 
 #header {
   position: sticky;
@@ -111,7 +120,6 @@ export default {
       display: none;
 
       @include tablet {
-        // padding: 10px 6vw;
         display: initial;
         font-size: 20px;
         font-weight: 100;

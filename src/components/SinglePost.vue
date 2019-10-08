@@ -1,5 +1,5 @@
 <template>
-  <Article v-if="article" :article="article" :frontendOrigin="frontendOrigin"/>
+  <Article v-if="article" :article="article" :frontendOrigin="frontendOrigin" />
   <Loader v-else></Loader>
 </template>
 
@@ -20,7 +20,9 @@ export default {
     return {
       article: null,
       meta: [],
-      ogUrl: this.$store.state.domains.baseUrlFrontend + this.$store.state.domains.hash,
+      ogUrl:
+        this.$store.state.domains.baseUrlFrontend +
+        this.$store.state.domains.hash,
       frontendOrigin: this.$store.state.domains.frontendOrigin,
       backendOrigin: this.$store.state.domains.backendOrigin,
     };
@@ -42,12 +44,14 @@ export default {
         { property: 'url', content: this.ogUrl },
         { property: 'og:type', content: 'article' },
         { property: 'description', content: this.article.preview },
-        { property: 'og:image', content: this.backendOrigin + this.article.image.url },
+        {
+          property: 'og:image',
+          content: this.backendOrigin + this.article.image.url,
+        },
       ];
     },
   },
 };
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>

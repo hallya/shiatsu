@@ -49,7 +49,11 @@ export default {
             lng: 0.568361,
           },
         },
-        fullAddress: ['La Grenouille', 'Route de Coudrecieux', '72440 Bouloire'],
+        fullAddress: [
+          'La Grenouille',
+          'Route de Coudrecieux',
+          '72440 Bouloire',
+        ],
       },
       saintCyrLecole: {
         mapConfig: {
@@ -58,7 +62,7 @@ export default {
             lng: 2.05809,
           },
         },
-        fullAddress: ['5 rue Jean Zay', '78210 Saint-Cyr-l\'Ecole'],
+        fullAddress: ['5 rue Jean Zay', "78210 Saint-Cyr-l'Ecole"],
       },
     };
   },
@@ -70,7 +74,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@/main.scss";
+@import '@/main.scss';
 
 main {
   display: flex;

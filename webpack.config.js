@@ -1,14 +1,19 @@
 // webpack.config.js
 const path = require('path');
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   mode: 'development',
   entry: ['main.ts', 'main.scss'],
   output: {
-    path: path.join(__dirname, "dist"),
-    filename: "bundle.js"
+    path: path.join(__dirname, 'dist'),
+    filename: 'bundle.js',
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
   },
   module: {
     rules: [
@@ -20,27 +25,27 @@ module.exports = {
           source: 'src',
           img: 'src',
           image: ['xlink:href', 'href'],
-          use: ['xlink:href', 'href']
-        }
+          use: ['xlink:href', 'href'],
+        },
       },
       {
         test: /\.tsx?$/,
-        loader: "ts-loader",
+        loader: 'ts-loader',
         options: {
-          appendTsSuffixTo: [/\.vue$/]
-        }
+          appendTsSuffixTo: [/\.vue$/],
+        },
       },
       {
         test: /\.js$/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
       },
       {
         test: /\.(css|scss)/,
         use: ExtractTextPlugin.extract([
           'vue-style-loader',
           'css-loader',
-          'sass-loader'
-        ])
+          'sass-loader',
+        ]),
       },
       {
         test: /\.(png|jpg|svg)$/,
@@ -51,7 +56,7 @@ module.exports = {
           },
         ],
       },
-    ]
+    ],
   },
   plugins: [
     new VueLoaderPlugin(),
@@ -59,4 +64,4 @@ module.exports = {
       filename: '[name].min.css',
     }),
   ],
-}
+};

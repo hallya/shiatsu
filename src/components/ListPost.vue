@@ -1,10 +1,14 @@
 <template>
   <ul v-if="articles.length" class="articles-list">
-    <li v-for="article of articles" :key="article.id" class="articles-list-item">
-      <Article :article="article" :frontendOrigin="frontendOrigin"/>
+    <li
+      v-for="article of articles"
+      :key="article.id"
+      class="articles-list-item"
+    >
+      <Article :article="article" :frontendOrigin="frontendOrigin" />
     </li>
   </ul>
-  <Loader v-else/>
+  <Loader v-else />
 </template>
 
 <script lang="ts">
@@ -38,9 +42,16 @@ export default {
       meta: [
         { property: 'og:title', content: 'Shiatsu et bien être' },
         { property: 'og:type', content: 'website' },
-        { property: 'og:description', content: 'Suivez les articles rédigé par Nathalie sur \
-        le Shiatsu et le bien-être' },
-        { property: 'og:image', content: this.baseUrl + nenupharShareDefaultImage },
+        {
+          property: 'og:description',
+          content:
+            'Suivez les articles rédigé par Nathalie sur \
+        le Shiatsu et le bien-être',
+        },
+        {
+          property: 'og:image',
+          content: this.baseUrl + nenupharShareDefaultImage,
+        },
       ],
     };
   },
@@ -58,11 +69,11 @@ export default {
 <style lang="scss">
 @import '@/main.scss';
 
-  .articles-list {
-    overflow: auto;
+.articles-list {
+  overflow: auto;
 
-    .articles-list-item {
-      margin: 0 auto 50px;
-    }
+  .articles-list-item {
+    margin: 0 auto 50px;
   }
+}
 </style>

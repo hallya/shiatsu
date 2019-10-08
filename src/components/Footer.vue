@@ -1,7 +1,11 @@
 <template>
   <footer id="footer">
-    <a class="footer-icon" href="https://www.facebook.com/nathaliedeloeper/" target="_blank">
-      <img v-bind:src="facebookFilled" alt="go to my page">
+    <a
+      class="footer-icon"
+      href="https://www.facebook.com/nathaliedeloeper/"
+      target="_blank"
+    >
+      <img v-bind:src="facebookFilled" alt="go to my page" />
     </a>
   </footer>
 </template>
@@ -34,7 +38,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   a {
     height: 40px;
     width: 40px;
@@ -46,7 +50,7 @@ export default {
       position: relative;
       img {
         position: absolute;
-        transition: .2s ease-in;
+        transition: 0.2s ease-in;
       }
     }
     picture {

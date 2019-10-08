@@ -1,5 +1,5 @@
-import me from './me/me';
 import shiatsu from './shiatsu/shiatsu';
+import me from './me/me';
 import meeting from './meeting/meeting';
 import cost from './cost/cost';
 import timeForTreatment from './timeForTreatment/timeForTreatment';
@@ -19,5 +19,5 @@ export const definitions = [
   extraordinary,
   healingPath,
   infos,
-  toTheDoctors
+  toTheDoctors,
 ];

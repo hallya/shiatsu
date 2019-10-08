@@ -1,13 +1,15 @@
 <template>
   <div class="definition">
-    <dt
-      v-on:click="isDescriptionShown = !isDescriptionShown"
-      :class="isOpen">
-      <h2>{{definition.title}}</h2>
+    <dt v-on:click="isDescriptionShown = !isDescriptionShown" :class="isOpen">
+      <h2>{{ definition.title }}</h2>
       <button :class="buttonState"></button>
     </dt>
     <dd :class="isOpen">
-      <Picture :images="definition.images" :shouldLoadPicture="isDescriptionShown" description=""/>
+      <Picture
+        :images="definition.images"
+        :shouldLoadPicture="isDescriptionShown"
+        description
+      />
       <p
         v-for="(paragraph, index) of definition.description"
         :key="`${definition.title} - paragraphe ${index}`"
@@ -17,7 +19,7 @@
   </div>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 const Picture = () => import('@/components-ui/Picture.vue');
 
 export default {
@@ -36,17 +38,19 @@ export default {
   },
   computed: {
     isOpen() {
-      return (this.isDescriptionShown && 'open');
+      return this.isDescriptionShown && 'open';
     },
     buttonState() {
-      return (this.isDescriptionShown ? 'toggleDescription close' : 'toggleDescription');
+      return this.isDescriptionShown
+        ? 'toggleDescription close'
+        : 'toggleDescription';
     },
   },
 };
 </script>
 
 <style lang="scss">
-@import "@/main.scss";
+@import '@/main.scss';
 
 .definition {
   margin-bottom: 5px;
@@ -126,7 +130,7 @@ export default {
 
       &:before,
       &:after {
-        content: "";
+        content: '';
         position: absolute;
         background-color: $jungle-green;
         border-radius: 10px;

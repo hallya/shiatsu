@@ -6,7 +6,7 @@
         <slot :google="google" :map="map" />
       </template>
       <figcaption>
-        <p v-for="line of fullAddress" v-bind:key="line">{{line}}</p>
+        <p v-for="line of fullAddress" v-bind:key="line">{{ line }}</p>
       </figcaption>
     </figure>
   </address>
@@ -32,9 +32,7 @@ export default {
   methods: {
     initializeMap() {
       const mapContainer = this.$refs.googleMap;
-      this.map = new this.google.maps.Map(
-        mapContainer, this.config,
-      );
+      this.map = new this.google.maps.Map(mapContainer, this.config);
     },
   },
 };
@@ -62,7 +60,7 @@ address.postale {
     height: 100%;
     display: flex;
     flex-direction: column;
-    
+
     .google-map {
       flex: 1 1 200px;
 

@@ -1,13 +1,17 @@
 <template>
   <figure class="loader">
     <picture class="loader">
-      <img class="loader" src="../assets/images/logos/loader.png" alt="Loading...">
+      <img
+        class="loader"
+        src="../assets/images/logos/loader.png"
+        alt="Loading..."
+      />
     </picture>
     <figcaption>un instant de méditation</figcaption>
   </figure>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 export default {
   name: 'Loader',
 };
@@ -24,7 +28,6 @@ figure.loader {
   flex-direction: column;
 
   picture.loader {
-  
     img.loader {
       width: 50px;
       height: 50px;

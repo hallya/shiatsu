@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from '@/views/Home.vue';
+import Home from './views/Home.vue';
 import ListPost from './components/ListPost.vue';
 import SinglePost from './components/SinglePost.vue';
 
@@ -10,24 +10,26 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      name: 'home',
-      path: '/home',
       component: Home,
       meta: {
         title: 'Shiatsu - Accueil',
       },
+      name: 'home',
+      path: '/home',
     },
     {
-      name: 'about',
-      path: '/about',
+      component: () =>
+        import(/* webpackChunkName: "about" */ './views/About.vue'),
       meta: {
         title: 'Shiatsu - À propos',
       },
-      component: () => import(/* webpackChunkName: "about" */  './views/About.vue'),
+      name: 'about',
+      path: '/about',
     },
     {
+      component: () =>
+        import(/* webpackChunkName: "reviews" */ './views/WIP.vue'),
       path: '/blog/posts',
-      component: () => import(/* webpackChunkName: "reviews" */  './views/WIP.vue'),
       children: [
         {
           name: 'articles',
@@ -48,20 +50,22 @@ export default new Router({
       ],
     },
     {
-      name: 'reviews',
-      path: '/reviews',
+      component: () =>
+        import(/* webpackChunkName: "reviews" */ './views/WIP.vue'),
       meta: {
         title: 'Shiatsu - Avis',
       },
-      component: () => import(/* webpackChunkName: "reviews" */  './views/WIP.vue'),
+      name: 'reviews',
+      path: '/reviews',
     },
     {
-      name: 'contacts',
-      path: '/contacts',
+      component: () =>
+        import(/* webpackChunkName: "contacts" */ './views/Contacts.vue'),
       meta: {
         title: 'Shiatsu - Contacts',
       },
-      component: () => import(/* webpackChunkName: "contacts" */  './views/Contacts.vue'),
+      name: 'contacts',
+      path: '/contacts',
     },
     {
       path: '**',

@@ -61,7 +61,7 @@ main.blog {
       }
     }
   }
-  .list-enter-active, 
+  .list-enter-active,
   .list-leave-active {
     transition: 5s;
   }
