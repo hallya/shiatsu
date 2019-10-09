@@ -30,6 +30,10 @@ export default class Articles {
       .map(this.formatForOne)
       .map((article) => ({
         ...article,
+        image: {
+          ...article.image,
+          url: store.state.domains.backendOrigin + article.image.url,
+        },
         contentIsVisible: false,
       }))
       .sort(this.byDate);
@@ -72,10 +76,9 @@ export default class Articles {
 
   private generateFacebookShareLink(id: string): string {
     const { baseUrlFrontend, hash } = store.state.domains;
-    const shareLink =
-      'https://www.facebook.com/sharer/sharer.php?u=' +
-      encodeURIComponent(`${baseUrlFrontend}#/blog/${id}`) +
-      '&amp;src=sdkpreparse';
+    const shareLink = 'https://www.facebook.com/sharer/sharer.php?u='
+      + encodeURIComponent(`${baseUrlFrontend}#/blog/${id}`)
+      + '&amp;src=sdkpreparse';
     return shareLink;
   }
 }

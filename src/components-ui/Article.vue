@@ -21,11 +21,7 @@
     <section class="article-main">
       <section class="article-main-image">
         <picture v-if="article.image">
-          <img
-            class="article-cover"
-            v-bind:src="`https://strapi.lcn-dlc.dev${article.image.url}`"
-            alt
-          />
+          <img class="article-cover" v-bind:src="article.image.url" alt="">
         </picture>
       </section>
       <TransitionFadeHeight>
@@ -63,12 +59,11 @@
           >Partager</a
         >
       </div>
-      <button
+      <button 
         v-if="article.hasOwnProperty('contentIsVisible')"
         class="article-toggle-content"
-        v-on:click="article.contentIsVisible = !article.contentIsVisible"
-      >
-        {{ article.contentIsVisible ? "Réduire l'article" : "Lire l'article" }}
+        v-on:click="article.contentIsVisible = !article.contentIsVisible">
+        {{ article.contentIsVisible ? 'Réduire l\'article' : 'Lire l\'article' }}
       </button>
     </footer>
   </article>

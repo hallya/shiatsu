@@ -4,7 +4,7 @@ export interface Article {
   subtitle: string;
   content: string;
   author: string;
-  image: string | null;
+  image: Image | null;
   video: string | null;
   tag: Tag[];
   createdAt: string;
@@ -19,7 +19,7 @@ export interface ArticleFormated {
   contentIsVisible?: boolean;
   author: string;
   shareLink: string;
-  image: string | null;
+  image: Image | null;
   video: string | null;
   tag: Tag[];
   createdAt: string;
@@ -31,4 +31,19 @@ export interface Tag {
   name: string;
   createdAt: string;
   updatedAt: string;
+}
+
+interface Image {
+  createdAt: string;
+  ext: string;
+  hash: string;
+  id: string;
+  mime: string;
+  name: string;
+  provider: string;
+  related: string[];
+  sha256: string;
+  size: string;
+  updatedAt: string;
+  url: string;
 }
