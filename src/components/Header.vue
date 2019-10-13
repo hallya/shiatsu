@@ -12,7 +12,7 @@
       <span>•</span>
       <NavLinkItem link="/about" :imgSrc="navlinks.about" label="À propos" />
       <span>•</span>
-      <NavLinkItem link="/blog/posts" :imgSrc="navlinks.blog" label="Blog" />
+      <NavLinkItem link="/blog" :imgSrc="navlinks.blog" label="Blog" />
       <span>•</span>
       <NavLinkItem
         link="/reviews"

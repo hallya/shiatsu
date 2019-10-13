@@ -29,7 +29,7 @@ export default new Router({
     {
       component: () =>
         import(/* webpackChunkName: "reviews" */ './views/WIP.vue'),
-      path: '/blog/posts',
+      path: '/blog',
       children: [
         {
           name: 'articles',
