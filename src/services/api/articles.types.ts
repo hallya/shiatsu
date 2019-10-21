@@ -1,4 +1,4 @@
-export interface Post {
+export interface Article {
   id: string;
   title: string;
   subtitle: string;
@@ -11,7 +11,7 @@ export interface Post {
   updatedAt: string;
 }
 
-export interface PostFormated {
+export interface ArticleFormated {
   id: string;
   title: string;
   subtitle: string;

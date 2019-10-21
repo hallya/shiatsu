@@ -2,8 +2,7 @@
   <main class="home">
     <section class="left-side" v-on:wheel="lazyLoadImage">
       <Picture
-        :images="tournesol"
-        :shouldLoadPicture="true"
+        :image="tournesol"
         description="Un magnifique tournesol en gros plan"
       />
       <blockquote class="home_citation">
@@ -38,8 +37,7 @@
         beaucoup mieux…
       </p>
       <Picture
-        :images="nenuphar"
-        :shouldLoadPicture="loadNenuphar"
+        :image="nenuphar"
         description="Quelques nenuphar côte à côte sur un plan d'eau"
       />
       <p>
@@ -60,46 +58,48 @@
 <script lang="ts">
 import Vue from 'vue';
 import { MetaInfo } from '@/types/metaInfo.interface';
-
-import Picture from '@/components-ui/Picture.vue';
-
+import Picture from '@/components-ui/Picture/Picture.vue';
+import { Home } from './Home.interface';
 import tournesolJpg from '@/assets/images/pictures/tournesol.jpg';
 import tournesolWebp from '@/assets/images/pictures/tournesol.webp';
 import tournesolWebpMobile from '@/assets/images/pictures/tournesol-mobile.webp';
 import nenupharJpg from '@/assets/images/pictures/plateau_nenuphar.jpg';
 import nenupharWebp from '@/assets/images/pictures/plateau_nenuphar.webp';
 import nenupharWebpMobile from '@/assets/images/pictures/plateau_nenuphar-mobile.webp';
-import defaultImage from '@/assets/images/pictures/defaultImageForSharing.jpg';
+import siteCoverUrl from '@/assets/images/pictures/defaultImageForSharing.jpg';
 
-export default {
+import store from '../store/store';
+
+export default Vue.extend({
   name: 'Home',
   components: {
     Picture,
   },
-  data() {
+  data(): Home {
     return {
-      baseUrl: this.$store.state.domains.baseUrlFrontend,
       tournesol: {
         defaultImage: tournesolJpg,
         imageWebp: tournesolWebp,
         imageWebpMobile: tournesolWebpMobile,
+        loadImage: true,
       },
       nenuphar: {
         defaultImage: nenupharJpg,
         imageWebp: nenupharWebp,
         imageWebpMobile: nenupharWebpMobile,
+        loadImage: false,
       },
-      loadNenuphar: false,
     };
   },
   methods: {
-    lazyLoadImage(section) {
+    lazyLoadImage(section: MouseEvent): void {
       if (section.offsetY > 200) {
-        this.loadNenuphar = true;
+        this.nenuphar.loadImage = true;
       }
     },
   },
   metaInfo(): MetaInfo {
+    const { baseUrlFrontend } = store.state.domains;
     return {
       meta: [
         {
@@ -113,11 +113,11 @@ export default {
             'Découvrez une pratique thérapeutique unique \
         au travers du regard de Nathalie de Loeper, praticienne de Shiatsu',
         },
-        { property: 'og:image', content: this.baseUrl + defaultImage },
+        { property: 'og:image', content: baseUrlFrontend + siteCoverUrl },
       ],
     };
   },
-};
+});
 </script>
 
 <style lang="scss">

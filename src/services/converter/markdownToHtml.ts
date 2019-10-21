@@ -1,3 +1,4 @@
+// @ts-ignore
 import showdown from 'showdown';
 
 export function convertToHtml(markdown: string): string {
@@ -6,6 +7,7 @@ export function convertToHtml(markdown: string): string {
   return converter.makeHtml(markdown);
 }
 
+// @ts-ignore
 function setOptionsFor(converter) {
   converter.setOption('noHeaderId', true);
 }

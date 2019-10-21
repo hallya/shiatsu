@@ -1,7 +1,7 @@
 import { convertToHtml } from '@/services/converter/markdownToHtml';
 
 import { getData } from '@/services/http/getData';
-import { Post, PostFormated } from './articles.types';
+import { Article, ArticleFormated } from './articles.types';
 
 import store from '@/store/store';
 
@@ -13,19 +13,19 @@ export default class Articles {
     this.formatForOne = this.formatForOne.bind(this);
   }
 
-  public getAll(): Promise<PostFormated[]> {
+  public getAll(): Promise<ArticleFormated[]> {
     return getData(store.state.domains.backendOrigin + this.apiPath).then(
       this.formatForMany,
     );
   }
 
-  public get(id: string): Promise<PostFormated> {
+  public get(id: string): Promise<ArticleFormated> {
     return getData(
       store.state.domains.backendOrigin + `${this.apiPath}/${id}`,
     ).then(this.formatForOne);
   }
 
-  private formatForMany(articles: Post[]): PostFormated[] {
+  private formatForMany(articles: Article[]): ArticleFormated[] {
     return articles
       .map(this.formatForOne)
       .map((article) => ({
@@ -35,7 +35,7 @@ export default class Articles {
       .sort(this.byDate);
   }
 
-  private formatForOne(article: Post): PostFormated {
+  private formatForOne(article: Article): ArticleFormated {
     const formatedArticle = {
       ...article,
       preview: convertToHtml(this.previewOf(article.content)),
@@ -45,7 +45,7 @@ export default class Articles {
     return formatedArticle;
   }
 
-  private byDate(a: PostFormated, b: PostFormated): number {
+  private byDate(a: ArticleFormated, b: ArticleFormated): number {
     const dateA = new Date(a.updatedAt).getTime();
     const dateB = new Date(b.updatedAt).getTime();
 

@@ -12,30 +12,33 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue';
 import TransitionFadeHeight from '@/transitions/Transition-fade-height.vue';
-
-import Articles from '@/services/api/articles.service';
-import { Post, PostFormated } from '@/services/api/articles.types';
-
-import Article from '@/components-ui/Article.vue';
-import Loader from '@/components-ui/Loader.vue';
-
 import nenupharShareDefaultImage from '@/assets/images/pictures/nenuphars_et_fleurs.jpg';
 import content from '@/assets/images/pictures/nenuphars_et_fleurs.jpg';
+import Article from '@/components-ui/Article.vue';
+import Loader from '@/components-ui/Loader.vue';
+import Articles from '@/services/api/articles.service';
+import { ListPost } from '@/components/ListPost.interface';
 
-export default {
+export default Vue.extend({
   name: 'ListPost',
   components: {
     Article,
     Loader,
     TransitionFadeHeight,
   },
-  data() {
+  data(): ListPost {
     return {
       articles: [],
       baseUrl: this.$store.state.domains.baseUrlFrontend,
       frontendOrigin: this.$store.state.domains.frontendOrigin,
     };
+  },
+  methods: {
+    async init() {
+      this.articles = await new Articles().getAll();
+    },
   },
   metaInfo() {
     return {
@@ -58,12 +61,7 @@ export default {
   mounted() {
     this.init();
   },
-  methods: {
-    async init() {
-      this.articles = await new Articles().getAll();
-    },
-  },
-};
+});
 </script>
 
 <style lang="scss">

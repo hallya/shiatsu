@@ -7,10 +7,11 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import Vue from 'vue';
 
-@Component
-export default class SpinningRings extends Vue {}
+export default Vue.extend({
+  name: 'SpinningRings',
+});
 </script>
 
 <style lang="scss">

@@ -1,38 +1,30 @@
 <template>
-  <router-link 
-    v-bind:to="link" 
-    tabindex="0">
+  <router-link v-bind:to="link" tabindex="0">
     <SpinningRings />
-    <img
-      :class="`header-nav-item-image${label === 'Accueil' ? ' home' : ''}`"
-      v-bind:src="imgSrc"
-      v-bind:alt="label"
-    />
-    <p>{{label}}</p>
+    <img class="header-nav-item-image" v-bind:src="imgSrc" v-bind:alt="label" />
+    <p>{{ label }}</p>
   </router-link>
 </template>
 
 <script lang="ts">
-const SpinningRings = () => import('../components-ui/SpinningRings.vue');
+import Vue from 'vue';
+import SpinningRings from '../components-ui/SpinningRings.vue';
 
-export default {
+export default Vue.extend({
   name: 'NavLinkItem',
-  components: {
-    SpinningRings,
-  },
-  computed: {
-    imgClassName: () => (this.label === 'Accueil' ? ' home' : ''),
-  },
   props: {
     link: String,
     imgSrc: String,
     label: String,
   },
-};
+  components: {
+    SpinningRings,
+  },
+});
 </script>
 
 <style lang="scss">
-@import "@/main.scss";
+@import '@/main.scss';
 
 a {
   border-radius: 50px;
@@ -68,7 +60,7 @@ a {
   }
   p {
     display: none;
-    font-family: "Arbutus Slab";
+    font-family: 'Arbutus Slab';
 
     @include tablet {
       letter-spacing: 2px;

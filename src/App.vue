@@ -10,11 +10,12 @@
   </div>
 </template>
 <script lang="ts">
+import Vue from 'vue';
 import { MetaInfo } from '@/types/metaInfo.interface';
 import Header from '@/components/Header.vue';
-const Footer = () => import('@/components/Footer.vue');
+import Footer from '@/components/Footer.vue';
 
-export default {
+export default Vue.extend({
   name: 'App',
   components: {
     Header,
@@ -37,7 +38,7 @@ export default {
       ],
     };
   },
-};
+});
 </script>
 
 <style lang="scss">

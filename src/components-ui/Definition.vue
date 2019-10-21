@@ -5,11 +5,7 @@
       <button :class="buttonState"></button>
     </dt>
     <dd :class="isOpen">
-      <Picture
-        :images="definition.images"
-        :shouldLoadPicture="isDescriptionShown"
-        description
-      />
+      <Picture :image="definition.images" description />
       <p
         v-for="(paragraph, index) of definition.description"
         :key="`${definition.title} - paragraphe ${index}`"
@@ -20,7 +16,7 @@
 </template>
 
 <script lang="ts">
-const Picture = () => import('@/components-ui/Picture.vue');
+import Picture from '@/components-ui/Picture/Picture.vue';
 
 export default {
   name: 'Definition',

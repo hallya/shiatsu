@@ -9,16 +9,16 @@
 </template>
 
 <script>
-import { Component, Vue } from 'vue-property-decorator';
+import Vue from 'vue';
 import router from '@/router';
 import TransitionFade from '@/transitions/Transition-fade.vue';
 
-@Component({
+export default Vue.extend({
+  name: 'Blog',
   components: {
     TransitionFade,
   },
-})
-export default class Blog extends Vue {}
+});
 </script>
 
 <style lang="scss">
