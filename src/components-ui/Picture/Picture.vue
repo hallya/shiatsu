@@ -6,7 +6,7 @@
       type="image/webp"
     />
     <source :srcset="image.imageWebpMobile" type="image/webp" />
-    <img v-if="image.loadImage" :src="image.defaultImage" :alt="description" />
+    <img v-if="loadImage" :src="image.defaultImage" :alt="description" />
   </picture>
 </template>
 
@@ -20,6 +20,7 @@ export default {
       type: Object,
       require: true,
     },
+    loadImage: Boolean,
     description: String,
   },
 };

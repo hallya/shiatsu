@@ -3,6 +3,7 @@
     <section class="left-side" v-on:wheel="lazyLoadImage">
       <Picture
         :image="tournesol"
+        :loadImage="tournesol.loadImage"
         description="Un magnifique tournesol en gros plan"
       />
       <blockquote class="home_citation">
@@ -38,6 +39,7 @@
       </p>
       <Picture
         :image="nenuphar"
+        :loadImage="nenuphar.loadImage"
         description="Quelques nenuphar côte à côte sur un plan d'eau"
       />
       <p>

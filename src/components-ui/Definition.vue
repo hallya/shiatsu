@@ -5,7 +5,11 @@
       <button :class="buttonState"></button>
     </dt>
     <dd :class="isOpen">
-      <Picture :image="definition.images" description />
+      <Picture
+        :image="definition.images"
+        :loadImage="isDescriptionShown"
+        description
+      />
       <p
         v-for="(paragraph, index) of definition.description"
         :key="`${definition.title} - paragraphe ${index}`"
@@ -205,7 +209,8 @@ export default {
       padding: 0 25vw 20px;
     }
     picture {
-      img {
+      img,
+      source {
         opacity: 0;
         width: 100%;
         border-bottom-left-radius: 8px;
