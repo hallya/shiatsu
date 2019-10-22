@@ -2,7 +2,7 @@
   <div class="definition">
     <dt v-on:click="isDescriptionShown = !isDescriptionShown" :class="isOpen">
       <h2>{{ definition.title }}</h2>
-      <button :class="buttonState"></button>
+      <button :class="buttonState" :aria-label="buttonActionLabel"></button>
     </dt>
     <dd :class="isOpen">
       <Picture
@@ -44,6 +44,11 @@ export default {
       return this.isDescriptionShown
         ? 'toggleDescription close'
         : 'toggleDescription';
+    },
+    buttonActionLabel() {
+      return this.isDescriptionShown
+        ? 'Fermer la description'
+        : 'Ouvrir la description';
     },
   },
 };
