@@ -4,8 +4,21 @@
   </main>
 </template>
 
+<script>
+import Vue from 'vue';
+
+export default Vue.extend({
+  name: 'WIP',
+  metaInfo() {
+    return {
+      title: 'À venir - Shiatsu',
+    };
+  },
+});
+</script>
+
 <style lang="scss">
-@import "@/styles/animations.scss";
+@import '@/styles/animations.scss';
 
 main {
   align-items: center;

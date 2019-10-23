@@ -18,6 +18,11 @@ export default Vue.extend({
   components: {
     TransitionFade,
   },
+  metaInfo() {
+    return {
+      title: 'Blog - Shiatsu',
+    };
+  },
 });
 </script>
 

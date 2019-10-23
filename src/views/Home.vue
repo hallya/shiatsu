@@ -59,7 +59,6 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { MetaInfo } from '@/types/metaInfo.interface';
 import Picture from '@/components-ui/Picture/Picture.vue';
 import { Home } from './Home.interface';
 import tournesolJpg from '@/assets/images/pictures/tournesol.jpg';
@@ -100,9 +99,10 @@ export default Vue.extend({
       }
     },
   },
-  metaInfo(): MetaInfo {
+  metaInfo() {
     const { baseUrlFrontend } = store.state.domains;
     return {
+      title: 'Accueil - Shiatsu',
       meta: [
         {
           property: 'og:title',

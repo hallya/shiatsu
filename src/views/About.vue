@@ -23,6 +23,11 @@ export default {
       definitions,
     };
   },
+  metaInfo() {
+    return {
+      title: 'À propos - Shiatsu',
+    };
+  },
 };
 </script>
 

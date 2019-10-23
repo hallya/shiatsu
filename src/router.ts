@@ -6,25 +6,26 @@ import SinglePost from './components/SinglePost.vue';
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   routes: [
     {
-      component: Home,
-      meta: {
-        title: 'Shiatsu - Accueil',
-      },
       name: 'home',
       path: '/home',
+      component: Home,
+      meta: {
+        title: 'Accueil - Shiatsu',
+      },
     },
     {
+      name: 'about',
+      path: '/about',
       component: () =>
         import(/* webpackChunkName: "about" */ './views/About.vue'),
       meta: {
-        title: 'Shiatsu - À propos',
+        title: 'À propos - Shiatsu',
+        auth: false,
       },
-      name: 'about',
-      path: '/about',
     },
     {
       component: () =>
@@ -36,7 +37,8 @@ export default new Router({
           path: '',
           component: ListPost,
           meta: {
-            title: 'Shiatsu - Blog',
+            title: 'Blog - Shiatsu',
+            auth: false,
           },
         },
         {
@@ -44,7 +46,8 @@ export default new Router({
           path: ':id',
           component: SinglePost,
           meta: {
-            title: 'Shiatsu - Blog',
+            title: 'Blog - Shiatsu',
+            auth: false,
           },
         },
       ],
@@ -53,7 +56,8 @@ export default new Router({
       component: () =>
         import(/* webpackChunkName: "reviews" */ './views/WIP.vue'),
       meta: {
-        title: 'Shiatsu - Avis',
+        title: 'Avis - Shiatsu',
+        auth: false,
       },
       name: 'reviews',
       path: '/reviews',
@@ -62,7 +66,8 @@ export default new Router({
       component: () =>
         import(/* webpackChunkName: "contacts" */ './views/Contacts.vue'),
       meta: {
-        title: 'Shiatsu - Contacts',
+        title: 'Contacts - Shiatsu',
+        auth: false,
       },
       name: 'contacts',
       path: '/contacts',
@@ -73,3 +78,10 @@ export default new Router({
     },
   ],
 });
+
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title;
+  next();
+});
+
+export default router;
