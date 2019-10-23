@@ -6,7 +6,9 @@
   overflow-y: scroll;
 }
 
-header, main, footer {
+header,
+main,
+footer {
   box-sizing: border-box;
 }
 
@@ -27,7 +29,7 @@ blockquote,
 input {
   user-select: none;
 }
-h1, figcaption {
+h1 {
   font-family: 'Arbutus Slab', sans-serif;
 }
 h1 {
@@ -35,13 +37,25 @@ h1 {
   margin: 0;
 }
 figcaption {
-  font-weight: bolder;
+  user-select: none;
+  font-weight: lighter;
 }
-h2,h3, h4, h5, h6, p, label, button, a, blockquote, cite, input, div, span {
-  font-family: 'Raleway',
-  Helvetica,
-  Arial,
-  sans-serif;
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figcaption,
+label,
+button,
+a,
+blockquote,
+cite,
+input,
+div,
+span {
+  font-family: 'Raleway', Helvetica, Arial, sans-serif;
 }
 h2 {
   text-align: center;
@@ -50,7 +64,7 @@ h2 {
 }
 a {
   text-decoration: none;
-  transition: .2s;
+  transition: 0.2s;
   &:focus {
     outline: 1px auto $focused;
   }
@@ -61,23 +75,24 @@ a {
 }
 p {
   line-height: 20px;
-  font-size: .8rem;
-  
+  font-size: 0.8rem;
+
   @include tablet {
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
   @include laptop {
     font-size: 1rem;
   }
 }
-small, small p {
-  font-size: .6rem;
-  
+small,
+small p {
+  font-size: 0.6rem;
+
   @include tablet {
-    font-size: .7rem;
+    font-size: 0.7rem;
   }
   @include laptop {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 }
 em {
@@ -87,7 +102,7 @@ blockquote {
   margin: 5px;
   line-height: 18px;
   font-weight: lighter;
-  
+
   @include tablet {
     margin: 10px;
   }
