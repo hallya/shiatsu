@@ -14,63 +14,63 @@
     </section>
     <section class="find-me">
       <h2 class="fontawesome-globe">Adresses</h2>
-      <Address
-        v-if="google"
-        :mapConfig="saintCyrLecole.mapConfig"
-        :fullAddress="saintCyrLecole.fullAddress"
-        :google="google"
-      />
-      <Address
-        v-if="google"
-        :mapConfig="bouloire.mapConfig"
-        :fullAddress="bouloire.fullAddress"
-        :google="google"
-      />
+      <Address :location="saintCyrLecole" />
+      <Address :location="bouloire" />
     </section>
   </main>
 </template>
 
-<script>
-const Address = () => import('@/components-ui/Address');
-import GoogleMapsApiLoader from 'google-maps-api-loader';
+<script lang="ts">
+import Vue from 'vue';
+import Address from '@/components-ui/Address.vue';
+import insideStCyrWebp from '@/assets/images/pictures/nathalie_cabinet_saint-cyr-lecole.webp';
+import insideStCyrWebpMobile from '@/assets/images/pictures/nathalie_cabinet_saint-cyr-lecole-mobile.webp';
+import insideStCyr from '@/assets/images/pictures/nathalie_cabinet_saint-cyr-lecole.jpg';
+import insideBouloireWebp from '@/assets/images/pictures/inside_bouloire.webp';
+import insideBouloireWebpMobile from '@/assets/images/pictures/inside_bouloire-mobile.webp';
+import insideBouloire from '@/assets/images/pictures/inside_bouloire.jpg';
 
-export default {
+export default Vue.extend({
+  name: 'Contacts',
   components: {
     Address,
   },
   data() {
     return {
-      apiKey: process.env.VUE_APP_GOOGLE_API_KEY,
-      google: null,
       bouloire: {
-        mapConfig: {
-          center: {
-            lat: 47.97291,
-            lng: 0.568361,
-          },
-        },
+        description: 'Cabinet - vue intérieur',
+        direction:
+          'https://www.google.com/maps/dir/?api=1&destination=Nathalie+de+loeper+shiatsu+bouloire&travelmode=driving',
         fullAddress: [
           'La Grenouille',
           'Route de Coudrecieux',
           '72440 Bouloire',
         ],
+        image: {
+          imageWebp: insideBouloireWebp,
+          imageWebpMobile: insideBouloireWebpMobile,
+          defaultImage: insideBouloire,
+        },
       },
       saintCyrLecole: {
-        mapConfig: {
-          center: {
-            lat: 48.8092,
-            lng: 2.05809,
-          },
+        description: 'Cabinet - vue intérieur',
+        direction:
+          'https://www.google.com/maps/dir/?api=1&destination=Nathalie+de+loeper+shiatsu+saint+cyr+lecole&travelmode=driving',
+        fullAddress: ['5 rue Jean Zay', '78210 Saint-Cyr-l‘Ecole'],
+        image: {
+          imageWebp: insideStCyrWebp,
+          imageWebpMobile: insideStCyrWebpMobile,
+          defaultImage: insideStCyr,
         },
-        fullAddress: ['5 rue Jean Zay', "78210 Saint-Cyr-l'Ecole"],
       },
     };
   },
-  async mounted() {
-    const googleMapApi = await GoogleMapsApiLoader({ apiKey: this.apiKey });
-    this.google = googleMapApi;
+  metaInfo() {
+    return {
+      title: 'Contacts - Shiatsu',
+    };
   },
-};
+});
 </script>
 
 <style lang="scss">
@@ -91,7 +91,7 @@ main {
       top: 70px;
 
       @include laptop {
-        width: 70%;
+        width: 55%;
         display: flex;
         flex-flow: wrap row;
       }
