@@ -27,7 +27,8 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-@import '@/main.scss';
+@import '@/styles/vars.scss';
+@import '@/styles/mixin.scss';
 
 main.blog {
   padding: 0;

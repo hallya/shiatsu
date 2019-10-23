@@ -87,7 +87,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@/main.scss';
+@import '@/styles/vars.scss';
+@import '@/styles/mixin.scss';
 
 .article {
   margin: 20px auto;

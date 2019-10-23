@@ -59,4 +59,7 @@ module.exports = {
       filename: '[name].min.css',
     }),
   ],
+  optimization: {
+    usedExports: true,
+  },
 };

@@ -18,7 +18,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@/main.scss';
 figure.loader {
   width: 100%;
   height: 100%;

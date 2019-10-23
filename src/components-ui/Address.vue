@@ -28,7 +28,8 @@ export default {
 };
 </script>
 <style lang="scss">
-@import '@/main.scss';
+@import '@/styles/vars.scss';
+@import '@/styles/mixin.scss';
 
 address.postale {
   width: 100%;

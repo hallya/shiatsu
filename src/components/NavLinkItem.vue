@@ -24,7 +24,8 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-@import '@/main.scss';
+@import '@/styles/vars.scss';
+@import '@/styles/mixin.scss';
 
 a {
   border-radius: 50px;

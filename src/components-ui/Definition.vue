@@ -55,8 +55,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@/main.scss';
-
+@import '@/styles/vars.scss';
+@import '@/styles/mixin.scss';
 .definition {
   margin-bottom: 5px;
 

@@ -15,7 +15,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-@import '@/main.scss';
+@import '@/styles/mixin.scss';
 
 @mixin border-gradient($from, $to, $weight: 0) {
   $mix-main: mix($from, $to);

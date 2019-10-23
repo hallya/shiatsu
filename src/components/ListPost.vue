@@ -65,8 +65,6 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-@import '@/main.scss';
-
 .articles-list {
   overflow: auto;
 

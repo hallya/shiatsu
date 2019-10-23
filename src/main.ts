@@ -5,6 +5,7 @@ import router from './router';
 import store from './store/store';
 import Vue from 'vue';
 import VueMeta from 'vue-meta';
+import './main.scss';
 
 Vue.config.productionTip = false;
 
