@@ -14,7 +14,7 @@
     >
       <img
         src="http://www.koifaire.com/images/reference_sur_koifaire.jpg"
-        alt="deloeper-shiatsu sur Koifaire"
+        alt=""
       />
     </a>
   </footer>
@@ -43,12 +43,12 @@ export default {
 @import '@/styles/vars.scss';
 
 #footer {
+  flex: 0 1 0;
   position: relative;
-  min-height: $footer-mobile-height;
-  padding: 20px 0 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px 0 50px;
 
   a {
     height: 40px;

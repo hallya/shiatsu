@@ -4,6 +4,8 @@
 #app {
   height: 100vh;
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
 }
 
 header,
@@ -13,7 +15,7 @@ footer {
 }
 
 main {
-  min-height: $main-mobile-height;
+  flex: 2 0 auto;
   padding: 10px;
   display: flex;
 }

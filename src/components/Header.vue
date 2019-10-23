@@ -62,6 +62,7 @@ export default {
 @import '@/styles/mixin.scss';
 
 #header {
+  flex: 0 2 0;
   position: sticky;
   background-color: white;
   box-shadow: 0 0 10px 10px white;
