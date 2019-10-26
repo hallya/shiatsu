@@ -1,2 +1,10 @@
 User-agent: *
-Disallow:
+
+Allow: /home/
+Allow: /about/
+Allow: /contacts/
+
+Disallow: /blog/
+Disallow: /review/
+
+Sitemap: https://deloeper-shiatsu.com/sitemap.xml
