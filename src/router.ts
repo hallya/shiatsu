@@ -11,7 +11,7 @@ const router = new Router({
   routes: [
     {
       name: 'home',
-      path: '/home',
+      path: './',
       component: Home,
       meta: {
         title: 'Accueil - Shiatsu',
@@ -29,7 +29,8 @@ const router = new Router({
     },
     {
       path: '/blog',
-      component: () => import(/* webpackChunkName: "reviews" */  './views/Blog.vue'),
+      component: () =>
+        import(/* webpackChunkName: "reviews" */ './views/Blog.vue'),
       children: [
         {
           name: 'articles',
