@@ -42,7 +42,6 @@ export default class Articles {
   private formatForOne(article: Article): ArticleFormated {
     const formatedArticle = {
       ...article,
-      preview: convertToHtml(this.previewOf(article.content)),
       content: convertToHtml(article.content),
       shareLink: this.generateFacebookShareLink(article.id),
     };
@@ -62,23 +61,16 @@ export default class Articles {
     return 0;
   }
 
-  private previewOf(contentInMarkdown: string): string {
-    const from = 0;
-    return (
-      contentInMarkdown.slice(from, this.idealPosition(contentInMarkdown)) +
-      ' . . .'
-    );
-  }
-
   private idealPosition(text: string): number {
     return text.indexOf('.');
   }
 
   private generateFacebookShareLink(id: string): string {
     const { baseUrlFrontend, hash } = store.state.domains;
-    const shareLink = 'https://www.facebook.com/sharer/sharer.php?u='
-      + encodeURIComponent(`${baseUrlFrontend}#/blog/${id}`)
-      + '&amp;src=sdkpreparse';
+    const shareLink =
+      'https://www.facebook.com/sharer/sharer.php?u=' +
+      encodeURIComponent(`${baseUrlFrontend}#/blog/${id}`) +
+      '&amp;src=sdkpreparse';
     return shareLink;
   }
 }
