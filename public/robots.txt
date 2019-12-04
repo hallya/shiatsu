@@ -1,10 +1,11 @@
 User-agent: *
 
-Allow: /home/
-Allow: /about/
-Allow: /contacts/
+Disallow: /blog
+Disallow: /review
 
-Disallow: /blog/
-Disallow: /review/
+Allow: /about
+Allow: /contacts
+Allow: /
 
-Sitemap: https://deloeper-shiatsu.com/sitemap.xml
+
+Sitemap: https://shiatsutherapie78.info/sitemap.xml
