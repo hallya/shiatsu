@@ -81,11 +81,11 @@ export default Vue.extend({
 main {
   display: flex;
   flex-flow: wrap row;
+  justify-content: center;
 
   section {
     width: 100%;
     margin: 0 auto;
-    text-align: justify;
     position: sticky;
     background-color: white;
 
