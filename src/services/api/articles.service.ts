@@ -30,6 +30,10 @@ export default class Articles {
       .map(this.formatForOne)
       .map((article) => ({
         ...article,
+        image: {
+          ...article.image,
+          url: store.state.domains.backendOrigin + article.image.url,
+        },
         contentIsVisible: false,
       }))
       .sort(this.byDate);
@@ -38,7 +42,6 @@ export default class Articles {
   private formatForOne(article: Article): ArticleFormated {
     const formatedArticle = {
       ...article,
-      preview: convertToHtml(this.previewOf(article.content)),
       content: convertToHtml(article.content),
       shareLink: this.generateFacebookShareLink(article.id),
     };
@@ -56,14 +59,6 @@ export default class Articles {
       return -1;
     }
     return 0;
-  }
-
-  private previewOf(contentInMarkdown: string): string {
-    const from = 0;
-    return (
-      contentInMarkdown.slice(from, this.idealPosition(contentInMarkdown)) +
-      ' . . .'
-    );
   }
 
   private idealPosition(text: string): number {

@@ -4,7 +4,7 @@ $gray: #888888;
 $light-gray: #d8d8d8;
 $meadow-green: #9fcb55;
 $garden-green: rgb(121, 159, 55);
-$jungle-green: #3B7200;
+$jungle-green: #3b7200;
 $bio-green: rgba(96, 255, 109, 0.137);
 $focused: rgb(255, 75, 75);
 // VIEWPORT BREAKPOINTS
@@ -14,5 +14,7 @@ $mobile-width: 549px;
 
 // MINIMUM HEIGHT
 $header-mobile-height: 200px;
-$footer-mobile-height: 50px;
-$main-mobile-height: calc(100vh - (#{$header-mobile-height} + #{$footer-mobile-height}));
+$footer-mobile-height: 110px;
+$main-mobile-height: calc(
+  100vh - (#{$header-mobile-height} + #{$footer-mobile-height})
+);

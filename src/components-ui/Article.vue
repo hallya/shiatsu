@@ -21,11 +21,7 @@
     <section class="article-main">
       <section class="article-main-image">
         <picture v-if="article.image">
-          <img
-            class="article-cover"
-            v-bind:src="`https://strapi.lcn-dlc.dev${article.image.url}`"
-            alt
-          />
+          <img class="article-cover" v-bind:src="article.image.url" alt="" />
         </picture>
       </section>
       <TransitionFadeHeight>
@@ -164,6 +160,7 @@ export default {
   }
   .article-main-content {
     padding: 5px 10px;
+    text-align: justify;
 
     h3 {
       width: 100%;

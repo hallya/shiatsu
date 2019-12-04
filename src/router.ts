@@ -11,7 +11,7 @@ const router = new Router({
   routes: [
     {
       name: 'home',
-      path: '/home',
+      path: './',
       component: Home,
       meta: {
         title: 'Accueil - Shiatsu',
@@ -28,9 +28,9 @@ const router = new Router({
       },
     },
     {
+      path: '/blog',
       component: () =>
         import(/* webpackChunkName: "reviews" */ './views/WIP.vue'),
-      path: '/blog',
       children: [
         {
           name: 'articles',
@@ -52,16 +52,16 @@ const router = new Router({
         },
       ],
     },
-    {
-      component: () =>
-        import(/* webpackChunkName: "reviews" */ './views/WIP.vue'),
-      meta: {
-        title: 'Avis - Shiatsu',
-        auth: false,
-      },
-      name: 'reviews',
-      path: '/reviews',
-    },
+    // {
+    //   component: () =>
+    //     import(/* webpackChunkName: "reviews" */ './views/WIP.vue'),
+    //   meta: {
+    //     title: 'Avis - Shiatsu',
+    //     auth: false,
+    //   },
+    //   name: 'reviews',
+    //   path: '/reviews',
+    // },
     {
       component: () =>
         import(/* webpackChunkName: "contacts" */ './views/Contacts.vue'),
