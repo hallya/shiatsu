@@ -112,10 +112,10 @@ export default {
     align-items: center;
 
     @include tablet {
-      padding: 10px 6vw;
+      padding: 10px 16vw;
     }
     @include laptop {
-      padding: 10px 15vw;
+      padding: 10px 25vw;
     }
     span {
       display: none;
