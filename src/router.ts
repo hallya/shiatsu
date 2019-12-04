@@ -30,7 +30,7 @@ const router = new Router({
     {
       path: '/blog',
       component: () =>
-        import(/* webpackChunkName: "reviews" */ './views/Blog.vue'),
+        import(/* webpackChunkName: "reviews" */ './views/WIP.vue'),
       children: [
         {
           name: 'articles',
@@ -52,16 +52,16 @@ const router = new Router({
         },
       ],
     },
-    {
-      component: () =>
-        import(/* webpackChunkName: "reviews" */ './views/WIP.vue'),
-      meta: {
-        title: 'Avis - Shiatsu',
-        auth: false,
-      },
-      name: 'reviews',
-      path: '/reviews',
-    },
+    // {
+    //   component: () =>
+    //     import(/* webpackChunkName: "reviews" */ './views/WIP.vue'),
+    //   meta: {
+    //     title: 'Avis - Shiatsu',
+    //     auth: false,
+    //   },
+    //   name: 'reviews',
+    //   path: '/reviews',
+    // },
     {
       component: () =>
         import(/* webpackChunkName: "contacts" */ './views/Contacts.vue'),

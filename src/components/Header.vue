@@ -14,12 +14,12 @@
       <span>•</span>
       <NavLinkItem link="/blog" :imgSrc="navlinks.blog" label="Blog" />
       <span>•</span>
-      <NavLinkItem
+      <!-- <NavLinkItem
         link="/reviews"
         :imgSrc="navlinks.reviews"
         label="Témoignages"
       />
-      <span>•</span>
+      <span>•</span> -->
       <NavLinkItem
         link="/contacts"
         :imgSrc="navlinks.contacts"
