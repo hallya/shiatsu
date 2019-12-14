@@ -102,8 +102,13 @@ export default Vue.extend({
   metaInfo() {
     const { baseUrlFrontend } = store.state.domains;
     return {
-      title: 'Accueil - Shiatsu',
+      title: 'Réunifiez votre être',
       meta: [
+        {
+          name: 'Description',
+          content:
+            'Prenez rendez-vous pour une séance bien-être à Saint Cyr l‘école ou à domicile',
+        },
         {
           property: 'og:title',
           content: 'Nathalie de Loeper, votre praticienne de Shiatsu',

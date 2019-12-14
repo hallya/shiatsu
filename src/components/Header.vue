@@ -8,11 +8,11 @@
       <h2>Soignez votre énergie</h2>
     </section>
     <nav id="nav">
-      <NavLinkItem link="/" :imgSrc="navlinks.home" label="Accueil" />
+      <NavLinkItem link="home" :imgSrc="navlinks.home" label="Accueil" />
       <span>•</span>
-      <NavLinkItem link="/about" :imgSrc="navlinks.about" label="À propos" />
+      <NavLinkItem link="about" :imgSrc="navlinks.about" label="À propos" />
       <span>•</span>
-      <NavLinkItem link="/blog" :imgSrc="navlinks.blog" label="Blog" />
+      <NavLinkItem link="blog" :imgSrc="navlinks.blog" label="Blog" />
       <span>•</span>
       <!-- <NavLinkItem
         link="/reviews"

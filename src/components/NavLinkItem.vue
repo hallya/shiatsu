@@ -1,5 +1,5 @@
 <template>
-  <router-link v-bind:to="link" tabindex="0">
+  <router-link :to="link" tabindex="0" exact>
     <SpinningRings />
     <img class="header-nav-item-image" v-bind:src="imgSrc" v-bind:alt="label" />
     <p>{{ label }}</p>
@@ -40,7 +40,7 @@ a {
   &:hover {
     color: $jungle-green;
   }
-  &.router-link-active {
+  &.router-link-exact-active {
     color: $meadow-green;
 
     img {

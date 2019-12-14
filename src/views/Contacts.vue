@@ -56,7 +56,7 @@ export default Vue.extend({
         description: 'Cabinet - vue intérieur',
         direction:
           'https://www.google.com/maps/dir/?api=1&destination=Nathalie+de+loeper+shiatsu+saint+cyr+lecole&travelmode=driving',
-        fullAddress: ['5 rue Jean Zay', '78210 Saint-Cyr-l‘Ecole'],
+        fullAddress: ['5 rue Jean Zay', '78210 Saint Cyr l‘Ecole'],
         image: {
           imageWebp: insideStCyrWebp,
           imageWebpMobile: insideStCyrWebpMobile,
@@ -67,7 +67,14 @@ export default Vue.extend({
   },
   metaInfo() {
     return {
-      title: 'Contacts - Shiatsu',
+      title: 'Contactez Nathalie',
+      meta: [
+        {
+          name: 'description',
+          content:
+            'Vous souhaitez passer le pas et découvrir les bienfaits du shiatsu ? Prenez RDV dés maintenant',
+        },
+      ],
     };
   },
 });

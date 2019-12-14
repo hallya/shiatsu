@@ -10,9 +10,9 @@
           />
         </picture>
         <time
-          :datetime="article.updatedAt | timestamp"
+          :datetime="article.updated_at | timestamp"
           class="article-date-label"
-          >{{ article.updatedAt | frenchDate | capitalize }}</time
+          >{{ article.updated_at | frenchDate | capitalize }}</time
         >
       </div>
       <h2 class="article-title">{{ article.title }}</h2>

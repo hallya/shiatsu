@@ -9,6 +9,6 @@ export const domains: Module<Domains, RootStore> = {
     pathname: window.location.pathname,
     baseUrlFrontend: window.location.origin + window.location.pathname,
     hash: window.location.hash,
-    backendOrigin: 'http://strapi.deloeper-shiatsu.com',
+    backendOrigin: 'https://strapi.shiatsutherapie78.info',
   },
 };

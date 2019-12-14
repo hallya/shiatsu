@@ -49,8 +49,8 @@ export default class Articles {
   }
 
   private byDate(a: ArticleFormated, b: ArticleFormated): number {
-    const dateA = new Date(a.updatedAt).getTime();
-    const dateB = new Date(b.updatedAt).getTime();
+    const dateA = new Date(a.updated_at).getTime();
+    const dateB = new Date(b.updated_at).getTime();
 
     if (dateA < dateB) {
       return 1;

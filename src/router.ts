@@ -13,64 +13,35 @@ const router = new Router({
       name: 'home',
       path: './',
       component: Home,
-      meta: {
-        title: 'Accueil - Shiatsu',
-      },
     },
     {
       name: 'about',
       path: '/about',
       component: () =>
         import(/* webpackChunkName: "about" */ './views/About.vue'),
-      meta: {
-        title: 'À propos - Shiatsu',
-        auth: false,
-      },
     },
     {
       path: '/blog',
       component: () =>
-        import(/* webpackChunkName: "reviews" */ './views/WIP.vue'),
+        import(/* webpackChunkName: "reviews" */ './views/Blog.vue'),
       children: [
         {
           name: 'articles',
           path: '',
           component: ListPost,
-          meta: {
-            title: 'Blog - Shiatsu',
-            auth: false,
-          },
         },
         {
           name: 'article',
           path: ':id',
           component: SinglePost,
-          meta: {
-            title: 'Blog - Shiatsu',
-            auth: false,
-          },
         },
       ],
     },
-    // {
-    //   component: () =>
-    //     import(/* webpackChunkName: "reviews" */ './views/WIP.vue'),
-    //   meta: {
-    //     title: 'Avis - Shiatsu',
-    //     auth: false,
-    //   },
-    //   name: 'reviews',
-    //   path: '/reviews',
-    // },
     {
-      component: () =>
-        import(/* webpackChunkName: "contacts" */ './views/Contacts.vue'),
-      meta: {
-        title: 'Contacts - Shiatsu',
-        auth: false,
-      },
       name: 'contacts',
       path: '/contacts',
+      component: () =>
+        import(/* webpackChunkName: "contacts" */ './views/Contacts.vue'),
     },
     {
       path: '**',

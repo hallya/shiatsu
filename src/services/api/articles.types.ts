@@ -1,40 +1,40 @@
 export interface Article {
-  id: string;
-  title: string;
-  subtitle: string;
-  content: string;
   author: string;
+  content: string;
+  created_at: string;
+  id: string;
   image: Image | null;
-  video: string | null;
+  subtitle: string;
   tag: Tag[];
-  createdAt: string;
-  updatedAt: string;
+  title: string;
+  updated_at: string;
+  video: string | null;
 }
 
 export interface ArticleFormated {
-  id: string;
-  title: string;
-  subtitle: string;
+  author: string;
   content: string;
   contentIsVisible?: boolean;
-  author: string;
-  shareLink: string;
+  created_at: string;
+  id: string;
   image: Image | null;
-  video: string | null;
+  shareLink: string;
+  subtitle: string;
   tag: Tag[];
-  createdAt: string;
-  updatedAt: string;
+  title: string;
+  updated_at: string;
+  video: string | null;
 }
 
 export interface Tag {
+  created_at: string;
   id: string;
   name: string;
-  createdAt: string;
-  updatedAt: string;
+  updated_at: string;
 }
 
 interface Image {
-  createdAt: string;
+  created_at: string;
   ext: string;
   hash: string;
   id: string;
@@ -44,6 +44,6 @@ interface Image {
   related: string[];
   sha256: string;
   size: string;
-  updatedAt: string;
+  updated_at: string;
   url: string;
 }

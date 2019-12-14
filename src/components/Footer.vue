@@ -5,7 +5,14 @@
       href="https://www.facebook.com/nathaliedeloeper/"
       target="_blank"
     >
-      <img v-bind:src="facebookFilled" alt="go to my page" />
+      <img v-bind:src="facebook" alt="facebook link" />
+    </a>
+    <a
+      class="footer-icon"
+      href="https://www.linkedin.com/in/nathalie-de-loeper-shiatsu-97910988/"
+      target="_blank"
+    >
+      <img v-bind:src="linkedIn" alt="linkedIn link" />
     </a>
     <a
       id="koifaire"
@@ -21,19 +28,15 @@
 </template>
 
 <script>
-import facebookEmpty from '@/assets/images/logos/social-media-f-empty.svg';
-import facebookFilled from '@/assets/images/logos/social-media-f-full.svg';
-import phoneEmpty from '@/assets/images/logos/phone-not-filled.svg';
-import phoneFilled from '@/assets/images/logos/phone-filled.svg';
+import facebook from '@/assets/images/logos/facebook_logo.svg';
+import linkedIn from '@/assets/images/logos/linkedin_logo.svg';
 
 export default {
   name: 'Footer',
   data() {
     return {
-      facebookEmpty,
-      facebookFilled,
-      phoneEmpty,
-      phoneFilled,
+      facebook,
+      linkedIn,
     };
   },
 };
