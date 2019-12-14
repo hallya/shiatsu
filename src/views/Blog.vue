@@ -20,7 +20,23 @@ export default Vue.extend({
   },
   metaInfo() {
     return {
-      title: 'Blog - Shiatsu',
+      title: 'Mes articles',
+      meta: [
+        {
+          name: 'Description',
+          content: 'Articles autour de la santé et du shiatsu',
+        },
+        {
+          property: 'og:title',
+          content: 'Mes articles',
+        },
+        { property: 'og:type', content: 'website' },
+        {
+          property: 'og:description',
+          content: 'Articles autour de la santé et du shiatsu',
+        },
+        { property: 'og:image', content: baseUrlFrontend + siteCoverUrl },
+      ],
     };
   },
 });
