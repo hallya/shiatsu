@@ -35,7 +35,6 @@ export default Vue.extend({
           property: 'og:description',
           content: 'Articles autour de la santé et du shiatsu',
         },
-        { property: 'og:image', content: baseUrlFrontend + siteCoverUrl },
       ],
     };
   },

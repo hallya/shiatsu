@@ -1,6 +1,6 @@
 <template>
   <router-link :to="link" tabindex="0" exact>
-    <SpinningRings />
+    <!-- <SpinningRings /> -->
     <img class="header-nav-item-image" v-bind:src="imgSrc" v-bind:alt="label" />
     <p>{{ label }}</p>
   </router-link>
@@ -28,22 +28,27 @@ export default Vue.extend({
 @import '@/styles/mixin.scss';
 
 a {
+  display: flex;
+  align-items: center;
+  position: relative;
   border-radius: 50px;
   padding: 10px;
   font-weight: bold;
   color: $dark-gray;
-  display: flex;
-  position: relative;
-  align-items: center;
   transition: 0.2s;
 
+  &:focus {
+    background-color: gray;
+    box-shadow: 0 0 0 8px gray;
+  }
   &:hover {
     color: $jungle-green;
   }
   &.router-link-exact-active {
     color: $meadow-green;
 
-    img {
+    img,
+    .home {
       filter: grayscale(1);
     }
   }

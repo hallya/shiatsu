@@ -8,15 +8,15 @@ Vue.use(Router);
 
 const router = new Router({
   mode: 'history',
+  base: '/',
   routes: [
     {
-      name: 'home',
-      path: './',
+      path: '',
       component: Home,
     },
     {
-      name: 'about',
       path: '/about',
+      name: 'about',
       component: () =>
         import(/* webpackChunkName: "about" */ './views/About.vue'),
     },
@@ -45,14 +45,9 @@ const router = new Router({
     },
     {
       path: '**',
-      redirect: { name: 'home' },
+      redirect: { path: '/' },
     },
   ],
-});
-
-router.beforeEach((to, from, next) => {
-  document.title = to.meta.title;
-  next();
 });
 
 export default router;

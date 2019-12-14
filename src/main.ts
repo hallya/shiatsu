@@ -12,17 +12,6 @@ Vue.config.productionTip = false;
 // Allow metaInfo to be set in all App
 Vue.use(VueMeta);
 
-router.beforeEach((to, from, next) => {
-  if (to.fullPath === from.fullPath) {
-    return;
-  }
-  document.title = to.meta.title;
-  next();
-});
-
-router.afterEach((to, from) => {
-  // store.commit('environmentStore/updateDomain');
-});
 new Vue({
   store,
   router,
