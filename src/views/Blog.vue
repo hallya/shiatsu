@@ -20,7 +20,7 @@ export default Vue.extend({
   },
   metaInfo() {
     return {
-      title: 'Mes articles',
+      title: 'Blog shiatsu',
       meta: [
         {
           name: 'Description',

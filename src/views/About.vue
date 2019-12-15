@@ -25,7 +25,7 @@ export default {
   },
   metaInfo() {
     return {
-      title: 'À propos - Shiatsu',
+      title: 'À propos',
     };
   },
 };

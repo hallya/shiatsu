@@ -67,7 +67,7 @@ export default Vue.extend({
   },
   metaInfo() {
     return {
-      title: 'Contactez Nathalie',
+      title: 'Contact',
       meta: [
         {
           name: 'description',
