@@ -118,11 +118,13 @@ main {
       margin: 10px 0;
       padding: 10px 20px;
       display: flex;
-      align-content: space-around;
-      flex-flow: row wrap;
+      align-items: center;
+      flex-direction: column;
 
       @include tablet {
+        flex-flow: wrap row;
         justify-content: center;
+        align-items: center;
       }
 
       h3,
@@ -160,8 +162,10 @@ main {
         &:hover {
           box-shadow: 0 3px 5px -3px #9c9c9c;
         }
-        &:not(:last-child) {
-          margin-bottom: 10px;
+        @include mobile {
+          &:not(:last-child) {
+            margin-bottom: 10px;
+          }
         }
       }
       .contact-separator {
