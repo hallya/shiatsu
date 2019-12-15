@@ -37,19 +37,26 @@ a {
   color: $dark-gray;
   transition: 0.2s;
 
-  &:focus {
-    background-color: gray;
-    box-shadow: 0 0 0 8px gray;
+  @include mobile {
+    &:focus {
+      background-color: gray;
+      box-shadow: 0 0 0 8px gray;
+    }
+  }
+  @include tablet {
+    border-radius: 0;
   }
   &:hover {
     color: $jungle-green;
   }
   &.router-link-exact-active {
     color: $meadow-green;
-
-    img,
-    .home {
+    padding: 5px 0;
+    img {
       filter: grayscale(1);
+    }
+    @include tablet {
+      box-shadow: 0 2px 0 -1px black;
     }
   }
   .header-nav-item-image {
