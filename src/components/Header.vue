@@ -1,11 +1,11 @@
 <template>
   <header id="header">
     <section id="wrapper-title">
-      <h1 id="title">Shiatsu</h1>
+      <h1 id="title">Shiatsu Thérapie</h1>
       <picture id="logoHeader">
         <img :src="nenuphar" alt="un logo comprenant plusieurs nenuphar" />
       </picture>
-      <h2>Soignez votre énergie</h2>
+      <h2>Soignez votre énergie c'est améliorer votre santé'</h2>
     </section>
     <nav id="nav">
       <NavLinkItem link="/" :imgSrc="navlinks.home" label="Accueil" />
