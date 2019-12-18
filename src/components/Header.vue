@@ -5,7 +5,7 @@
       <picture id="logoHeader">
         <img :src="nenuphar" alt="un logo comprenant plusieurs nenuphar" />
       </picture>
-      <h2>Soignez votre énergie c'est améliorer votre santé'</h2>
+      <h2>Soigner votre énergie c'est améliorer votre santé</h2>
     </section>
     <nav id="nav">
       <NavLinkItem link="/" :imgSrc="navlinks.home" label="Accueil" />
@@ -60,11 +60,17 @@ export default {
   position: sticky;
   background-color: white;
   box-shadow: 0 0 10px 10px white;
-  top: -123px;
+  top: -260px;
   z-index: 9999;
 
+  @include tablet {
+    top: -140px;
+  }
+  @include laptop {
+    top: -120px;
+  }
+
   #wrapper-title {
-    height: 100px;
     padding: 10px 0;
     display: flex;
     flex-flow: wrap row;
@@ -89,6 +95,7 @@ export default {
       width: 100%;
       color: rgb(121, 159, 55);
       letter-spacing: 3px;
+      padding: 10px 0;
 
       @include tablet {
         letter-spacing: 10px;
@@ -109,7 +116,7 @@ export default {
       padding: 10px 16vw;
     }
     @include laptop {
-      padding: 10px 25vw;
+      padding: 0px 25vw;
     }
     span {
       display: none;
