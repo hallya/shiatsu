@@ -38,7 +38,13 @@ address.postale {
   border-radius: 8px;
   padding: 0 0 10px;
   overflow: hidden;
+  transition: 0.3s;
+  box-shadow: 0 0 0 0 $dark-gray;
 
+  &:hover {
+    box-shadow: 0 25px 15px -22px;
+    transform: translateY(-10px);
+  }
   @include tablet {
     width: 65%;
     margin: 0 auto 30px;
@@ -85,6 +91,7 @@ address.postale {
     padding: 0 20px;
     line-height: 28px;
     color: $gray;
+    text-align: justify;
   }
   .navigation {
     margin: 10px 10px 0 auto;

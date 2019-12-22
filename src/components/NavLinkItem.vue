@@ -40,7 +40,7 @@ a {
   @include mobile {
     &:focus {
       background-color: gray;
-      box-shadow: 0 0 0 8px gray;
+      box-shadow: 0 0 0 10px gray;
     }
   }
   @include tablet {
@@ -51,7 +51,11 @@ a {
   }
   &.router-link-exact-active {
     color: $meadow-green;
-    padding: 5px 0;
+    padding: 0px;
+
+    @include tablet {
+      padding: 5px 0;
+    }
     img {
       filter: grayscale(1);
     }

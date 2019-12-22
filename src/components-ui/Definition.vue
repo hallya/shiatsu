@@ -89,7 +89,7 @@ export default {
   dt {
     cursor: pointer;
     position: sticky;
-    top: 65px;
+    top: 75px;
     margin-bottom: 0px;
     background-color: white;
     box-shadow: -101vw 1px 0px 1px transparent;
@@ -112,9 +112,11 @@ export default {
     }
     @include tablet {
       padding: 5px 15vw;
+      top: 80px;
     }
     @include laptop {
       padding: 5px 25vw;
+      top: 70px;
     }
     h2 {
       text-align: left;

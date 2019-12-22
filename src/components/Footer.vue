@@ -54,9 +54,15 @@ export default {
   padding: 20px 0 50px;
 
   a {
-    height: 40px;
-    width: 40px;
-    margin: 0 20px;
+    height: 30px;
+    width: 30px;
+    margin: 0 10px;
+    transition: 0.2s;
+    filter: grayscale(0);
+
+    &:hover {
+      filter: grayscale(1);
+    }
 
     &#koifaire {
       height: 30px;

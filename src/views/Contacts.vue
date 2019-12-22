@@ -100,7 +100,8 @@ main {
       top: 70px;
 
       @include laptop {
-        width: 55%;
+        width: 65%;
+        min-width: 850px;
         display: flex;
         flex-flow: wrap row;
       }
