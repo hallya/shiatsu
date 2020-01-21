@@ -100,9 +100,8 @@ export default Vue.extend({
     },
   },
   metaInfo() {
-    const { baseUrlFrontend } = store.state.domains;
     return {
-      title: 'Réunifiez votre être',
+      title: 'Nathalie de Loeper, votre praticienne de Shiatsu',
       meta: [
         {
           name: 'Description',
@@ -117,10 +116,12 @@ export default Vue.extend({
         {
           property: 'og:description',
           content:
-            'Découvrez une pratique thérapeutique unique \
-        au travers du regard de Nathalie de Loeper, praticienne de Shiatsu',
+            'Découvrez une pratique thérapeutique unique au travers du regard de Nathalie de Loeper, praticienne de Shiatsu',
         },
-        { property: 'og:image', content: baseUrlFrontend + siteCoverUrl },
+        {
+          property: 'og:image',
+          content: `https://shiatsutherapie78.info/${siteCoverUrl}`,
+        },
       ],
     };
   },
