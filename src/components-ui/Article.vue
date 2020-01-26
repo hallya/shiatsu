@@ -153,9 +153,15 @@ export default {
     .article-cover {
       margin: 15px 0;
       width: 100%;
-      box-shadow: 0 3px 8px -2px;
+      box-shadow: 0 0px 0px 0px;
       min-height: 100px;
-      background: gray;
+      background: grey;
+      transition: 0.5s;
+
+      &:hover {
+        transform: scale(0.99);
+        box-shadow: 0 21px 8px -10px rgba(0, 0, 0, 0.5);
+      }
     }
   }
   .article-main-content {
