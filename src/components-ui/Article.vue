@@ -51,19 +51,7 @@
       <small class="article-author">
         <p>rédaction : {{ article.author }}</p>
       </small>
-      <!-- <div
-        class="fb-share-button"
-        :data-href="frontendOrigin"
-        data-layout="button"
-        data-size="large"
-      >
-        <a
-          target="_blank"
-          :href="article.shareLink"
-          class="fb-xfbml-parse-ignore"
-          >Partager</a
-        >
-      </div> -->
+      <FacebookShare :sharedLink="article.shareLink" />
       <button
         v-if="article.hasOwnProperty('contentIsVisible')"
         class="article-toggle-content"
@@ -77,10 +65,12 @@
 
 <script lang="ts">
 import TransitionFadeHeight from '../transitions/Transition-fade-height.vue';
+import FacebookShare from '@/components-ui/FacebookShare.vue';
 
 export default {
   name: 'Article',
   components: {
+    FacebookShare,
     TransitionFadeHeight,
   },
   props: ['article', 'frontendOrigin'],
@@ -216,26 +206,7 @@ export default {
       color: $gray;
       text-align: right;
     }
-    .fb-share-button {
-      background: transparent;
-      padding: 0;
-      border: none;
-      box-shadow: 0px 10px 8px -8px $light-gray;
-      transition: 0.3s;
-      will-change: transform, box-shadow;
 
-      &:hover {
-        box-shadow: 0px 10px 8px -8px;
-        transform: translateY(-5px);
-      }
-      a {
-        box-shadow: 0 0 0 1px $light-gray;
-        padding: 8px 16px;
-        border-radius: 8px;
-        font-size: 1rem;
-        font-weight: bold;
-      }
-    }
     .article-toggle-content {
       display: block;
       border: none;
