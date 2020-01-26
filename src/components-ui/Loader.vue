@@ -12,9 +12,11 @@
 </template>
 
 <script lang="ts">
-export default {
+import Vue from 'vue';
+
+export default Vue.extend({
   name: 'Loader',
-};
+});
 </script>
 
 <style lang="scss">

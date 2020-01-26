@@ -13,7 +13,6 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import TransitionFadeHeight from '@/transitions/Transition-fade-height.vue';
 import nenupharShareDefaultImage from '@/assets/images/pictures/nenuphars_et_fleurs.jpg';
 import content from '@/assets/images/pictures/nenuphars_et_fleurs.jpg';
 import Article from '@/components-ui/Article.vue';
@@ -26,7 +25,6 @@ export default Vue.extend({
   components: {
     Article,
     Loader,
-    TransitionFadeHeight,
   },
   data(): ListPost {
     return {
@@ -34,11 +32,6 @@ export default Vue.extend({
       baseUrl: this.$store.state.domains.baseUrlFrontend,
       frontendOrigin: this.$store.state.domains.frontendOrigin,
     };
-  },
-  methods: {
-    async init() {
-      this.articles = await new Articles().getAll();
-    },
   },
   metaInfo() {
     return {
@@ -57,6 +50,11 @@ export default Vue.extend({
         },
       ],
     };
+  },
+  methods: {
+    async init() {
+      this.articles = await new Articles().getAll();
+    },
   },
   mounted() {
     this.init();

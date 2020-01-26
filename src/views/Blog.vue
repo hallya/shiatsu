@@ -14,9 +14,6 @@ import TransitionFade from '@/transitions/Transition-fade.vue';
 
 export default Vue.extend({
   name: 'Blog',
-  components: {
-    TransitionFade,
-  },
   metaInfo() {
     return {
       title: 'Blog shiatsu',

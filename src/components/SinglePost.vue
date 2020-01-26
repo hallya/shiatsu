@@ -3,13 +3,11 @@
   <Loader v-else></Loader>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from 'vue';
 import Articles from '@/services/api/articles.service';
-import Article from '@/components-ui/Article';
-import Loader from '@/components-ui/Loader';
-import TransitionFadeHeight from '../transitions/Transition-fade-height.vue';
-import showdown from 'showdown';
+import Article from '@/components-ui/Article.vue';
+import Loader from '@/components-ui/Loader.vue';
 
 export default Vue.extend({
   name: 'SinglePost',
@@ -17,9 +15,8 @@ export default Vue.extend({
   components: {
     Article,
     Loader,
-    TransitionFadeHeight,
   },
-  data() {
+  data(): any {
     return {
       article: null,
       meta: [],
@@ -39,10 +36,7 @@ export default Vue.extend({
         { property: 'url', content: this.ogUrl },
         { property: 'og:type', content: 'article' },
         { property: 'description', content: this.article.preview },
-        {
-          property: 'og:image',
-          content: this.backendOrigin + this.article.image.url,
-        },
+        { property: 'og:image', content: this.backendOrigin + this.article.image.url },
       ],
     };
   },
