@@ -53,6 +53,12 @@ module.exports = {
       },
     ],
   },
+  devServer: {
+    historyApiFallback: true,
+    hot: true,
+    http2: true,
+    https: true,
+  },
   plugins: [
     new VueLoaderPlugin(),
     new ExtractTextPlugin({
