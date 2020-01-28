@@ -77,11 +77,11 @@ a {
   }
 }
 p {
-  line-height: 20px;
-  font-size: 1rem;
+  line-height: 24px;
+  font-size: 1.1rem;
 
   @include tablet {
-    font-size: 0.9rem;
+    // font-size: 0.9rem;
   }
   @include laptop {
     font-size: 1rem;
@@ -89,14 +89,7 @@ p {
 }
 small,
 small p {
-  font-size: 0.6rem;
-
-  @include tablet {
-    font-size: 0.7rem;
-  }
-  @include laptop {
-    font-size: 0.8rem;
-  }
+  font-size: 0.8rem;
 }
 em {
   font-style: italic;

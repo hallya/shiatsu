@@ -46,7 +46,7 @@
       <small class="article-author">
         <p>rédaction : {{ article.author }}</p>
       </small>
-      <div
+      <!-- <div
         class="fb-share-button"
         :data-href="frontendOrigin"
         data-layout="button"
@@ -58,7 +58,7 @@
           class="fb-xfbml-parse-ignore"
           >Partager</a
         >
-      </div>
+      </div> -->
       <button
         v-if="article.hasOwnProperty('contentIsVisible')"
         class="article-toggle-content"
@@ -141,8 +141,10 @@ export default {
     .article-subtitle {
       margin: 10px 0 0;
       padding: 0 10px;
-      text-align: justify;
-      font-weight: normal;
+      text-align: left;
+      line-height: 24px;
+      font-weight: bold;
+      color: $dark-gray;
 
       @include laptop {
         padding: 0 40px;
@@ -188,7 +190,7 @@ export default {
     padding: 10px 20px;
     display: flex;
     flex-flow: wrap row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-end;
 
     .article-author {
