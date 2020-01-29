@@ -1,5 +1,5 @@
 <template>
-  <article :id="article.id" class="article">
+  <article :id="article.id" :class="articleClass">
     <header class="article-header">
       <div class="article-date">
         <picture>
@@ -21,7 +21,7 @@
     <section class="article-main">
       <section class="article-main-image">
         <picture v-if="article.image">
-          <img class="article-cover" v-bind:src="article.image.url" alt="" />
+          <img :class="coverImageClass" v-bind:src="article.image.url" alt="" />
         </picture>
       </section>
       <TransitionFadeHeight>
@@ -34,12 +34,9 @@
           key="content"
           v-html="article.content"
         ></section>
-        <section
-          v-else
-          class="article-main-content"
-          key="preview"
-          v-html="article.preview"
-        ></section>
+        <section v-else class="article-main-content" key="preview">
+          <p v-html="article.preview"></p>
+        </section>
       </TransitionFadeHeight>
     </section>
     <footer class="article-footer">
@@ -79,6 +76,18 @@ export default {
     TransitionFadeHeight,
   },
   props: ['article', 'frontendOrigin'],
+  computed: {
+    coverImageClass() {
+      return `article-cover ${
+        this.article.contentIsVisible ? 'noBoxShadow' : 'boxShadow'
+      }`;
+    },
+    articleClass() {
+      return `article ${
+        this.article.contentIsVisible ? 'boxShadow' : 'noBoxShadow'
+      }`;
+    },
+  },
 };
 </script>
 
@@ -86,22 +95,23 @@ export default {
 @import '@/styles/vars.scss';
 @import '@/styles/mixin.scss';
 
+.boxShadow {
+  transform: scale(0.99);
+  box-shadow: 0 21px 8px -10px rgba(0, 0, 0, 0.5);
+}
+.noBoxShadow {
+  box-shadow: 0 0px 0px 0px;
+}
 .article {
   margin: 20px auto;
   border-radius: 8px;
   padding: 0px 0px;
-  box-shadow: 0 0 0 0px $dark-gray;
   border: 1px solid $light-gray;
   overflow: hidden;
   transition: 0.5s;
 
   @include laptop {
     will-change: transform;
-
-    &:hover {
-      box-shadow: 0 25px 15px -22px;
-      transform: translateY(-10px);
-    }
   }
   .article-header {
     min-height: auto;
@@ -137,6 +147,9 @@ export default {
         white-space: nowrap;
       }
     }
+    .article-title {
+      letter-spacing: 2px;
+    }
     .article-title,
     .article-subtitle {
       margin: 10px 0 0;
@@ -155,15 +168,9 @@ export default {
     .article-cover {
       margin: 15px 0;
       width: 100%;
-      box-shadow: 0 0px 0px 0px;
       min-height: 100px;
       background: grey;
       transition: 0.5s;
-
-      &:hover {
-        transform: scale(0.99);
-        box-shadow: 0 21px 8px -10px rgba(0, 0, 0, 0.5);
-      }
     }
   }
   .article-main-content {
