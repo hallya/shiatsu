@@ -1,44 +1,45 @@
 import Vue from 'vue';
-import Router from 'vue-router';
+import VueRouter from 'vue-router';
 import Home from './views/Home.vue';
-import ListPost from './components/ListPost.vue';
-import SinglePost from './components/SinglePost.vue';
+import Blog from './views/Blog.vue';
 
-Vue.use(Router);
-
-const router = new Router({
+const router = new VueRouter({
   mode: 'history',
-  base: '/',
   routes: [
     {
-      path: '',
+      path: '/',
       component: Home,
     },
     {
       path: '/about',
-      name: 'about',
       component: () =>
         import(/* webpackChunkName: "about" */ './views/About.vue'),
     },
     {
       path: '/blog',
-      component: () =>
-        import(/* webpackChunkName: "reviews" */ './views/Blog.vue'),
+      component: Blog,
       children: [
         {
-          name: 'articles',
-          path: '',
-          component: ListPost,
+          path: ':id',
+          component: () =>
+            import(
+              /* webpackChunkName: "singlepost" */ './components/SinglePost.vue'
+            ),
         },
         {
-          name: 'article',
-          path: ':id',
-          component: SinglePost,
+          path: '',
+          component: () =>
+            import(
+              /* webpackChunkName: "listpost" */ './components/ListPost.vue'
+            ),
+        },
+        {
+          path: '**',
+          redirect: { path: '/blog' },
         },
       ],
     },
     {
-      name: 'contacts',
       path: '/contacts',
       component: () =>
         import(/* webpackChunkName: "contacts" */ './views/Contacts.vue'),
@@ -49,5 +50,7 @@ const router = new Router({
     },
   ],
 });
+
+Vue.use(VueRouter);
 
 export default router;

@@ -1,6 +1,6 @@
 <template>
   <main class="blog">
-    <section class="articles" key="content">
+    <section class="articles">
       <TransitionFade>
         <router-view></router-view>
       </TransitionFade>
@@ -8,9 +8,8 @@
   </main>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from 'vue';
-import router from '@/router';
 import TransitionFade from '@/transitions/Transition-fade.vue';
 
 export default Vue.extend({

@@ -15,13 +15,21 @@
           >{{ article.updated_at | frenchDate | capitalize }}</time
         >
       </div>
-      <h2 class="article-title">{{ article.title }}</h2>
-      <h3 class="article-subtitle">{{ article.subtitle }}</h3>
+      <h1 class="article-title">
+        <span class="title-background">
+          {{ article.title }}
+        </span>
+      </h1>
+      <h2 class="article-subtitle">
+        <span class="title-background">
+          {{ article.subtitle }}
+        </span>
+      </h2>
     </header>
     <section class="article-main">
       <section class="article-main-image">
         <picture v-if="article.image">
-          <img :class="coverImageClass" v-bind:src="article.image.url" alt="" />
+          <img :class="coverImageClass" :src="article.image.url" alt="" />
         </picture>
       </section>
       <TransitionFadeHeight>
@@ -96,7 +104,7 @@ export default {
 @import '@/styles/mixin.scss';
 
 .boxShadow {
-  transform: scale(0.99);
+  transform: scale(0.98);
   box-shadow: 0 21px 8px -10px rgba(0, 0, 0, 0.5);
 }
 .noBoxShadow {
@@ -131,11 +139,6 @@ export default {
       margin: 0px 0 10px auto;
       transition: 0.3s;
 
-      &:hover {
-        box-shadow: 10px 5px 10px -9px;
-        transform: translate3d(0px, -4px, 0);
-      }
-
       .article-date-icon {
         width: 25px;
       }
@@ -147,12 +150,10 @@ export default {
         white-space: nowrap;
       }
     }
-    .article-title {
-      letter-spacing: 2px;
-    }
+
     .article-title,
     .article-subtitle {
-      margin: 10px 0 0;
+      margin: 0;
       padding: 0 10px;
       text-align: left;
       line-height: 24px;
@@ -162,6 +163,15 @@ export default {
       @include laptop {
         padding: 0 40px;
       }
+      .title-background {
+        background-color: $meadow-green;
+        box-decoration-break: clone;
+        padding: 0 10px;
+      }
+    }
+    .article-title {
+      letter-spacing: 2px;
+      line-height: 34px;
     }
   }
   .article-main-image {

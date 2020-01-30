@@ -4,13 +4,15 @@
 </template>
 
 <script>
+import Vue from 'vue';
 import Articles from '@/services/api/articles.service';
 import Article from '@/components-ui/Article';
 import Loader from '@/components-ui/Loader';
 import TransitionFadeHeight from '../transitions/Transition-fade-height.vue';
 import showdown from 'showdown';
 
-export default {
+export default Vue.extend({
+  name: 'SinglePost',
   components: {
     Article,
     Loader,
@@ -51,7 +53,7 @@ export default {
       ];
     },
   },
-};
+});
 </script>
 
 <style lang="scss"></style>

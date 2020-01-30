@@ -13,39 +13,36 @@ export default class Articles {
     this.formatForOne = this.formatForOne.bind(this);
   }
 
-  public getAll(): Promise<ArticleFormated[]> {
-    return getData(store.state.domains.backendOrigin + this.apiPath).then(
+  public getAll = (): Promise<ArticleFormated[]> =>
+    getData(store.state.domains.backendOrigin + this.apiPath).then(
       this.formatForMany,
     );
-  }
 
-  public get(id: string): Promise<ArticleFormated> {
-    return getData(
-      store.state.domains.backendOrigin + `${this.apiPath}/${id}`,
-    ).then(this.formatForOne);
-  }
+  public get = (id: string): Promise<ArticleFormated> =>
+    getData(`${store.state.domains.backendOrigin}${this.apiPath}/${id}`).then(
+      this.formatForOne,
+    );
 
-  private formatForMany(articles: Article[]): ArticleFormated[] {
+  private formatForMany = (articles: Article[]): ArticleFormated[] => {
     return articles
       .map(this.formatForOne)
       .map((article) => ({
         ...article,
-        image: {
-          ...article.image,
-          url: store.state.domains.backendOrigin + article.image.url,
-        },
         contentIsVisible: false,
       }))
       .sort(this.byDate);
-  }
+  };
 
   private formatForOne(article: Article): ArticleFormated {
-    const formatedArticle = {
+    return {
       ...article,
+      image: {
+        ...article.image,
+        url: store.state.domains.backendOrigin + article.image.url,
+      },
       content: convertToHtml(article.content),
       shareLink: this.generateFacebookShareLink(article.id),
     };
-    return formatedArticle;
   }
 
   private byDate(a: ArticleFormated, b: ArticleFormated): number {
@@ -66,10 +63,10 @@ export default class Articles {
   }
 
   private generateFacebookShareLink(id: string): string {
-    const { baseUrlFrontend, hash } = store.state.domains;
+    const { baseUrlFrontend } = store.state.domains;
     const shareLink =
       'https://www.facebook.com/sharer/sharer.php?u=' +
-      encodeURIComponent(`${baseUrlFrontend}#/blog/${id}`) +
+      encodeURIComponent(`${baseUrlFrontend}/blog/${id}`) +
       '&amp;src=sdkpreparse';
     return shareLink;
   }

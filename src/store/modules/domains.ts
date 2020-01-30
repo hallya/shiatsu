@@ -5,10 +5,11 @@ import { RootStore } from '../store.type';
 export const domains: Module<Domains, RootStore> = {
   namespaced: true,
   state: {
-    frontendOrigin: window.location.origin,
-    pathname: window.location.pathname,
-    baseUrlFrontend: window.location.origin + window.location.pathname,
-    hash: window.location.hash,
     backendOrigin: 'https://strapi.shiatsutherapie78.info',
+    baseUrlFrontend:
+      'https://shiatsutherapie78.info' + window.location.pathname,
+    frontendOrigin: 'https://shiatsutherapie78.info',
+    hash: window.location.hash,
+    pathname: window.location.pathname,
   },
 };

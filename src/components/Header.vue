@@ -1,18 +1,18 @@
 <template>
   <header id="header">
     <section id="wrapper-title">
-      <h1 id="title">Shiatsu Thérapie</h1>
+      <p id="title">Shiatsu Thérapie</p>
       <picture id="logoHeader">
         <img :src="nenuphar" alt="un logo comprenant plusieurs nenuphar" />
       </picture>
-      <h2>Soigner votre énergie c'est améliorer votre santé</h2>
+      <h1>Soigner votre énergie c'est améliorer votre santé</h1>
     </section>
     <nav id="nav">
       <NavLinkItem link="/" :imgSrc="navlinks.home" label="Accueil" />
       <span>•</span>
-      <NavLinkItem link="about" :imgSrc="navlinks.about" label="À propos" />
+      <NavLinkItem link="/about" :imgSrc="navlinks.about" label="À propos" />
       <span>•</span>
-      <NavLinkItem link="blog" :imgSrc="navlinks.blog" label="Blog" />
+      <NavLinkItem link="/blog" :imgSrc="navlinks.blog" label="Blog" />
       <span>•</span>
       <NavLinkItem
         link="/contacts"
@@ -71,11 +71,13 @@ export default {
   }
 
   #wrapper-title {
-    padding: 10px 0;
+    padding: 10px;
     display: flex;
     flex-flow: wrap row;
     justify-content: center;
-
+    @include laptop {
+      padding: 0 25vw;
+    }
     picture#logoHeader {
       width: auto;
       margin: 0;
@@ -85,17 +87,20 @@ export default {
         width: 50px;
       }
     }
-    h1 {
-      margin-right: 10px;
+    #title {
+      margin-right: 0px;
       font-size: 42px;
       font-weight: bold;
       letter-spacing: 10px;
+      line-height: 50px;
+      font-family: 'Arbutus Slab', sans-serif;
     }
-    h2 {
+    h1 {
       width: 100%;
       color: rgb(121, 159, 55);
       letter-spacing: 3px;
-      padding: 10px 0;
+      padding: 0;
+      text-align: center;
 
       @include tablet {
         letter-spacing: 10px;
