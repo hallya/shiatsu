@@ -3,17 +3,11 @@
     <header class="article-header">
       <div class="article-date">
         <picture>
-          <img
-            class="article-date-icon"
-            src="../assets/images/logos/calendar.svg"
-            alt
-          />
+          <img class="article-date-icon" src="../assets/images/logos/calendar.svg" alt />
         </picture>
-        <time
-          :datetime="article.updated_at | timestamp"
-          class="article-date-label"
-          >{{ article.updated_at | frenchDate | capitalize }}</time
-        >
+        <time :datetime="article.updated_at | timestamp" class="article-date-label">{{
+          article.updated_at | frenchDate | capitalize
+        }}</time>
       </div>
       <h1 class="article-title">
         <span class="title-background">
@@ -34,10 +28,7 @@
       </section>
       <TransitionFadeHeight>
         <section
-          v-if="
-            !article.hasOwnProperty('contentIsVisible') ||
-              article.contentIsVisible
-          "
+          v-if="!article.hasOwnProperty('contentIsVisible') || article.contentIsVisible"
           class="article-main-content"
           key="content"
           v-html="article.content"
@@ -51,7 +42,7 @@
       <small class="article-author">
         <p>rédaction : {{ article.author }}</p>
       </small>
-      <FacebookShare :sharedLink="article.shareLink" />
+      <!-- <FacebookShare :sharedLink="article.shareLink" /> -->
       <button
         v-if="article.hasOwnProperty('contentIsVisible')"
         class="article-toggle-content"
@@ -76,14 +67,10 @@ export default {
   props: ['article', 'frontendOrigin'],
   computed: {
     coverImageClass() {
-      return `article-cover ${
-        this.article.contentIsVisible ? 'noBoxShadow' : 'boxShadow'
-      }`;
+      return `article-cover ${this.article.contentIsVisible ? 'noBoxShadow' : 'boxShadow'}`;
     },
     articleClass() {
-      return `article ${
-        this.article.contentIsVisible ? 'boxShadow' : 'noBoxShadow'
-      }`;
+      return `article ${this.article.contentIsVisible ? 'boxShadow' : 'noBoxShadow'}`;
     },
   },
 };
