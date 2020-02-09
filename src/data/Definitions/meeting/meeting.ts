@@ -13,7 +13,7 @@ const meeting: Definition = {
     '<blockquote>« Peut-être pourrait-on considérer le malade comme un être écorché et proposer l’image d’une « peau \
     de soin »(…)Il y a sans doute un ensemble de touchers, de regards, de paroles qui tissent cette peau de soin, \
     cocon pour le sujet fragile : étayage d’une nouvelle sensation et d’un sentiment neuf de soi. »</blockquote>',
-    'Claire Mari – <cite>La maladie, catastrophe intime</cite>',
+    'Claire Marin – <cite>La maladie, catastrophe intime</cite>',
   ],
   images: {
     defaultImage: jpg,

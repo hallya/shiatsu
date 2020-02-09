@@ -24,7 +24,7 @@ const shiatsu: Definition = {
     'Comme le musicien accorde l’instrument pour que les notes sonnent juste, le praticien durant le temps de la \
     séance travaille à harmoniser l’énergie. Corps/cœur/esprit sont accordés à l’unisson en une seule et même \
     vibration, ce qui apporte la sensation d’être restauré et réunifié.',
-    'Le shiatsu bien au-delà du massage relaxant, il descend en profondeur pour restituer l’énergie, ce qui fait \
+    'Le shiatsu thérapeutique bien au-delà du massage relaxant, il descend en profondeur pour restituer l’énergie, ce qui fait \
     souvent dire aux personnes qui l’ont reçu qu’elles ont découvert leur corps « autrement ».',
     'Santé et force se trouvent améliorées, soit dès la première séance, soit après 2 ou 3 fois.',
     'Si l’état est très fragilisé, par la vieillesse ou par l’ancienneté ou la gravité de la maladie, un apaisement \
