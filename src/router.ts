@@ -39,8 +39,14 @@ const router = new VueRouter({
       component: () => import(/* webpackChunkName: "contacts" */ './views/Contacts.vue'),
     },
     {
+      path: '/404-page-not-found',
+      component: () => import(/* webpackChunkName: "404" */ './views/404.vue'),
+    },
+    {
       path: '/*',
-      component: () => import(/* webpackChunkName: "contacts" */ './views/404.vue'),
+      redirect: {
+        path: '/404-page-not-found',
+      },
     },
   ],
 });

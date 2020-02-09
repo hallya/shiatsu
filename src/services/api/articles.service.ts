@@ -19,29 +19,26 @@ export default class Articles {
   public get = (id: string): Promise<ArticleFormated> =>
     getData(`${store.state.domains.backendOrigin}${this.apiPath}/${id}`).then(this.formatOne);
 
-  private formatAll = (articles: Article[]): ArticleFormated[] => {
-    return articles
+  private formatAll = (articles: Article[]): ArticleFormated[] =>
+    articles
       .map(this.formatOne)
       .map((article) => ({
         ...article,
         contentIsVisible: false,
       }))
       .sort(this.byDate);
-  };
 
-  private formatOne(article: Article): ArticleFormated {
-    return {
-      ...article,
-      image: {
-        ...article.image,
-        url: store.state.domains.backendOrigin + article.image.url,
-      },
-      content: convertToHtml(article.content),
-      shareLink: this.generateFacebookShareLink(article.id),
-    };
-  }
+  private formatOne = (article: Article): ArticleFormated => ({
+    ...article,
+    content: convertToHtml(article.content),
+    image: {
+      ...article.image,
+      url: store.state.domains.backendOrigin + article.image.url,
+    },
+    shareLink: this.generateFacebookShareLink(article.id),
+  });
 
-  private byDate(a: ArticleFormated, b: ArticleFormated): number {
+  private byDate = (a: ArticleFormated, b: ArticleFormated): number => {
     const dateA = new Date(a.updated_at).getTime();
     const dateB = new Date(b.updated_at).getTime();
 
@@ -52,18 +49,14 @@ export default class Articles {
       return -1;
     }
     return 0;
-  }
+  };
 
-  private idealPosition(text: string): number {
-    return text.indexOf('.');
-  }
-
-  private generateFacebookShareLink(id: string): string {
+  private generateFacebookShareLink = (id: string): string => {
     const { baseUrlFrontend } = store.state.domains;
     const shareLink =
       'https://www.facebook.com/sharer/sharer.php?u=' +
       encodeURIComponent(`${baseUrlFrontend}/blog/${id}`) +
       '&amp;src=sdkpreparse';
     return shareLink;
-  }
+  };
 }
