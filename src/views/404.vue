@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="page_not_found">
     <div class="status">
       <picture>
         <img class="background_alert" :src="alert" alt="Alert logo" />
@@ -31,7 +31,7 @@ export default {
 @import '@/styles/vars.scss';
 @import '@/styles/mixin.scss';
 
-main {
+.page_not_found {
   align-items: center;
   display: flex;
   flex-direction: column;
