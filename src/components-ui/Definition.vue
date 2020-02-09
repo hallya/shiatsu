@@ -5,11 +5,7 @@
       <button :class="buttonState" :aria-label="buttonActionLabel"></button>
     </dt>
     <dd :class="isOpen">
-      <Picture
-        :image="definition.images"
-        :loadImage="isDescriptionShown"
-        description
-      />
+      <Picture :image="definition.images" :loadImage="isDescriptionShown" description />
       <p
         v-for="(paragraph, index) of definition.description"
         :key="`${definition.title} - paragraphe ${index}`"
@@ -41,14 +37,10 @@ export default {
       return this.isDescriptionShown && 'open';
     },
     buttonState() {
-      return this.isDescriptionShown
-        ? 'toggleDescription close'
-        : 'toggleDescription';
+      return this.isDescriptionShown ? 'toggleDescription close' : 'toggleDescription';
     },
     buttonActionLabel() {
-      return this.isDescriptionShown
-        ? 'Fermer la description'
-        : 'Ouvrir la description';
+      return this.isDescriptionShown ? 'Fermer la description' : 'Ouvrir la description';
     },
   },
 };
@@ -89,7 +81,7 @@ export default {
   dt {
     cursor: pointer;
     position: sticky;
-    top: 75px;
+    top: 60px;
     margin-bottom: 0px;
     background-color: white;
     box-shadow: -101vw 1px 0px 1px transparent;
