@@ -1,9 +1,15 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import VueMeta from 'vue-meta';
 import Home from './views/Home.vue';
 import Blog from './views/Blog.vue';
 
-const router = new VueRouter({
+Vue.use(VueRouter);
+Vue.use(VueMeta, {
+  refreshOnceOnNavigation: true,
+});
+
+export default new VueRouter({
   mode: 'history',
   routes: [
     {
@@ -50,7 +56,3 @@ const router = new VueRouter({
     },
   ],
 });
-
-Vue.use(VueRouter);
-
-export default router;

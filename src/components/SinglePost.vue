@@ -20,7 +20,7 @@ export default Vue.extend({
     return {
       article: null,
       meta: [],
-      ogUrl: this.$store.state.domains.baseUrlFrontend + this.$store.state.domains.hash,
+      ogUrl: this.$store.state.domains.baseUrlFrontend,
       frontendOrigin: this.$store.state.domains.frontendOrigin,
       backendOrigin: this.$store.state.domains.backendOrigin,
     };
@@ -30,19 +30,24 @@ export default Vue.extend({
   },
   metaInfo() {
     return {
-      meta: [
-        { property: 'title', content: this.article.title },
-        { property: 'author', content: this.article.author },
-        { property: 'url', content: this.ogUrl },
-        { property: 'og:type', content: 'article' },
-        { property: 'description', content: this.article.preview },
-        { property: 'og:image', content: this.backendOrigin + this.article.image.url },
-      ],
+      meta: this.meta,
     };
   },
   methods: {
     async init() {
       this.article = await new Articles().get(this.id);
+      this.meta = [
+        { property: 'og:type', content: 'article' },
+        { property: 'og:title', content: this.article.title },
+        {
+          property: 'article:author',
+          content: 'https://www.facebook.com/profile.php?id=100010640928675',
+        },
+        { property: 'article:publisher', content: 'https://www.facebook.com/nathaliedeloeper/' },
+        { property: 'og:url', content: this.ogUrl },
+        { property: 'og:description', content: this.article.preview },
+        { property: 'og:image', content: this.article.image.url },
+      ];
     },
   },
 });

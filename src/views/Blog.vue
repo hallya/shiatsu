@@ -14,25 +14,8 @@ import TransitionFade from '@/transitions/Transition-fade.vue';
 
 export default Vue.extend({
   name: 'Blog',
-  metaInfo() {
-    return {
-      title: 'Blog shiatsu',
-      meta: [
-        {
-          name: 'Description',
-          content: 'Articles autour de la santé et du shiatsu',
-        },
-        {
-          property: 'og:title',
-          content: 'Mes articles',
-        },
-        { property: 'og:type', content: 'website' },
-        {
-          property: 'og:description',
-          content: 'Articles autour de la santé et du shiatsu',
-        },
-      ],
-    };
+  components: {
+    TransitionFade,
   },
 });
 </script>

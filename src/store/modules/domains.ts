@@ -6,8 +6,7 @@ export const domains: Module<Domains, RootStore> = {
   namespaced: true,
   state: {
     backendOrigin: 'https://strapi.shiatsutherapie78.info',
-    baseUrlFrontend:
-      'https://shiatsutherapie78.info' + window.location.pathname,
+    baseUrlFrontend: 'https://shiatsutherapie78.info' + window.location.pathname,
     frontendOrigin: 'https://shiatsutherapie78.info',
     hash: window.location.hash,
     pathname: window.location.pathname,
