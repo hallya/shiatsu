@@ -49,14 +49,8 @@ export default class Articles {
       return -1;
     }
     return 0;
-  }
+  };
 
-  private generateFacebookShareLink = (id: string): string => {
-    const { baseUrlFrontend } = store.state.domains;
-    const shareLink =
-      'https://www.facebook.com/sharer/sharer.php?u=' +
-      encodeURIComponent(`${baseUrlFrontend}/blog/${id}`) +
-      '&amp;src=sdkpreparse';
-    return shareLink;
-  }
+  private generateFacebookShareLink = (id: string): string =>
+    `${store.state.domains.frontendOrigin}/blog/${id}`;
 }
