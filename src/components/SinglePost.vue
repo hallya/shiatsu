@@ -13,6 +13,7 @@ import showdown from 'showdown';
 
 export default Vue.extend({
   name: 'SinglePost',
+  props: ['id'],
   components: {
     Article,
     Loader,
@@ -22,9 +23,7 @@ export default Vue.extend({
     return {
       article: null,
       meta: [],
-      ogUrl:
-        this.$store.state.domains.baseUrlFrontend +
-        this.$store.state.domains.hash,
+      ogUrl: this.$store.state.domains.baseUrlFrontend + this.$store.state.domains.hash,
       frontendOrigin: this.$store.state.domains.frontendOrigin,
       backendOrigin: this.$store.state.domains.backendOrigin,
     };
@@ -34,13 +33,7 @@ export default Vue.extend({
   },
   metaInfo() {
     return {
-      meta: this.meta,
-    };
-  },
-  methods: {
-    async init() {
-      this.article = await new Articles().get(this.$route.params.id);
-      this.meta = [
+      meta: [
         { property: 'title', content: this.article.title },
         { property: 'author', content: this.article.author },
         { property: 'url', content: this.ogUrl },
@@ -50,7 +43,12 @@ export default Vue.extend({
           property: 'og:image',
           content: this.backendOrigin + this.article.image.url,
         },
-      ];
+      ],
+    };
+  },
+  methods: {
+    async init() {
+      this.article = await new Articles().get(this.id);
     },
   },
 });

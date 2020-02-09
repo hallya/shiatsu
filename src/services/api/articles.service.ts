@@ -9,23 +9,19 @@ export default class Articles {
   private apiPath: string = '/articles';
 
   constructor() {
-    this.formatForMany = this.formatForMany.bind(this);
-    this.formatForOne = this.formatForOne.bind(this);
+    this.formatAll = this.formatAll.bind(this);
+    this.formatOne = this.formatOne.bind(this);
   }
 
   public getAll = (): Promise<ArticleFormated[]> =>
-    getData(store.state.domains.backendOrigin + this.apiPath).then(
-      this.formatForMany,
-    );
+    getData(`${store.state.domains.backendOrigin}${this.apiPath}`).then(this.formatAll);
 
   public get = (id: string): Promise<ArticleFormated> =>
-    getData(`${store.state.domains.backendOrigin}${this.apiPath}/${id}`).then(
-      this.formatForOne,
-    );
+    getData(`${store.state.domains.backendOrigin}${this.apiPath}/${id}`).then(this.formatOne);
 
-  private formatForMany = (articles: Article[]): ArticleFormated[] => {
+  private formatAll = (articles: Article[]): ArticleFormated[] => {
     return articles
-      .map(this.formatForOne)
+      .map(this.formatOne)
       .map((article) => ({
         ...article,
         contentIsVisible: false,
@@ -33,7 +29,7 @@ export default class Articles {
       .sort(this.byDate);
   };
 
-  private formatForOne(article: Article): ArticleFormated {
+  private formatOne(article: Article): ArticleFormated {
     return {
       ...article,
       image: {
