@@ -12,8 +12,7 @@ const router = new VueRouter({
     },
     {
       path: '/about',
-      component: () =>
-        import(/* webpackChunkName: "about" */ './views/About.vue'),
+      component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
     },
     {
       path: '/blog',
@@ -21,17 +20,13 @@ const router = new VueRouter({
       children: [
         {
           path: ':id',
+          props: true,
           component: () =>
-            import(
-              /* webpackChunkName: "singlepost" */ './components/SinglePost.vue'
-            ),
+            import(/* webpackChunkName: "singlepost" */ './components/SinglePost.vue'),
         },
         {
           path: '',
-          component: () =>
-            import(
-              /* webpackChunkName: "listpost" */ './components/ListPost.vue'
-            ),
+          component: () => import(/* webpackChunkName: "listpost" */ './components/ListPost.vue'),
         },
         {
           path: '**',
@@ -41,12 +36,11 @@ const router = new VueRouter({
     },
     {
       path: '/contacts',
-      component: () =>
-        import(/* webpackChunkName: "contacts" */ './views/Contacts.vue'),
+      component: () => import(/* webpackChunkName: "contacts" */ './views/Contacts.vue'),
     },
     {
-      path: '**',
-      redirect: { path: '/' },
+      path: '/*',
+      component: () => import(/* webpackChunkName: "contacts" */ './views/404.vue'),
     },
   ],
 });
