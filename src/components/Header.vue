@@ -14,11 +14,7 @@
       <span>•</span>
       <NavLinkItem link="/blog" :imgSrc="navlinks.blog" label="Blog" />
       <span>•</span>
-      <NavLinkItem
-        link="/contacts"
-        :imgSrc="navlinks.contacts"
-        label="Contacts"
-      />
+      <NavLinkItem link="/contacts" :imgSrc="navlinks.contacts" label="Contacts" />
     </nav>
   </header>
 </template>
@@ -60,14 +56,14 @@ export default {
   position: sticky;
   background-color: white;
   box-shadow: 0 0 10px 10px white;
-  top: -260px;
+  top: -250px;
   z-index: 9999;
 
   @include tablet {
-    top: -140px;
+    top: -120px;
   }
   @include laptop {
-    top: -120px;
+    top: -110px;
   }
 
   #wrapper-title {
