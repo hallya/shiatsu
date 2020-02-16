@@ -161,7 +161,7 @@ export default {
     }
   }
   .article-main-content {
-    padding: 5px 10px;
+    padding: 0 10px;
     text-align: justify;
 
     h3 {
@@ -171,7 +171,7 @@ export default {
       font-weight: bold;
     }
     p {
-      margin: 5px 0;
+      padding: 15px 0;
       text-align: justify;
     }
 

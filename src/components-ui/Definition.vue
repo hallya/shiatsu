@@ -219,11 +219,9 @@ export default {
     p {
       box-sizing: border-box;
       width: 100%;
-      padding: 0 10px;
+      padding: 10px 10px;
       opacity: 0;
-      font-size: 1rem;
       margin-top: 10px;
-      line-height: 24px;
       transition: opacity 0.2s;
 
       &:first-of-type {
