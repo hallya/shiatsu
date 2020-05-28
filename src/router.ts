@@ -22,7 +22,7 @@ export default new VueRouter({
     },
     {
       path: '/blog',
-      component: Blog,
+      component: () => import(/* webpackChunkName: "blog" */ './views/Blog.vue'),
       children: [
         {
           path: ':id',
