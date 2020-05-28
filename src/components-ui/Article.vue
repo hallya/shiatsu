@@ -55,8 +55,8 @@
 </template>
 
 <script lang="ts">
-import TransitionFadeHeight from '../transitions/Transition-fade-height.vue';
-import FacebookShare from '@/components-ui/FacebookShare.vue';
+import TransitionFadeHeight from '../transitions/Transition-fade-height.vue'
+import FacebookShare from '@/components-ui/FacebookShare.vue'
 
 export default {
   name: 'Article',
@@ -66,27 +66,27 @@ export default {
   },
   computed: {
     coverImageClass() {
-      return `article-cover ${this.article.contentIsVisible ? 'noBoxShadow' : 'boxShadow'}`;
+      return `article-cover ${this.article.contentIsVisible ? 'noBoxShadow' : 'boxShadow'}`
     },
     articleClass() {
-      return `article ${this.article.contentIsVisible ? 'boxShadow' : 'noBoxShadow'}`;
+      return `article ${this.article.contentIsVisible ? 'boxShadow' : 'noBoxShadow'}`
     },
   },
   props: ['article', 'frontendOrigin'],
   methods: {
     toggleArticleContent() {
       if (this.article.contentIsVisible) {
-        const article = document.getElementById(this.article.id);
-        article.scrollIntoView({ block: 'start', behavior: 'smooth' });
+        const article = document.getElementById(this.article.id)
+        article.scrollIntoView({ block: 'start', behavior: 'smooth' })
         setTimeout(() => {
-          this.article.contentIsVisible = !this.article.contentIsVisible;
-        }, 300);
+          this.article.contentIsVisible = !this.article.contentIsVisible
+        }, 300)
       } else {
-        this.article.contentIsVisible = !this.article.contentIsVisible;
+        this.article.contentIsVisible = !this.article.contentIsVisible
       }
     },
   },
-};
+}
 </script>
 
 <style lang="scss">
@@ -154,7 +154,6 @@ export default {
         padding: 0 40px;
       }
       .title-background {
-        background-color: $meadow-green;
         box-decoration-break: clone;
         padding: 0 10px;
       }
@@ -162,6 +161,16 @@ export default {
     .article-title {
       letter-spacing: 2px;
       line-height: 34px;
+
+      .title-background {
+        background-color: $meadow-green;
+      }
+    }
+    .article-subtitle {
+      .title-background {
+        background-color: $yellow;
+        line-height: 28px;
+      }
     }
   }
   .article-main-image {
