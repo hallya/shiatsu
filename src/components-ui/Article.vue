@@ -46,7 +46,7 @@
       <button
         v-if="article.hasOwnProperty('contentIsVisible')"
         class="article-toggle-content"
-        v-on:click="article.contentIsVisible = !article.contentIsVisible"
+        v-on:click="toggleArticleContent"
       >
         {{ article.contentIsVisible ? "Réduire l'article" : "Lire l'article" }}
       </button>
@@ -64,13 +64,26 @@ export default {
     FacebookShare,
     TransitionFadeHeight,
   },
-  props: ['article', 'frontendOrigin'],
   computed: {
     coverImageClass() {
       return `article-cover ${this.article.contentIsVisible ? 'noBoxShadow' : 'boxShadow'}`;
     },
     articleClass() {
       return `article ${this.article.contentIsVisible ? 'boxShadow' : 'noBoxShadow'}`;
+    },
+  },
+  props: ['article', 'frontendOrigin'],
+  methods: {
+    toggleArticleContent() {
+      if (this.article.contentIsVisible) {
+        const article = document.getElementById(this.article.id);
+        article.scrollIntoView({ block: 'start', behavior: 'smooth' });
+        setTimeout(() => {
+          this.article.contentIsVisible = !this.article.contentIsVisible;
+        }, 300);
+      } else {
+        this.article.contentIsVisible = !this.article.contentIsVisible;
+      }
     },
   },
 };
