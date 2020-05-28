@@ -61,7 +61,7 @@ import tournesolWebpMobile from '@/assets/images/pictures/tournesol-mobile.webp'
 import nenupharJpg from '@/assets/images/pictures/plateau_nenuphar.jpg';
 import nenupharWebp from '@/assets/images/pictures/plateau_nenuphar.webp';
 import nenupharWebpMobile from '@/assets/images/pictures/plateau_nenuphar-mobile.webp';
-import siteCoverUrl from '@/assets/images/pictures/defaultImageForSharing.jpg';
+import defaultImageForSharingJpg from '@/assets/images/pictures/defaultImageForSharing.jpg';
 
 import store from '../store/store';
 
@@ -113,7 +113,7 @@ export default Vue.extend({
         },
         {
           property: 'og:image',
-          content: `https://shiatsutherapie78.info/${siteCoverUrl}`,
+          content: `https://shiatsutherapie78.info/${defaultImageForSharingJpg}`,
         },
       ],
     };

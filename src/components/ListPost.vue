@@ -1,10 +1,6 @@
 <template>
   <ul v-if="articles.length" class="articles-list">
-    <li
-      v-for="article of articles"
-      :key="article.id"
-      class="articles-list-item"
-    >
+    <li v-for="article of articles" :key="article.id" class="articles-list-item">
       <Article :article="article" :frontendOrigin="frontendOrigin" />
     </li>
   </ul>
@@ -14,7 +10,6 @@
 <script lang="ts">
 import Vue from 'vue';
 import nenupharShareDefaultImage from '@/assets/images/pictures/nenuphars_et_fleurs.jpg';
-import content from '@/assets/images/pictures/nenuphars_et_fleurs.jpg';
 import Article from '@/components-ui/Article.vue';
 import Loader from '@/components-ui/Loader.vue';
 import Articles from '@/services/api/articles.service';
