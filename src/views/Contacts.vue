@@ -3,9 +3,7 @@
     <section class="contact-me">
       <address>
         <h3>Nathalie de Loeper</h3>
-        <a href="tel:+33612387928">
-          <i class="fontawesome-phone"></i> 06 12 38 79 28
-        </a>
+        <a href="tel:+33612387928"> <i class="fontawesome-phone"></i> 06 12 38 79 28 </a>
         <span class="contact-separator">-</span>
         <a href="mailto:natloeper@gmail.com">
           <i class="fontawesome-envelope"></i> natloeper@gmail.com
@@ -41,11 +39,7 @@ export default Vue.extend({
         description: 'Cabinet - vue intérieur',
         direction:
           'https://www.google.com/maps/dir/?api=1&destination=Nathalie+de+loeper+shiatsu+bouloire&travelmode=driving',
-        fullAddress: [
-          'La Grenouille',
-          'Route de Coudrecieux',
-          '72440 Bouloire',
-        ],
+        fullAddress: ['La Grenouille', 'Route de Coudrecieux', '72440 Bouloire'],
         image: {
           imageWebp: insideBouloireWebp,
           imageWebpMobile: insideBouloireWebpMobile,
@@ -119,13 +113,11 @@ main {
       margin: 10px 0;
       padding: 10px 20px;
       display: flex;
-      align-items: center;
       flex-direction: column;
 
       @include tablet {
         flex-flow: wrap row;
         justify-content: center;
-        align-items: center;
       }
 
       h3,
