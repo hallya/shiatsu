@@ -20,6 +20,7 @@
         </span>
       </h2>
     </header>
+
     <section class="article-main">
       <section class="article-main-image">
         <picture v-if="article.image">
@@ -38,6 +39,7 @@
         </section>
       </TransitionFadeHeight>
     </section>
+
     <footer class="article-footer">
       <small class="article-author">
         <p>rédaction : {{ article.author }}</p>
@@ -55,8 +57,8 @@
 </template>
 
 <script lang="ts">
-import TransitionFadeHeight from '../transitions/Transition-fade-height.vue'
-import FacebookShare from '@/components-ui/FacebookShare.vue'
+import TransitionFadeHeight from '../transitions/Transition-fade-height.vue';
+import FacebookShare from '@/components-ui/FacebookShare.vue';
 
 export default {
   name: 'Article',
@@ -66,27 +68,27 @@ export default {
   },
   computed: {
     coverImageClass() {
-      return `article-cover ${this.article.contentIsVisible ? 'noBoxShadow' : 'boxShadow'}`
+      return `article-cover ${this.article.contentIsVisible ? 'noBoxShadow' : 'boxShadow'}`;
     },
     articleClass() {
-      return `article ${this.article.contentIsVisible ? 'boxShadow' : 'noBoxShadow'}`
+      return `article ${this.article.contentIsVisible ? 'boxShadow' : 'noBoxShadow'}`;
     },
   },
   props: ['article', 'frontendOrigin'],
   methods: {
     toggleArticleContent() {
       if (this.article.contentIsVisible) {
-        const article = document.getElementById(this.article.id)
-        article.scrollIntoView({ block: 'start', behavior: 'smooth' })
+        const article = document.getElementById(this.article.id);
+        article.scrollIntoView({ block: 'start', behavior: 'smooth' });
         setTimeout(() => {
-          this.article.contentIsVisible = !this.article.contentIsVisible
-        }, 300)
+          this.article.contentIsVisible = !this.article.contentIsVisible;
+        }, 300);
       } else {
-        this.article.contentIsVisible = !this.article.contentIsVisible
+        this.article.contentIsVisible = !this.article.contentIsVisible;
       }
     },
   },
-}
+};
 </script>
 
 <style lang="scss">
@@ -183,6 +185,7 @@ export default {
     }
   }
   .article-main-content {
+    max-width: 100%;
     padding: 0 10px;
     text-align: justify;
 
