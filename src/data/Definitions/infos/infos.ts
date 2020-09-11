@@ -10,7 +10,6 @@ const infos: Definition = {
     '<strong>Saint Cyr l’Ecole</strong> 65 euros',
     '<strong>Bouloire</strong> 50 euros',
     '<strong>À domicile (Paris et proche banlieux)</strong> 30 euros (en supplément)',
-    'Une séance dure 75 minutes, parfois un peu plus.',
   ],
   images: null,
 };
