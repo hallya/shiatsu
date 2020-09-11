@@ -7,9 +7,9 @@ const infos: Definition = {
   title: 'Infos pratiques et tarifs',
   description: [
     'Concernant la tarification,',
-    '<strong>Saint Cyr l’Ecole</strong> 60 euros',
+    '<strong>Saint Cyr l’Ecole</strong> 65 euros',
     '<strong>Bouloire</strong> 50 euros',
-    '<strong>À domicile (Paris et proche banlieux)</strong> 30 euros',
+    '<strong>À domicile (Paris et proche banlieux)</strong> 30 euros (en supplément)',
     'Une séance dure 75 minutes, parfois un peu plus.',
   ],
   images: null,
