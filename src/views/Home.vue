@@ -6,6 +6,14 @@
         :loadImage="tournesol.loadImage"
         description="Un magnifique tournesol en gros plan"
       />
+      <p>
+        <strong class="strong"
+          >Les rendez-vous sont espacés de 2 heures afin d'aérer longuement après chaque patient.
+          <br />
+          &#9888;&#65039;Il n'y a pas d'attente ni de croisement de personnes. Port du masque
+          obligatoire.&#9888;&#65039;
+        </strong>
+      </p>
       <blockquote class="home_citation">
         « […] le soin, lorsqu’il se conçoit comme relation et attention à la souffrance et aux
         besoins du malade, peut réparer son image dévastée, réveiller son désir de vivre, le libérer
@@ -166,6 +174,9 @@ main.home {
           width: 80%;
         }
       }
+    }
+    .strong {
+      font-weight: bold;
     }
     blockquote,
     cite {
