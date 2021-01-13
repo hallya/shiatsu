@@ -6,12 +6,8 @@
       :srcset="image.imageWebp"
       type="image/webp"
     />
-    <source
-      v-if="image.imageWebpMobile"
-      :srcset="image.imageWebpMobile"
-      type="image/webp"
-    />
-    <img :src="image.defaultImage" :alt="description || ''" />
+    <source v-if="image.imageWebpMobile" :srcset="image.imageWebpMobile" type="image/webp" />
+    <img :src="image.defaultImage" :alt="description || ''" aria-checked="" loading="lazy" />
   </picture>
 </template>
 
