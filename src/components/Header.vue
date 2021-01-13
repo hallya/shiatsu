@@ -11,8 +11,8 @@
       <NavLinkItem link="/" :imgSrc="navlinks.home" label="Accueil" />
       <span>•</span>
       <NavLinkItem link="/about" :imgSrc="navlinks.about" label="À propos" />
-      <span>•</span>
-      <NavLinkItem link="/blog" :imgSrc="navlinks.blog" label="Blog" />
+      <!-- <span>•</span>
+      <NavLinkItem link="/blog" :imgSrc="navlinks.blog" label="Blog" /> -->
       <span>•</span>
       <NavLinkItem link="/contacts" :imgSrc="navlinks.contacts" label="Contacts" />
     </nav>
