@@ -1,19 +1,30 @@
 <template>
   <main class="home">
-    <section class="left-side" v-on:wheel="lazyLoadImage">
+    <section v-on:wheel="lazyLoadImage">
       <Picture
         :image="tournesol"
         :loadImage="tournesol.loadImage"
         description="Un magnifique tournesol en gros plan"
       />
-      <p>
-        <strong class="strong"
-          >Les rendez-vous sont espacés de 2 heures afin d'aérer longuement après chaque patient.
-          <br />
-          &#9888;&#65039;Il n'y a pas d'attente ni de croisement de personnes. Port du masque
-          obligatoire.&#9888;&#65039;
-        </strong>
-      </p>
+      <section class="covid-section">
+        <h2 class="covid-text">☝️Infos covid☝️</h2>
+        <p class="covid-text">
+          Pendant le confinement ou au-delà de l'horaire imposé par le couvre-feu vous pouvez venir
+          recevoir un shiatsu. Il suffit de cocher la case de l'attestation : déplacement pour soins
+          ne pouvant être assurés à distance, etc...
+        </p>
+        <p class="covid-text">
+          Le shiatsu thérapeutique, médecine alternative, entre dans la liste des activités de santé
+          humaine non classées ailleurs, sa pratique est autorisée.
+        </p>
+        <p class="covid-text center">&#9888;&#65039;</p>
+        <p class="covid-text">
+          Les rendez-vous sont espacés de 2 heures afin d'aérer longuement après chaque patient.
+        </p>
+        <p class="covid-text">Il n'y a pas d'attente ni de croisement de personnes.</p>
+        <p class="covid-text center">😷Port du masque obligatoire😷</p>
+      </section>
+
       <blockquote class="home_citation">
         « […] le soin, lorsqu’il se conçoit comme relation et attention à la souffrance et aux
         besoins du malade, peut réparer son image dévastée, réveiller son désir de vivre, le libérer
@@ -24,7 +35,7 @@
         </footer>
       </blockquote>
     </section>
-    <section class="right-side">
+    <section>
       <p>
         Fatigué ou vite fatigable, anxieux, déprimé, tendu, irascible, colérique, à fleur de peau,
         agité, angoissé, stressé, triste, sans entrain, sans énergie, sans appétit, en train de
@@ -131,6 +142,7 @@ export default Vue.extend({
 
 <style lang="scss">
 @import '@/styles/mixin.scss';
+@import '@/styles/vars.scss';
 
 main.home {
   width: 100%;
@@ -145,6 +157,9 @@ main.home {
   }
   @include laptop {
     padding: 40px 20vw;
+  }
+  .covid-section {
+    margin-top: 20px;
   }
   section {
     width: 100%;
@@ -175,8 +190,12 @@ main.home {
         }
       }
     }
-    .strong {
-      font-weight: bold;
+    .covid-text {
+      line-height: 20px;
+      color: $jungle-green;
+    }
+    .center {
+      text-align: center;
     }
     blockquote,
     cite {
