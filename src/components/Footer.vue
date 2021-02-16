@@ -1,10 +1,6 @@
 <template>
   <footer id="footer">
-    <a
-      class="footer-icon"
-      href="https://www.facebook.com/nathaliedeloeper/"
-      target="_blank"
-    >
+    <a class="footer-icon" href="https://www.facebook.com/nathaliedeloeper/" target="_blank">
       <img v-bind:src="facebook" alt="facebook link" />
     </a>
     <a
@@ -16,13 +12,10 @@
     </a>
     <a
       id="koifaire"
-      href="http://www.koifaire.com/ile-de-france/deloeper,shiatsu-140396.html"
+      href="https://www.koifaire.com/ile-de-france/deloeper,shiatsu-140396.html"
       target="_blank"
     >
-      <img
-        src="http://www.koifaire.com/images/reference_sur_koifaire.jpg"
-        alt=""
-      />
+      <img src="https://www.koifaire.com/images/reference_sur_koifaire.jpg" alt="" />
     </a>
   </footer>
 </template>
