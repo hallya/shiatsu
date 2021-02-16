@@ -1,9 +1,10 @@
 import jpg from '@/assets/images/pictures/nathalie_de_loeper.jpg';
 import webp from '@/assets/images/pictures/nathalie_de_loeper.webp';
 import webpMobile from '@/assets/images/pictures/nathalie_de_loeper-mobile.webp';
-import { Definition } from '../about.type';
+import { Definition } from '.';
 
-const me: Definition = {
+export const me: Definition = {
+  id: '2',
   title: 'Me présenter à vous',
   description: [
     'J’ai suivi les quatre années d’enseignement de Bernard Bouheret, jusqu’à l’obtention du diplôme \
@@ -29,5 +30,3 @@ const me: Definition = {
     imageWebpMobile: webpMobile,
   },
 };
-
-export default me;

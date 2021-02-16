@@ -1,11 +1,11 @@
 <template>
   <header id="header">
-    <section id="wrapper-title">
-      <p id="title">Shiatsu Thérapie</p>
+    <section id="wrapper-title" aria-labelledby="title" aria-describedby="title-description">
+      <h1 id="title">Shiatsu Thérapie</h1>
       <picture id="logoHeader">
         <img :src="nenuphar" alt="un logo comprenant plusieurs nenuphar" />
       </picture>
-      <h1>Soigner votre énergie c'est améliorer votre santé</h1>
+      <p id="title-description">Soigner votre énergie c'est améliorer votre santé</p>
     </section>
     <nav id="nav">
       <NavLinkItem link="/" :imgSrc="navlinks.home" label="Accueil" />
@@ -52,10 +52,10 @@ export default {
 @import '@/styles/mixin.scss';
 
 #header {
-  flex: 0 2 0;
-  position: sticky;
   background-color: white;
   box-shadow: 0 0 10px 10px white;
+  flex: 0 2 0;
+  position: sticky;
   top: -250px;
   z-index: 9999;
 
@@ -67,16 +67,17 @@ export default {
   }
 
   #wrapper-title {
-    padding: 10px;
     display: flex;
     flex-flow: wrap row;
     justify-content: center;
+    padding: 10px;
+
     @include laptop {
       padding: 0 25vw;
     }
     picture#logoHeader {
-      width: auto;
       margin: 0;
+      width: auto;
 
       img {
         height: 50px;
@@ -84,19 +85,19 @@ export default {
       }
     }
     #title {
-      margin-right: 0px;
-      font-size: 42px;
+      font: 42px 'Arbutus Slab', sans-serif;
+      margin: 0;
       font-weight: bold;
       letter-spacing: 10px;
       line-height: 50px;
-      font-family: 'Arbutus Slab', sans-serif;
     }
-    h1 {
-      width: 100%;
+    #title-description {
       color: rgb(121, 159, 55);
+      font: 26px 'Arbutus Slab', sans-serif;
       letter-spacing: 3px;
       padding: 0;
       text-align: center;
+      width: 100%;
 
       @include tablet {
         letter-spacing: 10px;

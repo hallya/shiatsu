@@ -1,18 +1,15 @@
 <template>
   <main class="about">
-    <dl>
-      <Definition
-        v-for="definition of definitions"
-        :definition="definition"
-        :key="`Definition : ${definition.title}`"
-      ></Definition>
-    </dl>
+    <Definition
+      v-for="definition of definitions"
+      :definition="definition"
+      :key="`Definition : ${definition.title}`"
+    />
   </main>
 </template>
 <script>
-import { Component, Vue } from 'vue-property-decorator';
 import Definition from '@/components-ui/Definition.vue';
-import { definitions } from '@/data/Definitions/about';
+import { definitions } from '@/data/Definitions';
 
 export default {
   components: {
@@ -34,9 +31,10 @@ export default {
 <style lang="scss">
 .about {
   padding: 10px 0;
-  dl {
-    padding: 0;
+
+  .definitionsContainer {
     max-width: 100%;
+    padding: 0;
   }
 }
 </style>

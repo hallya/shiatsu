@@ -1,9 +1,10 @@
 import jpg from '@/assets/images/pictures/champ_de_tournesols.jpg';
 import webp from '@/assets/images/pictures/champ_de_tournesols.webp';
 import webpMobile from '@/assets/images/pictures/champ_de_tournesols-mobile.webp';
-import { Definition } from '../about.type';
+import { Definition } from '.';
 
-const timeForTreatment: Definition = {
+export const timeForTreatment: Definition = {
+  id: '5',
   title: 'Combien de séances pour un traitement',
   description: [
     'Sont à considérer les causes qui nous amènent à ce soin, notre état général, l’ancienneté, l’importance ou la \
@@ -20,5 +21,3 @@ const timeForTreatment: Definition = {
     imageWebpMobile: webpMobile,
   },
 };
-
-export default timeForTreatment;

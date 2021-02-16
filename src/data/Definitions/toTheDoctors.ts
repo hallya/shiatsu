@@ -1,9 +1,10 @@
 import jpg from '@/assets/images/pictures/capucine_fleurs_feuilles.jpg';
 import webp from '@/assets/images/pictures/capucine_fleurs_feuilles.webp';
 import webpMobile from '@/assets/images/pictures/capucine_fleurs_feuilles-mobile.webp';
-import { Definition } from '../about.type';
+import { Definition } from '.';
 
-const toTheDoctors: Definition = {
+export const toTheDoctors: Definition = {
+  id: '10',
   title: 'Chers Médecins',
   description: [
     '<blockquote>« La souffrance de l’autre nous fait vaciller. Cette souffrance est telle que parfois \
@@ -36,5 +37,3 @@ const toTheDoctors: Definition = {
     imageWebpMobile: webpMobile,
   },
 };
-
-export default toTheDoctors;

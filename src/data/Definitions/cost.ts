@@ -1,9 +1,10 @@
 import jpg from '@/assets/images/pictures/defaultImageForSharing.jpg';
 import webp from '@/assets/images/pictures/defaultImageForSharing.webp';
 import webpMobile from '@/assets/images/pictures/defaultImageForSharing-mobile.webp';
-import { Definition } from '../about.type';
+import { Definition } from '.';
 
-const cost: Definition = {
+export const cost: Definition = {
+  id: '4',
   title: 'Le shiatsu, un choix en conscience',
   description: [
     'Se soigner, prendre soin de sa santé est associé dans notre pays à la gratuité. Sécurité Sociale et mutuelle \
@@ -22,4 +23,3 @@ const cost: Definition = {
     imageWebpMobile: webpMobile,
   },
 };
-export default cost;

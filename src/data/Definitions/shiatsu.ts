@@ -1,9 +1,10 @@
 import jpg from '@/assets/images/pictures/nathalie_de_loeaper_pratique_shiatsu.jpg';
 import webp from '@/assets/images/pictures/nathalie_de_loeaper_pratique_shiatsu.webp';
 import webpMobile from '@/assets/images/pictures/nathalie_de_loeaper_pratique_shiatsu-mobile.webp';
-import { Definition } from '../about.type';
+import { Definition } from '.';
 
-const shiatsu: Definition = {
+export const shiatsu: Definition = {
+  id: '1',
   title: 'Qu’est-ce que le shiatsu ?',
   description: [
     'Le shiatsu est une des huit approches alternatives désignées dans la résolution du \
@@ -39,5 +40,3 @@ const shiatsu: Definition = {
     imageWebpMobile: webpMobile,
   },
 };
-
-export default shiatsu;

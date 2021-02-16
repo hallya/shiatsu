@@ -35,8 +35,8 @@
         </footer>
       </blockquote>
     </section>
-    <section>
-      <p>
+    <section aria-label="Le shiatsu, pourquoi ?" aria-describedby="p-1 p-2 p-3 p-4">
+      <p id="p-1">
         Fatigué ou vite fatigable, anxieux, déprimé, tendu, irascible, colérique, à fleur de peau,
         agité, angoissé, stressé, triste, sans entrain, sans énergie, sans appétit, en train de
         suivre un régime, de santé fragile, toujours enrhumé, sujet aux gastro à répétition, aux
@@ -48,7 +48,7 @@
         chagrin à la suite d’une séparation, d’un deuil, dans l’angoisse d’une maladie incurable, en
         fin de vie…
       </p>
-      <p>
+      <p id="p-2">
         Ou simplement pour prévenir plutôt que guérir, pour avoir plus de force, plus de calme, plus
         d’entrain et de légèreté, pour se sentir un peu ou beaucoup mieux…
       </p>
@@ -57,11 +57,11 @@
         :loadImage="nenuphar.loadImage"
         description="Quelques nenuphar côte à côte sur un plan d'eau"
       />
-      <p>
+      <p id="p-3">
         Le shiatsu thérapeutique vous apporte le soin qui vous permet selon les cas de vous
         rétablir, d’être réaccordé, un ancrage et un apaisement dans la situation qui est la vôtre.
       </p>
-      <p>
+      <p id="p-4">
         J’ai constitué cette liste à partir des maux, légers ou graves, passagers ou persistants
         pour lesquels femmes, hommes ou enfants sont venus me voir et à qui j’ai fait du bien en
         réunifiant l’être, corps, cœur, esprit.

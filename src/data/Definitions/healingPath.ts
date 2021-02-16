@@ -1,9 +1,10 @@
 import jpg from '@/assets/images/pictures/pressions_mains_shiatsu.jpg';
 import webp from '@/assets/images/pictures/pressions_mains_shiatsu.webp';
 import webpMobile from '@/assets/images/pictures/pressions_mains_shiatsu-mobile.webp';
-import { Definition } from '../about.type';
+import { Definition } from '.';
 
-const healingPath: Definition = {
+export const healingPath: Definition = {
+  id: '8',
   title: 'Des mains qui soignent',
   description: [
     'J’ai lu cette histoire un jour, cela se passait au Japon, un retraité avait l’habitude de se rendre tous les \
@@ -23,5 +24,3 @@ const healingPath: Definition = {
     imageWebpMobile: webpMobile,
   },
 };
-
-export default healingPath;

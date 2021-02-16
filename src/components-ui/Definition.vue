@@ -1,18 +1,27 @@
 <template>
-  <div class="definition">
-    <dt v-on:click="isDescriptionShown = !isDescriptionShown" :class="isOpen">
-      <h2>{{ definition.title }}</h2>
-      <button :class="buttonState" :aria-label="buttonActionLabel"></button>
-    </dt>
-    <dd :class="isOpen">
+  <section
+    class="definition"
+    :aria-labelledby="`${definition.id}-title`"
+    :aria-describedby="`${definition.id}-description`"
+  >
+    <div
+      v-on:click="isDescriptionShown = !isDescriptionShown"
+      :class="`definitionTitleContainer ${isOpen}`"
+    >
+      <h2 :id="`${definition.id}-title`" class="definitionTitle">{{ definition.title }}</h2>
+      <button :class="buttonState" :aria-label="buttonActionLabel" />
+    </div>
+    <div :class="isOpen">
       <Picture :image="definition.images" :loadImage="isDescriptionShown" description />
-      <p
-        v-for="(paragraph, index) of definition.description"
-        :key="`${definition.title} - paragraphe ${index}`"
-        v-html="paragraph"
-      ></p>
-    </dd>
-  </div>
+      <div :id="`${definition.id}-description`" class="definitionDescriptionContainer">
+        <p
+          v-for="(paragraph, index) of definition.description"
+          :key="`${definition.title} - paragraphe ${index}`"
+          v-html="paragraph"
+        ></p>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script lang="ts">
@@ -53,7 +62,7 @@ export default {
   margin-bottom: 5px;
 
   @include laptop {
-    dd {
+    .definitionDescriptionContainer {
       display: flex;
       justify-content: space-around;
       align-items: center;
@@ -68,17 +77,17 @@ export default {
     }
 
     &:nth-child(odd) {
-      dd {
+      .definitionDescriptionContainer {
         flex-direction: row-reverse;
       }
     }
     &:nth-child(even) {
-      dd {
+      .definitionDescriptionContainer {
         flex-direction: row;
       }
     }
   }
-  dt {
+  .definitionTitleContainer {
     cursor: pointer;
     position: sticky;
     top: 70px;
@@ -110,7 +119,7 @@ export default {
       padding: 5px 25vw;
       top: 65px;
     }
-    h2 {
+    .definitionTitle {
       text-align: left;
       margin-bottom: 5px;
       color: $jungle-green;
@@ -170,7 +179,7 @@ export default {
     }
   }
 
-  dd {
+  .definitionDescriptionContainer {
     max-height: 0px;
     height: auto;
     width: calc(100% - 10px);

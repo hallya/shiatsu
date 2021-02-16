@@ -1,9 +1,10 @@
 import jpg from '@/assets/images/pictures/oiseau_qui_chante.jpg';
 import webp from '@/assets/images/pictures/oiseau_qui_chante.webp';
 import webpMobile from '@/assets/images/pictures/oiseau_qui_chante-mobile.webp';
-import { Definition } from '../about.type';
+import { Definition } from '.';
 
-const generosity: Definition = {
+export const generosity: Definition = {
+  id: '6',
   title: 'Soyez généreux, partagez votre expérience !',
   description: [
     'Si le shiatsu vous a fait du bien, parlez-en, il est encore trop peu connu en France et a besoin de chaque voix \
@@ -18,5 +19,3 @@ const generosity: Definition = {
     imageWebpMobile: webpMobile,
   },
 };
-
-export default generosity;

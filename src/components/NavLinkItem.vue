@@ -1,14 +1,12 @@
 <template>
   <router-link :to="link" tabindex="0" exact>
-    <!-- <SpinningRings /> -->
     <img class="header-nav-item-image" v-bind:src="imgSrc" v-bind:alt="label" />
-    <p>{{ label }}</p>
+    <p class="navLinkText">{{ label }}</p>
   </router-link>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import SpinningRings from '../components-ui/SpinningRings.vue';
 
 export default Vue.extend({
   name: 'NavLinkItem',
@@ -16,9 +14,6 @@ export default Vue.extend({
     link: String,
     imgSrc: String,
     label: String,
-  },
-  components: {
-    SpinningRings,
   },
 });
 </script>
@@ -28,13 +23,13 @@ export default Vue.extend({
 @import '@/styles/mixin.scss';
 
 a {
-  display: flex;
   align-items: center;
-  position: relative;
   border-radius: 50px;
-  padding: 10px;
-  font-weight: bold;
   color: $dark-gray;
+  display: flex;
+  font-weight: bold;
+  padding: 10px;
+  position: relative;
   transition: 0.2s;
 
   @include mobile {
@@ -75,7 +70,8 @@ a {
     width: 37px;
     height: 37px;
   }
-  p {
+
+  .navLinkText {
     display: none;
     font-family: 'Arbutus Slab';
 

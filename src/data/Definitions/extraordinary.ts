@@ -1,9 +1,10 @@
 import jpg from '@/assets/images/pictures/etang_verdure(2).jpg';
 import webp from '@/assets/images/pictures/etang_verdure(2).webp';
 import webpMobile from '@/assets/images/pictures/etang_verdure(2)-mobile.webp';
-import { Definition } from '../about.type';
+import { Definition } from '.';
 
-const extraordinary: Definition = {
+export const extraordinary: Definition = {
+  id: '7',
   title: 'Shiatsus extraordinaires',
   description: [
     'Il y a quelques années, j’ai été appelée au chevet de Claude souffrant d’un cancer généralisé diagnostiqué un \
@@ -35,5 +36,3 @@ const extraordinary: Definition = {
     imageWebpMobile: webpMobile,
   },
 };
-
-export default extraordinary;

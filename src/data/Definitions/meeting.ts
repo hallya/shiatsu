@@ -1,9 +1,10 @@
 import jpg from '@/assets/images/pictures/nathalie_de_loeper_praticienne_shiatsu.jpg';
 import webp from '@/assets/images/pictures/nathalie_de_loeper_praticienne_shiatsu.webp';
 import webpMobile from '@/assets/images/pictures/nathalie_de_loeper_praticienne_shiatsu-mobile.webp';
-import { Definition } from '../about.type';
+import { Definition } from '.';
 
-const meeting: Definition = {
+export const meeting: Definition = {
+  id: '3',
   title: 'Le Shiatsu, un soin et une rencontre',
   description: [
     'Le shiatsu est une voie qui engage celui qui la suit dans la profondeur du cœur et de la conscience.',
@@ -21,5 +22,3 @@ const meeting: Definition = {
     imageWebpMobile: webpMobile,
   },
 };
-
-export default meeting;

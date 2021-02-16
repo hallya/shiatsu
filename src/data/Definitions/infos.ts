@@ -1,9 +1,10 @@
 import insideStCyrWebp from '@/assets/images/pictures/nathalie_cabinet_saint-cyr-lecole.webp';
 import insideStCyrWebpMobile from '@/assets/images/pictures/nathalie_cabinet_saint-cyr-lecole-mobile.webp';
 import insideStCyr from '@/assets/images/pictures/nathalie_cabinet_saint-cyr-lecole.jpg';
-import { Definition } from '../about.type';
+import { Definition } from '.';
 
-const infos: Definition = {
+export const infos: Definition = {
+  id: '9',
   title: 'Infos pratiques et tarifs',
   description: [
     'Concernant la tarification,',
@@ -13,5 +14,3 @@ const infos: Definition = {
   ],
   images: null,
 };
-
-export default infos;

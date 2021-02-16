@@ -35,11 +35,6 @@ blockquote,
 input {
   user-select: none;
 }
-h1 {
-  font-family: 'Arbutus Slab', sans-serif;
-  font-size: 26px;
-  margin: 0;
-}
 figcaption {
   user-select: none;
   font-weight: lighter;
@@ -81,9 +76,6 @@ p {
   line-height: 26px;
   font-size: 1.1rem;
 
-  @include tablet {
-    // font-size: 0.9rem;
-  }
   @include laptop {
     font-size: 1rem;
   }
