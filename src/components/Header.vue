@@ -93,7 +93,7 @@ export default {
     }
     #title-description {
       color: rgb(121, 159, 55);
-      font: 26px 'Arbutus Slab', sans-serif;
+      font: 26px/26px 'Arbutus Slab', sans-serif;
       letter-spacing: 3px;
       padding: 0;
       text-align: center;
