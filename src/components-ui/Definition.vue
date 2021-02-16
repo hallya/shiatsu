@@ -1,24 +1,33 @@
 <template>
   <section
-    class="definition"
-    :aria-labelledby="`${definition.id}-title`"
     :aria-describedby="`${definition.id}-description`"
+    :aria-labelledby="`${definition.id}-title`"
+    class="definition"
+    itemprop="mainEntity"
+    itemscope
+    itemtype="https://schema.org/Question"
   >
     <div
-      v-on:click="isDescriptionShown = !isDescriptionShown"
       :class="`definitionTitleContainer ${isOpen}`"
+      v-on:click="isDescriptionShown = !isDescriptionShown"
     >
-      <h2 :id="`${definition.id}-title`" class="definitionTitle">{{ definition.title }}</h2>
+      <h2 itemprop="name" :id="`${definition.id}-title`" class="definitionTitle">
+        {{ definition.title }}
+      </h2>
       <button :class="buttonState" :aria-label="buttonActionLabel" />
     </div>
-    <div :class="isOpen">
+    <div :class="isOpen" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
       <Picture :image="definition.images" :loadImage="isDescriptionShown" description />
-      <div :id="`${definition.id}-description`" class="definitionDescriptionContainer">
+      <div
+        :id="`${definition.id}-description`"
+        class="definitionDescriptionContainer"
+        itemprop="text"
+      >
         <p
-          v-for="(paragraph, index) of definition.description"
           :key="`${definition.title} - paragraphe ${index}`"
+          v-for="(paragraph, index) of definition.description"
           v-html="paragraph"
-        ></p>
+        />
       </div>
     </div>
   </section>

@@ -23,6 +23,10 @@ export default {
   metaInfo() {
     return {
       title: 'À propos',
+      htmlAttrs: {
+        itemscope: 'itemscope',
+        itemtype: 'https://schema.org/FAQPage',
+      },
     };
   },
 };
