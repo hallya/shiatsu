@@ -16,13 +16,16 @@
       </h2>
       <button :class="buttonState" :aria-label="buttonActionLabel" />
     </div>
-    <div :class="isOpen" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <Picture :image="definition.images" :loadImage="isDescriptionShown" description />
-      <div
-        :id="`${definition.id}-description`"
-        class="definitionDescriptionContainer"
-        itemprop="text"
-      >
+    <div
+      :class="`definitionDescriptionContainer ${isOpen}`"
+      itemscope
+      itemprop="acceptedAnswer"
+      itemtype="https://schema.org/Answer"
+    >
+      <div class="picture">
+        <Picture :image="definition.images" :loadImage="isDescriptionShown" description />
+      </div>
+      <div :id="`${definition.id}-description`" itemprop="text" class="description">
         <p
           :key="`${definition.title} - paragraphe ${index}`"
           v-for="(paragraph, index) of definition.description"
@@ -72,27 +75,29 @@ export default {
 
   @include laptop {
     .definitionDescriptionContainer {
+      .picture {
+        width: 55%;
+      }
+    }
+    .description {
       display: flex;
       justify-content: space-around;
       align-items: center;
       flex-wrap: wrap;
-
-      picture {
-        width: 55%;
-      }
-      p:first-of-type {
-        width: 40%;
-      }
     }
 
     &:nth-child(odd) {
       .definitionDescriptionContainer {
-        flex-direction: row-reverse;
+        picture {
+          margin-left: auto;
+        }
       }
     }
     &:nth-child(even) {
       .definitionDescriptionContainer {
-        flex-direction: row;
+        picture {
+          margin-right: auto;
+        }
       }
     }
   }
