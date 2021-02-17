@@ -6,6 +6,8 @@
     "import/no-unresolved": 0,
     "react/jsx-filename-extension": {
       "extensions": [".jsx", ".tsx"]
-    }
+    },
+    "quotes": "error",
+    "jsx-quotes": "error"
   }
 }
