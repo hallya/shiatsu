@@ -3,32 +3,24 @@
     :aria-describedby="`${definition.id}-description`"
     :aria-labelledby="`${definition.id}-title`"
     class="definition"
-    itemprop="mainEntity"
-    itemscope
-    itemtype="https://schema.org/Question"
   >
     <div
-      :class="`definitionTitleContainer ${isOpen}`"
+      :class="`faqQuestionContainer ${isOpen}`"
       v-on:click="isDescriptionShown = !isDescriptionShown"
     >
-      <h2 itemprop="name" :id="`${definition.id}-title`" class="definitionTitle">
-        {{ definition.title }}
+      <h2 :id="`${definition.id}-title`" class="definitionTitle">
+        {{ definition.question }}
       </h2>
       <button :class="buttonState" :aria-label="buttonActionLabel" />
     </div>
-    <div
-      :class="`definitionDescriptionContainer ${isOpen}`"
-      itemscope
-      itemprop="acceptedAnswer"
-      itemtype="https://schema.org/Answer"
-    >
+    <div :class="`definitionDescriptionContainer ${isOpen}`">
       <div class="picture">
         <Picture :image="definition.images" :loadImage="isDescriptionShown" description />
       </div>
-      <div :id="`${definition.id}-description`" itemprop="text" class="description">
+      <div :id="`${definition.id}-description`" class="description">
         <p
-          :key="`${definition.title} - paragraphe ${index}`"
-          v-for="(paragraph, index) of definition.description"
+          :key="`${definition.question} - paragraphe ${index}`"
+          v-for="(paragraph, index) of definition.answer"
           v-html="paragraph"
         />
       </div>
@@ -37,10 +29,10 @@
 </template>
 
 <script lang="ts">
-import Picture from '@/components-ui/Picture/Picture.vue';
+import Picture from "@/components-ui/Picture/Picture.vue";
 
 export default {
-  name: 'Definition',
+  name: "Definition",
   components: {
     Picture,
   },
@@ -55,21 +47,21 @@ export default {
   },
   computed: {
     isOpen() {
-      return this.isDescriptionShown && 'open';
+      return this.isDescriptionShown && "open";
     },
     buttonState() {
-      return this.isDescriptionShown ? 'toggleDescription close' : 'toggleDescription';
+      return this.isDescriptionShown ? "toggleDescription close" : "toggleDescription";
     },
     buttonActionLabel() {
-      return this.isDescriptionShown ? 'Fermer la description' : 'Ouvrir la description';
+      return this.isDescriptionShown ? "Fermer la description" : "Ouvrir la description";
     },
   },
 };
 </script>
 
 <style lang="scss">
-@import '@/styles/vars.scss';
-@import '@/styles/mixin.scss';
+@import "@/styles/vars.scss";
+@import "@/styles/mixin.scss";
 .definition {
   margin-bottom: 5px;
 
@@ -101,7 +93,7 @@ export default {
       }
     }
   }
-  .definitionTitleContainer {
+  .faqQuestionContainer {
     cursor: pointer;
     position: sticky;
     top: 70px;
@@ -152,7 +144,7 @@ export default {
 
       &:before,
       &:after {
-        content: '';
+        content: "";
         position: absolute;
         background-color: $jungle-green;
         border-radius: 10px;

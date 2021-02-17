@@ -1,32 +1,31 @@
 <template>
   <main class="about">
-    <Definition
-      v-for="definition of definitions"
-      :definition="definition"
-      :key="`Definition : ${definition.title}`"
-    />
+    <Faq v-for="faq of faqs" :definition="faq" :key="`Definition : ${faq.question}`" />
   </main>
 </template>
 <script>
-import Definition from '@/components-ui/Definition.vue';
-import { definitions } from '@/data/Definitions';
+import Faq from "@/components-ui/FAQ.vue";
+import { faqs } from "@/data/faqs";
+import { aboutPageSchemaContext } from "@/data/googleSchemas";
 
 export default {
   components: {
-    Definition,
+    Faq,
   },
   data() {
     return {
-      definitions,
+      faqs,
     };
   },
   metaInfo() {
     return {
-      title: 'À propos',
-      htmlAttrs: {
-        itemscope: 'itemscope',
-        itemtype: 'https://schema.org/FAQPage',
-      },
+      title: "À propos",
+      script: [
+        {
+          type: "application/ld+json",
+          innerHTML: JSON.stringify(aboutPageSchemaContext),
+        },
+      ],
     };
   },
 };

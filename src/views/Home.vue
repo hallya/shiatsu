@@ -71,21 +71,20 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import Picture from '@/components-ui/Picture/Picture.vue';
-import { Home } from './Home.interface';
-import tournesolJpg from '@/assets/images/pictures/tournesol.jpg';
-import tournesolWebp from '@/assets/images/pictures/tournesol.webp';
-import tournesolWebpMobile from '@/assets/images/pictures/tournesol-mobile.webp';
-import nenupharJpg from '@/assets/images/pictures/plateau_nenuphar.jpg';
-import nenupharWebp from '@/assets/images/pictures/plateau_nenuphar.webp';
-import nenupharWebpMobile from '@/assets/images/pictures/plateau_nenuphar-mobile.webp';
-import defaultImageForSharingJpg from '@/assets/images/pictures/defaultImageForSharing.jpg';
-
-import store from '../store/store';
+import Vue from "vue";
+import Picture from "@/components-ui/Picture/Picture.vue";
+import { Home } from "./Home.interface";
+import tournesolJpg from "@/assets/images/pictures/tournesol.jpg";
+import tournesolWebp from "@/assets/images/pictures/tournesol.webp";
+import tournesolWebpMobile from "@/assets/images/pictures/tournesol-mobile.webp";
+import nenupharJpg from "@/assets/images/pictures/plateau_nenuphar.jpg";
+import nenupharWebp from "@/assets/images/pictures/plateau_nenuphar.webp";
+import nenupharWebpMobile from "@/assets/images/pictures/plateau_nenuphar-mobile.webp";
+import defaultImageForSharingJpg from "@/assets/images/pictures/defaultImageForSharing.jpg";
+import { homePageSchemaContext } from "@/data/googleSchemas";
 
 export default Vue.extend({
-  name: 'Home',
+  name: "Home",
   components: {
     Picture,
   },
@@ -114,25 +113,31 @@ export default Vue.extend({
   },
   metaInfo() {
     return {
-      title: 'Nathalie de Loeper, votre praticienne de Shiatsu',
+      title: "Nathalie de Loeper, votre praticienne de Shiatsu",
       meta: [
         {
-          name: 'Description',
-          content: 'Prenez rendez-vous pour une séance bien-être à Saint Cyr l‘école ou à domicile',
+          name: "Description",
+          content: "Prenez rendez-vous pour une séance bien-être à Saint Cyr l‘école ou à domicile",
         },
         {
-          property: 'og:title',
-          content: 'Nathalie de Loeper, votre praticienne de Shiatsu',
+          property: "og:title",
+          content: "Nathalie de Loeper, votre praticienne de Shiatsu",
         },
-        { property: 'og:type', content: 'website' },
+        { property: "og:type", content: "website" },
         {
-          property: 'og:description',
+          property: "og:description",
           content:
-            'Découvrez une pratique thérapeutique unique au travers du regard de Nathalie de Loeper, praticienne de Shiatsu',
+            "Découvrez une pratique thérapeutique unique au travers du regard de Nathalie de Loeper, praticienne de Shiatsu",
         },
         {
-          property: 'og:image',
+          property: "og:image",
           content: `https://shiatsutherapie78.info/${defaultImageForSharingJpg}`,
+        },
+      ],
+      script: [
+        {
+          type: "application/ld+json",
+          innerHTML: JSON.stringify(homePageSchemaContext),
         },
       ],
     };
@@ -141,8 +146,8 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-@import '@/styles/mixin.scss';
-@import '@/styles/vars.scss';
+@import "@/styles/mixin.scss";
+@import "@/styles/vars.scss";
 
 main.home {
   width: 100%;

@@ -49,6 +49,7 @@
     "prettier": "^1.18.2",
     "pretty-quick": "^1.11.1",
     "sass-loader": "7.1.0",
+    "schema-dts": "^0.8.2",
     "ts-jest": "^26.0.0",
     "ts-loader": "5.3.3",
     "tslint-config-airbnb": "^5.11.2",

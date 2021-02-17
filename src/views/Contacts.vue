@@ -19,27 +19,28 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import Address from '@/components-ui/Address.vue';
-import insideStCyrWebp from '@/assets/images/pictures/nathalie_cabinet_saint-cyr-lecole.webp';
-import insideStCyrWebpMobile from '@/assets/images/pictures/nathalie_cabinet_saint-cyr-lecole-mobile.webp';
-import insideStCyr from '@/assets/images/pictures/nathalie_cabinet_saint-cyr-lecole.jpg';
-import insideBouloireWebp from '@/assets/images/pictures/inside_bouloire.webp';
-import insideBouloireWebpMobile from '@/assets/images/pictures/inside_bouloire-mobile.webp';
-import insideBouloire from '@/assets/images/pictures/inside_bouloire.jpg';
+import Vue from "vue";
+import Address from "@/components-ui/Address.vue";
+import insideStCyrWebp from "@/assets/images/pictures/nathalie_cabinet_saint-cyr-lecole.webp";
+import insideStCyrWebpMobile from "@/assets/images/pictures/nathalie_cabinet_saint-cyr-lecole-mobile.webp";
+import insideStCyr from "@/assets/images/pictures/nathalie_cabinet_saint-cyr-lecole.jpg";
+import insideBouloireWebp from "@/assets/images/pictures/inside_bouloire.webp";
+import insideBouloireWebpMobile from "@/assets/images/pictures/inside_bouloire-mobile.webp";
+import insideBouloire from "@/assets/images/pictures/inside_bouloire.jpg";
+import { contactPageSchemaContext } from "@/data/googleSchemas";
 
 export default Vue.extend({
-  name: 'Contacts',
+  name: "Contacts",
   components: {
     Address,
   },
   data() {
     return {
       bouloire: {
-        description: 'Cabinet - vue intérieur',
+        description: "Cabinet - vue intérieur",
         direction:
-          'https://www.google.com/maps/dir/?api=1&destination=Nathalie+de+loeper+shiatsu+bouloire&travelmode=driving',
-        fullAddress: ['La Grenouille', 'Route de Coudrecieux', '72440 Bouloire'],
+          "https://www.google.com/maps/dir/?api=1&destination=Nathalie+de+loeper+shiatsu+bouloire&travelmode=driving",
+        fullAddress: ["La Grenouille", "Route de Coudrecieux", "72440 Bouloire"],
         image: {
           imageWebp: insideBouloireWebp,
           imageWebpMobile: insideBouloireWebpMobile,
@@ -47,10 +48,10 @@ export default Vue.extend({
         },
       },
       saintCyrLecole: {
-        description: 'Cabinet - vue intérieur',
+        description: "Cabinet - vue intérieur",
         direction:
-          'https://www.google.com/maps/dir/?api=1&destination=Nathalie+de+loeper+shiatsu+saint+cyr+lecole&travelmode=driving',
-        fullAddress: ['5 rue Jean Zay', '78210 Saint Cyr l‘Ecole'],
+          "https://www.google.com/maps/dir/?api=1&destination=Nathalie+de+loeper+shiatsu+saint+cyr+lecole&travelmode=driving",
+        fullAddress: ["5 rue Jean Zay", "78210 Saint Cyr l‘Ecole"],
         image: {
           imageWebp: insideStCyrWebp,
           imageWebpMobile: insideStCyrWebpMobile,
@@ -61,12 +62,18 @@ export default Vue.extend({
   },
   metaInfo() {
     return {
-      title: 'Contacts',
+      title: "Contacts",
       meta: [
         {
-          name: 'description',
+          name: "description",
           content:
-            'Vous souhaitez passer le pas et découvrir les bienfaits du shiatsu ? Prenez RDV dés maintenant',
+            "Vous souhaitez passer le pas et découvrir les bienfaits du shiatsu ? Prenez RDV dés maintenant",
+        },
+      ],
+      script: [
+        {
+          type: "application/ld+json",
+          innerHTML: JSON.stringify(contactPageSchemaContext),
         },
       ],
     };
@@ -76,8 +83,8 @@ export default Vue.extend({
 
 <style lang="scss">
 @import url(https://weloveiconfonts.com/api/?family=fontawesome);
-@import '@/styles/vars.scss';
-@import '@/styles/mixin.scss';
+@import "@/styles/vars.scss";
+@import "@/styles/mixin.scss";
 
 main {
   display: flex;
