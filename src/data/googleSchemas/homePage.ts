@@ -1,9 +1,11 @@
 import { AboutPage, MedicalBusiness, WithContext } from "schema-dts";
 import { medicalBusiness } from "./medicalBusiness";
+import { organization } from "./organization";
 
 export const homePageSchemaContext: WithContext<MedicalBusiness | AboutPage> = {
   "@context": "https://schema.org",
   "@graph": [
+    organization,
     {
       "@type": "Service",
 

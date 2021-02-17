@@ -1,6 +1,7 @@
 import { AboutPage, Question, WithContext } from "schema-dts";
 import thumbnailPicture from "@/assets/images/pictures/nathalie_de_loeper_praticienne_shiatsu.jpg";
 import { faqs } from "../faqs/index";
+import { organization } from "./organization";
 import { person } from "./person";
 
 const lastReviewed = "2021-02-17";
@@ -8,6 +9,7 @@ const lastReviewed = "2021-02-17";
 export const aboutPageSchemaContext: WithContext<AboutPage> = {
   "@context": "https://schema.org",
   "@graph": [
+    organization,
     {
       lastReviewed,
       "@type": "AboutPage",

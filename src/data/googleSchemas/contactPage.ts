@@ -1,5 +1,6 @@
 import { WithContext, ContactPage } from "schema-dts";
 import { medicalBusiness } from "./medicalBusiness";
+import { organization } from "./organization";
 import { person } from "./person";
 
 const lastReviewed = "2021-02-17";
@@ -8,6 +9,7 @@ export const contactPageSchemaContext: WithContext<ContactPage> = {
   "@context": "https://schema.org",
   "@graph": [
     medicalBusiness,
+    organization,
     {
       lastReviewed,
       "@type": "ContactPage",

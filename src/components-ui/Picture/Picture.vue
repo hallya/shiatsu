@@ -12,14 +12,13 @@
 </template>
 
 <script lang="ts">
-import { Picture } from './Picture.interface';
+import { Picture } from "./Picture.interface";
 
 export default {
-  name: 'Picture',
+  name: "Picture",
   props: {
     image: {
       type: Object,
-      require: true,
     },
     loadImage: Boolean,
     description: String,
