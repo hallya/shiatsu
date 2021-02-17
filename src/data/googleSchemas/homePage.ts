@@ -1,12 +1,55 @@
 import { AboutPage, MedicalBusiness, WithContext } from "schema-dts";
-import logo from "../../assets/images/logos/nenuphar.svg";
 import { medicalBusiness } from "./medicalBusiness";
-import { person } from "./person";
 
 export const homePageSchemaContext: WithContext<MedicalBusiness | AboutPage> = {
   "@context": "https://schema.org",
   "@graph": [
-    medicalBusiness,
+    {
+      "@type": "Service",
+
+      areaServed: medicalBusiness["areaServed"],
+      serviceType: "Shiatsu thérapeutique",
+      provider: medicalBusiness,
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Séance de shiatsu",
+        itemListElement: [
+          {
+            "@type": "OfferCatalog",
+            name: "Shiatsu sur place",
+            itemListElement: [
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Saint-Cyr-L'école",
+                },
+              },
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Bouloire",
+                },
+              },
+            ],
+          },
+          {
+            "@type": "OfferCatalog",
+            name: "Shiatsu à domicile",
+            itemListElement: [
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Saint-Cyr-L'école, Paris et proche banlieux",
+                },
+              },
+            ],
+          },
+        ],
+      },
+    },
     {
       "@type": "SpecialAnnouncement",
       name: "Infos covid",
