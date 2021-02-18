@@ -67,6 +67,7 @@ export const homePageSchemaContext: WithContext<MedicalBusiness | AboutPage> = {
         "@type": "MedicalBusiness",
         "@id": "medicalBusiness",
       },
+      expires: "2021-08-31",
     },
   ],
 };
