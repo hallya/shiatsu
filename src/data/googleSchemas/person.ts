@@ -5,6 +5,7 @@ export const person: Person = {
   "@type": "Person",
   address: {
     "@type": "PostalAddress",
+    "@id": "address",
     addressLocality: "Saint-Cyr-l'École, France",
     postalCode: "F-78210",
     streetAddress: "5 rue Jean Zay",
@@ -23,4 +24,4 @@ export const person: Person = {
     "https://www.linkedin.com/in/nathalie-de-loeper-shiatsu-97910988/",
     "https://www.koifaire.com/ile-de-france/deloeper,shiatsu-140396.html",
   ],
-} as const;
+};

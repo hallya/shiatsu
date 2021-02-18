@@ -8,7 +8,10 @@ const lastReviewed = "2021-02-17";
 export const contactPageSchemaContext: WithContext<ContactPage> = {
   "@context": "https://schema.org",
   "@graph": [
-    medicalBusiness,
+    {
+      "@type": "MedicalBusiness",
+      "@id": "medicalBusiness",
+    },
     organization,
     {
       lastReviewed,

@@ -9,8 +9,10 @@ import { reviews } from "./review";
 
 export const medicalBusiness: MedicalBusiness = {
   "@type": "MedicalBusiness",
-  "@id": "https://shiatsutherapie78.info",
-  address: person["address"],
+  "@id": "medicalBusiness",
+  address: {
+    "@id": "address",
+  },
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: 5,
@@ -23,6 +25,7 @@ export const medicalBusiness: MedicalBusiness = {
   },
   areaServed: {
     "@type": "GeoCircle",
+    "@id": "businessArea",
     geoMidpoint: {
       "@type": "GeoCoordinates",
       latitude: 48.809106,
