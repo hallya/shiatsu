@@ -7,13 +7,11 @@
       type="image/webp"
     />
     <source v-if="image.imageWebpMobile" :srcset="image.imageWebpMobile" type="image/webp" />
-    <img :src="image.defaultImage" :alt="description || ''" aria-checked="" loading="lazy" />
+    <img :src="image.defaultImage" :alt="description || ''" loading="lazy" />
   </picture>
 </template>
 
 <script lang="ts">
-import { Picture } from "./Picture.interface";
-
 export default {
   name: "Picture",
   props: {
