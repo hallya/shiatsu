@@ -30,7 +30,7 @@ import insideBouloire from "@/assets/images/pictures/inside_bouloire.jpg";
 import { contactPageSchemaContext } from "@/data/googleSchemas";
 
 export default Vue.extend({
-  name: "Contacts",
+  name: "Contact",
   components: {
     Address,
   },

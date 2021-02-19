@@ -1,7 +1,7 @@
 User-agent: *
 
 Allow: /about
-Allow: /contacts
+Allow: /contact
 Allow: /
 
 

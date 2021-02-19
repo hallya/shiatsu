@@ -69,7 +69,7 @@ export const contactPageSchemaContext: WithContext<ContactPage> = {
       },
       name: "Contact",
       typicalAgeRange: "18-",
-      url: "https://shiatsutherapie78.info/contacts",
+      url: "https://shiatsutherapie78.info/contact",
     },
   ],
 };

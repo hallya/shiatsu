@@ -14,20 +14,20 @@
       <!-- <span>•</span>
       <NavLinkItem link="/blog" :imgSrc="navlinks.blog" label="Blog" /> -->
       <span>•</span>
-      <NavLinkItem link="/contacts" :imgSrc="navlinks.contacts" label="Contacts" />
+      <NavLinkItem link="/contact" :imgSrc="navlinks.contact" label="Contact" />
     </nav>
   </header>
 </template>
 
 <script lang="ts">
-import NavLinkItem from './NavLinkItem.vue';
+import NavLinkItem from "./NavLinkItem.vue";
 
-import nenuphar from '@/assets/images/logos/nenuphar.svg';
-import home from '@/assets/images/logos/home.svg';
-import about from '@/assets/images/logos/about.svg';
-import blog from '@/assets/images/logos/blog.svg';
-import reviews from '@/assets/images/logos/reviews.svg';
-import contacts from '@/assets/images/logos/contacts.svg';
+import nenuphar from "@/assets/images/logos/nenuphar.svg";
+import home from "@/assets/images/logos/home.svg";
+import about from "@/assets/images/logos/about.svg";
+import blog from "@/assets/images/logos/blog.svg";
+import reviews from "@/assets/images/logos/reviews.svg";
+import contact from "@/assets/images/logos/contact.svg";
 
 export default {
   components: {
@@ -41,7 +41,7 @@ export default {
         about,
         blog,
         reviews,
-        contacts,
+        contact,
       },
     };
   },
@@ -49,7 +49,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@/styles/mixin.scss';
+@import "@/styles/mixin.scss";
 
 #header {
   background-color: white;
@@ -85,7 +85,7 @@ export default {
       }
     }
     #title {
-      font: 42px 'Arbutus Slab', sans-serif;
+      font: 42px "Arbutus Slab", sans-serif;
       margin: 0;
       font-weight: bold;
       letter-spacing: 10px;
@@ -93,7 +93,7 @@ export default {
     }
     #title-description {
       color: rgb(121, 159, 55);
-      font: 26px/26px 'Arbutus Slab', sans-serif;
+      font: 26px/26px "Arbutus Slab", sans-serif;
       letter-spacing: 3px;
       padding: 0;
       text-align: center;

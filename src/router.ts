@@ -1,8 +1,8 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import VueMeta from 'vue-meta';
-import Home from './views/Home.vue';
-import Blog from './views/Blog.vue';
+import Vue from "vue";
+import VueRouter from "vue-router";
+import VueMeta from "vue-meta";
+import Home from "./views/Home.vue";
+import Blog from "./views/Blog.vue";
 
 Vue.use(VueRouter);
 Vue.use(VueMeta, {
@@ -10,48 +10,48 @@ Vue.use(VueMeta, {
 });
 
 export default new VueRouter({
-  mode: 'history',
+  mode: "history",
   routes: [
     {
-      path: '/',
+      path: "/",
       component: Home,
     },
     {
-      path: '/about',
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
+      path: "/about",
+      component: () => import(/* webpackChunkName: "about" */ "./views/About.vue"),
     },
     {
-      path: '/blog',
-      component: () => import(/* webpackChunkName: "blog" */ './views/Blog.vue'),
+      path: "/blog",
+      component: () => import(/* webpackChunkName: "blog" */ "./views/Blog.vue"),
       children: [
         {
-          path: ':id',
+          path: ":id",
           props: true,
           component: () =>
-            import(/* webpackChunkName: "singlepost" */ './components/SinglePost.vue'),
+            import(/* webpackChunkName: "singlepost" */ "./components/SinglePost.vue"),
         },
         {
-          path: '',
-          component: () => import(/* webpackChunkName: "listpost" */ './components/ListPost.vue'),
+          path: "",
+          component: () => import(/* webpackChunkName: "listpost" */ "./components/ListPost.vue"),
         },
         {
-          path: '**',
-          redirect: { path: '/blog' },
+          path: "**",
+          redirect: { path: "/blog" },
         },
       ],
     },
     {
-      path: '/contacts',
-      component: () => import(/* webpackChunkName: "contacts" */ './views/Contacts.vue'),
+      path: "/contact",
+      component: () => import(/* webpackChunkName: "contact" */ "./views/Contact.vue"),
     },
     {
-      path: '/404-page-not-found',
-      component: () => import(/* webpackChunkName: "404" */ './views/404.vue'),
+      path: "/404-page-not-found",
+      component: () => import(/* webpackChunkName: "404" */ "./views/404.vue"),
     },
     {
-      path: '/*',
+      path: "/*",
       redirect: {
-        path: '/404-page-not-found',
+        path: "/404-page-not-found",
       },
     },
   ],
