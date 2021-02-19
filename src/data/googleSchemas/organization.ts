@@ -1,6 +1,5 @@
 import { Organization } from "schema-dts";
 import logo from "../../assets/images/logos/nenuphar.svg";
-import { reviews } from "./review";
 import { person } from "./person";
 
 export const organization: Organization = {
