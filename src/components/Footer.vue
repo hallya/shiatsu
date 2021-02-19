@@ -15,17 +15,21 @@
       href="https://www.koifaire.com/ile-de-france/deloeper,shiatsu-140396.html"
       target="_blank"
     >
-      <img src="https://www.koifaire.com/images/reference_sur_koifaire.jpg" alt="" />
+      <img
+        aria-label="lien vers page business"
+        src="https://www.koifaire.com/images/reference_sur_koifaire.jpg"
+        alt=""
+      />
     </a>
   </footer>
 </template>
 
 <script>
-import facebook from '@/assets/images/logos/facebook_logo.svg';
-import linkedIn from '@/assets/images/logos/linkedin_logo.svg';
+import facebook from "@/assets/images/logos/facebook_logo.svg";
+import linkedIn from "@/assets/images/logos/linkedin_logo.svg";
 
 export default {
-  name: 'Footer',
+  name: "Footer",
   data() {
     return {
       facebook,
@@ -36,7 +40,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@/styles/vars.scss';
+@import "@/styles/vars.scss";
 
 #footer {
   flex: 0 1 0;
