@@ -5,7 +5,7 @@ import { FAQElement } from ".";
 
 export const meeting: FAQElement = {
   id: "3",
-  question: "Le Shiatsu, un soin et une rencontre",
+  question: "Le shiatsu, un soin et une rencontre",
   answer: [
     "Le shiatsu est une voie qui engage celui qui la suit dans la profondeur du cœur et de la conscience.",
     "A genoux, dans cette position d’humilité, durant toute la durée de la séance le praticien de shiatsu se met au service du soin qu’il prodigue.",
