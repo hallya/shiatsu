@@ -66,6 +66,11 @@ export const homePageSchemaContext: WithContext<MedicalBusiness | AboutPage> = {
       announcementLocation: {
         "@type": "MedicalBusiness",
         "@id": "medicalBusiness",
+        address: {
+          "@id": "address",
+        },
+        name: "Cabinet sur Saint-Cyr-l'École",
+        url: organization["url"],
       },
       expires: "2021-08-31",
     },
