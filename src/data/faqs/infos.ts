@@ -10,7 +10,6 @@ export const infos: FAQElement = {
     "Concernant la tarification,",
     "<strong>Saint Cyr l’Ecole</strong> 65 euros",
     "<strong>Bouloire</strong> 50 euros",
-    "<strong>À domicile (Paris et proche banlieux)</strong> 30 euros (en supplément)",
   ],
   images: {
     defaultImage: jpg,
