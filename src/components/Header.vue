@@ -1,16 +1,18 @@
 <template>
-  <header id="header">
-    <section id="wrapper-title" aria-labelledby="title" aria-describedby="title-description">
-      <h1 id="title">Shiatsu Thérapie</h1>
-      <picture id="logoHeader">
+  <header class="header">
+    <section class="wrapper-title">
+      <h1 class="title">Shiatsu Thérapie</h1>
+      <picture class="logoHeader">
         <img :src="nenuphar" alt="un logo comprenant plusieurs nenuphar" />
       </picture>
-      <p id="title-description">Soigner votre énergie c'est améliorer votre santé</p>
+      <p class="title-description">Soigner votre énergie c'est améliorer votre santé</p>
     </section>
-    <nav id="nav">
+    <nav class="nav">
       <NavLinkItem link="/" :imgSrc="navlinks.home" label="Accueil" />
       <span>•</span>
       <NavLinkItem link="/about" :imgSrc="navlinks.about" label="À propos" />
+      <span>•</span>
+      <NavLinkItem link="/faq" :imgSrc="navlinks.about" label="FAQ" />
       <!-- <span>•</span>
       <NavLinkItem link="/blog" :imgSrc="navlinks.blog" label="Blog" /> -->
       <span>•</span>
@@ -51,7 +53,7 @@ export default {
 <style lang="scss">
 @import "@/styles/mixin.scss";
 
-#header {
+.header {
   background-color: white;
   box-shadow: 0 0 10px 10px white;
   flex: 0 2 0;
@@ -66,7 +68,7 @@ export default {
     top: -110px;
   }
 
-  #wrapper-title {
+  .wrapper-title {
     display: flex;
     flex-flow: wrap row;
     justify-content: center;
@@ -75,7 +77,7 @@ export default {
     @include laptop {
       padding: 0 25vw;
     }
-    picture#logoHeader {
+    .logoHeader {
       margin: 0;
       width: auto;
 
@@ -84,14 +86,14 @@ export default {
         width: 50px;
       }
     }
-    #title {
+    .title {
       font: 42px "Arbutus Slab", sans-serif;
       margin: 0;
       font-weight: bold;
       letter-spacing: 10px;
       line-height: 50px;
     }
-    #title-description {
+    .title-description {
       color: rgb(121, 159, 55);
       font: 26px/26px "Arbutus Slab", sans-serif;
       letter-spacing: 3px;
@@ -104,7 +106,7 @@ export default {
       }
     }
   }
-  #nav {
+  .nav {
     box-sizing: border-box;
     height: 70px;
     width: 100%;

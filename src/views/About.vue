@@ -1,6 +1,11 @@
 <template>
-  <main class="about">
-    <Faq v-for="about of abouts" :definition="about" :key="`Definition : ${about.question}`" />
+  <main class="main-about">
+    <Faq
+      v-for="(about, index) of abouts"
+      :index="index"
+      :definition="about"
+      :key="`Definition : ${about.question}`"
+    />
   </main>
 </template>
 <script>
@@ -32,8 +37,9 @@ export default {
 </script>
 
 <style lang="scss">
-.about {
-  padding: 10px 0;
+.main-about {
+  display: grid;
+  row-gap: 16px;
 
   .definitionsContainer {
     max-width: 100%;

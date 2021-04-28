@@ -1,23 +1,23 @@
 <template>
   <section
-    :aria-describedby="`${definition.id}-description`"
-    :aria-labelledby="`${definition.id}-title`"
+    :aria-describedby="`${index}-description`"
+    :aria-labelledby="`${index}-title`"
     class="definition"
   >
     <div
       :class="`faqQuestionContainer ${isOpen}`"
       v-on:click="isDescriptionShown = !isDescriptionShown"
     >
-      <h2 :id="`${definition.id}-title`" class="definitionTitle">
+      <h2 :id="`${index}-title`" class="definitionTitle">
         {{ definition.question }}
       </h2>
       <button :class="buttonState" :aria-label="buttonActionLabel" />
     </div>
     <div :class="`definitionDescriptionContainer ${isOpen}`">
-      <div class="picture">
+      <div v-if="definition.images" class="picture">
         <Picture :image="definition.images" :loadImage="isDescriptionShown" description />
       </div>
-      <div :id="`${definition.id}-description`" class="description">
+      <div :id="`${index}-description`" class="description">
         <p
           :key="`${definition.question} - paragraphe ${index}`"
           v-for="(paragraph, index) of definition.answer"
@@ -37,6 +37,7 @@ export default {
     Picture,
   },
   props: {
+    index: Number,
     definition: Object,
   },
   data() {
@@ -63,19 +64,19 @@ export default {
 @import "@/styles/vars.scss";
 @import "@/styles/mixin.scss";
 .definition {
-  margin-bottom: 5px;
+  margin: 0;
 
+  .description {
+    align-items: center;
+    display: grid;
+    padding: 16px 0;
+    row-gap: 16px;
+  }
   @include laptop {
     .definitionDescriptionContainer {
       .picture {
         width: 55%;
       }
-    }
-    .description {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      flex-wrap: wrap;
     }
 
     &:nth-child(odd) {
@@ -96,8 +97,8 @@ export default {
   .faqQuestionContainer {
     cursor: pointer;
     position: sticky;
-    top: 70px;
-    margin-bottom: 0px;
+    top: 75px;
+    margin: 0px auto;
     background-color: white;
     box-shadow: -101vw 1px 0px 1px transparent;
     padding: 5px 10px;
@@ -186,22 +187,19 @@ export default {
   }
 
   .definitionDescriptionContainer {
-    max-height: 0px;
-    height: auto;
-    width: calc(100% - 10px);
-    margin: 0 5px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
     border-radius: 8px;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    padding: 0 0 5px;
-    text-align: justify;
-    overflow: hidden;
     box-sizing: border-box;
+    margin: 0 auto;
+    max-height: 0px;
+    overflow: hidden;
+    padding: 0;
+    text-align: justify;
     transition: 0.5s;
+    width: calc(100% - 10px);
 
     &.open {
-      border-bottom-left-radius: 8px;
-      border-bottom-right-radius: 8px;
       max-height: 3000px;
       transition: all 0.5s, opacity 0.2s 0s;
 
@@ -217,10 +215,10 @@ export default {
     }
 
     @include tablet {
-      padding: 0 15vw 20px;
+      width: 70vw;
     }
     @include laptop {
-      padding: 0 25vw 20px;
+      width: 50vw;
     }
     picture {
       img,
@@ -233,15 +231,11 @@ export default {
     }
     p {
       box-sizing: border-box;
-      width: 100%;
-      padding: 10px 10px;
+      margin: 0;
       opacity: 0;
-      margin-top: 10px;
+      padding: 0;
       transition: opacity 0.2s;
 
-      &:first-of-type {
-        margin-top: 0;
-      }
       @include laptop {
         padding: 0;
       }

@@ -1,5 +1,5 @@
-@import './vars.scss';
-@import './mixin.scss';
+@import "./vars.scss";
+@import "./mixin.scss";
 
 #app {
   height: 100vh;
@@ -15,13 +15,6 @@ header,
 main,
 footer {
   box-sizing: border-box;
-}
-
-main {
-  flex: 2 0 auto;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
 }
 
 h2,
@@ -54,7 +47,7 @@ cite,
 input,
 div,
 span {
-  font-family: 'Raleway', Helvetica, Arial, sans-serif;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
 }
 h2 {
   text-align: center;

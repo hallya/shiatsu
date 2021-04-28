@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="main-contact">
     <section class="contact-me">
       <address>
         <h3>Nathalie de Loeper</h3>
@@ -86,7 +86,7 @@ export default Vue.extend({
 @import "@/styles/vars.scss";
 @import "@/styles/mixin.scss";
 
-main {
+.main-contact {
   display: flex;
   flex-flow: wrap row;
   justify-content: center;

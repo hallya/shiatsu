@@ -45,6 +45,10 @@ export default new VueRouter({
       component: () => import(/* webpackChunkName: "contact" */ "./views/Contact.vue"),
     },
     {
+      path: "/faq",
+      component: () => import(/* webpackChunkName: "faq" */ "./views/Faq.vue"),
+    },
+    {
       path: "/404-page-not-found",
       component: () => import(/* webpackChunkName: "404" */ "./views/404.vue"),
     },
