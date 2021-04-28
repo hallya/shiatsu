@@ -1,5 +1,4 @@
 import { WithContext, ContactPage } from "schema-dts";
-import { medicalBusiness } from "./medicalBusiness";
 import { organization } from "./organization";
 import { person } from "./person";
 
