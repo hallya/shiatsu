@@ -23,7 +23,7 @@ export interface Images {
   imageWebpMobile: VNode | null;
 }
 
-export const faqs = [
+export const abouts = [
   shiatsu,
   me,
   meeting,

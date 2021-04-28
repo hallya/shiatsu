@@ -1,6 +1,6 @@
 import { AboutPage, Question, WithContext } from "schema-dts";
 import thumbnailPicture from "@/assets/images/pictures/nathalie_de_loeper_praticienne_shiatsu.jpg";
-import { faqs } from "../faqs/index";
+import { abouts } from "../abouts";
 import { organization } from "./organization";
 import { person } from "./person";
 
@@ -16,7 +16,7 @@ export const aboutPageSchemaContext: WithContext<AboutPage> = {
       about: {
         lastReviewed,
         "@type": "FAQPage",
-        mainEntity: faqs.map(
+        mainEntity: abouts.map(
           (subject): Question => ({
             "@type": "Question",
             name: subject.question,

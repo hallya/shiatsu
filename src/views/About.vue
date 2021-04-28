@@ -1,11 +1,11 @@
 <template>
   <main class="about">
-    <Faq v-for="faq of faqs" :definition="faq" :key="`Definition : ${faq.question}`" />
+    <Faq v-for="about of abouts" :definition="about" :key="`Definition : ${about.question}`" />
   </main>
 </template>
 <script>
 import Faq from "@/components-ui/FAQ.vue";
-import { faqs } from "@/data/faqs";
+import { abouts } from "@/data/abouts";
 import { aboutPageSchemaContext } from "@/data/googleSchemas";
 
 export default {
@@ -14,7 +14,7 @@ export default {
   },
   data() {
     return {
-      faqs,
+      abouts,
     };
   },
   metaInfo() {
