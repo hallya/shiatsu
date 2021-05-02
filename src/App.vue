@@ -10,29 +10,27 @@
   </div>
 </template>
 <script lang="ts">
-import Vue from 'vue';
-import { MetaInfo } from '@/types/metaInfo.interface';
-import Header from '@/components/Header.vue';
-import Footer from '@/components/Footer.vue';
+import Vue from "vue";
+import { MetaInfo } from "@/types/metaInfo.interface";
+import Header from "@/components/Header.vue";
+import Footer from "@/components/Footer.vue";
 
 export default Vue.extend({
-  name: 'App',
+  name: "App",
   components: {
     Header,
     Footer,
   },
   data() {
     return {
-      ogUrl:
-        this.$store.state.domains.baseUrlFrontend +
-        this.$store.state.domains.hash,
+      ogUrl: this.$store.state.domains.baseUrlFrontend + this.$store.state.domains.hash,
     };
   },
   metaInfo(): MetaInfo {
     return {
       meta: [
         {
-          property: 'og:url',
+          property: "og:url",
           content: this.ogUrl,
         },
       ],
@@ -43,11 +41,15 @@ export default Vue.extend({
 
 <style lang="scss">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  -webkit-font-smoothing: antialiased;
   color: #2c3e50;
+  display: grid;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+  overflow-y: scroll;
+  text-align: center;
 }
 .fade-enter-active,
 .fade-leave-active {

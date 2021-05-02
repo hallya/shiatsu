@@ -95,16 +95,16 @@ export default {
     }
   }
   .faqQuestionContainer {
-    cursor: pointer;
-    position: sticky;
-    top: 75px;
-    margin: 0px auto;
+    align-items: center;
     background-color: white;
     box-shadow: -101vw 1px 0px 1px transparent;
-    padding: 5px 10px;
+    cursor: pointer;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    margin: 0px auto;
+    padding: 5px 10px;
+    position: sticky;
+    top: 108px;
     transition: 0.5s;
 
     &:focus-within {
@@ -120,11 +120,11 @@ export default {
     }
     @include tablet {
       padding: 5px 15vw;
-      top: 75px;
+      top: 105px;
     }
     @include laptop {
       padding: 5px 25vw;
-      top: 65px;
+      top: 115px;
     }
     .definitionTitle {
       text-align: left;

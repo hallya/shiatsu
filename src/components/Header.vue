@@ -5,14 +5,15 @@
       <picture class="logoHeader">
         <img :src="nenuphar" alt="un logo comprenant plusieurs nenuphar" />
       </picture>
-      <p class="title-description">Soigner votre énergie c'est améliorer votre santé</p>
+      <p class="title-description">
+        Soigner votre énergie<br />
+        c'est améliorer votre santé
+      </p>
     </section>
     <nav class="nav">
       <NavLinkItem link="/" :imgSrc="navlinks.home" label="Accueil" />
       <span>•</span>
       <NavLinkItem link="/about" :imgSrc="navlinks.about" label="À propos" />
-      <span>•</span>
-      <NavLinkItem link="/faq" :imgSrc="navlinks.about" label="FAQ" />
       <!-- <span>•</span>
       <NavLinkItem link="/blog" :imgSrc="navlinks.blog" label="Blog" /> -->
       <span>•</span>
@@ -58,7 +59,7 @@ export default {
   box-shadow: 0 0 10px 10px white;
   flex: 0 2 0;
   position: sticky;
-  top: -250px;
+  top: -240px;
   z-index: 9999;
 
   @include tablet {
@@ -108,7 +109,6 @@ export default {
   }
   .nav {
     box-sizing: border-box;
-    height: 70px;
     width: 100%;
     padding: 5px;
     display: flex;
@@ -120,7 +120,7 @@ export default {
       padding: 10px 16vw;
     }
     @include laptop {
-      padding: 0px 25vw;
+      padding: 20px 25vw;
     }
     span {
       display: none;

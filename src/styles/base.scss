@@ -1,12 +1,6 @@
 @import "./vars.scss";
 @import "./mixin.scss";
 
-#app {
-  height: 100vh;
-  overflow-y: scroll;
-  display: flex;
-  flex-direction: column;
-}
 [v-cloak] > * {
   display: none;
 }

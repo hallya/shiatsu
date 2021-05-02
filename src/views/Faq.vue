@@ -1,12 +1,12 @@
 <template>
-  <main class="main-faq">
+  <section class="section-faq">
     <Faq
       v-for="(faq, index) of faqs"
       :index="index"
       :definition="faq"
       :key="`Definition : ${faq.question}`"
     />
-  </main>
+  </section>
 </template>
 
 <script lang="ts">
@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style lang="scss">
-.main-faq {
+.section-faq {
   display: grid;
   row-gap: 16px;
 }

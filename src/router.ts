@@ -19,6 +19,21 @@ export default new VueRouter({
     {
       path: "/about",
       component: () => import(/* webpackChunkName: "about" */ "./views/About.vue"),
+      children: [
+        {
+          path: "quick-answer",
+          component: () => import(/* webpackChunkName: "faq" */ "./views/Faq.vue"),
+        },
+        {
+          path: "in-depth-answer",
+          component: () =>
+            import(/* webpackChunkName: "inDepthAnswer" */ "./views/InDepthAnswer.vue"),
+        },
+        {
+          path: "**",
+          redirect: { path: "/about/quick-answer" },
+        },
+      ],
     },
     {
       path: "/blog",
@@ -43,10 +58,6 @@ export default new VueRouter({
     {
       path: "/contact",
       component: () => import(/* webpackChunkName: "contact" */ "./views/Contact.vue"),
-    },
-    {
-      path: "/faq",
-      component: () => import(/* webpackChunkName: "faq" */ "./views/Faq.vue"),
     },
     {
       path: "/404-page-not-found",

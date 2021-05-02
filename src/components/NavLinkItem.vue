@@ -1,15 +1,15 @@
 <template>
-  <router-link :to="link" tabindex="0" exact>
+  <router-link :to="link" tabindex="0">
     <img class="header-nav-item-image" v-bind:src="imgSrc" v-bind:alt="label" />
     <p class="navLinkText">{{ label }}</p>
   </router-link>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue from "vue";
 
 export default Vue.extend({
-  name: 'NavLinkItem',
+  name: "NavLinkItem",
   props: {
     link: String,
     imgSrc: String,
@@ -19,8 +19,8 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-@import '@/styles/vars.scss';
-@import '@/styles/mixin.scss';
+@import "@/styles/vars.scss";
+@import "@/styles/mixin.scss";
 
 a {
   align-items: center;
@@ -32,12 +32,6 @@ a {
   position: relative;
   transition: 0.2s;
 
-  @include mobile {
-    &:focus {
-      background-color: gray;
-      box-shadow: 0 0 0 10px gray;
-    }
-  }
   @include tablet {
     border-radius: 0;
   }
@@ -53,9 +47,6 @@ a {
     }
     img {
       filter: grayscale(1);
-    }
-    @include tablet {
-      box-shadow: 0 2px 0 -1px black;
     }
   }
   .header-nav-item-image {
@@ -73,7 +64,7 @@ a {
 
   .navLinkText {
     display: none;
-    font-family: 'Arbutus Slab';
+    font-family: "Arbutus Slab";
 
     @include tablet {
       letter-spacing: 2px;
