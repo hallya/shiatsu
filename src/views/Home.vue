@@ -26,16 +26,21 @@
       </section>
 
       <blockquote class="home_citation">
-        « […] le soin, lorsqu’il se conçoit comme relation et attention à la souffrance et aux
-        besoins du malade, peut réparer son image dévastée, réveiller son désir de vivre, le libérer
-        de l’amertume ou l’inquiétude propres à la maladie.&nbsp;»
+        <p>
+          Le principe fondamental d'une séance de shiatsu est d'établir un "écho de vie" entre le
+          praticien et le receveur.
+        </p>
+        <p>Il est un moyen de guérison des forces vitales du corps.</p>
         <footer>
-          Claire Marin –
-          <cite>La maladie, catastrophe intime</cite>
+          <cite>Shizuto Masunaga</cite>
         </footer>
       </blockquote>
     </section>
-    <section aria-label="Le shiatsu, pourquoi ?" aria-describedby="p-1 p-2 p-3 p-4">
+    <section
+      aria-label="Le shiatsu, pourquoi ?"
+      aria-describedby="p-1 p-2 p-3 p-4"
+      class="shiatsu-description"
+    >
       <p id="p-1">
         Fatigué ou vite fatigable, anxieux, déprimé, tendu, irascible, colérique, à fleur de peau,
         agité, angoissé, stressé, triste, sans entrain, sans énergie, sans appétit, en train de
@@ -163,12 +168,17 @@ main.home {
   @include laptop {
     padding: 40px 20vw;
   }
+  .shiatsu-description {
+    padding: 0 16px;
+  }
   .covid-section {
     margin-top: 20px;
+    padding: 0 16px;
   }
   section {
+    box-sizing: border-box;
+    padding: 0;
     width: 100%;
-    padding: 0 5px;
 
     @include tablet {
       display: flex;
@@ -205,18 +215,22 @@ main.home {
     blockquote,
     cite {
       @include tablet {
-        width: 240px;
+        width: 350px;
       }
       @include laptop {
-        width: 400px;
+        width: 500px;
       }
     }
     blockquote.home_citation {
+      line-height: 22px;
       min-height: 0;
       margin: 40px 20px 20px;
 
       @include laptop {
         margin: 40px 80px;
+      }
+      p {
+        text-align: center;
       }
       footer {
         margin-top: 10px;
@@ -232,7 +246,6 @@ main.home {
       margin: 10px 0;
       font-size: 16px;
       text-align: justify;
-      padding: 0 6vw;
 
       @include tablet {
         font-size: 18px;

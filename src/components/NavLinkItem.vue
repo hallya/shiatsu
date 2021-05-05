@@ -42,9 +42,6 @@ a {
     color: $meadow-green;
     padding: 0px;
 
-    @include tablet {
-      padding: 5px 0;
-    }
     img {
       filter: grayscale(1);
     }
