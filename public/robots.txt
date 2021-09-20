@@ -5,5 +5,4 @@ Allow: /about/in-depth-answer
 Allow: /contact
 Allow: /
 
-
 Sitemap: https://shiatsutherapie78.info/sitemap.xml

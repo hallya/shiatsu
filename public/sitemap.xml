@@ -3,9 +3,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://shiatsutherapie78.info</loc>
+    <loc>https://shiatsutherapie78.info/</loc>
     <lastmod>2021-01-13</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 
   <url>
@@ -26,7 +27,7 @@
     <loc>https://shiatsutherapie78.info/contact</loc>
     <lastmod>2019-10-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.1</priority>
   </url>
 
 </urlset> 
