@@ -9,11 +9,38 @@
 </template>
 <script>
 import NavLinkItem from "@/components/NavLinkItem.vue";
+import defaultImageForSharingJpg from "@/assets/images/pictures/defaultImageForSharing.jpg";
+
 export default {
   components: { NavLinkItem },
   metaInfo() {
     return {
       title: "À propos",
+      meta: [
+        {
+          property: "og:title",
+          content: "À propos",
+        },
+        {
+          property: "og:url",
+          content: "https://www.shiatsutherapie78.info/about",
+        },
+        {
+          name: "Description",
+          content:
+            "Plus d'informations en bref ou en détails concernant la pratique du shiatu ainsi que sur votre praticienne",
+        },
+        { property: "og:type", content: "website" },
+        {
+          property: "og:description",
+          content:
+            "Plus d'informations en bref ou en détails concernant la pratique du shiatu ainsi que sur votre praticienne",
+        },
+        {
+          property: "og:image",
+          content: `https://www.shiatsutherapie78.info/${defaultImageForSharingJpg}`,
+        },
+      ],
     };
   },
 };

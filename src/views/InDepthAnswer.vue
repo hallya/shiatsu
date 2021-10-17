@@ -12,6 +12,7 @@
 import Faq from "@/components-ui/FAQ.vue";
 import { abouts } from "@/data/abouts";
 import { aboutPageSchemaContext } from "@/data/googleSchemas";
+import defaultImageForSharingJpg from "@/assets/images/pictures/defaultImageForSharing.jpg";
 
 export default {
   components: {
@@ -24,7 +25,32 @@ export default {
   },
   metaInfo() {
     return {
-      title: "À propos",
+      title: "En détails",
+      meta: [
+        {
+          name: "Description",
+          content:
+            "Plus d'informations en détails concernant la pratique du shiatu ainsi que sur votre praticienne",
+        },
+        {
+          property: "og:title",
+          content: "En détails",
+        },
+        {
+          property: "og:url",
+          content: "https://www.shiatsutherapie78.info/about/in-depth-answer",
+        },
+        { property: "og:type", content: "website" },
+        {
+          property: "og:description",
+          content:
+            "Plus d'informations en détails concernant la pratique du shiatu ainsi que sur votre praticienne",
+        },
+        {
+          property: "og:image",
+          content: `https://www.shiatsutherapie78.info/${defaultImageForSharingJpg}`,
+        },
+      ],
       script: [
         {
           type: "application/ld+json",

@@ -28,6 +28,7 @@ import insideBouloireWebp from "@/assets/images/pictures/inside_bouloire.webp";
 import insideBouloireWebpMobile from "@/assets/images/pictures/inside_bouloire-mobile.webp";
 import insideBouloire from "@/assets/images/pictures/inside_bouloire.jpg";
 import { contactPageSchemaContext } from "@/data/googleSchemas";
+import defaultImageForSharingJpg from "@/assets/images/pictures/defaultImageForSharing.jpg";
 
 export default Vue.extend({
   name: "Contact",
@@ -62,12 +63,30 @@ export default Vue.extend({
   },
   metaInfo() {
     return {
-      title: "Contacts",
+      title: "Contact",
       meta: [
+        {
+          property: "og:title",
+          content: "Contact",
+        },
+        {
+          property: "og:url",
+          content: "https://www.shiatsutherapie78.info/contact",
+        },
         {
           name: "description",
           content:
-            "Vous souhaitez passer le pas et découvrir les bienfaits du shiatsu ? Prenez RDV dés maintenant",
+            "Prendre rendez-vous pour une séance de shiatsu à Saint Cyr l‘école (78) ou à Bouloire (72)",
+        },
+        { property: "og:type", content: "website" },
+        {
+          property: "og:description",
+          content:
+            "Prendre rendez-vous pour une séance de shiatsu à Saint Cyr l‘école (78) ou à Bouloire (72)",
+        },
+        {
+          property: "og:image",
+          content: `https://www.shiatsutherapie78.info/${defaultImageForSharingJpg}`,
         },
       ],
       script: [

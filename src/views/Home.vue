@@ -121,22 +121,27 @@ export default Vue.extend({
       title: "Nathalie de Loeper, votre praticienne de Shiatsu",
       meta: [
         {
-          name: "Description",
-          content: "Prenez rendez-vous pour une séance bien-être à Saint Cyr l‘école ou à domicile",
-        },
-        {
           property: "og:title",
           content: "Nathalie de Loeper, votre praticienne de Shiatsu",
+        },
+        {
+          property: "og:url",
+          content: "https://www.shiatsutherapie78.info",
+        },
+        {
+          name: "Description",
+          content:
+            "Découvrez la pratique thérapeutique unique au contact de Nathalie de Loeper, praticienne diplômé de  l'E.S.T (Ecole de Shiatsu Thérapeutique) affiliée à l’UFPST (Union Française des Professionnels de Shiatsu Thérapeutique).",
         },
         { property: "og:type", content: "website" },
         {
           property: "og:description",
           content:
-            "Découvrez une pratique thérapeutique unique au travers du regard de Nathalie de Loeper, praticienne de Shiatsu",
+            "Découvrez la pratique thérapeutique unique au contact de Nathalie de Loeper, praticienne diplômé de  l'E.S.T (Ecole de Shiatsu Thérapeutique) affiliée à l’UFPST (Union Française des Professionnels de Shiatsu Thérapeutique).",
         },
         {
           property: "og:image",
-          content: `https://shiatsutherapie78.info/${defaultImageForSharingJpg}`,
+          content: `https://www.shiatsutherapie78.info/${defaultImageForSharingJpg}`,
         },
       ],
       script: [
