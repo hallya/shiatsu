@@ -12,7 +12,7 @@
 import Faq from "@/components-ui/FAQ.vue";
 import { abouts } from "@/data/abouts";
 import { aboutPageSchemaContext } from "@/data/googleSchemas";
-import defaultImageForSharingJpg from "@/assets/images/pictures/defaultImageForSharing.jpg";
+import defaultImageForSharingJpg from "@/assets/images/pictures/nathalie_de_loeper_praticienne_shiatsu.jpg";
 
 export default {
   components: {
@@ -48,7 +48,7 @@ export default {
         },
         {
           property: "og:image",
-          content: `https://www.shiatsutherapie78.info/${defaultImageForSharingJpg}`,
+          content: `https://www.shiatsutherapie78.info${defaultImageForSharingJpg}`,
         },
       ],
       script: [

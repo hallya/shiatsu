@@ -9,7 +9,7 @@
 </template>
 <script>
 import NavLinkItem from "@/components/NavLinkItem.vue";
-import defaultImageForSharingJpg from "@/assets/images/pictures/defaultImageForSharing.jpg";
+import defaultImageForSharingJpg from "@/assets/images/pictures/nathalie_de_loeper_praticienne_shiatsu.jpg";
 
 export default {
   components: { NavLinkItem },
@@ -38,7 +38,7 @@ export default {
         },
         {
           property: "og:image",
-          content: `https://www.shiatsutherapie78.info/${defaultImageForSharingJpg}`,
+          content: `https://www.shiatsutherapie78.info${defaultImageForSharingJpg}`,
         },
       ],
     };
