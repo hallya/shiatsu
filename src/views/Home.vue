@@ -6,25 +6,6 @@
         :loadImage="tournesol.loadImage"
         description="Un magnifique tournesol en gros plan"
       />
-      <section class="covid-section">
-        <h2 class="covid-text">☝️Infos covid☝️</h2>
-        <p class="covid-text">
-          Pendant le confinement ou au-delà de l'horaire imposé par le couvre-feu vous pouvez venir
-          recevoir un shiatsu. Il suffit de cocher la case de l'attestation : déplacement pour soins
-          ne pouvant être assurés à distance, etc...
-        </p>
-        <p class="covid-text">
-          Le shiatsu thérapeutique, médecine alternative, entre dans la liste des activités de santé
-          humaine non classées ailleurs, sa pratique est autorisée.
-        </p>
-        <p class="covid-text center">&#9888;&#65039;</p>
-        <p class="covid-text">
-          Les rendez-vous sont espacés de 2 heures afin d'aérer longuement après chaque patient.
-        </p>
-        <p class="covid-text">Il n'y a pas d'attente ni de croisement de personnes.</p>
-        <p class="covid-text center">😷Port du masque obligatoire😷</p>
-      </section>
-
       <blockquote class="home_citation">
         <p>
           Le principe fondamental d'une séance de shiatsu est d'établir un "écho de vie" entre le
@@ -176,10 +157,6 @@ main.home {
   .shiatsu-description {
     padding: 0 16px;
   }
-  .covid-section {
-    margin-top: 20px;
-    padding: 0 16px;
-  }
   section {
     box-sizing: border-box;
     padding: 0;
@@ -209,10 +186,6 @@ main.home {
           width: 80%;
         }
       }
-    }
-    .covid-text {
-      line-height: 20px;
-      color: $jungle-green;
     }
     .center {
       text-align: center;
