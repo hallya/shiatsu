@@ -1,6 +1,6 @@
-import jpg from "@/assets/images/pictures/capucine_fleurs_feuilles.jpg";
-import webp from "@/assets/images/pictures/capucine_fleurs_feuilles.webp";
-import webpMobile from "@/assets/images/pictures/capucine_fleurs_feuilles-mobile.webp";
+import jpg from "@/assets/images/pictures/nathalie_flower_field.jpg";
+import webp from "@/assets/images/pictures/nathalie_flower_field.webp";
+import webpMobile from "@/assets/images/pictures/nathalie_flower_field-mobile.webp";
 import { FAQElement } from ".";
 
 export const toTheDoctors: FAQElement = {

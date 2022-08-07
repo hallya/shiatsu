@@ -1,6 +1,6 @@
-import { Picture } from '../components-ui/Picture/Picture.interface';
+import { Picture } from "../components-ui/Picture/Picture.interface";
 
 export interface Home {
-  tournesol: Picture;
+  landingPicture: Picture;
   nenuphar: Picture;
 }

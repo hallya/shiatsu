@@ -2,9 +2,9 @@
   <main class="home">
     <section v-on:wheel="lazyLoadImage">
       <Picture
-        :image="tournesol"
-        :loadImage="tournesol.loadImage"
-        description="Un magnifique tournesol en gros plan"
+        :image="landingPicture"
+        :loadImage="landingPicture.loadImage"
+        description="Un magnifique arbre fleuri"
       />
       <blockquote class="home_citation">
         <p>
@@ -60,9 +60,9 @@
 import Vue from "vue";
 import Picture from "@/components-ui/Picture/Picture.vue";
 import { Home } from "./Home.interface";
-import tournesolJpg from "@/assets/images/pictures/tournesol.jpg";
-import tournesolWebp from "@/assets/images/pictures/tournesol.webp";
-import tournesolWebpMobile from "@/assets/images/pictures/tournesol-mobile.webp";
+import arbreFleuriJpg from "@/assets/images/pictures/arbre_fleuri.jpg";
+import arbreFleuriWebp from "@/assets/images/pictures/arbre_fleuri.webp";
+import arbreFleuriWebpMobile from "@/assets/images/pictures/arbre_fleuri-mobile.webp";
 import nenupharJpg from "@/assets/images/pictures/plateau_nenuphar.jpg";
 import nenupharWebp from "@/assets/images/pictures/plateau_nenuphar.webp";
 import nenupharWebpMobile from "@/assets/images/pictures/plateau_nenuphar-mobile.webp";
@@ -76,10 +76,10 @@ export default Vue.extend({
   },
   data(): Home {
     return {
-      tournesol: {
-        defaultImage: tournesolJpg,
-        imageWebp: tournesolWebp,
-        imageWebpMobile: tournesolWebpMobile,
+      landingPicture: {
+        defaultImage: arbreFleuriJpg,
+        imageWebp: arbreFleuriWebp,
+        imageWebpMobile: arbreFleuriWebpMobile,
         loadImage: true,
       },
       nenuphar: {
