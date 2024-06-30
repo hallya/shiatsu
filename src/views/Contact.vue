@@ -109,6 +109,7 @@ export default Vue.extend({
   display: flex;
   flex-flow: wrap row;
   justify-content: center;
+  padding: 0 20px;
 
   section {
     width: 100%;
@@ -122,13 +123,18 @@ export default Vue.extend({
       @include laptop {
         width: 65%;
         min-width: 850px;
-        display: flex;
-        flex-flow: wrap row;
+        display: grid;
+        grid-template-areas:
+          "A A"
+          "B C";
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
       }
     }
     h2 {
       margin: 20px 0;
       width: 100%;
+      grid-area: A;
 
       @include laptop {
         width: 100%;
@@ -137,9 +143,8 @@ export default Vue.extend({
     address {
       box-sizing: border-box;
       margin: 10px 0;
-      padding: 10px 20px;
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-rows: 1fr auto auto;
 
       @include tablet {
         flex-flow: wrap row;

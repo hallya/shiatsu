@@ -5,31 +5,26 @@
       <figcaption>{{ location.description }}</figcaption>
     </figure>
     <p v-for="line of location.fullAddress" v-bind:key="line">{{ line }}</p>
-    <a
-      class="fontawesome-road navigation"
-      :href="location.direction"
-      target="_blank"
-      >Itinéraire</a
-    >
+    <a class="fontawesome-road navigation" :href="location.direction" target="_blank">Itinéraire</a>
   </address>
 </template>
 <script>
-import Picture from './Picture/Picture.vue';
+import Picture from "./Picture/Picture.vue";
 
 export default {
-  name: 'Address',
+  name: "Address",
   components: {
     Picture,
   },
-  props: ['location'],
+  props: ["location"],
   data() {
     return {};
   },
 };
 </script>
 <style lang="scss">
-@import '@/styles/vars.scss';
-@import '@/styles/mixin.scss';
+@import "@/styles/vars.scss";
+@import "@/styles/mixin.scss";
 
 address.postale {
   width: 100%;
@@ -46,11 +41,9 @@ address.postale {
     transform: translateY(-10px);
   }
   @include tablet {
-    width: 65%;
     margin: 0 auto 30px;
   }
   @include laptop {
-    width: 45%;
     margin: 0 auto auto auto;
   }
 
