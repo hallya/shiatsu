@@ -1,7 +1,7 @@
 <template>
-  <router-link :to="link" tabindex="0">
+  <router-link :to="link">
     <img class="header-nav-item-image" v-bind:src="imgSrc" v-bind:alt="label" />
-    <p class="navLinkText">{{ label }}</p>
+    <span class="navLinkText">{{ label }}</span>
   </router-link>
 </template>
 

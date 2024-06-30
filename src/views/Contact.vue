@@ -18,8 +18,7 @@
   </main>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
+<script>
 import Address from "@/components-ui/Address.vue";
 import insideStCyrWebp from "@/assets/images/pictures/nathalie_cabinet_saint-cyr-lecole.webp";
 import insideStCyrWebpMobile from "@/assets/images/pictures/nathalie_cabinet_saint-cyr-lecole-mobile.webp";
@@ -30,8 +29,7 @@ import insideBouloire from "@/assets/images/pictures/inside_bouloire.jpg";
 import { contactPageSchemaContext } from "@/data/googleSchemas";
 import defaultImageForSharingJpg from "@/assets/images/pictures/nathalie_de_loeper_praticienne_shiatsu.jpg";
 
-export default Vue.extend({
-  name: "Contact",
+export default {
   components: {
     Address,
   },
@@ -97,11 +95,10 @@ export default Vue.extend({
       ],
     };
   },
-});
+};
 </script>
 
 <style lang="scss">
-@import url(https://weloveiconfonts.com/api/?family=fontawesome);
 @import "@/styles/vars.scss";
 @import "@/styles/mixin.scss";
 
