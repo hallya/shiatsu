@@ -9,7 +9,7 @@ export const infos: FAQElement = {
   answer: [
     "Concernant la tarification,",
     "<strong>Saint Cyr l’Ecole</strong> 70 euros",
-    "<strong>Bouloire</strong> 55 euros",
+    "<strong>Bouloire</strong> 60 euros",
   ],
   images: {
     defaultImage: jpg,
