@@ -60,9 +60,10 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "@/styles/vars.scss";
 @import "@/styles/mixin.scss";
+
 .definition {
   margin: 0;
 
@@ -126,6 +127,7 @@ export default {
       padding: 5px 25vw;
       top: 115px;
     }
+
     .definitionTitle {
       text-align: left;
       margin-bottom: 5px;

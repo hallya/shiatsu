@@ -28,8 +28,6 @@ import NavLinkItem from "./NavLinkItem.vue";
 import nenuphar from "@/assets/images/logos/nenuphar.svg";
 import home from "@/assets/images/logos/home.svg";
 import about from "@/assets/images/logos/about.svg";
-import blog from "@/assets/images/logos/blog.svg";
-import reviews from "@/assets/images/logos/reviews.svg";
 import contact from "@/assets/images/logos/contact.svg";
 
 export default {
@@ -42,8 +40,6 @@ export default {
       navlinks: {
         home,
         about,
-        blog,
-        reviews,
         contact,
       },
     };

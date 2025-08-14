@@ -1,53 +1,74 @@
 // webpack.config.js
-const path = require('path');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require("path");
+const VueLoaderPlugin = require("vue-loader/lib/plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-  mode: 'development',
-  entry: ['main.ts', 'main.scss'],
+  mode: "development",
+  entry: ["main.ts", "main.scss"],
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
+    path: path.join(__dirname, "dist"),
+    filename: "bundle.js",
   },
   module: {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader',
+        loader: "vue-loader",
         transformAssetUrl: {
-          video: ['src', 'poster'],
-          source: 'src',
-          img: 'src',
-          image: ['xlink:href', 'href'],
-          use: ['xlink:href', 'href'],
+          video: ["src", "poster"],
+          source: "src",
+          img: "src",
+          image: ["xlink:href", "href"],
+          use: ["xlink:href", "href"],
         },
       },
       {
         test: /\.tsx?$/,
-        loader: 'ts-loader',
+        loader: "ts-loader",
         options: {
           appendTsSuffixTo: [/\.vue$/],
         },
       },
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        loader: "babel-loader",
       },
       {
         test: /\.(css|scss)/,
-        use: ExtractTextPlugin.extract([
-          'vue-style-loader',
-          'css-loader',
-          'sass-loader',
-        ]),
+        use: ExtractTextPlugin.extract(["vue-style-loader", "css-loader", "sass-loader"]),
       },
       {
-        test: /\.(png|jpg|svg)$/,
+        test: /\.(png|jpg|jpeg|gif|svg|webp)$/,
         use: [
           {
-            loader: 'file-loader',
-            options: {},
+            loader: "file-loader",
+            options: {
+              name: "[name].[hash:8].[ext]",
+              outputPath: "images/",
+            },
+          },
+          {
+            loader: "image-webpack-loader",
+            options: {
+              mozjpeg: {
+                progressive: true,
+                quality: 65,
+              },
+              optipng: {
+                enabled: false,
+              },
+              pngquant: {
+                quality: [0.65, 0.9],
+                speed: 4,
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+              webp: {
+                quality: 75,
+              },
+            },
           },
         ],
       },
@@ -62,10 +83,20 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
     new ExtractTextPlugin({
-      filename: '[name].min.css',
+      filename: "[name].min.css",
     }),
   ],
   optimization: {
     usedExports: true,
+    splitChunks: {
+      chunks: "all",
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "vendors",
+          chunks: "all",
+        },
+      },
+    },
   },
 };

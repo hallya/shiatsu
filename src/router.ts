@@ -2,7 +2,6 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import VueMeta from "vue-meta";
 import Home from "./views/Home.vue";
-import Blog from "./views/Blog.vue";
 
 Vue.use(VueRouter);
 Vue.use(VueMeta, {
@@ -32,26 +31,6 @@ export default new VueRouter({
         {
           path: "**",
           redirect: { path: "/about/quick-answer" },
-        },
-      ],
-    },
-    {
-      path: "/blog",
-      component: () => import(/* webpackChunkName: "blog" */ "./views/Blog.vue"),
-      children: [
-        {
-          path: ":id",
-          props: true,
-          component: () =>
-            import(/* webpackChunkName: "singlepost" */ "./components/SinglePost.vue"),
-        },
-        {
-          path: "",
-          component: () => import(/* webpackChunkName: "listpost" */ "./components/ListPost.vue"),
-        },
-        {
-          path: "**",
-          redirect: { path: "/blog" },
         },
       ],
     },
