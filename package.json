@@ -5,10 +5,17 @@
   "engines": {
     "node": ">=18.0.0"
   },
+  "overrides": {
+    "@achrinza/node-ipc": {
+      "engines": {
+        "node": ">=8.0.0"
+      }
+    }
+  },
   "pre-commit": "npm run test:unit",
   "scripts": {
     "serve": "NODE_OPTIONS='--openssl-legacy-provider' vue-cli-service serve --open",
-    "build": "NODE_OPTIONS='--openssl-legacy-provider' vue-cli-service build --mode production",
+    "build": "NODE_OPTIONS='--openssl-legacy-provider --max-old-space-size=4096' vue-cli-service build --mode production",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "format": "npx pretty-quick",
