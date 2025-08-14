@@ -6,6 +6,9 @@
         :loadImage="landingPicture.loadImage"
         description="Un magnifique arbre fleuri"
       />
+      <h1 class="sr-only">
+        Nathalie de Loeper - Praticienne de Shiatsu Thérapeutique à Saint-Cyr-l'École et Bouloire
+      </h1>
       <blockquote class="home_citation">
         <p>
           Le principe fondamental d'une séance de shiatsu est d'établir un "écho de vie" entre le
@@ -22,6 +25,7 @@
       aria-describedby="p-1 p-2 p-3 p-4"
       class="shiatsu-description"
     >
+      <h2>Le shiatsu thérapeutique : pour qui et pourquoi ?</h2>
       <p id="p-1">
         Fatigué ou vite fatigable, anxieux, déprimé, tendu, irascible, colérique, à fleur de peau,
         agité, angoissé, stressé, triste, sans entrain, sans énergie, sans appétit, en train de
@@ -67,7 +71,7 @@ import nenupharJpg from "@/assets/images/pictures/plateau_nenuphar.jpg";
 import nenupharWebp from "@/assets/images/pictures/plateau_nenuphar.webp";
 import nenupharWebpMobile from "@/assets/images/pictures/plateau_nenuphar-mobile.webp";
 import defaultImageForSharingJpg from "@/assets/images/pictures/nathalie_de_loeper_praticienne_shiatsu.jpg";
-import { homePageSchemaContext } from "@/data/googleSchemas";
+import { homePageSchemaContext, localBusiness } from "@/data/googleSchemas";
 
 export default Vue.extend({
   name: "Home",
@@ -99,36 +103,66 @@ export default Vue.extend({
   },
   metaInfo() {
     return {
-      title: "Nathalie de Loeper, votre praticienne de Shiatsu",
+      title: "Nathalie de Loeper - Shiatsu Thérapeutique | Saint-Cyr-l'École & Bouloire",
       meta: [
         {
+          name: "description",
+          content:
+            "Praticienne de shiatsu thérapeutique diplômée EST-UFPST à Saint-Cyr-l'École (78) et Bouloire (72). Séances pour soulager stress, fatigue, douleurs, améliorer votre bien-être et rétablir l'équilibre énergétique. Prise de rendez-vous en ligne.",
+        },
+        {
+          name: "keywords",
+          content:
+            "shiatsu thérapeutique, massage, bien-être, stress, fatigue, douleurs, Saint-Cyr-l'École, Yvelines, Bouloire, Sarthe, Nathalie de Loeper, médecine alternative, énergie vitale, méridiens, relaxation",
+        },
+        {
           property: "og:title",
-          content: "Nathalie de Loeper, votre praticienne de Shiatsu",
+          content: "Nathalie de Loeper - Shiatsu Thérapeutique | Saint-Cyr-l'École & Bouloire",
         },
         {
           property: "og:url",
           content: "https://www.shiatsutherapie78.info",
         },
         {
-          name: "Description",
+          property: "og:description",
           content:
-            "Découvrez la pratique thérapeutique unique au contact de Nathalie de Loeper, praticienne diplômé de  l'E.S.T (Ecole de Shiatsu Thérapeutique) affiliée à l’UFPST (Union Française des Professionnels de Shiatsu Thérapeutique).",
+            "Praticienne de shiatsu thérapeutique diplômée. Séances pour soulager stress, fatigue, douleurs. Cabinet à Saint-Cyr-l'École (78) et Bouloire (72). Prise de rendez-vous.",
         },
         { property: "og:type", content: "website" },
         {
-          property: "og:description",
-          content:
-            "Découvrez la pratique thérapeutique unique au contact de Nathalie de Loeper, praticienne diplômé de  l'E.S.T (Ecole de Shiatsu Thérapeutique) affiliée à l’UFPST (Union Française des Professionnels de Shiatsu Thérapeutique).",
-        },
-        {
           property: "og:image",
           content: `https://www.shiatsutherapie78.info${defaultImageForSharingJpg}`,
+        },
+        {
+          name: "twitter:title",
+          content: "Nathalie de Loeper - Shiatsu Thérapeutique",
+        },
+        {
+          name: "twitter:description",
+          content:
+            "Praticienne de shiatsu thérapeutique à Saint-Cyr-l'École et Bouloire. Soulagez stress, fatigue et douleurs.",
+        },
+        {
+          name: "geo.region",
+          content: "FR-78",
+        },
+        {
+          name: "geo.placename",
+          content: "Saint-Cyr-l'École",
+        },
+        {
+          name: "geo.position",
+          content: "48.809106;2.05806",
         },
       ],
       script: [
         {
           type: "application/ld+json",
           innerHTML: JSON.stringify(homePageSchemaContext),
+        },
+        {
+          type: "application/ld+json",
+          innerHTML: JSON.stringify(localBusiness),
         },
       ],
     };
@@ -147,6 +181,18 @@ main.home {
   display: flex;
   justify-content: center;
   flex-flow: wrap row;
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
 
   @include tablet {
     padding: 40px 10vw;

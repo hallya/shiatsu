@@ -15,21 +15,54 @@
 </template>
 
 <script>
-import alert from '@/assets/images/logos/alert.svg';
+import alert from "@/assets/images/logos/alert.svg";
 
 export default {
-  name: '404',
+  name: "404",
   data() {
     return {
       alert,
+    };
+  },
+  metaInfo() {
+    return {
+      title: "Page non trouvée (404) - Shiatsu Thérapeutique Nathalie de Loeper",
+      meta: [
+        {
+          name: "description",
+          content:
+            "Page non trouvée. Retournez à l'accueil pour découvrir les services de shiatsu thérapeutique de Nathalie de Loeper à Saint-Cyr-l'École (78).",
+        },
+        {
+          name: "robots",
+          content: "noindex, nofollow",
+        },
+        {
+          property: "og:title",
+          content: "Page non trouvée (404) - Shiatsu Thérapeutique",
+        },
+        {
+          property: "og:description",
+          content:
+            "Page non trouvée. Retournez à l'accueil pour découvrir les services de shiatsu thérapeutique.",
+        },
+        {
+          property: "og:type",
+          content: "website",
+        },
+        {
+          property: "og:url",
+          content: "https://www.shiatsutherapie78.info/404",
+        },
+      ],
     };
   },
 };
 </script>
 
 <style lang="scss">
-@import '@/styles/vars.scss';
-@import '@/styles/mixin.scss';
+@import "@/styles/vars.scss";
+@import "@/styles/mixin.scss";
 
 .page_not_found {
   align-items: center;
@@ -95,7 +128,7 @@ export default {
       background-color: $meadow-green;
       box-decoration-break: clone;
       color: $white;
-      font-family: 'Arbutus Slab', sans-serif;
+      font-family: "Arbutus Slab", sans-serif;
       letter-spacing: 1px;
       opacity: 0.9;
       padding: 0 20px;

@@ -1,5 +1,6 @@
 import { AboutPage, MedicalBusiness, WithContext } from "schema-dts";
 import { organization } from "./organization";
+import { localBusiness } from "./localBusiness";
 
 export const homePageSchemaContext: WithContext<MedicalBusiness | AboutPage> = {
   "@context": "https://schema.org",

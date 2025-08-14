@@ -1,8 +1,9 @@
 <template>
   <main class="main-contact">
+    <h1>Contact et Prise de Rendez-vous - Shiatsu Thérapeutique</h1>
     <section class="contact-me">
       <address>
-        <h3>Nathalie de Loeper</h3>
+        <h2>Nathalie de Loeper</h2>
         <a href="tel:+33612387928"> <i class="fontawesome-phone"></i> 06 12 38 79 28 </a>
         <span class="contact-separator">-</span>
         <a href="mailto:natloeper@gmail.com">
@@ -11,7 +12,7 @@
       </address>
     </section>
     <section class="find-me">
-      <h2 class="fontawesome-globe">Adresses</h2>
+      <h2 class="fontawesome-globe">Nos Cabinets - Adresses</h2>
       <Address :location="saintCyrLecole" />
       <Address :location="bouloire" />
     </section>
@@ -26,7 +27,7 @@ import insideStCyr from "@/assets/images/pictures/nathalie_cabinet_saint-cyr-lec
 import insideBouloireWebp from "@/assets/images/pictures/inside_bouloire.webp";
 import insideBouloireWebpMobile from "@/assets/images/pictures/inside_bouloire-mobile.webp";
 import insideBouloire from "@/assets/images/pictures/inside_bouloire.jpg";
-import { contactPageSchemaContext } from "@/data/googleSchemas";
+import { contactPageSchemaContext, localBusiness } from "@/data/googleSchemas";
 import defaultImageForSharingJpg from "@/assets/images/pictures/nathalie_de_loeper_praticienne_shiatsu.jpg";
 
 export default {
@@ -61,36 +62,53 @@ export default {
   },
   metaInfo() {
     return {
-      title: "Contact",
+      title: "Contact - Prise de Rendez-vous Shiatsu | Saint-Cyr-l'École & Bouloire",
       meta: [
         {
+          name: "description",
+          content:
+            "Prenez rendez-vous pour une séance de shiatsu thérapeutique à Saint-Cyr-l'École (78) ou à Bouloire (72). Contactez Nathalie de Loeper par téléphone ou email. Cabinets accessibles et séances sur mesure.",
+        },
+        {
+          name: "keywords",
+          content:
+            "rendez-vous shiatsu, contact shiatsu, Saint-Cyr-l'École, Bouloire, prise de rendez-vous, consultation shiatsu, Nathalie de Loeper",
+        },
+        {
           property: "og:title",
-          content: "Contact",
+          content: "Contact - Prise de Rendez-vous Shiatsu | Saint-Cyr-l'École & Bouloire",
         },
         {
           property: "og:url",
           content: "https://www.shiatsutherapie78.info/contact",
         },
         {
-          name: "description",
+          property: "og:description",
           content:
-            "Prendre rendez-vous pour une séance de shiatsu à Saint Cyr l‘école (78) ou à Bouloire (72)",
+            "Prenez rendez-vous pour une séance de shiatsu thérapeutique. Cabinets à Saint-Cyr-l'École (78) et Bouloire (72). Contact direct.",
         },
         { property: "og:type", content: "website" },
         {
-          property: "og:description",
-          content:
-            "Prendre rendez-vous pour une séance de shiatsu à Saint Cyr l‘école (78) ou à Bouloire (72)",
-        },
-        {
           property: "og:image",
           content: `https://www.shiatsutherapie78.info${defaultImageForSharingJpg}`,
+        },
+        {
+          name: "geo.region",
+          content: "FR-78",
+        },
+        {
+          name: "geo.placename",
+          content: "Saint-Cyr-l'École",
         },
       ],
       script: [
         {
           type: "application/ld+json",
           innerHTML: JSON.stringify(contactPageSchemaContext),
+        },
+        {
+          type: "application/ld+json",
+          innerHTML: JSON.stringify(localBusiness),
         },
       ],
     };

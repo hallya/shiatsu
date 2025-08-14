@@ -1,9 +1,32 @@
 User-agent: *
+Allow: /
 
+# Pages principales
 Allow: /about
 Allow: /about/quick-answer
 Allow: /about/in-depth-answer
 Allow: /contact
-Allow: /
+Allow: /blog
+Allow: /faq
+Allow: /reviews
 
+# Ressources importantes
+Allow: /img/
+Allow: /assets/
+Allow: /css/
+Allow: /js/
+
+# Empêcher l'indexation des fichiers techniques
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /src/
+Disallow: /dist/
+Disallow: /*.json$
+Disallow: /*.js$
+Disallow: /*.css$
+
+# Sitemap
 Sitemap: https://www.shiatsutherapie78.info/sitemap.xml
+
+# Crawl-delay pour être respectueux
+Crawl-delay: 1

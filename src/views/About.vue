@@ -10,16 +10,27 @@
 <script>
 import NavLinkItem from "@/components/NavLinkItem.vue";
 import defaultImageForSharingJpg from "@/assets/images/pictures/nathalie_de_loeper_praticienne_shiatsu.jpg";
+import { localBusiness } from "@/data/googleSchemas";
 
 export default {
   components: { NavLinkItem },
   metaInfo() {
     return {
-      title: "À propos",
+      title: "À propos - Nathalie de Loeper | Shiatsu Thérapeutique Saint-Cyr-l'École",
       meta: [
         {
+          name: "description",
+          content:
+            "Découvrez Nathalie de Loeper, praticienne de shiatsu thérapeutique diplômée EST-UFPST. Informations détaillées sur la pratique du shiatsu, son parcours et son approche thérapeutique à Saint-Cyr-l'École (78).",
+        },
+        {
+          name: "keywords",
+          content:
+            "Nathalie de Loeper, shiatsu thérapeutique, praticienne shiatsu, EST-UFPST, Saint-Cyr-l'École, Yvelines, médecine traditionnelle chinoise, bien-être, énergie vitale",
+        },
+        {
           property: "og:title",
-          content: "À propos",
+          content: "À propos - Nathalie de Loeper | Shiatsu Thérapeutique",
         },
         {
           property: "og:url",
@@ -28,17 +39,52 @@ export default {
         {
           name: "Description",
           content:
-            "Plus d'informations en bref ou en détails concernant la pratique du shiatu ainsi que sur votre praticienne",
+            "Découvrez Nathalie de Loeper, praticienne de shiatsu thérapeutique diplômée EST-UFPST. Informations détaillées sur la pratique du shiatsu, son parcours et son approche thérapeutique à Saint-Cyr-l'École (78).",
         },
         { property: "og:type", content: "website" },
         {
           property: "og:description",
           content:
-            "Plus d'informations en bref ou en détails concernant la pratique du shiatu ainsi que sur votre praticienne",
+            "Découvrez Nathalie de Loeper, praticienne de shiatsu thérapeutique diplômée EST-UFPST. Informations détaillées sur la pratique du shiatsu, son parcours et son approche thérapeutique à Saint-Cyr-l'École (78).",
         },
         {
           property: "og:image",
           content: `https://www.shiatsutherapie78.info${defaultImageForSharingJpg}`,
+        },
+        {
+          name: "twitter:title",
+          content: "À propos - Nathalie de Loeper | Shiatsu Thérapeutique",
+        },
+        {
+          name: "twitter:description",
+          content:
+            "Découvrez Nathalie de Loeper, praticienne de shiatsu thérapeutique diplômée EST-UFPST à Saint-Cyr-l'École.",
+        },
+        {
+          name: "twitter:image",
+          content: `https://www.shiatsutherapie78.info${defaultImageForSharingJpg}`,
+        },
+        {
+          name: "geo.region",
+          content: "FR-78",
+        },
+        {
+          name: "geo.placename",
+          content: "Saint-Cyr-l'École",
+        },
+        {
+          name: "geo.position",
+          content: "48.809106;2.05806",
+        },
+        {
+          name: "ICBM",
+          content: "48.809106, 2.05806",
+        },
+      ],
+      script: [
+        {
+          type: "application/ld+json",
+          innerHTML: JSON.stringify(localBusiness),
         },
       ],
     };

@@ -1,18 +1,22 @@
 <template>
-  <section class="section-faq">
-    <Faq
-      v-for="(faq, index) of faqs"
-      :index="index"
-      :definition="faq"
-      :key="`Definition : ${faq.question}`"
-    />
-  </section>
+  <main>
+    <h1>Questions Fréquentes sur le Shiatsu Thérapeutique</h1>
+    <section class="section-faq">
+      <Faq
+        v-for="(faq, index) of faqs"
+        :index="index"
+        :definition="faq"
+        :key="`Definition : ${faq.question}`"
+      />
+    </section>
+  </main>
 </template>
 
 <script lang="ts">
 import { faqs } from "@/data/faqs";
 import Faq from "@/components-ui/FAQ.vue";
 import defaultImageForSharingJpg from "@/assets/images/pictures/nathalie_de_loeper_praticienne_shiatsu.jpg";
+import { faqSchema } from "@/data/googleSchemas";
 
 export default {
   components: {
@@ -25,30 +29,41 @@ export default {
   },
   metaInfo() {
     return {
-      title: "En bref",
+      title: "FAQ Shiatsu - Questions Fréquentes | Nathalie de Loeper",
       meta: [
         {
-          name: "Description",
+          name: "description",
           content:
-            "Plus d'informations en bref concernant la pratique du shiatu ainsi que sur votre praticienne",
+            "Toutes vos questions sur le shiatsu thérapeutique : définition, bienfaits, déroulement d'une séance, tarifs, lieux de consultation. Réponses détaillées par Nathalie de Loeper.",
+        },
+        {
+          name: "keywords",
+          content:
+            "FAQ shiatsu, questions shiatsu, bienfaits shiatsu, séance shiatsu, tarifs shiatsu, déroulement shiatsu, Nathalie de Loeper",
         },
         {
           property: "og:title",
-          content: "En bref",
+          content: "FAQ Shiatsu - Questions Fréquentes | Nathalie de Loeper",
         },
         {
           property: "og:url",
           content: "https://www.shiatsutherapie78.info/about/quick-answer",
         },
-        { property: "og:type", content: "website" },
         {
           property: "og:description",
           content:
-            "Plus d'informations en bref concernant la pratique du shiatu ainsi que sur votre praticienne",
+            "Toutes vos questions sur le shiatsu thérapeutique : définition, bienfaits, déroulement d'une séance. Réponses détaillées.",
         },
+        { property: "og:type", content: "website" },
         {
           property: "og:image",
           content: `https://www.shiatsutherapie78.info${defaultImageForSharingJpg}`,
+        },
+      ],
+      script: [
+        {
+          type: "application/ld+json",
+          innerHTML: JSON.stringify(faqSchema),
         },
       ],
     };
