@@ -36,6 +36,7 @@
     "vuex-class": "^0.3.2"
   },
   "devDependencies": {
+    "@achrinza/node-ipc": "^10.1.11",
     "@types/jest": "23.1.4",
     "@typescript-eslint/eslint-plugin": "^3.0.2",
     "@vue/cli-plugin-babel": "3.6.0",
@@ -65,7 +66,8 @@
     "tslint-config-airbnb": "^5.11.2",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^4.1.5",
-    "vue-svg-loader": "0.12.0"
+    "vue-svg-loader": "0.12.0",
+    "vue-template-compiler": "^2.7.0"
   },
   "postcss": {
     "plugins": {
