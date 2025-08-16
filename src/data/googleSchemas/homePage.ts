@@ -1,58 +1,35 @@
-import { AboutPage, MedicalBusiness, WithContext } from "schema-dts";
+import { WebPage, WithContext } from "schema-dts";
 import { organization } from "./organization";
 import { localBusiness } from "./localBusiness";
 
-export const homePageSchemaContext: WithContext<MedicalBusiness | AboutPage> = {
+export const homePageSchemaContext: WithContext<WebPage> = {
   "@context": "https://schema.org",
   "@graph": [
     organization,
+    localBusiness,
     {
-      "@type": "Service",
-      areaServed: {
-        "@type": "GeoCircle",
-        "@id": "businessArea",
+      "@type": "WebPage",
+      "@id": "homePage",
+      name: "Accueil - Nathalie de Loeper Shiatsu Thérapeutique",
+      description:
+        "Praticienne de shiatsu thérapeutique diplômée EST-UFPST à Saint-Cyr-l'École (78) et Bouloire (72). Séances pour soulager stress, fatigue, douleurs et améliorer le bien-être.",
+      url: "https://www.shiatsutherapie78.info/",
+      mainEntity: {
+        "@type": "LocalBusiness",
+        "@id": "localBusiness",
       },
-      serviceType: "Shiatsu thérapeutique",
-      provider: {
-        "@type": "MedicalBusiness",
-        "@id": "medicalBusiness",
+      publisher: {
+        "@type": "Organization",
+        "@id": "organization",
       },
-      hasOfferCatalog: {
-        "@type": "OfferCatalog",
-        name: "Séance de shiatsu",
+      breadcrumb: {
+        "@type": "BreadcrumbList",
         itemListElement: [
           {
-            "@type": "OfferCatalog",
-            name: "Shiatsu sur place",
-            itemListElement: [
-              {
-                "@type": "Offer",
-                itemOffered: {
-                  "@type": "Service",
-                  name: "Saint-Cyr-L'école",
-                },
-              },
-              {
-                "@type": "Offer",
-                itemOffered: {
-                  "@type": "Service",
-                  name: "Bouloire",
-                },
-              },
-            ],
-          },
-          {
-            "@type": "OfferCatalog",
-            name: "Shiatsu à domicile",
-            itemListElement: [
-              {
-                "@type": "Offer",
-                itemOffered: {
-                  "@type": "Service",
-                  name: "Saint-Cyr-L'école, Paris et proche banlieux",
-                },
-              },
-            ],
+            "@type": "ListItem",
+            position: 1,
+            name: "Accueil",
+            item: "https://www.shiatsutherapie78.info/",
           },
         ],
       },

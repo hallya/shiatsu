@@ -87,6 +87,253 @@
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://www.google.com" />
     <link rel="preconnect" href="https://www.facebook.com" />
+
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "organization",
+            "name": "Nathalie de Loeper - Shiatsu Thérapeutique",
+            "alternateName": "Cabinet de Shiatsu Saint-Cyr-l'École",
+            "description": "Praticienne de shiatsu thérapeutique diplômée EST-UFPST. Séances pour soulager stress, fatigue, douleurs et améliorer le bien-être.",
+            "url": "https://www.shiatsutherapie78.info/",
+            "logo": {
+              "@type": "ImageObject",
+              "contentUrl": "https://www.shiatsutherapie78.info/img/logos/nenuphar.svg"
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+33612387928",
+              "email": "natloeper@gmail.com",
+              "contactType": "customer service",
+              "availableLanguage": "French"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "5 rue Jean Zay",
+              "addressLocality": "Saint-Cyr-l'École",
+              "postalCode": "78210",
+              "addressRegion": "Île-de-France",
+              "addressCountry": "FR"
+            },
+            "foundingDate": "2015-01-08",
+            "knowsAbout": [
+              "Shiatsu thérapeutique",
+              "Médecine traditionnelle chinoise",
+              "Méridiens d'acupuncture",
+              "Gestion du stress",
+              "Bien-être",
+              "Énergie vitale"
+            ]
+          },
+          {
+            "@type": "LocalBusiness",
+            "@id": "localBusiness",
+            "name": "Nathalie de Loeper - Shiatsu Thérapeutique",
+            "alternateName": "Cabinet de Shiatsu Saint-Cyr-l'École",
+            "description": "Praticienne de shiatsu thérapeutique diplômée EST-UFPST. Séances pour soulager stress, fatigue, douleurs et améliorer le bien-être. Cabinet à Saint-Cyr-l'École (78) et Bouloire (72).",
+            "url": "https://www.shiatsutherapie78.info/",
+            "telephone": "+33612387928",
+            "email": "mailto:natloeper@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "5 rue Jean Zay",
+              "addressLocality": "Saint-Cyr-l'École",
+              "postalCode": "78210",
+              "addressRegion": "Île-de-France",
+              "addressCountry": "FR"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 48.809106,
+              "longitude": 2.05806
+            },
+            "openingHours": ["Mo-Fr 09:00-19:00", "Sa 09:00-13:00"],
+            "priceRange": "€€",
+            "paymentAccepted": "Cash, Check",
+            "currenciesAccepted": "EUR",
+            "areaServed": [
+              "Saint-Cyr-l'École, Île-de-France, France",
+              "Bouloire, Pays de la Loire, France",
+              "Paris, Île-de-France, France"
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Services de Shiatsu",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Séance de Shiatsu Thérapeutique - Saint-Cyr-l'École",
+                    "description": "Séance de 75 minutes pour soulager stress, fatigue, douleurs et rétablir l'équilibre énergétique",
+                    "provider": {
+                      "@type": "Person",
+                      "name": "Nathalie de Loeper"
+                    }
+                  },
+                  "price": "70",
+                  "priceCurrency": "EUR",
+                  "availability": "https://schema.org/InStock"
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Séance de Shiatsu Thérapeutique - Bouloire",
+                    "description": "Séance de 75 minutes pour soulager stress, fatigue, douleurs et rétablir l'équilibre énergétique",
+                    "provider": {
+                      "@type": "Person",
+                      "name": "Nathalie de Loeper"
+                    }
+                  },
+                  "price": "60",
+                  "priceCurrency": "EUR",
+                  "availability": "https://schema.org/InStock"
+                }
+              ]
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": 5,
+              "ratingCount": 5,
+              "bestRating": 5,
+              "worstRating": 1
+            },
+            "review": [
+              {
+                "@type": "Review",
+                "author": {
+                  "@type": "Person",
+                  "name": "Marie L."
+                },
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": 5,
+                  "bestRating": 5,
+                  "worstRating": 1
+                },
+                "reviewBody": "Excellente praticienne de shiatsu. Nathalie a su me soulager de mes douleurs de dos et de mon stress. Je recommande vivement ses séances.",
+                "datePublished": "2024-01-15",
+                "itemReviewed": {
+                  "@type": "Service",
+                  "name": "Séance de Shiatsu Thérapeutique"
+                }
+              },
+              {
+                "@type": "Review",
+                "author": {
+                  "@type": "Person",
+                  "name": "Pierre D."
+                },
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": 5,
+                  "bestRating": 5,
+                  "worstRating": 1
+                },
+                "reviewBody": "Très professionnelle et à l'écoute. Les séances de shiatsu m'ont beaucoup aidé pour ma fatigue chronique. Cabinet agréable à Saint-Cyr-l'École.",
+                "datePublished": "2024-01-10",
+                "itemReviewed": {
+                  "@type": "Service",
+                  "name": "Séance de Shiatsu Thérapeutique"
+                }
+              },
+              {
+                "@type": "Review",
+                "author": {
+                  "@type": "Person",
+                  "name": "Sophie M."
+                },
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": 5,
+                  "bestRating": 5,
+                  "worstRating": 1
+                },
+                "reviewBody": "Nathalie est une praticienne exceptionnelle. Son shiatsu m'a permis de retrouver mon énergie et de mieux gérer mon stress. Je vais régulièrement.",
+                "datePublished": "2024-01-05",
+                "itemReviewed": {
+                  "@type": "Service",
+                  "name": "Séance de Shiatsu Thérapeutique"
+                }
+              }
+            ],
+            "image": [
+              "https://www.shiatsutherapie78.info/img/nathalie_de_loeper_praticienne_shiatsu.jpg"
+            ],
+            "sameAs": [
+              "https://www.facebook.com/nathaliedeloeper/",
+              "https://www.linkedin.com/in/nathalie-de-loeper-shiatsu-97910988/"
+            ],
+            "founder": {
+              "@type": "Person",
+              "address": {
+                "@type": "PostalAddress",
+                "@id": "address",
+                "addressLocality": "Saint-Cyr-l'École",
+                "postalCode": "78210",
+                "streetAddress": "5 rue Jean Zay",
+                "addressRegion": "Île-de-France",
+                "addressCountry": "FR"
+              },
+              "birthDate": "1960-12-06",
+              "email": "mailto:natloeper@gmail.com",
+              "image": "https://www.shiatsutherapie78.info/img/nathalie_de_loeper.jpg",
+              "jobTitle": "Praticienne de shiatsu",
+              "gender": "female",
+              "name": "Nathalie de Loeper",
+              "nationality": "French",
+              "telephone": "+33612387928",
+              "url": "https://www.shiatsutherapie78.info/about",
+              "sameAs": [
+                "https://www.facebook.com/nathaliedeloeper/",
+                "https://www.linkedin.com/in/nathalie-de-loeper-shiatsu-97910988/",
+                "https://www.koifaire.com/ile-de-france/deloeper,shiatsu-140396.html"
+              ]
+            },
+            "foundingDate": "2015-01-08",
+            "knowsAbout": [
+              "Shiatsu thérapeutique",
+              "Médecine traditionnelle chinoise",
+              "Méridiens d'acupuncture",
+              "Gestion du stress",
+              "Bien-être",
+              "Énergie vitale"
+            ]
+          },
+          {
+            "@type": "WebPage",
+            "@id": "homePage",
+            "name": "Accueil - Nathalie de Loeper Shiatsu Thérapeutique",
+            "description": "Praticienne de shiatsu thérapeutique diplômée EST-UFPST à Saint-Cyr-l'École (78) et Bouloire (72). Séances pour soulager stress, fatigue, douleurs et améliorer le bien-être.",
+            "url": "https://www.shiatsutherapie78.info/",
+            "mainEntity": {
+              "@type": "LocalBusiness",
+              "@id": "localBusiness"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "@id": "organization"
+            },
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Accueil",
+                  "item": "https://www.shiatsutherapie78.info/"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <noscript>
