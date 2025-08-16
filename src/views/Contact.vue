@@ -51,7 +51,7 @@ export default {
         description: "Cabinet - vue intérieur",
         direction:
           "https://www.google.com/maps/dir/?api=1&destination=Nathalie+de+loeper+shiatsu+saint+cyr+lecole&travelmode=driving",
-        fullAddress: ["5 rue Jean Zay", "78210 Saint Cyr l‘Ecole"],
+        fullAddress: ["5 rue Jean Zay", "78210 Saint Cyr l'Ecole"],
         image: {
           imageWebp: insideStCyrWebp,
           imageWebpMobile: insideStCyrWebpMobile,
@@ -59,6 +59,13 @@ export default {
         },
       },
     };
+  },
+  mounted() {
+    this.$injectSchema(contactPageSchemaContext);
+    this.$injectSchema(localBusiness);
+  },
+  beforeDestroy() {
+    this.$clearSchemas();
   },
   metaInfo() {
     return {
@@ -100,15 +107,13 @@ export default {
           name: "geo.placename",
           content: "Saint-Cyr-l'École",
         },
-      ],
-      script: [
         {
-          type: "application/ld+json",
-          innerHTML: JSON.stringify(contactPageSchemaContext),
+          name: "geo.position",
+          content: "48.809106;2.05806",
         },
         {
-          type: "application/ld+json",
-          innerHTML: JSON.stringify(localBusiness),
+          name: "ICBM",
+          content: "48.809106, 2.05806",
         },
       ],
     };

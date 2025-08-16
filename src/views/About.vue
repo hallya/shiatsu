@@ -14,6 +14,12 @@ import { localBusiness } from "@/data/googleSchemas";
 
 export default {
   components: { NavLinkItem },
+  mounted() {
+    this.$injectSchema(localBusiness);
+  },
+  beforeDestroy() {
+    this.$clearSchemas();
+  },
   metaInfo() {
     return {
       title: "À propos - Nathalie de Loeper | Shiatsu Thérapeutique Saint-Cyr-l'École",
@@ -79,12 +85,6 @@ export default {
         {
           name: "ICBM",
           content: "48.809106, 2.05806",
-        },
-      ],
-      script: [
-        {
-          type: "application/ld+json",
-          innerHTML: JSON.stringify(localBusiness),
         },
       ],
     };

@@ -1,7 +1,6 @@
 <template>
   <main>
-    <h1 class="sr-only">Informations Détaillées sur le Shiatsu Thérapeutique</h1>
-    <section class="section-inDepth">
+    <section class="section-about">
       <Faq
         v-for="(about, index) of abouts"
         :index="index"
@@ -11,11 +10,12 @@
     </section>
   </main>
 </template>
+
 <script>
-import Faq from "@/components-ui/FAQ.vue";
 import { abouts } from "@/data/abouts";
-import { aboutPageSchemaContext } from "@/data/googleSchemas";
+import Faq from "@/components-ui/FAQ.vue";
 import defaultImageForSharingJpg from "@/assets/images/pictures/nathalie_de_loeper_praticienne_shiatsu.jpg";
+import { aboutPageSchemaContext } from "@/data/googleSchemas";
 
 export default {
   components: {
@@ -26,39 +26,42 @@ export default {
       abouts,
     };
   },
+  mounted() {
+    this.$injectSchema(aboutPageSchemaContext);
+  },
+  beforeDestroy() {
+    this.$clearSchemas();
+  },
   metaInfo() {
     return {
-      title:
-        "Informations Détaillées - Shiatsu Thérapeutique Nathalie de Loeper | Saint-Cyr-l'École",
+      title: "Informations Détaillées - Shiatsu Thérapeutique Nathalie de Loeper",
       meta: [
         {
           name: "description",
           content:
-            "Informations détaillées sur la pratique du shiatsu thérapeutique, la formation de Nathalie de Loeper et son approche thérapeutique. Découvrez les bienfaits du shiatsu à Saint-Cyr-l'École (78).",
+            "Informations détaillées sur le shiatsu thérapeutique, la praticienne Nathalie de Loeper, les tarifs et le déroulement des séances à Saint-Cyr-l'École.",
         },
         {
           name: "keywords",
           content:
-            "shiatsu thérapeutique, informations détaillées, formation shiatsu, bienfaits shiatsu, Nathalie de Loeper, Saint-Cyr-l'École, Yvelines, médecine traditionnelle chinoise",
-        },
-        {
-          name: "Description",
-          content:
-            "Informations détaillées sur la pratique du shiatsu thérapeutique, la formation de Nathalie de Loeper et son approche thérapeutique. Découvrez les bienfaits du shiatsu à Saint-Cyr-l'École (78).",
+            "shiatsu détaillé, informations shiatsu, tarifs shiatsu, séance shiatsu, Nathalie de Loeper, Saint-Cyr-l'École",
         },
         {
           property: "og:title",
-          content: "Informations Détaillées - Shiatsu Thérapeutique Nathalie de Loeper",
+          content: "Informations Détaillées - Shiatsu Thérapeutique",
+        },
+        {
+          property: "og:description",
+          content:
+            "Informations détaillées sur le shiatsu thérapeutique, la praticienne Nathalie de Loeper et les séances.",
+        },
+        {
+          property: "og:type",
+          content: "website",
         },
         {
           property: "og:url",
           content: "https://www.shiatsutherapie78.info/about/in-depth-answer",
-        },
-        { property: "og:type", content: "website" },
-        {
-          property: "og:description",
-          content:
-            "Informations détaillées sur la pratique du shiatsu thérapeutique, la formation de Nathalie de Loeper et son approche thérapeutique. Découvrez les bienfaits du shiatsu.",
         },
         {
           property: "og:image",
@@ -70,8 +73,7 @@ export default {
         },
         {
           name: "twitter:description",
-          content:
-            "Informations détaillées sur la pratique du shiatsu thérapeutique et l'approche de Nathalie de Loeper.",
+          content: "Informations détaillées sur le shiatsu thérapeutique et les séances.",
         },
         {
           name: "twitter:image",
@@ -92,12 +94,6 @@ export default {
         {
           name: "ICBM",
           content: "48.809106, 2.05806",
-        },
-      ],
-      script: [
-        {
-          type: "application/ld+json",
-          innerHTML: JSON.stringify(aboutPageSchemaContext),
         },
       ],
     };

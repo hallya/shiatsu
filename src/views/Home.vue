@@ -101,6 +101,13 @@ export default Vue.extend({
       }
     },
   },
+  mounted() {
+    this.$injectSchema(homePageSchemaContext);
+    this.$injectSchema(localBusiness);
+  },
+  beforeDestroy() {
+    this.$clearSchemas();
+  },
   metaInfo() {
     return {
       title: "Nathalie de Loeper - Shiatsu Thérapeutique | Saint-Cyr-l'École & Bouloire",
