@@ -35,6 +35,12 @@ export default {
   metaInfo() {
     return {
       title: "Informations Détaillées - Shiatsu Thérapeutique Nathalie de Loeper",
+      link: [
+        {
+          rel: "canonical",
+          href: "https://www.shiatsutherapie78.info/about/in-depth-answer",
+        },
+      ],
       meta: [
         {
           name: "description",

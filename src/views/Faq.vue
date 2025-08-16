@@ -1,6 +1,6 @@
 <template>
   <main>
-    <h1 class="sr-only">Questions Fréquentes sur le Shiatsu Thérapeutique</h1>
+    <h1>Questions Fréquentes sur le Shiatsu Thérapeutique</h1>
     <section class="section-faq">
       <Faq
         v-for="(faq, index) of faqs"
@@ -36,6 +36,12 @@ export default {
   metaInfo() {
     return {
       title: "Questions Fréquentes - Shiatsu Thérapeutique Nathalie de Loeper | Saint-Cyr-l'École",
+      link: [
+        {
+          rel: "canonical",
+          href: "https://www.shiatsutherapie78.info/about/quick-answer",
+        },
+      ],
       meta: [
         {
           name: "description",
@@ -110,16 +116,12 @@ export default {
 main {
   margin: 0 auto;
 
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
   }
 
   .section-faq {

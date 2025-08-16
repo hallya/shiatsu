@@ -70,6 +70,12 @@ export default {
   metaInfo() {
     return {
       title: "Contact - Prise de Rendez-vous Shiatsu | Saint-Cyr-l'École & Bouloire",
+      link: [
+        {
+          rel: "canonical",
+          href: "https://www.shiatsutherapie78.info/contact",
+        },
+      ],
       meta: [
         {
           name: "description",
