@@ -10,16 +10,9 @@
 <script>
 import NavLinkItem from "@/components/NavLinkItem.vue";
 import defaultImageForSharingJpg from "@/assets/images/pictures/nathalie_de_loeper_praticienne_shiatsu.jpg";
-import { localBusiness } from "@/data/googleSchemas";
 
 export default {
   components: { NavLinkItem },
-  mounted() {
-    this.$injectSchema(localBusiness);
-  },
-  beforeDestroy() {
-    this.$clearSchemas();
-  },
   metaInfo() {
     return {
       title: "À propos - Nathalie de Loeper | Shiatsu Thérapeutique Saint-Cyr-l'École",

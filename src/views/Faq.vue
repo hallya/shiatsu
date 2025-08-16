@@ -16,6 +16,7 @@
 import { faqs } from "@/data/faqs";
 import Faq from "@/components-ui/FAQ.vue";
 import defaultImageForSharingJpg from "@/assets/images/pictures/nathalie_de_loeper_praticienne_shiatsu.jpg";
+import { faqPageSchemaContext } from "@/data/googleSchemas";
 
 export default {
   components: {
@@ -25,6 +26,12 @@ export default {
     return {
       faqs,
     };
+  },
+  mounted() {
+    this.$injectSchema(faqPageSchemaContext);
+  },
+  beforeDestroy() {
+    this.$clearSchemas();
   },
   metaInfo() {
     return {
