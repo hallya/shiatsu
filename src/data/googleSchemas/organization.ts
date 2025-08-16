@@ -1,21 +1,40 @@
 import { Organization } from "schema-dts";
 import logo from "../../assets/images/logos/nenuphar.svg";
-import { person } from "./person";
 
 export const organization: Organization = {
   "@type": "Organization",
-  description: "Shiatsu thérapeutique",
-  email: person["email"],
-  founder: person,
-  foundingDate: "2015-01-08",
-  legalName: "de Loeper Nathalie",
+  "@id": "organization",
+  name: "Nathalie de Loeper - Shiatsu Thérapeutique",
+  alternateName: "Cabinet de Shiatsu Saint-Cyr-l'École",
+  description:
+    "Praticienne de shiatsu thérapeutique diplômée EST-UFPST. Séances pour soulager stress, fatigue, douleurs et améliorer le bien-être.",
+  url: "https://www.shiatsutherapie78.info/",
   logo: {
     "@type": "ImageObject",
-    contentUrl: `https://shiatsutherapie78.info${logo}`,
-    name: "4 nenuphars",
-    description: 'logo de "de Loeper Shiatsu", réalisé par France Bizot',
-    datePublished: "2019-09-29",
+    contentUrl: `https://www.shiatsutherapie78.info${logo}`,
   },
-  telephone: person["telephone"],
-  url: "https://shiatsutherapie78.info/",
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+33612387928",
+    email: "natloeper@gmail.com",
+    contactType: "customer service",
+    availableLanguage: "French",
+  },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "5 rue Jean Zay",
+    addressLocality: "Saint-Cyr-l'École",
+    postalCode: "78210",
+    addressRegion: "Île-de-France",
+    addressCountry: "FR",
+  },
+  foundingDate: "2015-01-08",
+  knowsAbout: [
+    "Shiatsu thérapeutique",
+    "Médecine traditionnelle chinoise",
+    "Méridiens d'acupuncture",
+    "Gestion du stress",
+    "Bien-être",
+    "Énergie vitale",
+  ],
 };

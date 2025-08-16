@@ -1,87 +1,46 @@
-import { AboutPage, Question, WithContext } from "schema-dts";
-import thumbnailPicture from "@/assets/images/pictures/nathalie_de_loeper_praticienne_shiatsu.jpg";
-import { abouts } from "../abouts";
+import { AboutPage, WithContext } from "schema-dts";
 import { organization } from "./organization";
 import { person } from "./person";
-
-const lastReviewed = "2021-02-17";
+import thumbnailPicture from "../../assets/images/pictures/nathalie_de_loeper_praticienne_shiatsu.jpg";
 
 export const aboutPageSchemaContext: WithContext<AboutPage> = {
   "@context": "https://schema.org",
   "@graph": [
     organization,
     {
-      lastReviewed,
       "@type": "AboutPage",
-      about: {
-        lastReviewed,
-        "@type": "FAQPage",
-        mainEntity: abouts.map(
-          (subject): Question => ({
-            "@type": "Question",
-            name: subject.question,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: subject.answer.join(""),
-            },
-          }),
-        ),
+      "@id": "aboutPage",
+      name: "À propos - Nathalie de Loeper Shiatsu Thérapeutique",
+      description:
+        "Découvrez Nathalie de Loeper, praticienne de shiatsu thérapeutique diplômée EST-UFPST. Informations détaillées sur la pratique du shiatsu, son parcours et son approche thérapeutique à Saint-Cyr-l'École (78).",
+      url: "https://www.shiatsutherapie78.info/about",
+      mainEntity: {
+        "@type": "Person",
+        "@id": "person",
       },
-      author: person,
-      accessMode: ["textual", "visual", "auditory"],
-      accessibilityFeature: [
-        "alternativeText",
-        "longDescription",
-        "captions",
-        "structuralNavigation",
-        "resizeText/CSSEnabled",
-        "highContrast/CSSEnabled",
-      ],
-      accessModeSufficient: [
-        {
-          "@type": "ItemList",
-          itemListElement: ["textual"],
-          description: "See the text",
-        },
-        {
-          "@type": "ItemList",
-          itemListElement: ["textual", "visual"],
-          description: "See the text and images",
-        },
-        {
-          "@type": "ItemList",
-          itemListElement: ["auditory"],
-          description: "Hear the text and image descriptions",
-        },
-        {
-          "@type": "ItemList",
-          itemListElement: ["auditory", "visual"],
-          description: "Hear the text and see the images",
-        },
-        {
-          "@type": "ItemList",
-          itemListElement: ["auditory", "visual", "textual"],
-          description: "Hear the text and see the text and images",
-        },
-      ],
-      accessibilityAPI: "ARIA",
-      conditionsOfAccess: {
-        "@type": "PronounceableText",
-        textValue: "Accessible sur rendez-vous par téléphone ou échange email",
+      publisher: {
+        "@type": "Organization",
+        "@id": "organization",
       },
-      mainContentOfPage: {
-        "@type": "WebPageElement",
-        author: person,
-        description:
-          "Informations relatives à la réception ou la pratique d'un shiastu ainsi qu'à la praticienne elle-même",
-        keywords:
-          "shiatsu, soin, rencontre, choix, conscience, soigner, séance, traitement, expérience, extraordinaire, information, infos, tarif, médecin, médecine, alternative, maladie, patient, bien, doigts, pression, acupuncture, énergie, corps, harmonieux, coeur, moral, esprit, ancrage, émotions, fatigue, fragilité, fragilisé, circulation, santé, force, vieillesse, apaisement, allègement",
-        name: "À propos",
+      about: person,
+      thumbnailUrl: `https://www.shiatsutherapie78.info${thumbnailPicture}`,
+      breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Accueil",
+            item: "https://www.shiatsutherapie78.info/",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "À propos",
+            item: "https://www.shiatsutherapie78.info/about",
+          },
+        ],
       },
-      url: "https://shiatsutherapie78.info/about",
-      name: "À propos",
-      typicalAgeRange: "18-",
-      thumbnailUrl: `https://shiatsutherapie78.info${thumbnailPicture}`,
     },
   ],
 };

@@ -26,9 +26,9 @@ export const localBusiness: LocalBusiness = {
     latitude: 48.809106,
     longitude: 2.05806,
   },
-  openingHours: ["Mo-Th 08:00-20:00", "Fr 09:00-19:00", "Sa 09:00-13:00"],
+  openingHours: ["Mo-Fr 09:00-19:00", "Sa 09:00-13:00"],
   priceRange: "€€",
-  paymentAccepted: "Cash",
+  paymentAccepted: "Cash, Check",
   currenciesAccepted: "EUR",
   areaServed: [
     "Saint-Cyr-l'École, Île-de-France, France",
@@ -43,7 +43,23 @@ export const localBusiness: LocalBusiness = {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Séance de Shiatsu Thérapeutique",
+          name: "Séance de Shiatsu Thérapeutique - Saint-Cyr-l'École",
+          description:
+            "Séance de 75 minutes pour soulager stress, fatigue, douleurs et rétablir l'équilibre énergétique",
+          provider: {
+            "@type": "Person",
+            name: "Nathalie de Loeper",
+          },
+        },
+        price: "70",
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Séance de Shiatsu Thérapeutique - Bouloire",
           description:
             "Séance de 75 minutes pour soulager stress, fatigue, douleurs et rétablir l'équilibre énergétique",
           provider: {
