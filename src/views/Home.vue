@@ -110,8 +110,7 @@ export default Vue.extend({
   },
   metaInfo() {
     return {
-      title:
-        "Nathalie de Loeper - Praticienne de Shiatsu Thérapeutique | Saint-Cyr-l'École & Bouloire",
+      title: "Nathalie de Loeper - Shiatsu Thérapeutique",
       link: [
         {
           rel: "canonical",

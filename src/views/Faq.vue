@@ -35,7 +35,7 @@ export default {
   },
   metaInfo() {
     return {
-      title: "Questions Fréquentes - Shiatsu Thérapeutique Nathalie de Loeper | Saint-Cyr-l'École",
+      title: "FAQ - Shiatsu Thérapeutique Nathalie de Loeper",
       link: [
         {
           rel: "canonical",

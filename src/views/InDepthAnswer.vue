@@ -34,7 +34,7 @@ export default {
   },
   metaInfo() {
     return {
-      title: "Informations Détaillées - Shiatsu Thérapeutique Nathalie de Loeper",
+      title: "Informations Détaillées - Shiatsu Nathalie de Loeper",
       link: [
         {
           rel: "canonical",
