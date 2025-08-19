@@ -7,23 +7,15 @@
   <!-- Page d'accueil -->
   <url>
     <loc>https://www.shiatsutherapie78.info/</loc>
-    <lastmod>2024-08-14</lastmod>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-  </url>
-
-  <!-- Page À propos -->
-  <url>
-    <loc>https://www.shiatsutherapie78.info/about</loc>
-    <lastmod>2024-08-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
 
   <!-- FAQ - Questions fréquentes -->
   <url>
     <loc>https://www.shiatsutherapie78.info/about/quick-answer</loc>
-    <lastmod>2024-08-14</lastmod>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -31,7 +23,7 @@
   <!-- Page détaillée -->
   <url>
     <loc>https://www.shiatsutherapie78.info/about/in-depth-answer</loc>
-    <lastmod>2024-08-14</lastmod>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -39,7 +31,7 @@
   <!-- Page Contact -->
   <url>
     <loc>https://www.shiatsutherapie78.info/contact</loc>
-    <lastmod>2024-08-14</lastmod>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
