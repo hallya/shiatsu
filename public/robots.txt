@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-
 Allow: /about/quick-answer
 Allow: /about/in-depth-answer
 Allow: /contact
@@ -22,6 +21,3 @@ Disallow: /404-page-not-found
 
 # Sitemap
 Sitemap: https://www.shiatsutherapie78.info/sitemap.xml
-
-# Crawl-delay pour être respectueux
-Crawl-delay: 1
