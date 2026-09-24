@@ -7,9 +7,7 @@ export const infos: FAQElement = {
   id: "9",
   question: "Infos pratiques et tarifs",
   answer: [
-    "Concernant la tarification,",
-    "<strong>Saint Cyr l’Ecole</strong> 70 euros",
-    "<strong>Bouloire</strong> 60 euros",
+    'Pour connaître la tarification de la séance n\'hésitez pas à m\'envoyer un sms au <a style="display: inline" href="tel:+33612387928">06 12 38 79 28</a>'
   ],
   images: {
     defaultImage: jpg,
